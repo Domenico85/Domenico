@@ -131,6 +131,6 @@ footer{
     margin: 0 auto;
 }
 .socials img{
-   width: 200px;
-   height: auto;
+   max-width: 150px;
+   height: 120px;
 }
