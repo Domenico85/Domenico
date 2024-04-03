@@ -12,9 +12,13 @@ function hideBanner() {
 document.getElementById("consent-button").addEventListener("click", hideBanner);
 document.getElementById("exit").addEventListener("click", hideBannerTemporarily);
 document.body.addEventListener("click", function(event){
-    if (!event.target.closest("overlay")){
+    const userClick= event.target;
+    const closeElement= document.querySelector("#overlay");
+    const closeBanner= (closeElement == userClick);
+    if (closeBanner){
         hideBannerTemporarily();
     }
+    
 });
 
 window.addEventListener("load", function(){
@@ -48,10 +52,6 @@ function startImageLoop() {
         currentIndex = (currentIndex + 1) % images.length;
     }, 3000);
 }
-imagen.addEventListener("click", () => {
-    let currentIndex = images.indexOf(imagen.src);
-    currentIndex = (currentIndex + 1) % images.length;
-    imagen.src = images[currentIndex];
-});
+
 
 startImageLoop();

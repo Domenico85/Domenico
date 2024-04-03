@@ -26,9 +26,14 @@ body{
 #exit{
     float: right;
     font-size: 20px;
+    text-decoration: none;
 }
 #consent-button{
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    max-width: 50px;
+    margin: 0 auto;
 }
 
 #overlay.hidden {
