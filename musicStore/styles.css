@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'make';
+    src: url(Fonts/make.ttf);
+}
+body{
+    
+    /* background-repeat: no-repeat;
+    background-position: 260px 48px;
+    background-size: 60%; */
+    /* margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; */
+    
+   
+}
+nav .logo {
+    max-width: 15%;
+   
+   
+}
+nav {
+    display: flex;
+    align-items: center;
+}
+nav a{
+    font-family: 'make';
+    color: red;
+    font-size: 30px;
+    text-decoration: none;
+    margin: 0 35px;
+    
+   
+    
+}
+nav a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+.textnav{
+    display: flex;
+    /* align-content: center; */
+    margin: 0 5px auto;
+}
+.bodyindex{ background-image: url(Img/sfondo.jpeg);
+    background-repeat: no-repeat;
+    background-position: 260px 48px;
+    background-size: 60%;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    background-color: purple;
+
+}
+
+.body-products {
+    /* background-image: url(Img/secondario.jpeg); */
+    background-size: 50%;
+    background-color: black;
+    background-position: 335px 48px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+.sell {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 2rem; 
+    margin: 2rem 0;
+}
+.sell img {
+    width: 50%; 
+    max-width: 400px;
+    height: auto; 
+    display: flex; 
+    margin: 0 auto;
+    align-items: center;
+}
+.prodotti a {
+    font-family: 'make';
+    color: yellow;
+}
+.prodotti{
+    text-align: center;
+}
+.prodotti a:hover{
+    color: red;
+}
+body.contactos {
+    /* margin: 0;
+    padding: 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(green, yellow, red);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    
+}
+.social{
+    font-family: 'make';
+    font-size: 30px;
+}
+.cont {
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.cont>a {
+    display: inline-block;
+    margin: 10px;
+}
+
+.cont>a>img {
+    max-width: 200px;
+    margin: auto;
+
+}
+body.lessons{
+    background-image: url(Img/lessons2.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 48px;
+    background-size: 60%;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: blue;
+
+}
+.textlessons{
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 0px;
+    text-align: center;
+}
+p.teach::first-letter{
+    font-size: 300%;
+    float: left;
+}
+.bodyabout{
+    background-image: url(Img/about\ us.jpeg);
+    background-repeat: no-repeat;
+    background-position: 50% 48px;
+    background-size: 60%;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+}
+.aboutus{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 800px;
+    margin-top: -155px;
+    text-align: center;
+    font-size: 20px;
+    
+}
+h1{
+    color: yellow;
+}
+h2{
+    color: red;
+    font-size: 22px;
+    text-decoration: underline;
+}

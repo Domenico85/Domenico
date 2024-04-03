@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="izquierda">
+
+        <img class="logo" src="Open.png" alt="logo">
+        <div class="textlogo">
+            <h2>New Chat</h2>
+        </div>
+        <p class="hoy">Hoy </p>
+        <p class="texto1">Martin es el amo?</p>
+        <p class="texto1">Como flexear?</p>
+        <p class="texto1">Hola Mundo</p>
+
+        <p class="hoy">Ultimos 7 dias</p>
+        <p class="texto1">Gatos=Demonios?</p>
+        <p class="texto1">Como hacer BIEN la carbonara</p>
+        <p class="texto1">Ayuda con JS</p>
+    </div>
+
+    <div class="derecha">
+
+        <h2>Bienvenid@s en MicoGpt</h2>
+        <img class="logo2" src="Open.png" alt="logo2">
+        <p class="help"> How can I help you today?</p>
+        
+        <p id="respuesta"></p>
+        
+        <div class="caja">
+
+            <textarea id="inputText" placeholder="Escribe algo..." onkeydown="detectarEnter(event)"></textarea>
+            
+        </div>
+
+        
+    
+    
+        <footer class="derecha-footer">
+            <p>MicoGPT can make mistakes. Consider checking important information.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

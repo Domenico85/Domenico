@@ -1,0 +1,168 @@
+@font-face {
+    font-family: 'Abril';
+    src: url(Fonts/AbrilFatface-Regular.ttf);
+}
+
+body {
+    background-image: url(Images/fondo.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Abril';
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+
+}
+
+nav img {
+    max-height: 80px;
+    margin-right: auto;
+}
+
+.textnav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #72A0C1;
+}
+
+@font-face {
+    font-family: 'Hugh';
+    src: url(Fonts/Hugh.ttf);
+}
+
+.pres {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+    font-family: 'Hugh';
+    font-size: 70px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+}
+
+body.pageproduct {
+    font-family: 'Abril';
+    background-image: url(Images/product.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body.about {
+    font-family: 'Abril';
+    background-image: url(Images/about.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body.contacts {
+    font-family: 'Abril';
+    background-image: url(Images/contacts.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.prescont {
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.prescont>a {
+    display: inline-block;
+    margin: 10px;
+}
+
+.prescont>a>img {
+    max-width: 200px;
+    margin: auto;
+
+}
+
+p {
+    font-family: 'Hugh';
+    font-size: 100px;
+    text-align: center;
+    margin: 0;
+}
+
+h1 img {
+    max-width: 250px;
+}
+
+.green {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+p.greentext {
+    font-size: 20px;
+    font-family: 'Abril';
+}
+
+.producttext {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 70px;
+    text-align: center;
+}
+.aboutus{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+    
+    text-align: center;
+}
+.textabout{
+    font-size:20px ;
+    font-family: 'Abril';
+}
+.textabout::first-letter{
+    font-size: 300%;
+    float: left;
+}

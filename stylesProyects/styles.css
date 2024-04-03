@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("Raleway-VariableFont_wght.ttf");
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background-image: url("leaf.jpeg");
+  background-position: center;
+  background-size: auto;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+}
+
+.project-links {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(69, 67, 67, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #3498db;
+  color: #fff;
+}
