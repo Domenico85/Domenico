@@ -2,39 +2,22 @@
     font-family: 'make';
     src: url(Fonts/make.ttf);
 }
-body{
-    
-    /* background-repeat: no-repeat;
-    background-position: 260px 48px;
-    background-size: 60%; */
-    /* margin: 0;
-    padding: 0;
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; */
-    
-   
-}
 .logo {
     max-width: 14%;
     position: absolute;
-    margin-top: 200px;
-   
-   
+    margin-bottom: 600px;  
 }
 nav {
     display: flex;
     align-items: center;
+    margin-bottom: 820px;
 }
 nav a{
     font-family: 'make';
     color: red;
     font-size: 30px;
     text-decoration: none;
-    margin: 0 35px;
-    
-   
-    
+    margin: 0 35px;    
 }
 nav a:hover{
     color: yellow;
@@ -47,15 +30,15 @@ nav a:hover{
 }
 .bodyindex{ background-image: url(Img/sfondo.jpeg);
     background-repeat: no-repeat;
-    background-position: 260px 48px;
-    background-size: 60%;
+    background-position:center 50px;
+    background-size: 50%;
     margin: 0;
     padding: 0;
     display: flex; 
     justify-content: space-between;
     align-items: center;
     background-color: purple;
-
+    min-height: 100vh;
 }
 
 .body-products {
