@@ -56,18 +56,167 @@ nav {
     min-width: 100vh;
     background-color: red;
 }
+
 @font-face {
     font-family: "make";
     src: url(font/make.ttf);
 }
-nav a{
+
+nav a {
     text-decoration: none;
     font-family: "make";
     font-size: 20px;
     color: black;
-    
+
 }
-nav a:hover{
+
+nav a:hover {
     color: yellow;
 }
 
+.products {
+    min-height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.sell {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.sell img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.prodotti a {
+    font-family: 'make';
+    color: yellow;
+    font-size: 30px;
+}
+
+.prodotti {
+    text-align: center;
+}
+
+.prodotti a:hover {
+    color: red;
+}
+
+.lessons {
+    min-height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(Img/lessons2.jpeg);
+}
+
+.textlessons {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+p.teach::first-letter {
+    font-size: 300%;
+    float: left;
+}
+
+.offerlessons {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 30px;
+    max-width: 386px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.offerlessons img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about {
+    min-height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(Img/about\ us.jpeg);
+    background-position: top;
+}
+
+@font-face {
+    font-family: "country";
+    src: url(font/country.ttf);
+}
+
+.texabout {
+    text-align: center;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    max-width: 300px;
+    margin-top: 25px;
+}
+
+.texabout h2 {
+    color: black;
+    font-family: "country";
+}
+
+.texabout h1 {
+    color: red;
+    font-family: "country";
+    margin-top: 85px;
+    text-decoration: underline;
+
+}
+.contacts{
+    min-height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(green, yellow, red);
+
+}
+.social{
+font-family: "make";
+font-size: 40px;
+color: yellow;
+}
+@font-face {
+    font-family: "passero";
+    src: url(font/Passero.ttf);
+}
+footer{
+    background-color: red;
+    min-width: 100vh;
+    text-align: center;
+    font-family: "passero";
+}
