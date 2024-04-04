@@ -23,7 +23,7 @@ document.body.addEventListener("click", function(event){
 window.addEventListener("load", function(){
    let bannerHidden = localStorage.getItem("bannerHidden");
    if (bannerHidden === "true"){
-       let element = document.getElementById("#overlay");
+       let element = document.getElementById("overlay");
        element.classList.add("hidden");
    }
 });

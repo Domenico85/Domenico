@@ -1,4 +1,3 @@
-
 .index {
     min-height: 100vh;
     display: flex;
@@ -127,9 +126,10 @@ nav a:hover {
 .textlessons {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    padding: 1px;
+    padding: 18px;
     max-width: 400px;
     margin: 30px auto;
+    font-size: 16px;
 }
 
 p.teach::first-letter {
@@ -143,11 +143,11 @@ p.teach::first-letter {
     max-width: 386px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     margin: 0 auto;
-    
-    
+
+
 }
 
 .offerlessons img {
@@ -182,7 +182,7 @@ p.teach::first-letter {
 }
 
 .texabout h2 {
-    color: black;
+    color: blue;
     font-family: "country";
 }
 
@@ -193,29 +193,49 @@ p.teach::first-letter {
     text-decoration: underline;
 
 }
-.contacts{
+@font-face {
+    font-family: "dongle";
+    src: url(font/Dongle-Regular.ttf);
+}
+.texabout p{
+font-size: 25px;
+font-family: "dongle";
+}
+.contacts {
     min-height: 100vh;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     background-image: linear-gradient(green, yellow, red);
 
 }
-.cont img{
-    max-width: 300px;
+
+.cont {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.social{
-font-family: "make";
-font-size: 40px;
-color: yellow;
+
+.cont img {
+    max-width: 300px;
+
 }
+
+.social {
+    font-family: "make";
+    font-size: 40px;
+    color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
 @font-face {
     font-family: "passero";
     src: url(font/Passero.ttf);
 }
-footer{
+
+footer {
     background-color: red;
     text-align: center;
     font-family: "passero";
@@ -227,11 +247,48 @@ footer{
 }
 
 @media screen and (min-width:600px) {
+    .index {
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
     nav {
-        display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 6px;
-    background-color: red;
+        gap: 40px;
+
+    }
+}
+
+@media screen and (min-width:1200px) {
+    nav {
+        gap: 120px;
+
+    }
+
+    nav a {
+        font-size: 30px;
+    }
+
+    .textlessons {
+        margin: 25px 50px 75px 100px;
+        font-size: 28px;
+        padding: 68px;
+    }
+
+    .offerlessons {
+        margin: -853px 255px 425px auto;
+        justify-content: center;
+        max-width: 700px;
+    }
+
+    .texabout {
+        max-width: 1200px;
+    }
+    .texabout p {
+        font-size: 40px ;
+    }
+    .cont {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 }
