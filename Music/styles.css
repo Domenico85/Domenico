@@ -51,7 +51,7 @@
 nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 18px;
     padding: 6px;
     min-width: 100vw;
     background-color: red;
@@ -204,6 +204,10 @@ p.teach::first-letter {
     align-items: center;
     background-image: linear-gradient(green, yellow, red);
 
+}
+.cont img{
+    max-width: 300px;
+    display: flex;
 }
 .social{
 font-family: "make";
