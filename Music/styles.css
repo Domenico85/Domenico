@@ -53,7 +53,7 @@ nav {
     justify-content: center;
     gap: 30px;
     padding: 6px;
-    min-width: 100vh;
+    min-width: 100vw;
     background-color: red;
 }
 
@@ -161,7 +161,7 @@ p.teach::first-letter {
 }
 
 .about {
-    min-height: 100vh;
+    min-height: 100v;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
