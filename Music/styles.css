@@ -128,7 +128,7 @@ nav a:hover {
     border-radius: 5px;
     padding: 18px;
     max-width: 400px;
-    margin: 30px auto;
+    margin: 30px;
     font-size: 16px;
 }
 
@@ -145,7 +145,7 @@ p.teach::first-letter {
     flex-wrap: wrap;
     /* justify-content: center; */
     /* align-items: center; */
-    margin: 0 auto;
+    margin: 20px 20px 20px 20px;
 
 
 }
@@ -157,6 +157,7 @@ p.teach::first-letter {
     display: flex;
     margin: 0 auto;
     align-items: center;
+    margin-top: 20px;
 }
 
 .about {
@@ -178,7 +179,7 @@ p.teach::first-letter {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .texabout h2 {
