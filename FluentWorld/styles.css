@@ -11,12 +11,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
 #overlay div {
     background-color: bisque;
     color: black;
-    margin-top: inherit;
+    margin-top: 50px;
     max-width: 50%;
     border: 2px solid black;
     padding: 30px;
