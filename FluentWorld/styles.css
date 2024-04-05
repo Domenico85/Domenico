@@ -91,12 +91,12 @@ body {
     background-color: black;
     transform: translateX(100%);
     transition: all 1s;
-
-
 }
-
+.myLinks a:hover{
+    color: red;
+}
 .activemenu {
-    transform: translateX(0%);
+    transform: translateX(50%);
 }
 
 .topnav a {
