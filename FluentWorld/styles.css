@@ -23,16 +23,17 @@ body {
     border-radius: 10px;
     font-family: "quick";
 }
-.cookie{
+
+.cookie {
     display: flex;
-  max-width: 40px;
-  justify-content: center;
-  align-content: center;
-  margin: 0 auto 5px;
+    max-width: 40px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto 5px;
 }
 
 #exit {
-     font-size: 30px;
+    font-size: 30px;
     display: flex;
     justify-content: center;
     max-width: 200px;
@@ -58,12 +59,15 @@ body {
     font-family: "lilita";
     text-decoration: none;
 }
-#consent-button:hover{
-    color: red;
-} 
-#exit:hover{
+
+#consent-button:hover {
     color: red;
 }
+
+#exit:hover {
+    color: red;
+}
+
 #overlay.hidden {
     display: none;
 }
@@ -75,21 +79,25 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: #333;
     position: absolute;
     font-family: "lilita";
     left: 0;
     right: 0;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-    display: none;
+
+.myLinks {
+    background-color: black;
+    transform: translateX(100%);
+    transition: all 1s;
+
 
 }
 
+.activemenu {
+    transform: translateX(0%);
+}
 
-/* Style navigation menu links */
 .topnav a {
     color: white;
     padding: 14px 16px;
@@ -99,7 +107,6 @@ body {
     gap: 19px;
 }
 
-/* Style the hamburger menu */
 .topnav a.icon {
     display: block;
     position: absolute;
@@ -118,7 +125,6 @@ body {
     margin: 16px 97px;
 }
 
-/* Style the active link (or home/logo) */
 .active {
     background-color: #04AA6D;
     color: white;
@@ -149,7 +155,8 @@ footer {
     color: white;
     font-family: "lilita";
 }
-main h1{
+
+main h1 {
     font-family: "lilita";
     text-align: center;
     margin: 80px auto;

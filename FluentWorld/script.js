@@ -1,11 +1,10 @@
-function myFunction() {
-    var x = document.getElementById("myLinks");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
-    }
+function showMenu(){
+    let myLinks= document.querySelector(".myLinks");
+    myLinks.classList.toggle("activemenu");
 }
+document.querySelector(".icon");
+let hambu=document.querySelector(".icon");
+hambu.addEventListener("click", showMenu);
 
 function hideBanner() {
     let element = document.getElementById("overlay");
