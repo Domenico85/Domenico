@@ -81,7 +81,7 @@ body {
 
 .topnav {
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     font-family: "lilita";
     left: 0;
     right: 0;
@@ -93,9 +93,11 @@ body {
     transform: translateX(100%);
     transition: all 1s;
 }
-.myLinks a:hover{
+
+.myLinks a:hover {
     color: red;
 }
+
 .activemenu {
     transform: translateX(50%);
 }
@@ -165,13 +167,37 @@ main h1 {
     text-align: center;
     margin: 80px auto;
 }
+
 .mainNews {
     background-image: url(Img/news.jpeg);
     display: flex;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     min-height: 97vh;
+    padding-top: 95px;
 
+}
+
+.newsSection {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto 2px;
+    border: 1px solid black;
+
+
+}
+.newsSection h1{
+    font-family: "lilita";
+    text-align: center;
+    margin: 52px auto;
+}
+
+.newsSection h2, h3{
+    font-family: "lilita";
+    text-align: center;
+    color: red; 
 }
 
 .mainLessons {
@@ -182,7 +208,7 @@ main h1 {
     min-height: 97vh;
 }
 
-.mainTeachers{
+.mainTeachers {
     background-image: url(Img/teachers.jpeg);
     display: flex;
     background-position: center;
@@ -190,7 +216,7 @@ main h1 {
     min-height: 97vh;
 }
 
-.mainLanguage{
+.mainLanguage {
     background-image: url(Img/languages.jpeg);
     display: flex;
     background-position: center;
@@ -198,7 +224,7 @@ main h1 {
     min-height: 97vh;
 }
 
-.mainContacts{
+.mainContacts {
     background-image: url(Img/contact.jpeg);
     display: flex;
     background-position: center;
@@ -206,7 +232,7 @@ main h1 {
     min-height: 97vh;
 }
 
-.mainAbout{
+.mainAbout {
     background-image: url(Img/about.jpeg);
     display: flex;
     background-position: center;
