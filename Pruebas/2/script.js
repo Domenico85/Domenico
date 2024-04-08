@@ -1,36 +1,74 @@
-let options= ["rock", "paper","scissors"];
+let options = ["rock", "paper", "scissors"];
 
 
-function getComputerChoice(){
+function getComputerChoice() {
     let randomNumber = Math.random();
-    let randomArrNumber = randomNumber*options.length;
+    let randomArrNumber = randomNumber * options.length;
     let index = Math.floor(randomArrNumber);
     let randomElement = options[index];
     return randomElement
 }
-// getComputerChoice();
 
-function playRound (playerSelection, computerSelection) {
-    console.log(playerSelection);
+function playerChoise() {
+    let userImput = prompt("").toLowerCase();
+    return userImput;
+}
+
+function whoWins(playerSelection, computerSelection) {
+    console.log(playerSelection); 
     console.log(computerSelection);
-    
+
     if (playerSelection == computerSelection) {
-        let tieMessage = "You Tied";
-        return tieMessage;
-    } else if ((playerSelection == "rock" && computerSelection == "scissors") || 
-               (playerSelection == "paper" && computerSelection == "rock") ||
-               (playerSelection == "scissors" && computerSelection == "paper")) {
-        let winMessage = "You Win! " + playerSelection + " beats " + computerSelection;
-        return winMessage;
+        let result = undefined
+        return result
+
+    } else if ((playerSelection == "rock" && computerSelection == "scissors") ||
+        (playerSelection == "paper" && computerSelection == "rock") ||
+        (playerSelection == "scissors" && computerSelection == "paper")) {
+        let result = "player"
+        return result
+
     } else {
-        let looseMessage = "You Lose! " + computerSelection + " beats " + playerSelection;
-        return looseMessage;
+
+        let result = "computer"
+        return result
+
     }
 }
-    
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-let resultPlayRound = playRound(playerSelection, computerSelection);
+function playGame() {
 
-console.log(resultPlayRound);
+    let playerWins = 0;
+    let computerWins = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = playerChoise();
+        let computerSelection = getComputerChoice();
+        let roundWinner = whoWins(playerSelection, computerSelection);
+        console.log(roundWinner);
+        if (roundWinner == "player") {
+            playerWins++
+            console.log("You win")
+        }
+        else if (roundWinner == "computer") {
+            computerWins++
+            console.log("You Loose")
+
+        }
+
+    }
+    if (playerWins > computerWins) {
+        return "You Win the game"
+    }
+    else if (playerWins < computerWins) {
+
+        return "You Lost the game"
+    }
+    else {
+        return "It's a Tie"
+    }
+
+
+}
+
+console.log(playGame());
