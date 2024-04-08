@@ -24,6 +24,7 @@ body {
 .mainImage {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .mainImage img {
