@@ -127,8 +127,13 @@ body {
     margin: 0 auto;
     font-family: "sigmar";
 }
+@media screen and (min-width: 500px) {
+    .score {
+        justify-content: center;
+    }
+}
 
-@media screen and (min-width:1200px) {
+/* @media screen and (min-width:1200px) {
     .score {
         justify-content: center;
     }
@@ -150,4 +155,4 @@ body {
         justify-content: center;
     }
 
-}
+} */
