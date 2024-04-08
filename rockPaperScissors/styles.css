@@ -134,26 +134,15 @@ body {
     }
 }
 
-/* @media screen and (min-width:1200px) {
-    .score {
-        justify-content: center;
-    }
+@media screen and (min-width: 300px) {
+.title {
+    font-size: 11px;
 }
-
-@media screen and (min-width:500px) {
-    .score {
-        justify-content: center;
-        margin: 0px 14px;
-    }
+.mainImage img{
+    max-width: 150px;
 }
-
-@media screen and (min-width:320px) {
-    .title {
-        font-size: 11px;
-    }
-    .mainImage{
-        max-width: 155px;
-        justify-content: center;
-    }
-
-} */
+.score {
+    justify-content: center;
+    gap: 36px;
+}
+}
