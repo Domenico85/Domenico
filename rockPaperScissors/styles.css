@@ -16,7 +16,9 @@ body {
     font-family: "sigmar";
     font-size: 14px;
 }
-
+.title span{
+    color: white;
+}
 .mainImage {
     display: flex;
     justify-content: center;
@@ -90,19 +92,24 @@ body {
     font-size: 30px;
 }
 
-.win {
-    max-width: 200px;
-    max-height: 100px;
+.win,
+.lose,
+.tie {
+    max-width: 64px;
     background-color: black;
-    color: white;
     border-radius: 9px;
     padding: 10px;
-    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 4px auto;
     display: none;
+}
+.win img,
+.lose img,
+.tie img{
+    max-width: 32px;
+    max-height: 32px;
 }
 .reload {
     display: none;
@@ -117,27 +124,13 @@ body {
     font-family: "sigmar";
 }
 
-.win img {
-    max-width: 32px;
-    max-height: 32px;
+@media screen and (min-width:1200px) {
+    .score {
+        justify-content: center;
+    }
 }
-
-.lose {
-    max-width: 200px;
-    max-height: 100px;
-    background-color: black;
-    color: white;
-    border-radius: 9px;
-    padding: 10px;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    display: none;
-}
-
-.lose img {
-    max-width: 32px;
-    max-height: 32px;
+@media screen and (min-width:500px) {
+    .score {
+        justify-content: center;
+    }
 }

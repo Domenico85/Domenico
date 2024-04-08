@@ -90,6 +90,9 @@ const game = () => {
  
         // const chooseMove = document.querySelector('.move');
         const result = document.querySelector('.result');
+        const resultImgWin = document.querySelector('.win');
+        const resultImgLose = document.querySelector('.lose');
+        const resultImgTie = document.querySelector('.tie');
         const reloadBtn = document.querySelector('.reload');
  
         playerOptions.forEach(option => {
@@ -104,16 +107,20 @@ const game = () => {
             result.style.fontSize = '2rem';
             result.innerText = 'You Won The Game'
             result.style.color = '#308D46';
+            resultImgWin.style.display = 'flex';
         }
         else if (playerScore < computerScore) {
             result.style.fontSize = '2rem';
             result.innerText = 'You Lost The Game';
             result.style.color = 'red';
+            resultImgLose.style.display = 'flex';
         }
         else {
             result.style.fontSize = '2rem';
             result.innerText = 'Tie';
             result.style.color = 'grey'
+            resultImgTie.style.display = 'flex';
+
         }
         reloadBtn.innerText = 'Restart';
         reloadBtn.style.display = 'flex'
