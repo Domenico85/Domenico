@@ -189,16 +189,18 @@ main h1 {
 
 
 }
-.newsSection h1{
+
+.newsSection h1 {
     font-family: "lilita";
     text-align: center;
     margin: 52px auto;
 }
 
-.newsSection h2, h3{
+.newsSection h2,
+h3 {
     font-family: "lilita";
     text-align: center;
-    color: red; 
+    color: red;
 }
 
 .mainLessons {
@@ -224,30 +226,46 @@ main h1 {
     background-size: cover;
     min-height: 97vh;
 }
-.mainLanguage img{
+
+.mainLanguage img {
     max-width: 453px;
-  max-height: 265px;
-  margin: 205px -14px;
-  position: fixed;
-  opacity: 0;
-	animation: change-img-anim 30s infinite;
+    max-height: 265px;
+    margin: 205px -14px;
+    position: fixed;
+    opacity: 0;
+    animation: change-img-anim 30s infinite;
 }
+
 .imageLang:nth-of-type(1) {
-	animation-delay: 0s;
+    animation-delay: 0s;
 }
+
 .imageLang:nth-of-type(2) {
-	animation-delay: 10s;
+    animation-delay: 10s;
 }
+
 .imageLang:nth-of-type(3) {
-	animation-delay: 20s;
+    animation-delay: 20s;
 }
 
 @keyframes change-img-anim {
-	0%{ opacity: 0;}
-	10%{ opacity: 1;}
-	90%{ opacity: 1;}
-	100%{ opacity: 0;}
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
+
 .mainContacts {
     background-image: url(Img/contact.jpeg);
     display: flex;

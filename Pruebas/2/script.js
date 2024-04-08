@@ -10,7 +10,7 @@ function getComputerChoice() {
 }
 
 function playerChoise() {
-    let userImput = prompt("").toLowerCase();
+    // let userImput = prompt("").toLowerCase();
     return userImput;
 }
 
@@ -45,7 +45,7 @@ function playGame() {
         let playerSelection = playerChoise();
         let computerSelection = getComputerChoice();
         let roundWinner = whoWins(playerSelection, computerSelection);
-        console.log(roundWinner);
+        console.log(`Marcador. Player ${playerWins} - Computer ${computerWins}`);
         if (roundWinner == "player") {
             playerWins++
             console.log("You win")
@@ -54,6 +54,8 @@ function playGame() {
             computerWins++
             console.log("You Loose")
 
+        } else {
+            i--;
         }
 
     }

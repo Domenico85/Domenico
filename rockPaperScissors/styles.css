@@ -1,0 +1,143 @@
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(green, red, yellow);
+    font-family: "sigmar";
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: "sigmar";
+    src: url(font/SigmarOne-Regular.ttf);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: "sigmar";
+    font-size: 14px;
+}
+
+.mainImage {
+    display: flex;
+    justify-content: center;
+}
+
+.mainImage img {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    margin: 50px auto;
+}
+
+.game a {
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game a img {
+    max-width: 32px;
+    max-height: 32px;
+
+}
+
+.game a:hover {
+    background-color: red;
+}
+
+.game a:nth-of-type(2):hover {
+    background-color: green;
+}
+
+.game a:nth-of-type(3):hover {
+    background-color: #cfcf02;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 90px;
+    margin: 0 29px;
+}
+
+.playerScore,
+.computerScore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerScore p,
+.computerScore p {
+    margin-top: 0;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 30px;
+}
+
+.win {
+    max-width: 200px;
+    max-height: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    display: none;
+}
+.reload {
+    display: none;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: green;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family: "sigmar";
+}
+
+.win img {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.lose {
+    max-width: 200px;
+    max-height: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 9px;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    display: none;
+}
+
+.lose img {
+    max-width: 32px;
+    max-height: 32px;
+}
