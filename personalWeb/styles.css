@@ -1,78 +1,90 @@
 body {
     margin: 0;
-    background-color: beige
+    background-color: black;
 }
+
 @font-face {
-    font-family: "right" ;
+    font-family: "right";
     src: url(font/Righteous-Regular.ttf);
 }
 
-.hamburger {
-    display: inline-block;
-    height: 26px;
-    margin-right: 27px;
-    
-    a.main-nav-toggle {
-      display: block;
-      width: 28px;
-      height: 16px;
-      right: 15px;
-      position: absolute;
-      top: 25px;
-      
-      &:after,
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 0;
-        border-bottom: 4px solid #bbb;
-        width: 100%;
-        left: 0;
-        right: 0;
-        transition: all ease-out 0.3s;
-      }
-      
-      &:after {
-        top: 100%;
-      }
-      
-      i {
-        display: block;
-        text-indent: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        height: 4px;
-        background-color: #bbb;
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        transition: all ease-out 0.1s;
-      }
-      
-      &.active-menu {
-        &:after {
-          transform: rotate(-45deg);
-          transform-origin: center;
-          top: 50%;
-        }
-        
-        &:before {
-          transform: rotate(45deg);
-          transform-origin: center;
-          top: 50%
-        }
-        
-        i {
-          opacity: 0;
-        }
-      }
-    }
-  }
-.activemenu {
-    transform: translateX(50%);
+.menu-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
 }
+
+.hamburger {
+    height: 26px;
+    margin-right: 0px;
+    position: relative;
+    z-index: 9999;
+
+
+    a.main-nav-toggle {
+        display: block;
+        width: 28px;
+        height: 16px;
+        right: 15px;
+        position: absolute;
+        top: 25px;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 0;
+            border-bottom: 4px solid #bbb;
+            width: 100%;
+            left: 0;
+            right: 0;
+            transition: all ease-out 0.3s;
+        }
+
+        &:after {
+            top: 100%;
+        }
+
+        i {
+            display: block;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 4px;
+            background-color: #bbb;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transition: all ease-out 0.1s;
+        }
+
+        &.active-menu {
+            &:after {
+                transform: rotate(-45deg);
+                transform-origin: center;
+                top: 50%;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+                transform-origin: center;
+                top: 50%
+            }
+
+            i {
+                opacity: 0;
+            }
+        }
+    }
+}
+
 .myLinks {
+    display: none;
+}
+
+.myLinksActive {
     background-color: black;
     /* transform: translateX(100%); */
     transition: all 1s;
@@ -81,15 +93,28 @@ body {
     gap: 20px;
     align-items: center;
     padding: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
-.myLinks a{
+
+.myLinks a {
     color: white;
     text-decoration: none;
     font-family: "right";
+    font-size: 40px;
+    padding: 50px;
+    transition: all 1s ease-in-out;
 }
-.myLinks a:hover{
+
+.myLinks a:hover {
     color: #e83611;
+    transform: scale(2);
+    
 }
+
 :root {
     --color-1: #186cb8;
     --color-2: #2a9a9f;
@@ -98,18 +123,21 @@ body {
     --color-5: #f1b211;
 }
 
-.name{
+.name {
     background-color: black;
     margin: 50px 0 0 0;
     transition: all 2s ease-in-out;
 
 }
-.nome{
+
+.nome {
     margin: 1px 72px auto;
 }
-.name:hover{
+
+.name:hover {
     transform: scale(1.5);
 }
+
 h1 {
     color: transparent;
     font-family: sans-serif;
@@ -132,9 +160,10 @@ h1 {
 
 }
 
-.centerImg img{
-   max-width: 100%;
+.centerImg img {
+    max-width: 100%;
 }
-.pc{
+
+.pc {
     max-width: 100%;
 }

@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function showMenu() {
     let myLinks = document.querySelector(".myLinks");
-    myLinks.classList.toggle("activemenu");
+    myLinks.classList.toggle("myLinksActive");
 }
-document.querySelector(".main-nav-toggle");
 let hambu = document.querySelector(".main-nav-toggle");
 hambu.addEventListener("click", showMenu);
