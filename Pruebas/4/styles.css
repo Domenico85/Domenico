@@ -11,6 +11,7 @@
 }
 .box:hover {
     background-color: aqua;
-    transform: scale(2);
+    transform: scale(2) rotate(1080deg);
+    
     
 }
