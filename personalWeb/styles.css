@@ -86,8 +86,6 @@ body {
 
 .myLinksActive {
     background-color: black;
-    /* transform: translateX(100%); */
-    transition: all 1s;
     display: flex;
     flex-direction: column;
     gap: 20px;
