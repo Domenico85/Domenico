@@ -134,7 +134,7 @@ body {
     }
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (max-width: 400px) {
 .title {
     font-size: 11px;
 }
