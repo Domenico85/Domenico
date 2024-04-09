@@ -1,0 +1,16 @@
+.box {
+    max-width: 50px;
+    background-color: red;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 66px auto;
+    padding: 16px;
+    text-align: center;
+    transition: all 1s ease-in-out;
+
+}
+.box:hover {
+    background-color: aqua;
+    transform: scale(2);
+    
+}
