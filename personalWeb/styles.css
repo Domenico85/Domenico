@@ -6,17 +6,7 @@ body {
     font-family: "right" ;
     src: url(font/Righteous-Regular.ttf);
 }
-nav{
-    display: flex;
-    gap: 46px;
-    font-family: "right";
-    margin: 12px auto auto 23px;
-    font-size: 16px;
-}
-nav a{
-    text-decoration: none;
 
-}
 .hamburger {
     display: inline-block;
     height: 26px;
@@ -26,7 +16,7 @@ nav a{
       display: block;
       width: 28px;
       height: 16px;
-      left: 70px;
+      right: 15px;
       position: absolute;
       top: 25px;
       
@@ -79,6 +69,27 @@ nav a{
       }
     }
   }
+.activemenu {
+    transform: translateX(50%);
+}
+.myLinks {
+    background-color: black;
+    /* transform: translateX(100%); */
+    transition: all 1s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 12px;
+}
+.myLinks a{
+    color: white;
+    text-decoration: none;
+    font-family: "right";
+}
+.myLinks a:hover{
+    color: #e83611;
+}
 :root {
     --color-1: #186cb8;
     --color-2: #2a9a9f;

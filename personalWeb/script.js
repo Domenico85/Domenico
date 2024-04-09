@@ -1,7 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var navToggle = document.querySelector('.main-nav-toggle');
 
-    navToggle.addEventListener('click', function(event) {
+    navToggle.addEventListener('click', function (event) {
         event.preventDefault();
 
         if (navToggle.classList.contains('active-menu')) {
@@ -11,3 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function showMenu() {
+    let myLinks = document.querySelector(".myLinks");
+    myLinks.classList.toggle("activemenu");
+}
+document.querySelector(".main-nav-toggle");
+let hambu = document.querySelector(".main-nav-toggle");
+hambu.addEventListener("click", showMenu);
