@@ -1,6 +1,7 @@
-html{
+html {
     scroll-behavior: smooth;
 }
+
 body {
     margin: 0;
     background-color: black;
@@ -130,11 +131,11 @@ body {
 h1 {
     color: transparent;
     font-family: sans-serif;
-    font-size: 7vw;
+    font-size: 6vw;
     font-weight: 900;
     text-align: center;
     width: min-content;
-    margin: auto;
+    margin: 5px auto;
     text-transform: uppercase;
     background: linear-gradient(220deg, var(--color-1) 19%,
             transparent 19%, transparent 20%,
@@ -152,6 +153,10 @@ h1 {
 #center-img img {
     max-width: 100%;
     margin: 77px auto auto;
+}
+
+#works {
+    display: block;
 }
 
 #works-container {
@@ -181,13 +186,16 @@ h1 {
     color: white;
     font-family: 'right';
 }
-.work-desc h2{
+
+.work-desc h2 {
     color: gold;
 }
+
 .pc {
     max-width: 100%;
 }
-.about-me{
+
+.about-me {
     border: 1px solid black;
     border-radius: 5px;
     box-sizing: border-box;
@@ -195,15 +203,18 @@ h1 {
     margin: 0 15px 9px 13px;
     background: rgba(255, 255, 255, 0.9);
 }
-.about-me h2{
+
+.about-me h2 {
     color: red;
     text-align: center;
     font-family: 'right';
 }
-.about-me p{
+
+.about-me p {
     font-family: 'right';
 }
-.contactos{
+
+.contactos {
     border: 1px solid black;
     border-radius: 5px;
     box-sizing: border-box;
@@ -211,12 +222,79 @@ h1 {
     margin: 0 15px 9px 13px;
     background: rgba(255, 255, 255, 0.9);
 }
-.contactos img{
+
+.contactos img {
     width: 100%;
 }
 
-footer{
+footer {
     color: white;
     text-align: center;
     font-family: 'right';
+}
+
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 3vw;
+        display: inline;
+    }
+
+    .hamburger {
+        text-align: center;
+    }
+
+    .hamburger h1 {
+        margin: 97px 20px 0
+    }
+
+    #center-img img {
+        display: block;
+    }
+
+    #works {
+        text-align: center;
+    }
+
+    #works-container {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+    }
+
+    .work-desc {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #about {
+        display: block;
+    }
+
+    .about-me {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .pc {
+        margin: 0 auto;
+        display: flex;
+    }
+
+    #contacts {
+        display: block;
+    }
+
+    .contactos {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+    }
+
+    .contactos img {
+        max-width: 40%;
+        margin: auto auto auto 70px;
+    }
 }
