@@ -237,6 +237,7 @@ h1 {
     margin: 0 15px 9px 13px;
     background: rgba(255, 255, 255, 0.5);
     text-decoration: none;
+    text-align: center;
 }
 
 #works-container a {
@@ -301,6 +302,7 @@ footer {
     color: white;
     text-align: center;
     font-family: 'right';
+    background-color: black;
 }
 
 @media screen and (min-width: 700px) {
