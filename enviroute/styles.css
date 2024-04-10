@@ -9,6 +9,8 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Abril';
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
@@ -30,16 +32,18 @@ nav img {
     align-items: center;
     justify-content: center;
     margin-right: auto;
+    gap: 80px;
 }
 
 nav a {
     color: black;
     text-decoration: none;
-    margin: 0 15px;
-    padding: 8px 15px;
+    margin: 20px 15px;
+    padding: 27px 100px;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+    font-size: 20px;
 }
 
 nav a:hover {
@@ -64,10 +68,10 @@ nav a:hover {
 }
 
 footer {
-    position: fixed;
+    display: flex;
     bottom: 0;
     left: 0;
-    width: 100%;
+    right: 0;
     text-align: center;
     padding: 10px 0;
     color: white;
@@ -145,24 +149,58 @@ p.greentext {
     border-radius: 5px;
     padding: 30px;
     max-width: 400px;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 70px;
     text-align: center;
 }
-.aboutus{
+
+.aboutus {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 5px;
     padding: 30px;
     max-width: 400px;
     margin: auto;
-    
+
     text-align: center;
 }
-.textabout{
-    font-size:20px ;
+
+.textabout {
+    font-size: 20px;
     font-family: 'Abril';
 }
-.textabout::first-letter{
+
+.textabout::first-letter {
     font-size: 300%;
     float: left;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav a {
+        padding: 9px 2px;
+        margin: 0 8px;
+        color: white;
+    }
+    .textnav{
+        gap: 0px;
+    }
+    .aboutus {
+        max-width: 335px;
+        margin: 63px auto;
+    }
+
+    .pres {
+        max-width: 273px;
+    }
+
+    .prescont {
+        flex-direction: column;
+    }
+    
+    body.about {
+        overflow: hidden;
+    }
 }

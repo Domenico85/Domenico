@@ -126,7 +126,7 @@ body {
 }
 
 .topnav p {
-    color: black;
+    color: red;
     display: flex;
     margin: 0 73px;
     font-size: 38px;
@@ -316,4 +316,18 @@ h3 {
     background-position: center;
     background-size: cover;
     min-height: 97vh;
+}
+
+@media screen and (min-width: 700px) { 
+    .topnav a {
+        font-size: 37px;
+    }
+    .activemenu {
+        transform: translateX(82%);
+    }
+    .newsSection {
+        max-width: 80%;
+        font-size: 20px;
+    }
+    
 }
