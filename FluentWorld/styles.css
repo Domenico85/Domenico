@@ -163,7 +163,9 @@ body {
     min-height: 97vh;
 
 }
-
+.welcome{
+    display: contents;
+}
 .welcome h1 {
     font-family: "lilita";
     text-align: center;
