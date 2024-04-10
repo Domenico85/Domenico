@@ -304,3 +304,77 @@ footer {
     text-align: center;
     font-family: 'right';
 }
+
+@media screen and (min-width: 700px) {
+    h1 {
+        font-size: 3vw;
+        display: inline;
+    }
+
+    .hamburger {
+        text-align: center;
+    }
+
+    .hamburger h1 {
+        margin: 97px 20px 0
+    }
+
+    #center-img img {
+        display: block;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #works {
+        text-align: center;
+        display: block;
+        margin-top: 5px;
+    }
+
+    #works-container {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+        flex-basis: calc(50% - 20px);
+    }
+
+    .work-desc {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #about {
+        display: block;
+    }
+
+    .about-me {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+        font-size: 27px;
+        text-align: center;
+    }
+
+    .pc {
+        margin: 0 auto;
+        display: flex;
+    }
+
+    #contacts {
+        display: block;
+    }
+
+    .contactos {
+        margin: 20px auto;
+        padding: 17px;
+        max-width: 53%;
+    }
+
+    .contactos img {
+        max-width: 40%;
+        margin: auto auto auto 70px;
+    }
+}

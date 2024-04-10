@@ -325,10 +325,15 @@ footer {
         text-align: center;
     }
 
+    section{
+        display: flex;
+        flex-wrap: wrap;
+    }
     #works-container {
         margin: 20px auto;
         padding: 17px;
         max-width: 53%;
+        flex-basis: calc(50% - 20px);
     }
 
     .work-desc {
@@ -366,5 +371,10 @@ footer {
     .contactos img {
         max-width: 40%;
         margin: auto auto auto 70px;
+    }
+
+    footer{
+        background-color: black;
+        font-size: 22px;
     }
 }
