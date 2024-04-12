@@ -28,16 +28,15 @@ window.addEventListener("load", function () {
     }
 });
 
-var btn = document.querySelectorAll('.btn');
+document.addEventListener('DOMContentLoaded', function() {
+    var hambu = document.querySelector('.btn');
 
-for (var i = 0; i < btn.length; i++) {
-    btn[i].addEventListener('click', function() {
-        if (this.classList.contains('active')) {
-            this.classList.remove('active');
-            this.classList.add('not-active');
-        } else {
-            this.classList.remove('not-active');
-            this.classList.add('active');
-        }
+    hambu.addEventListener('click', function(event) {
+        event.preventDefault();
+        hambu.classList.toggle('active');
+        hambu.classList.toggle('not-active');
     });
-}
+});
+
+
+
