@@ -94,7 +94,7 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 66px;
-    left: 63px;
+    right: 0px;
     transform: translate(-50%, -50%);
     width: 85px;
     height: 85px;
@@ -243,11 +243,13 @@ span+span {
 }
 
 nav {
-    transform: translateX(-100%);
-    transition: all 1s ease-in-out; 
+     transform: translateX(-100%); 
+    transition: all 1s ease-in-out;
 }
 .active-nav{
-transform: translateX(0%);
+    transform: translateX(0%);
+    transition: all 1s ease-in-out; 
+
 }
 nav a{
     text-decoration: none;
@@ -272,6 +274,7 @@ nav a{
 .nav-home{
    
     margin: 116px 0px auto 0px;
+    
     
 }
 .nav-places,
