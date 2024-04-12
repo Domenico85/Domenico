@@ -28,15 +28,18 @@ window.addEventListener("load", function () {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+function showNav(){
+    let nav = document.querySelector('nav')
+    nav.classList.toggle("active-nav")
+}
     var hambu = document.querySelector('.btn');
 
     hambu.addEventListener('click', function(event) {
         event.preventDefault();
-        hambu.classList.toggle('active');
+        hambu.classList.toggle('active', showNav());
         hambu.classList.toggle('not-active');
     });
-});
+
 
 
 

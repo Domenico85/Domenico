@@ -89,17 +89,6 @@ body {
 
 }
 
-#background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-}
-
 .box {
     border-radius: 50%;
     position: absolute;
@@ -251,3 +240,67 @@ span+span {
         transform: scale(1);
     }
 }
+
+nav {
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out; 
+}
+.active-nav{
+transform: translateX(0%);
+}
+nav a{
+    text-decoration: none;
+}
+.nav-home,
+.nav-contact,
+.nav-culture,
+.nav-food,
+.nav-places{
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: 'mont';
+    display: flex;
+    flex-direction: row;
+    max-width: 85px;
+    padding: 50px;
+    gap: 12px;
+    font-size: 20px;
+    align-items: center;
+    max-height: 20px;
+}
+.nav-home{
+   
+    margin: 116px 0px auto 0px;
+    
+}
+.nav-places,
+.nav-culture{
+   
+    margin: 2px 0px auto 240px;
+    /* transform: translateX(100%); */
+   
+}
+
+.nav-food,
+.nav-contact{
+    
+    margin:0px 0px auto 0px;
+   
+}
+.nav-home p,
+.nav-food p,
+.nav-contact p{
+    margin: 0 0 0 -16px;
+    
+}
+.nav-places img,
+.nav-culture img{
+    margin: 0 0 0 -18px;
+}
+nav img{
+    max-width: 32px;
+}
+
+nav p{
+    color: red;
+}
+
