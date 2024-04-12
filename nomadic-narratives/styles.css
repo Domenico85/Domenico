@@ -1,5 +1,6 @@
 body {
     margin: auto;
+    max-width: 100%;
 }
 
 @font-face {
@@ -8,7 +9,7 @@ body {
 }
 
 #overlay {
-    position: fixed;
+    position: relative;
     background-color: #0000007a;
     width: 100%;
     height: 100%;
@@ -260,12 +261,13 @@ nav a{
     font-family: 'mont';
     display: flex;
     flex-direction: row;
-    max-width: 85px;
+    /* max-width: 74%; */
     padding: 50px;
     gap: 12px;
     font-size: 20px;
     align-items: center;
     max-height: 20px;
+    justify-content: center;
 }
 .nav-home{
    
@@ -275,9 +277,10 @@ nav a{
 .nav-places,
 .nav-culture{
    
-    margin: 2px 0px auto 240px;
+    /* margin: 2px 0px auto 240px; */
     /* transform: translateX(100%); */
-   
+   /* max-width: 74%; */
+   margin: 0 auto auto 0px;
 }
 
 .nav-food,
@@ -285,6 +288,11 @@ nav a{
     
     margin:0px 0px auto 0px;
    
+}
+.nav-home ,
+.nav-food ,
+.nav-contact{
+    max-width: 100%;
 }
 .nav-home p,
 .nav-food p,
