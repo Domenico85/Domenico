@@ -1,6 +1,7 @@
 body {
-    margin: auto;
+    margin:0 auto;
     max-width: 100%;
+    display: flow-root;
 }
 
 @font-face {
@@ -243,22 +244,25 @@ span+span {
 }
 
 nav {
-     transform: translateX(-100%); 
+    transform: translateX(-100%);
     transition: all 1s ease-in-out;
 }
-.active-nav{
+
+.active-nav {
     transform: translateX(0%);
-    transition: all 1s ease-in-out; 
+    /* transition: all 1s ease-in-out;  */
 
 }
-nav a{
+
+nav a {
     text-decoration: none;
 }
+
 .nav-home,
 .nav-contact,
 .nav-culture,
 .nav-food,
-.nav-places{
+.nav-places {
     background-color: rgba(255, 255, 255, 0.6);
     font-family: 'mont';
     display: flex;
@@ -271,47 +275,53 @@ nav a{
     max-height: 20px;
     justify-content: center;
 }
-.nav-home{
-   
+
+.nav-home {
+
     margin: 116px 0px auto 0px;
-    
-    
+
+
 }
+
 .nav-places,
-.nav-culture{
-   
+.nav-culture {
+
     /* margin: 2px 0px auto 240px; */
     /* transform: translateX(100%); */
-   /* max-width: 74%; */
-   margin: 0 auto auto 0px;
+    /* max-width: 74%; */
+    margin: 0 auto auto 0px;
 }
 
 .nav-food,
-.nav-contact{
-    
-    margin:0px 0px auto 0px;
-   
+.nav-contact {
+
+    margin: 0px 0px auto 0px;
+
 }
-.nav-home ,
-.nav-food ,
-.nav-contact{
+
+.nav-home,
+.nav-food,
+.nav-contact {
     max-width: 100%;
+    /* transform: translateX(-100%);  */
 }
+
 .nav-home p,
 .nav-food p,
-.nav-contact p{
+.nav-contact p {
     margin: 0 0 0 -16px;
-    
+
 }
+
 .nav-places img,
-.nav-culture img{
+.nav-culture img {
     margin: 0 0 0 -18px;
 }
-nav img{
+
+nav img {
     max-width: 32px;
 }
 
-nav p{
+nav p {
     color: red;
 }
-
