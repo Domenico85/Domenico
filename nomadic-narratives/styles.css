@@ -1,8 +1,9 @@
-html{
+html {
     overflow: hidden;
 }
+
 body {
-    margin:0 auto;
+    margin: 0 auto;
     max-width: 100%;
     display: block;
     overflow: hidden;
@@ -247,16 +248,18 @@ span+span {
         transform: scale(1);
     }
 }
- 
+
 nav {
     outline: 2px solid green;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-nav > * {
+
+nav>* {
     min-height: 16.666666666666vh;
 }
+
 .nav-home,
 .nav-contact,
 .nav-culture,
@@ -291,27 +294,61 @@ nav img {
 nav p {
     color: black;
 }
-.nav-right{
+
+.nav-right {
     transform: translate(-100%);
 }
-.nav-left{
+
+.nav-left {
     transform: translate(100%);
 }
-nav a{
+
+nav a {
     text-decoration: none;
     transition: all 1s ease-in-out;
 }
-.active-nav{
+
+.active-nav {
     transform: translate(0%);
 }
 
-.title{
+.title {
     background-color: rgba(255, 255, 255, 0.6);
     margin: 0 auto;
     text-align: center;
     font-family: 'mont';
     font-size: 42px;
 }
-.title::first-line{
+
+.title::first-line {
     color: white;
+}
+
+.video-wrapper-places {
+   position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1; 
+}
+
+.title2 {
+    color: black;
+    font-size: 40px;
+    font-family: 'mont';
+    text-align: center;
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-wrapper-food{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    display: flex;
 }
