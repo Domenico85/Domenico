@@ -1,3 +1,6 @@
+html{
+    overflow: hidden;
+}
 body {
     margin:0 auto;
     max-width: 100%;
@@ -259,7 +262,7 @@ span+span {
     gap: 12px;
     font-size: 20px;
     align-items: center;
-    max-height: 10px;
+    max-height: 0px;
     justify-content: center;
     margin-top: 0px;
 }
@@ -322,6 +325,7 @@ nav a{
     margin: 0 auto;
     text-align: center;
     font-family: 'mont';
+    font-size: 28px;
 }
 .title::first-line{
     color: white;
