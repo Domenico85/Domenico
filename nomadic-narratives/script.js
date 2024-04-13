@@ -29,8 +29,12 @@ window.addEventListener("load", function () {
 });
 
 function showNav(){
-    let nav = document.querySelector('nav')
-    nav.classList.toggle("active-nav")
+    let elements = document.querySelectorAll('nav a')
+
+    elements.forEach(element =>{
+        element.classList.toggle("active-nav")
+    })
+ 
 }
     var hambu = document.querySelector('.btn');
 
