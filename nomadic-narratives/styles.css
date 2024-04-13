@@ -248,7 +248,15 @@ span+span {
     }
 }
  
-  
+nav {
+    outline: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+nav > * {
+    min-height: 16.666666666666vh;
+}
 .nav-home,
 .nav-contact,
 .nav-culture,
@@ -257,34 +265,11 @@ span+span {
     background-color: rgba(255, 255, 255, 0.6);
     font-family: 'mont';
     display: flex;
-    flex-direction: row;
-    padding: 50px;
     gap: 12px;
     font-size: 20px;
     align-items: center;
-    max-height: 0px;
     justify-content: center;
     margin-top: 0px;
-}
-
- 
-.nav-places,
-.nav-culture {
-    margin: 0 auto auto 0px;
-}
-
-.nav-food,
-.nav-contact {
-
-    margin: 0px 0px auto 0px;
-
-}
-
-.nav-home,
-.nav-food,
-.nav-contact {
-    max-width: 100%;
-
 }
 
 .nav-home p,
@@ -325,7 +310,7 @@ nav a{
     margin: 0 auto;
     text-align: center;
     font-family: 'mont';
-    font-size: 28px;
+    font-size: 42px;
 }
 .title::first-line{
     color: white;
