@@ -1,0 +1,11 @@
+body{
+    min-height: 100vh;
+}
+
+.squares {
+    /* background-color: blueviolet;
+    display: flex;
+    max-width: 16px;
+    max-height: 16px;
+    border: 1px solid black; */
+}
