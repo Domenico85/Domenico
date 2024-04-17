@@ -9,7 +9,9 @@
     box-sizing: border-box;
     overflow: hidden;
 }
-
+h1{
+    text-align: center;
+}
 .container{
     width: 100%;
     height: 100%;
@@ -63,5 +65,8 @@ form input.operator{
     .line{
         display: flex;
     }
-
+    
+    form .display{
+        margin: 16px 0;
+    }
 }
