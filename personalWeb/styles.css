@@ -501,7 +501,7 @@ footer {
     #works-container {
         margin: 20px auto;
         padding: 17px;
-        max-width: 53%;
+        max-width: 40%;
         flex-basis: calc(50% - 20px);
     }
 
