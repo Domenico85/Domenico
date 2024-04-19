@@ -560,4 +560,8 @@ footer {
     .work-desc-it{
         min-height: 45%;
     }
+
+    .myLinks a{
+        margin-top: 50px;
+    }
 }
