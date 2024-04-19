@@ -65,7 +65,7 @@ form input.operator,
     color: #33ffd8;
 }
 
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 500px) { 
 
     .line{
         display: flex;
@@ -73,5 +73,9 @@ form input.operator,
     
     form .display{
         margin: 16px 0;
+    }
+
+    .calculator form input {
+        width: 58px;
     }
 }
