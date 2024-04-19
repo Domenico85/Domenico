@@ -76,6 +76,6 @@ form input.operator,
     }
 
     .calculator form input {
-        width: 58px;
+        width: 2.4rem;
     }
 }
