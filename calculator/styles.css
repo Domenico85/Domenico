@@ -78,4 +78,7 @@ form input.operator,
     .calculator form input {
         width: 2.4rem;
     }
+    form input.equal{
+        width: 110px;
+    }
 }
