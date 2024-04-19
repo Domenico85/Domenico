@@ -396,9 +396,6 @@ body.places {
 
     a.active-nav p:hover{
         color: red;
-    }
-
-    a.active-nav p:hover{
         transform: scale(1.1);
     }
 

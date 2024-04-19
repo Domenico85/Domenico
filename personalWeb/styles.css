@@ -551,4 +551,13 @@ footer {
         background-color: black;
         font-size: 22px;
     }
+    .works-img img{
+        max-width: 732px;
+        max-height: 332px;
+    }
+    .work-desc-eng,
+    .work-desc-esp,
+    .work-desc-it{
+        min-height: 45%;
+    }
 }
