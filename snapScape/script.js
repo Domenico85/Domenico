@@ -39,3 +39,22 @@ var $ham = document.querySelector('.hamburger-container'),
 			$ham.classList.add('open');
 		}
 	};
+
+	const menuLinks = document.querySelectorAll('.menu a');
+
+function closeMenu() {
+    const $pageBody = document.querySelector('.page-body');
+    const $ham = document.querySelector('.hamburger-container');
+    $pageBody.classList.remove('open');
+    $ham.classList.remove('open');
+}
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        closeMenu();
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 400);
+        event.preventDefault();
+    });
+});

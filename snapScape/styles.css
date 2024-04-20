@@ -282,3 +282,29 @@ img{
 .content-image:hover > * {
   transform: translateY(0px);
 }
+
+.title{
+  color: rgba(225,225,225, .01);
+    background-image: url("img/textback.jpeg");
+    background-repeat: repeat;
+    -webkit-background-clip:text;
+    animation: animate 50s ease-in-out infinite;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 42px;
+}
+@keyframes animate {
+  0%, 100% {
+    background-position: left top;
+  }
+  25%{
+    background-position: right bottom;
+   }
+  50% {
+    background-position: left bottom;
+  }
+  75% {
+    background-position: right top;
+  }   
+}
