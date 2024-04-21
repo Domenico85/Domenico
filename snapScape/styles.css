@@ -341,7 +341,7 @@ body {
 .menu {
   position: absolute;
   left: 21px;
-  width: 98%;
+  width: 90%;
   height: 64%;
   z-index: 1;
   bottom: 0;
@@ -479,7 +479,7 @@ img {
   .content h1{
     font-size: 70px;
   }
-  .content p {
+  .text-mobile {
     display: none;
   }
   .title{
