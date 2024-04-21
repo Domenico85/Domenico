@@ -193,9 +193,16 @@ body {
 .fifth {
   background-color: #E6A6A8;
 }
-.hambu-gal{
+
+.sixth {
+  background-color: #FDEECF;
+
+}
+
+.hambu-gal {
   background-color: #04ba0d;
 }
+
 .first-gallery {
   background-color: #c5fbc7;
 }
@@ -213,11 +220,18 @@ body {
 }
 
 .fifth-gallery {
-  background-color: #002802;
+  background-color: #017d07;
 }
-.hambu-shop{
+
+.sixth-gallery {
+  background-color: #55fd5e;
+
+}
+
+.hambu-shop {
   background-color: red;
 }
+
 .first-shop {
   background-color: #fb8888;
 }
@@ -226,7 +240,7 @@ body {
   background-color: #fa7878;
 }
 
-.third-shop{
+.third-shop {
   background-color: #fa4848;
 }
 
@@ -237,61 +251,93 @@ body {
 .fifth-shop {
   background-color: #960202;
 }
-.hambu-about{
+
+.sixth-shop {
+  background-color: #fa4848;
+
+}
+
+.hambu-about {
   background-color: yellow;
 }
-.first-about{
+
+.first-about {
   background-color: rgb(252, 252, 195);
 }
-.second-about{
+
+.second-about {
   background-color: rgb(247, 247, 133);
 }
-.third-about{
+
+.third-about {
   background-color: rgb(244, 244, 95);
 }
-.fourth-about{
+
+.fourth-about {
   background-color: rgb(249, 249, 55);
 }
-.fifth-about{
+
+.fifth-about {
   background-color: rgb(245, 245, 5);
 }
-.hamburger-about{
+
+.sixth-about {
+  background-color: rgb(244, 244, 95);
+}
+
+.hamburger-about {
   border-top: 2px solid black;
 
 }
-.hamburger-about::after{
+
+.hamburger-about::after {
   border-top: 2px solid black;
 
 }
-.hamburger-about::before{
+
+.hamburger-about::before {
   border-top: 2px solid black;
 
 }
-.plus-about{
+
+.plus-about {
   border-top: 3px solid black;
 
 }
-.plus-about::after{
+
+.plus-about::after {
   border-top: 3px solid black
 }
-.hambu-contacts{
+
+.hambu-contacts {
   background-color: blue;
 }
-.first-contacts{
+
+.first-contacts {
   background-color: rgb(197, 197, 248);
 }
-.second-contacts{
+
+.second-contacts {
   background-color: rgb(155, 155, 247);
 }
-.third-contacts{
+
+.third-contacts {
   background-color: rgb(115, 115, 248);
 }
-.fourth-contacts{
+
+.fourth-contacts {
   background-color: rgb(61, 61, 248);
 }
-.fifth-contacts{
+
+.fifth-contacts {
   background-color: rgb(1, 1, 255);
 }
+
+.sixth-contacts {
+  background-color: rgb(115, 115, 248);
+
+}
+
 .menu {
   position: absolute;
   left: 21px;
@@ -337,18 +383,19 @@ body {
   position: relative;
 }
 
-img{
+img {
   width: 100%;
   display: block;
   margin: auto;
 }
-.content-image{
+
+.content-image {
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   position: absolute;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -358,51 +405,89 @@ img{
 
 }
 
-.content-image:hover{
+.content-image:hover {
   opacity: 1;
 }
 
-.content-image h1{
+.content-image h1 {
   font-size: 25px;
   color: #ffe100;
   margin-bottom: 15px;
 }
 
-.content-image p{
+.content-image p {
   font-size: 19px;
   color: #fff;
 }
-.content-image > *{
+
+.content-image>* {
   transform: translateY(25px);
   transition: all 0.6s;
 }
 
-.content-image:hover > * {
+.content-image:hover>* {
   transform: translateY(0px);
 }
 
-.title{
-  color: rgba(225,225,225, .01);
-    background-image: url("img/textback.jpeg");
-    background-repeat: repeat;
-    -webkit-background-clip:text;
-    animation: animate 50s ease-in-out infinite;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 42px;
+.title {
+  color: rgba(225, 225, 225, .01);
+  background-image: url("img/textback.jpeg");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  animation: animate 50s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 42px;
 }
+
 @keyframes animate {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: left top;
   }
-  25%{
+
+  25% {
     background-position: right bottom;
-   }
+  }
+
   50% {
     background-position: left bottom;
   }
+
   75% {
     background-position: right top;
-  }   
+  }
+}
+
+@media only screen and (min-width: 800px) {
+
+  .mobile-holder {
+    width: 100%;
+    height: 100%;
+  }
+
+  .sixth,
+  .sixth-about,
+  .sixth-contacts,
+  .sixth-gallery,
+  .sixth-shop {
+    height: 100%;
+  }
+
+  .content h1{
+    font-size: 70px;
+  }
+  .content p {
+    display: none;
+  }
+  .title{
+    font-size: 90px;
+  }
+
+  .image{
+    width: 400px;
+  }
+
 }
