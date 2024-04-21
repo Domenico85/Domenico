@@ -49,15 +49,73 @@
     display: none;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 17px;
-    padding: 6px;
-    /* min-width: 100vw; */
+.nav-bar {
+    height: 70px;
+    margin-right: 0px;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    /* backdrop-filter: blur(20px); */
     background-color: red;
-}
 
+
+    a.main-nav-toggle {
+        display: block;
+        width: 48px;
+        height: 32px;
+        right: 15px;
+        position: absolute;
+        top: 16px;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 0;
+            border-bottom: 4px solid #bbb;
+            width: 100%;
+            left: 0;
+            right: 0;
+            transition: all ease-out 0.3s;
+        }
+
+        &:after {
+            top: 100%;
+        }
+
+        i {
+            display: block;
+            text-indent: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            height: 4px;
+            background-color: #bbb;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transition: all ease-out 0.1s;
+        }
+
+        &.active-menu {
+            &:after {
+                transform: rotate(-45deg);
+                transform-origin: center;
+                top: 50%;
+            }
+
+            &:before {
+                transform: rotate(45deg);
+                transform-origin: center;
+                top: 50%
+            }
+
+            i {
+                opacity: 0;
+            }
+        }
+    }
+}   
 @font-face {
     font-family: "make";
     src: url(font/make.ttf);
@@ -89,7 +147,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 7rem 0;
 }
 
 .sell img {
@@ -128,7 +186,7 @@ nav a:hover {
     border-radius: 5px;
     padding: 18px;
     max-width: 400px;
-    margin: 30px;
+    margin: 93px 18px 0px 21px;
     font-size: 16px;
 }
 
@@ -179,7 +237,7 @@ p.teach::first-letter {
     background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     max-width: 300px;
-    margin: 20px auto;
+    margin: 88px auto;
 }
 
 .texabout h2 {
@@ -229,6 +287,21 @@ font-family: "dongle";
     color: yellow;
     display: flex;
     justify-content: center;
+    margin-top: 100px;
+}
+
+.myLinksActive {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 12px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 69px;
+    bottom: 0;
 }
 
 @font-face {
@@ -258,6 +331,11 @@ footer {
         display: none;
         
     }
+    nav .myLinksActive a {
+        display: block;
+        color: red;
+        font-size: 40px;
+    }
 }
 
 @media screen and (min-width:1200px) {
@@ -265,17 +343,20 @@ footer {
         background-repeat: no-repeat;
         background-color: black;
     }
-    nav {
-        gap: 120px;
-
+    .nav-bar-text{
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 16px 0px 16px;
     }
-
-    nav a {
-        font-size: 30px;
+    .nav-bar-text a{
+        font-size: 38px;
     }
-
+    .nav-bar a.main-nav-toggle{
+        display: none;
+        
+    }
     .textlessons {
-        margin: 25px 50px 75px 100px;
+        margin: 125px 50px 75px 100px;
         font-size: 28px;
         padding: 68px;
     }
