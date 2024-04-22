@@ -22,34 +22,52 @@
 
         <section class="right-column">
             <form>
-                
-            <fieldset>
-                <legend>Contact Details</legend>
-              
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="surname">Last Name:</label>
-                <input type="text" id="surname" name="surname" required>
-              
-                <label for="phone_number">Phone:</label>
-                <input type="tel" id="phone_number" name="phone_number" required>
-              
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            
-            </fieldset> 
+                <fieldset>
+                    <legend>Contact Details</legend>
+
+                    <label class="name-field" for="name">Name:
+                        <input type="text" id="name" name="name" required>
+                        <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid">
+                    </label>
+
+                    <label class="surname-field" for="surname">Last Name:
+                        <input type="text" id="surname" name="surname" required>
+                        <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid">
+                    </label>
+
+                    <label class="phone-number-field" for="phone_number">Phone:
+                        <input type="tel" id="phone_number" name="phone_number" required>
+                        <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid">
+                    </label>
+
+                    <label class="email-field" for="email">Email:
+                        <input type="email" id="email" name="email" required>
+                        <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid">
+                    </label>
+
+                    <label class="password-field" for="password">Password:
+                        <input type="password" id="password" name="password" required>
+                        <!-- <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid"> -->
+                    </label>
+
+                    <label class="confirm-password-field" for="confirm_password">Confirm Password:
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <!-- <img class="image-valid" src="img/valid.svg" alt="image-valid">
+                        <img class="image-not-valid" src="img/not-valid.svg" alt="image-not-valid"> -->
+                    </label>
+
+                </fieldset>
 
                 <button type="submit">Create Account</button>
-           
 
-        </form>
+
+            </form>
             <p>Already have an account? <a href="#">Log in</a></p>
         </section>
     </main>
