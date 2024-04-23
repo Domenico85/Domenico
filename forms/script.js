@@ -46,7 +46,7 @@ function validatePassword() {
         passwordInput.style.borderColor = redColor;
         confirmPasswordInput.style.borderColor = redColor;
         confirmPasswordInput.parentNode.appendChild(mismatchText);
-        
+        console.log(confirmPasswordInput)
     }
 }
 
