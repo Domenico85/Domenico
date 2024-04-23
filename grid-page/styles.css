@@ -28,6 +28,7 @@ main {
     max-width: 40px;
 
 }
+
 .title {
     display: flex;
     gap: 15px;
@@ -36,12 +37,14 @@ main {
     justify-content: center;
     font-size: 12px;
 }
-.nav{
+
+.nav {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin: 20px 10px;
 }
+
 .nav a {
     display: flex;
     gap: 10px;
@@ -69,6 +72,7 @@ input {
     width: auto;
     border-radius: 10px;
 }
+
 .box {
     position: relative;
     width: 50px;
@@ -95,7 +99,7 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     font-family: 'milonga';
-    font-size: 12px;
+    font-size: 25px;
 }
 
 .box:hover input {
@@ -127,9 +131,15 @@ input {
     top: 2px;
 }
 
+.box2 {
+    display: flex;
+    gap: 10px;
+}
+
 .box2 img {
-    width: 10%;
-    border-radius: 20px;
+    width: 100px;
+    border-radius: 50px;
+    margin-left: 4px;
 }
 
 .main-content {
@@ -137,3 +147,33 @@ input {
 
 }
 
+.box2 p {
+    border: 1px solid black;
+    border-radius: 33px;
+    width: 140px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8f9bff;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+.buttons a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.buttons a:hover{
+    color: yellow;
+    transform: scale(1.2);
+    transition: all 1s;
+}
