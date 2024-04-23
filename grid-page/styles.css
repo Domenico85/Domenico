@@ -211,7 +211,10 @@ input {
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
-.left-contents img {
+.left-contents img,
+.view,
+.scan,
+.share {
     width: 40px;
     padding: 7px;
     position: relative;
@@ -221,24 +224,20 @@ input {
 .icon-desc,
 .icon-desc2,
 .icon-desc3 {
-    visibility: hidden;
+    display: none;
+    position: absolute;
     width: 120px;
     background-color: #555;
     color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s ease ;
 }
-.icon-desc::after,
-.icon-desc2::after,
-.icon-desc3::after{
+
+.view .icon-desc::after,
+.scan .icon-desc2::after,
+.share .icon-desc3::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -249,11 +248,10 @@ input {
     border-color: #555 transparent transparent transparent;
 }
 
-.view:hover + .icon-desc,
-.scan:hover + .icon-desc2,
-.share:hover + .icon-desc3 {
-    visibility: visible;
-    opacity: 1;
+a .view:hover ~ .icon-desc,
+.scan a:hover + .icon-desc2,
+.share a:hover + .icon-desc3 {
+    display: block;
 }
 
 .right-contents {
@@ -261,4 +259,8 @@ input {
     grid-template-rows: repeat(2, 335.5px);
     justify-items: center;
     align-items: center;
+}
+
+.right-contents img{
+    width: 70px;
 }
