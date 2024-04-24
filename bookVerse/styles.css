@@ -2,6 +2,9 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 60% auto;
+    background-image: url(img/back-form.jpg);
+    font-family: "Sofia", sans-serif;
+    background-position: center;
 }
 
 nav {
@@ -29,6 +32,8 @@ form {
     margin: 0 auto 0 10px;
     width: fit-content;
     font-size: 20px;
+    background-image: url(img/abstract-1172790.jpg);
+    background-size: cover;
 }
 
 fieldset {
@@ -63,6 +68,7 @@ legend {
     max-height: fit-content;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background-color: white;
 }
 
 .read-yes {
