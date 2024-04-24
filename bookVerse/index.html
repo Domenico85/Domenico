@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="content">
+        <h1>Book</h1>
+        <h1>Verse</h1>
+        <form id="form-book">
+            <fieldset>
+                <legend>Add a Book</legend>
+
+                <label for="title">Title:
+                    <input type="text" id="title" name="title" required>
+                </label>
+
+                <label for="author">Author:
+                    <input type="text" id="author" name="author" required>
+                </label>
+
+                <label for="pages">Pages:
+                    <input type="number" id="pages" name="pages">
+                </label>
+
+                <label for="read">Have you read it?
+                    <input type="radio" id="read-yes" name="read" value="Yes">Yes
+                    <input type="radio" id="read-no" name="read" value="No">No
+                </label>
+
+                <button type="submit">Add Book</button>
+            </fieldset>
+        </form>
+    </main>
+    
+    
+    <nav>
+        <img src="img/bookverse-logo-removebg-preview.png" alt="logo">
+        
+
+            <a href="#">
+                <img src="img/home.svg" alt="home"> Home
+            </a>
+            
+            <a href="#">
+                <img src="img/books.svg" alt="books"> Books
+            </a>
+            
+            <a href="#">
+                <img src="img/favourite.svg" alt="fav"> Favorites
+            </a>
+            
+            <a href="#">
+                <img src="img/contacts.svg" alt="contacts"> Contacts
+            </a>
+        
+    </nav>
+
+</body>
+</html>
