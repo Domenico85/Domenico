@@ -195,26 +195,22 @@ input {
 .left-contents {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: repeat(3, 223px);
+    grid-template-rows: repeat(3, 3fr);
     justify-items: center;
     align-items: center;
 }
 
-.left-contents div,
+.projects,
 .right-contents div {
     width: 90%;
     height: 90%;
     background-color: white;
-    border-left: 2px yellow;
     border-radius: 10px;
     text-align: center;
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
-.left-contents img,
-.view,
-.scan,
-.share {
+.left-contents img {
     width: 40px;
     padding: 7px;
     position: relative;
@@ -233,24 +229,18 @@ input {
     border-radius: 6px;
     padding: 5px 0;
     z-index: 1;
+    left: 75%;
+    top: -15%;
 }
 
-.view .icon-desc::after,
-.scan .icon-desc2::after,
-.share .icon-desc3::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+.projects a{
+    position: relative
+    ;
+    display: inline-flex;
 }
-
-a .view:hover ~ .icon-desc,
-.scan a:hover + .icon-desc2,
-.share a:hover + .icon-desc3 {
+.view:hover~.icon-desc,
+.scan:hover~.icon-desc2,
+.share:hover~.icon-desc3 {
     display: block;
 }
 
@@ -261,6 +251,6 @@ a .view:hover ~ .icon-desc,
     align-items: center;
 }
 
-.right-contents img{
+.right-contents img {
     width: 70px;
 }
