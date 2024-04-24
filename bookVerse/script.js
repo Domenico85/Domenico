@@ -28,22 +28,37 @@ formBook.addEventListener('submit', function (event) {
 
     const newBookBox = document.createElement('div');
     newBookBox.classList.add("book")
-    newBookBox.innerHTML =`
+    newBookBox.innerHTML = `
     <p><strong>Title:</strong> ${newBook.title}</p>    
     <p><strong>Author:</strong> ${newBook.author}</p>
     <p><strong>Pages:</strong> ${newBook.pages}</p>
     `;
-    
+
     bookContainer.appendChild(newBookBox);
-    const button =  document.createElement('button')
-    button.innerText= "Read: " + (newBook.read ? 'Yes' : 'No'); 
+    const button = document.createElement('button')
+    button.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
     button.classList.add(newBook.read ? 'read-yes' : 'read-no');
-    button.addEventListener('click', (event)=>{ 
+    button.addEventListener('click', (event) => {
         newBook.read = !newBook.read
-        event.target.innerText = "Read: " + (newBook.read ? 'Yes' : 'No'); 
+        event.target.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
         event.target.classList.toggle('read-yes');
         event.target.classList.toggle('read-no');
     })
-    newBookBox.appendChild(button)
+
+    const removeButton = document.createElement('button');
+    removeButton.innerText = "Remove Book";
+    removeButton.classList.add('remove-button');
+
+    removeButton.dataset.bookIndex = myLibrary.length - 1;
+
+    removeButton.addEventListener('click', (event) => {
+        const bookIndexToRemove = parseInt(event.target.dataset.bookIndex);
+        if (!isNaN(bookIndexToRemove)) {
+            myLibrary.splice(bookIndexToRemove, 1);
+            bookContainer.removeChild(event.target.parentNode);
+        }
+    });
+    newBookBox.appendChild(button);
+    newBookBox.appendChild(removeButton);
     formBook.reset();
 });

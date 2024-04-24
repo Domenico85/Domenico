@@ -146,3 +146,6 @@ legend {
     top: 0;
     border-radius: 10px;
 }
+.remove-button{
+    border-radius: 4px;
+}
