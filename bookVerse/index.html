@@ -10,8 +10,7 @@
 </head>
 <body>
     <main class="content">
-        <h1>Book</h1>
-        <h1>Verse</h1>
+        <h1>Book <span>VERSE</span></h1>
         <form id="form-book">
             <fieldset>
                 <legend>Add a Book</legend>
@@ -28,14 +27,18 @@
                     <input type="number" id="pages" name="pages">
                 </label>
 
-                <label for="read">Have you read it?
+                <label for="read">Have you read it?<br>
                     <input type="radio" id="read-yes" name="read" value="Yes">Yes
                     <input type="radio" id="read-no" name="read" value="No">No
                 </label>
 
-                <button type="submit">Add Book</button>
+                <button type="submit" class="button-add-book">Add Book</button>
             </fieldset>
         </form>
+
+        <div class="book-container">
+
+        </div>
     </main>
     
     
@@ -43,11 +46,11 @@
         <img src="img/bookverse-logo-removebg-preview.png" alt="logo">
         
 
-            <a href="#">
+            <a href="index.html">
                 <img src="img/home.svg" alt="home"> Home
             </a>
             
-            <a href="#">
+            <a href="books.html">
                 <img src="img/books.svg" alt="books"> Books
             </a>
             
