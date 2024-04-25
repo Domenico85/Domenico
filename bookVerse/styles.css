@@ -1,18 +1,31 @@
+html {
+    min-height: 100%;
+}
+
 body {
     margin: 0;
-    display: grid;
-    grid-template-columns: 60% auto;
     background-image: url(img/back-form.jpg);
     font-family: "Sofia", sans-serif;
     background-position: center;
+    padding: 0 0px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
-    display: grid;
-    grid-template-rows: repeat(5, auto);
+    display: flex;
+    flex-direction: column;
     height: 99vh;
     border: 2px solid;
     transform: translateX(68%);
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: space-between;
+    position: fixed;
+    right: 0;
+    top: 0;
 }
 
 nav img {
@@ -23,6 +36,11 @@ nav a img {
     width: 35px;
 }
 
+.logo {
+    width: 54px;
+    margin: 0 -8px;
+}
+
 form {
     background-color: #f9f9f9;
     padding: 20px;
@@ -30,7 +48,7 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     max-width: fit-content;
     margin: 0 auto 0 10px;
-    width: fit-content;
+    width: 66%;
     font-size: 20px;
     background-image: url(img/abstract-1172790.jpg);
     background-size: cover;
@@ -47,7 +65,7 @@ legend {
     text-align: center;
 }
 
-.content-books {
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +74,8 @@ legend {
 .book-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    width: 100%;
 }
 
 .book {
@@ -64,11 +83,12 @@ legend {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    max-width: fit-content;
-    max-height: fit-content;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     background-color: white;
+    width: 72%;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .read-yes {
@@ -152,6 +172,7 @@ legend {
     top: 0;
     border-radius: 10px;
 }
-.remove-button{
+
+.remove-button {
     border-radius: 4px;
 }

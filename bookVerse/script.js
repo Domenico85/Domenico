@@ -10,6 +10,8 @@ function Book(title, author, pages, read) {
 
 const formBook = document.querySelector('#form-book');
 const bookContainer = document.querySelector('.book-container')
+const myLibrary = [];
+
 
 formBook.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -17,11 +19,10 @@ formBook.addEventListener('submit', function (event) {
     const title = document.querySelector('#title').value;
     const author = document.querySelector('#author').value;
     const pages = parseInt(document.querySelector('#pages').value);
-    const read = document.querySelector('input[name="read"]:checked').value;
+    const read = document.querySelector('input[name="read"]:checked').value.toLowerCase();
     console.log(read);
     const newBook = new Book(title, author, pages, read);
 
-    const myLibrary = [];
 
     myLibrary.push(newBook);
     console.log(myLibrary)
@@ -41,8 +42,8 @@ formBook.addEventListener('submit', function (event) {
     button.addEventListener('click', (event) => {
         newBook.read = !newBook.read
         event.target.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
-        event.target.classList.toggle('read-yes');
-        event.target.classList.toggle('read-no');
+        event.target.classList.toggle('read-yes', newBook.read);
+        event.target.classList.toggle('read-no', !newBook.read);
     })
 
     const removeButton = document.createElement('button');
