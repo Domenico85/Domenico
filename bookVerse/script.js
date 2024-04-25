@@ -11,8 +11,56 @@ function Book(title, author, pages, read, cover) {
 
 const formBook = document.querySelector('#form-book');
 const bookContainer = document.querySelector('.book-container')
-const myLibrary = [];
+const storedLibrary = JSON.parse(localStorage.getItem('myLibrary'));
+const myLibrary = storedLibrary || [];
 
+function saveLibrary() {
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
+}
+
+function createBookBox(book) {
+    const newBookBox = document.createElement('div');
+    newBookBox.classList.add("book");
+    newBookBox.innerHTML = `
+        <p><strong>Title:</strong> ${book.title}</p>    
+        <p><strong>Author:</strong> ${book.author}</p>
+        <p><strong>Pages:</strong> ${book.pages}</p>
+    `;
+
+    if (book.cover) {
+        newBookBox.innerHTML += `<img src="${URL.createObjectURL(book.cover)}" alt="Book Cover" class="book-cover">`;
+    } else {
+        newBookBox.innerHTML += `<img src="img/textimg.jpg" alt="Placeholder" class="book-cover">`;
+    }
+
+    const button = document.createElement('button');
+    button.innerText = "Read: " + (book.read ? 'Yes' : 'No');
+    button.classList.add(book.read ? 'read-yes' : 'read-no');
+    button.addEventListener('click', (event) => {
+        book.read = !book.read;
+        event.target.innerText = "Read: " + (book.read ? 'Yes' : 'No');
+        event.target.classList.toggle('read-yes', book.read);
+        event.target.classList.toggle('read-no', !book.read);
+        saveLibrary();
+    });
+
+    const removeButton = document.createElement('button');
+    removeButton.innerText = "Remove Book";
+    removeButton.classList.add('remove-button');
+    removeButton.addEventListener('click', () => {
+        const index = myLibrary.indexOf(book);
+        if (index !== -1) {
+            myLibrary.splice(index, 1);
+            bookContainer.removeChild(newBookBox);
+            saveLibrary();
+        }
+    });
+
+    newBookBox.appendChild(button);
+    newBookBox.appendChild(removeButton);
+
+    return newBookBox;
+}
 
 formBook.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -24,63 +72,27 @@ formBook.addEventListener('submit', function (event) {
     const cover = document.querySelector('#cover').files[0];
     const newBook = new Book(title, author, pages, read, cover);
 
-
     myLibrary.push(newBook);
-    console.log(myLibrary)
+    saveLibrary();
 
-    const newBookBox = document.createElement('div');
-    newBookBox.classList.add("book")
-    newBookBox.innerHTML = `
-    <p><strong>Title:</strong> ${newBook.title}</p>    
-    <p><strong>Author:</strong> ${newBook.author}</p>
-    <p><strong>Pages:</strong> ${newBook.pages}</p>
-    `;
-
-    if (newBook.cover) {
-        // Display cover image if available
-        newBookBox.innerHTML += `<img src="${URL.createObjectURL(newBook.cover)}" alt="Book Cover" class="book-cover">`;
-    }
-    
-    // Optional: Add a placeholder image if no cover is provided
-    else {
-        newBookBox.innerHTML += `<img src="img/textimg.jpg" alt="Placeholder" class="book-cover">`;
-    }
-
+    const newBookBox = createBookBox(newBook);
     bookContainer.appendChild(newBookBox);
-    const button = document.createElement('button')
-    button.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
-    button.classList.add(newBook.read ? 'read-yes' : 'read-no');
-    button.addEventListener('click', (event) => {
-        newBook.read = !newBook.read
-        event.target.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
-        event.target.classList.toggle('read-yes', newBook.read);
-        event.target.classList.toggle('read-no', !newBook.read);
-    })
-    const imageElement = newBookBox.querySelector('.book-cover');
-    imageElement.style.maxWidth = '200px';
-    imageElement.style.margin = '0 auto';
-    const removeButton = document.createElement('button');
-    removeButton.innerText = "Remove Book";
-    removeButton.classList.add('remove-button');
 
-    removeButton.dataset.bookIndex = myLibrary.length - 1;
-
-    removeButton.addEventListener('click', (event) => {
-        const bookIndexToRemove = parseInt(event.target.dataset.bookIndex);
-        if (!isNaN(bookIndexToRemove)) {
-            myLibrary.splice(bookIndexToRemove, 1);
-            bookContainer.removeChild(event.target.parentNode);
-        }
-    });
-    newBookBox.appendChild(button);
-    newBookBox.appendChild(removeButton);
     formBook.reset();
 });
 
+function loadLibrary() {
+    myLibrary.forEach(book => {
+        const newBookBox = createBookBox(book);
+        bookContainer.appendChild(newBookBox);
+    });
+}
+window.addEventListener('load', loadLibrary);
+
 function showMenu() {
-    let myLinks = document.querySelector("nav");
+    const myLinks = document.querySelector("nav");
     myLinks.classList.toggle("activemenu");
 }
-document.querySelector(".logo");
-let logo = document.querySelector(".logo");
+
+const logo = document.querySelector(".logo");
 logo.addEventListener("click", showMenu);
