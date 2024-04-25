@@ -63,3 +63,11 @@ formBook.addEventListener('submit', function (event) {
     newBookBox.appendChild(removeButton);
     formBook.reset();
 });
+
+function showMenu(){
+    let myLinks= document.querySelector("nav");
+    myLinks.classList.toggle("activemenu");
+}
+document.querySelector(".logo");
+let logo=document.querySelector(".logo");
+logo.addEventListener("click", showMenu);

@@ -26,10 +26,24 @@ nav {
     position: fixed;
     right: 0;
     top: 0;
+    transition: all 1s;
+}
+
+.activemenu {
+    transform: translateX(0%);
 }
 
 nav img {
     width: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
 nav a img {
