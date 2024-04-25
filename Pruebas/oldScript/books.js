@@ -1,9 +1,9 @@
-function Book(title, author, pages, read, coverFile) {
+function Book(title, author, pages, read, cover) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read === 'yes' ? true : false;
-    this.coverFile = coverFile;
+    this.cover = cover;
     this.info = function () {
         return `Title: ${this.title}\nAuthor: ${this.author}\nPages: ${this.pages}\nRead: ${this.read}`;
     }
@@ -15,11 +15,7 @@ const storedLibrary = JSON.parse(localStorage.getItem('myLibrary'));
 const myLibrary = storedLibrary || [];
 
 function saveLibrary() {
-    const serializedLibrary = myLibrary.map(book => {
-        const { coverFile, ...rest } = book;
-        return rest;
-    });
-    localStorage.setItem('myLibrary', JSON.stringify(serializedLibrary));
+    localStorage.setItem('myLibrary', JSON.stringify(myLibrary));
 }
 
 function createBookBox(book) {
@@ -31,13 +27,13 @@ function createBookBox(book) {
         <p><strong>Pages:</strong> ${book.pages}</p>
     `;
 
-    if (book.coverFile) {
+    if (book.cover) {
         const reader = new FileReader();
         reader.onload = function (event) {
             const imgSrc = event.target.result;
             newBookBox.innerHTML += `<img src="${imgSrc}" alt="Book Cover" class="book-cover">`;
         };
-        reader.readAsDataURL(book.coverFile);
+        reader.readAsDataURL(book.cover);
     } else {
         newBookBox.innerHTML += `<img src="img/textimg.jpg" alt="Placeholder" class="book-cover">`;
     }
@@ -52,6 +48,8 @@ function createBookBox(book) {
         event.target.classList.toggle('read-no', !book.read);
         saveLibrary();
     });
+
+
 
     const removeButton = document.createElement('button');
     removeButton.innerText = "Remove Book";
@@ -78,8 +76,8 @@ formBook.addEventListener('submit', function (event) {
     const author = document.querySelector('#author').value;
     const pages = parseInt(document.querySelector('#pages').value);
     const read = document.querySelector('input[name="read"]:checked').value.toLowerCase();
-    const coverFile = document.querySelector('#cover').files[0];
-    const newBook = new Book(title, author, pages, read, coverFile);
+    const cover = document.querySelector('#cover').files[0];
+    const newBook = new Book(title, author, pages, read, cover);
 
     myLibrary.push(newBook);
     saveLibrary();
@@ -94,18 +92,13 @@ function loadLibrary() {
     const storedLibrary = JSON.parse(localStorage.getItem('myLibrary'));
     if (storedLibrary) {
         myLibrary.length = 0;
-        storedLibrary.forEach(bookData => {
-            const { title, author, pages, read } = bookData;
-            const coverFile = null;
-            const book = new Book(title, author, pages, read, coverFile);
-            myLibrary.push(book);
+        storedLibrary.forEach(book => myLibrary.push(new Book(book.title, book.author, book.pages, book.read, book.cover)));
+        myLibrary.forEach(book => {
             const newBookBox = createBookBox(book);
             bookContainer.appendChild(newBookBox);
-
         });
     }
 }
-
 window.addEventListener('load', loadLibrary);
 
 function showMenu() {
