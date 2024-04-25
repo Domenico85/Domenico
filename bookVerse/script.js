@@ -1,8 +1,9 @@
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, cover) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read === 'yes' ? true : false;
+    this.cover = cover;
     this.info = function () {
         return `Title: ${this.title}\nAuthor: ${this.author}\nPages: ${this.pages}\nRead: ${this.read}`;
     }
@@ -20,8 +21,8 @@ formBook.addEventListener('submit', function (event) {
     const author = document.querySelector('#author').value;
     const pages = parseInt(document.querySelector('#pages').value);
     const read = document.querySelector('input[name="read"]:checked').value.toLowerCase();
-    console.log(read);
-    const newBook = new Book(title, author, pages, read);
+    const cover = document.querySelector('#cover').files[0];
+    const newBook = new Book(title, author, pages, read, cover);
 
 
     myLibrary.push(newBook);
@@ -35,6 +36,16 @@ formBook.addEventListener('submit', function (event) {
     <p><strong>Pages:</strong> ${newBook.pages}</p>
     `;
 
+    if (newBook.cover) {
+        // Display cover image if available
+        newBookBox.innerHTML += `<img src="${URL.createObjectURL(newBook.cover)}" alt="Book Cover" class="book-cover">`;
+    }
+    
+    // Optional: Add a placeholder image if no cover is provided
+    else {
+        newBookBox.innerHTML += `<img src="img/textimg.jpg" alt="Placeholder" class="book-cover">`;
+    }
+
     bookContainer.appendChild(newBookBox);
     const button = document.createElement('button')
     button.innerText = "Read: " + (newBook.read ? 'Yes' : 'No');
@@ -45,7 +56,9 @@ formBook.addEventListener('submit', function (event) {
         event.target.classList.toggle('read-yes', newBook.read);
         event.target.classList.toggle('read-no', !newBook.read);
     })
-
+    const imageElement = newBookBox.querySelector('.book-cover');
+    imageElement.style.maxWidth = '200px';
+    imageElement.style.margin = '0 auto';
     const removeButton = document.createElement('button');
     removeButton.innerText = "Remove Book";
     removeButton.classList.add('remove-button');
@@ -64,10 +77,10 @@ formBook.addEventListener('submit', function (event) {
     formBook.reset();
 });
 
-function showMenu(){
-    let myLinks= document.querySelector("nav");
+function showMenu() {
+    let myLinks = document.querySelector("nav");
     myLinks.classList.toggle("activemenu");
 }
 document.querySelector(".logo");
-let logo=document.querySelector(".logo");
+let logo = document.querySelector(".logo");
 logo.addEventListener("click", showMenu);
