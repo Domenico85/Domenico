@@ -3,7 +3,7 @@ function Book(title, author, pages, read, coverFile) {
     this.author = author;
     this.pages = pages;
     this.read = read === 'yes' ? true : false;
-    this.coverFile = coverFile; // Store the file object directly
+    this.coverFile = coverFile;
     this.info = function () {
         return `Title: ${this.title}\nAuthor: ${this.author}\nPages: ${this.pages}\nRead: ${this.read}`;
     }
@@ -15,7 +15,6 @@ const storedLibrary = JSON.parse(localStorage.getItem('myLibrary'));
 const myLibrary = storedLibrary || [];
 
 function saveLibrary() {
-    // Before saving, remove the coverFile property from each book
     const serializedLibrary = myLibrary.map(book => {
         const { coverFile, ...rest } = book;
         return rest;
@@ -79,7 +78,7 @@ formBook.addEventListener('submit', function (event) {
     const author = document.querySelector('#author').value;
     const pages = parseInt(document.querySelector('#pages').value);
     const read = document.querySelector('input[name="read"]:checked').value.toLowerCase();
-    const coverFile = document.querySelector('#cover').files[0]; // Get the file object
+    const coverFile = document.querySelector('#cover').files[0];
     const newBook = new Book(title, author, pages, read, coverFile);
 
     myLibrary.push(newBook);
@@ -100,6 +99,9 @@ function loadLibrary() {
             const coverFile = null;
             const book = new Book(title, author, pages, read, coverFile);
             myLibrary.push(book);
+            const newBookBox = createBookBox(book);
+            bookContainer.appendChild(newBookBox);
+
         });
     }
 }
