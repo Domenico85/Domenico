@@ -257,5 +257,10 @@ content h1{
         margin: 0 auto;
         font-size: 72px;
     }
+
+    nav a:hover{
+        color: yellow;
+        transform: scale(1.1);
+    }
       
 }
