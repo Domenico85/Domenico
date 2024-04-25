@@ -8,6 +8,7 @@ body {
     font-family: "Sofia", sans-serif;
     background-position: center;
     padding: 0 0px;
+    height: 100vh;
 }
 
 .content {
@@ -238,7 +239,9 @@ legend {
 
 @media only screen and (min-width:500px) {
     body {
-        background-size: contain;
+        /* background-size: contain; */
+        background-image: url(img/desk.jpg);
+        background-size: 100%;
     }
 
     form {
