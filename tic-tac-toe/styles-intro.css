@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'mark';
+    src: url(font/PermanentMarker-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'fruk' ;
+    src: url(font/Fruktur-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100vh);
+    animation: fadeIn 2.5s ease-in-out forwards;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.intro h1 {
+    font-family: 'mark';
+    opacity: 0;
+    animation: fadeInH1 1s ease-in-out forwards;
+}
+
+.intro span {
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInH1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.intro img{
+    width: 70%;
+}
+
+
+#countdown {
+    position: absolute;
+    left: 50%;
+    top: 82%;
+    display: inline-block;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    font-size: 0vw;
+    /* opacity: 50%; */
+    color: black; 
+    font-family: 'fruk';
+  }

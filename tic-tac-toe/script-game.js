@@ -55,62 +55,58 @@ const TicTacToeGame = (function(){
 
 })();
 
-const player1 = TicTacToeGame.createPlayer('Player 1', 'X');
-// console.log (player1);
-const player2 = TicTacToeGame.createPlayer('Player 2', 'O');
-// console.log(player2);
-const gameboard = TicTacToeGame.createGameboard();
-// console.log(gameboard);
+const container = document.querySelector('.container');
+const modal = document.querySelector('.modal');
+const message = document.querySelector('.message');
+const restartBtn = document.getElementById('restart-btn');
+const boxes = document.querySelectorAll('.box');
 
-// console.log(TicTacToeGame);
+const player1 = TicTacToeGame.createPlayer('Player 1', 'X');
+const player2 = TicTacToeGame.createPlayer('Player 2', 'O');
+const gameboard = TicTacToeGame.createGameboard();
+
+let currentPlayer = player1;
 
 const displayBoard = () => {
     const board = gameboard.getBoard();
-    console.log(`
-    ${board[0]} | ${board[1]} | ${board[2]}
-    ---------
-    ${board[3]} | ${board[4]} | ${board[5]}
-    ---------
-    ${board[6]} | ${board[7]} | ${board[8]}
-  `
-    );
+    for (let i = 0; i < board.length; i++) {
+        boxes[i].textContent = board[i];
+    }
 };
 
-const startGame = () => {
-    let currentPlayer = player1;
-  
-    while (true) {
-      displayBoard();
-      console.log(`${currentPlayer.name}'s turn (${currentPlayer.marker})`);
-      let move = parseInt(prompt('Enter your move (1-9):'));
-  
-      if (isNaN(move) || move < 1 || move > 9) {
-        console.log('Invalid move! Please enter a number between 1 and 9.');
-        continue;
-      }
-  
-      move--;
-  
-      if (!gameboard.markCell(move, currentPlayer.marker)) {
-        console.log('That cell is already occupied! Try again.');
-        continue;
-      }
-  
-      const winner = gameboard.checkWinner();
-      if (winner) {
+const handleCellClick = (event) => {
+    const index = parseInt(event.target.id);
+    if (gameboard.markCell(index, currentPlayer.marker)) {
         displayBoard();
-        if (winner === 'tie') {
-          console.log('It\'s a tie!');
-        } else {
-          console.log(`${currentPlayer.name} wins!`);
+        const winner = gameboard.checkWinner();
+        if (winner) {
+            showModal(winner);
+            return;
         }
-        break;
-      }
-  
-      currentPlayer = currentPlayer === player1 ? player2 : player1;
+        currentPlayer = currentPlayer === player1 ? player2 : player1;
     }
-  };
-  
-  startGame();
+};
 
+const showModal = (result) => {
+    if (result === 'tie') {
+        message.innerHTML = 'It\'s a <span class="tie">tie</span>!';
+    } else {
+        message.innerHTML = `Congratulations Player <span class="winner">${result}</span>! You've won the game <span class="smile">:)</span>`;
+    }
+    modal.style.display = 'block';
+};
+
+const restartGame = () => {
+    gameboard.resetBoard();
+    currentPlayer = player1;
+    displayBoard();
+    modal.style.display = 'none';
+};
+
+restartBtn.addEventListener('click', restartGame);
+boxes.forEach(box => {
+    box.addEventListener('click', handleCellClick);
+});
+
+displayBoard();
 
