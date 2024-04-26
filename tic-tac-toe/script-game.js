@@ -48,9 +48,28 @@ const TicTacToeGame = (function(){
         return {getBoard, markCell, checkWinner, resetBoard}
     };
 
+    const getRandomInt = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
+
+    const computerMove = (board) => {
+        const emptyCells = [];
+        for (let i = 0; i < board.length; i++) {
+            if (board[i] === '') {
+                emptyCells.push(i);
+            }
+        }
+        if (emptyCells.length === 0) {
+            return null;
+        }
+        const randomIndex = getRandomInt(0, emptyCells.length - 1);
+        return emptyCells[randomIndex];
+    };
+
     return {
         createPlayer: Player,
-        createGameboard: Gameboard
+        createGameboard: Gameboard,
+        computerMove: computerMove
     };
 
 })();
@@ -60,12 +79,14 @@ const modal = document.querySelector('.modal');
 const message = document.querySelector('.message');
 const restartBtn = document.getElementById('restart-btn');
 const boxes = document.querySelectorAll('.box');
+const modeButtons = document.querySelectorAll('.mode');
 
 const player1 = TicTacToeGame.createPlayer('Player 1', 'X');
 const player2 = TicTacToeGame.createPlayer('Player 2', 'O');
 const gameboard = TicTacToeGame.createGameboard();
 
 let currentPlayer = player1;
+let isPlayerVsBot = true; // Default mode is Player Vs Bot
 
 const displayBoard = () => {
     const board = gameboard.getBoard();
@@ -83,7 +104,23 @@ const handleCellClick = (event) => {
             showModal(winner);
             return;
         }
-        currentPlayer = currentPlayer === player1 ? player2 : player1;
+        if (isPlayerVsBot && currentPlayer === player1) {
+            setTimeout(() => {
+                const botMoveIndex = TicTacToeGame.computerMove(gameboard.getBoard());
+                if (botMoveIndex !== null) {
+                    gameboard.markCell(botMoveIndex, player2.marker);
+                    displayBoard();
+                    const winner = gameboard.checkWinner();
+                    if (winner) {
+                        showModal(winner);
+                        return;
+                    }
+                }
+                currentPlayer = player1;
+            }, 500);
+        } else {
+            currentPlayer = currentPlayer === player1 ? player2 : player1;
+        }
     }
 };
 
@@ -101,6 +138,19 @@ const restartGame = () => {
     currentPlayer = player1;
     displayBoard();
     modal.style.display = 'none';
+    showModeButtons();
+};
+
+const hideModeButtons = () => {
+    modeButtons.forEach(button => {
+        button.style.display = 'none';
+    });
+};
+
+const showModeButtons = () => {
+    modeButtons.forEach(button => {
+        button.style.display = 'block';
+    });
 };
 
 restartBtn.addEventListener('click', restartGame);
@@ -110,3 +160,13 @@ boxes.forEach(box => {
 
 displayBoard();
 
+modeButtons.forEach(button => {
+    button.addEventListener('click', function(event){
+        if (event.target.value === 'bot') {
+            isPlayerVsBot = true;
+        } else if (event.target.value === 'player') {
+            isPlayerVsBot = false;
+        }
+        hideModeButtons();
+    });
+});
