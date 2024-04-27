@@ -316,10 +316,29 @@ button:hover {
     .box {
         height: 15vh;
         width: 15vh;
+        font-size: 80px;
     }
 
     .choose {
         width: 69vh;
         height: 50vh;
+    }
+    .choose p{
+        font-size: 4.5rem;
+    }
+    .modal {
+        width: 69vh;
+        height: 50vh;
+
+    }
+
+    .modal h2 {
+        font-size: 2.4rem;
+    }
+
+    #restart-btn {
+        width: 25vh;
+        height: 13vh;
+        margin-top: 20px;
     }
 }
