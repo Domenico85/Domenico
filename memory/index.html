@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,36 @@
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <header class="header">
+    <div class="column-left">
         <h1 class="title">Memory <span>Game</span></h1>
-       
+        <img src="img/logo.jpeg" alt="logo" class="logo">
+
+    </div>
+
+
+    <main class="content">
+
+        <section class="card-container"></section>
+    
+    </main>
+
+    <div class="column-right">
+
         <div class="movement">
             <h6 class="subtitle">Move<span>ments</span></h6>
             <div class="available" id="available"></div>
         </div>
-    </header>
-    <img src="img/logo.jpeg" alt="logo" class="logo">
-    <main class="content">
-       
-        <section class="card-container"></section>
-    </main>
+    </div>
+
     <div class="modal" id="modal">
         <div class="modal-container">
             <h3 class="modal-title" id="modal-title">You win!</h3>
             <button type="button" class="button" id="play-again">Play Again</button>
         </div>
     </div>
+    
 </body>
+
 </html>
