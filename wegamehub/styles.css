@@ -7,10 +7,12 @@ html,
 body {
     /* width: 100%;
     height: 100%; */
-    background-color: #DDFFF7;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);    
     z-index: 1;
     position: relative;
     font-family: 'ranchers';
+    background-repeat: no-repeat;
 }
 
 body {
@@ -40,12 +42,14 @@ header img {
 
 }
 
-header h1{
+header h1 {
     color: white;
 }
-header h1 span{
+
+header h1 span {
     color: yellow;
 }
+
 main {
     top: 100px;
     position: relative;
@@ -123,7 +127,7 @@ main h1 span {
 .box:hover:before,
 .box:hover:after {
 
-    animation-duration: 0.2s;
+    animation-duration: 0.45s;
 }
 
 .box a {
@@ -147,4 +151,25 @@ main h1 span {
 
 .box img {
     width: 100%;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 3;
+}
+
+@media only screen and (min-width:500px) {
+
+    .boxes-container{
+        flex-direction: row;
+        gap: 300px;
+    }
+    
 }
