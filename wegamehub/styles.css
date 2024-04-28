@@ -1,20 +1,42 @@
+@font-face {
+    font-family: 'ranchers';
+    src: url(font/Ranchers-Regular.ttf);
+}
+
 html,
 body {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     background-color: #DDFFF7;
     z-index: 1;
     position: relative;
     overflow-x: hidden;
-
+    font-family: 'ranchers';
 }
 
 body {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
-    color: #fff;
+
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    color: black;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    gap: 20px;
+    display: flex;
+}
+
+header img {
+    width: 27%;
+    /* border-radius: 50px; */
 }
 
 main {
@@ -25,6 +47,15 @@ main {
     position: relative;
 }
 
+.text-start {
+    text-align: center;
+    position: absolute;
+    color: black;
+    margin-top: -153px;
+}
+main h1 span{
+    color: red;
+}
 .box {
     width: 12rem;
     height: 10rem;
@@ -90,9 +121,12 @@ main {
     flex-direction: column;
     text-decoration: none;
 }
-.box p{
+
+.box p {
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.box img{
+
+.box img {
     width: 100%;
 }
