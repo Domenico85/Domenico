@@ -1,0 +1,116 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  min-height: 100vh;
+  background-color: black;
+}
+
+.nav{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  top: 25px;
+  right: 25px;
+  z-index: 3;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: width 0.5s,height 0.5s;
+  transition-delay: 0s,0.75s;
+}
+.nav.active{
+  width: 250px;
+  height: 350px;
+  transition:height 0.5s,width 0.5s;
+  transition-delay: 0s,0.75s;
+}
+.nav .menu-toggle.active{
+  background: #2196f3;
+}
+
+.nav .menu-toggle{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #ff4081;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.nav .menu-toggle::before{
+  content: '+';
+  position: absolute;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  width: 50px;
+  height: 50px;
+  transition: 0.5s;
+}
+
+.nav .menu-toggle.active::before{
+  transform: rotate(315deg);
+}
+
+.nav ul {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.nav ul li{
+  position: relative;
+  list-style: none;
+  width: 100%;
+}
+.nav ul li:hover{
+  background: #03a9f4;
+}
+
+.nav ul li a{
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: #154367;
+  position: relative;
+}
+
+.nav ul li a .icon{
+  position: relative;
+  display: block;
+  min-width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.nav ul li a .icon i{
+  font-size: 1.15em;
+  color: #154367;
+}
+
+.nav ul li a .title{
+  display: block;
+  line-height: 50px;
+  white-space: nowrap;
+
+}
+.nav ul li:hover a .title,
+.nav ul li:hover a .icon i{
+
+  color: #fff;
+}
+
+
+
