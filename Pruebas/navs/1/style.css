@@ -1,14 +1,15 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
+
+body {
   min-height: 100vh;
   background-color: black;
 }
 
-.nav{
+.nav {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -18,20 +19,22 @@ body{
   z-index: 3;
   border-radius: 4px;
   overflow: hidden;
-  transition: width 0.5s,height 0.5s;
-  transition-delay: 0s,0.75s;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.75s;
 }
-.nav.active{
+
+.nav.active {
   width: 250px;
   height: 350px;
-  transition:height 0.5s,width 0.5s;
-  transition-delay: 0s,0.75s;
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.75s;
 }
-.nav .menu-toggle.active{
+
+.nav .menu-toggle.active {
   background: #2196f3;
 }
 
-.nav .menu-toggle{
+.nav .menu-toggle {
   position: relative;
   top: 0;
   left: 0;
@@ -45,7 +48,7 @@ body{
   cursor: pointer;
 }
 
-.nav .menu-toggle::before{
+.nav .menu-toggle::before {
   content: '+';
   position: absolute;
   font-size: 2rem;
@@ -59,7 +62,7 @@ body{
   transition: 0.5s;
 }
 
-.nav .menu-toggle.active::before{
+.nav .menu-toggle.active::before {
   transform: rotate(315deg);
 }
 
@@ -69,16 +72,17 @@ body{
   width: 100%;
 }
 
-.nav ul li{
+.nav ul li {
   position: relative;
   list-style: none;
   width: 100%;
 }
-.nav ul li:hover{
+
+.nav ul li:hover {
   background: #03a9f4;
 }
 
-.nav ul li a{
+.nav ul li a {
   display: flex;
   width: 100%;
   text-decoration: none;
@@ -86,7 +90,7 @@ body{
   position: relative;
 }
 
-.nav ul li a .icon{
+.nav ul li a .icon {
   position: relative;
   display: block;
   min-width: 50px;
@@ -95,22 +99,234 @@ body{
   line-height: 50px;
 }
 
-.nav ul li a .icon i{
+.nav ul li a .icon i {
   font-size: 1.15em;
   color: #154367;
 }
 
-.nav ul li a .title{
+.nav ul li a .title {
   display: block;
   line-height: 50px;
   white-space: nowrap;
 
 }
+
 .nav ul li:hover a .title,
-.nav ul li:hover a .icon i{
+.nav ul li:hover a .icon i {
 
   color: #fff;
 }
 
+.container {
+  height: 120px;
+  width: 120px;
+  margin: 21px auto 0px 60px;
+  position: relative;
+}
 
+.circle {
+  background-color: black;
+  height: 120px;
+  width: 120px;
+  display: block;
+  border: 5px solid #00baff;
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  transform: rotate(-90deg);
+  animation-name: circle;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+  -webkit-animation-name: circle;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+}
 
+.fa {
+  font-size: 42px;
+  color: #00baff;
+  bottom: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -18px;
+  animation-name: arrow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-play-state: running;
+  -webkit-animation-name: arrow;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  -webkit-animation-play-state: running;
+}
+
+.pulse {
+  margin: 0 auto;
+  border-radius: 100px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 0;
+  background-color: transparent;
+  opacity: 0;
+  width: 110px;
+  height: 110px;
+  border: 10px solid #00baff;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -o-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  /* Giving Animation Function */
+  -webkit-animation: pulse 1s linear infinite 0.3s;
+  -moz-animation: pulse 1s linear infinite 0.3s;
+  border-image: initial;
+}
+
+@keyframes arrow {
+  0% {
+    bottom: 0;
+  }
+
+  75% {
+    bottom: 90px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    bottom: 0;
+  }
+
+  75% {
+    bottom: 90px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes circle {
+  0% {
+    height: 120px;
+  }
+
+  10% {
+    height: 120px;
+  }
+
+  50% {
+    height: 130px;
+  }
+
+  75% {
+    height: 150px;
+  }
+
+  90% {
+    height: 130px;
+  }
+
+  100% {
+    height: 120px;
+  }
+}
+
+@-webkit-keyframes circle {
+  0% {
+    height: 120px;
+  }
+
+  10% {
+    height: 120px;
+  }
+
+  50% {
+    height: 130px;
+  }
+
+  75% {
+    height: 150px;
+  }
+
+  90% {
+    height: 130px;
+  }
+
+  100% {
+    height: 120px;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  8% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  15% {
+    -webkit-transform: scale(0.1);
+    opacity: 1;
+  }
+
+  30% {
+    -webkit-transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+  }
+}
+
+@-moz-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  8% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  15% {
+    -webkit-transform: scale(0.1);
+    opacity: 1;
+  }
+
+  30% {
+    -webkit-transform: scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+  }
+}
