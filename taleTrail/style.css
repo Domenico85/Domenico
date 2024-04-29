@@ -103,6 +103,6 @@ nav a {
 }
 
 .slide-in {
-  position: relative;
-  left: 17%;
+  display: block;
+  margin: 0 auto;
 }
