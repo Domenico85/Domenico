@@ -33,3 +33,17 @@ document.querySelector('.menu-toggle').onclick = function(){
   this.classList.toggle('active');
   nav.classList.toggle('active');
 }
+
+window.addEventListener('scroll', function() {
+    let scrollTop = window.scrollY;
+    // console.log('top:', scrollTop);
+    
+    let windowHeight = window.innerHeight;
+    let documentHeight = document.querySelector('main').clientHeight;
+    // console.log('documentHeight:', documentHeight);
+    
+    let scrollPercent = ((scrollTop) / (documentHeight - windowHeight) * 10) + 0;
+    console.log('perc:', scrollPercent);
+
+    document.querySelector('.scroll-watcher').style.width = scrollPercent + '%';
+});

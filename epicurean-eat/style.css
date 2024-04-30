@@ -79,6 +79,21 @@ body {
 #exit:hover {
     color: red;
 }
+#overlay.hidden {
+    display: none;
+}
+
+.scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: red;
+    width: 0;
+    display: block;
+    transition: width 0.3s ease;
+}
 
 .logo {
     width: 20%;
@@ -86,12 +101,10 @@ body {
     margin: 20px;
 }
 
-#overlay.hidden {
-    display: none;
-}
+
 
 .nav {
-    position: absolute;
+    position: fixed;
     width: 50px;
     height: 50px;
     background: #fff;
@@ -200,6 +213,19 @@ body {
 }
 
 main {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-family: 'lugra';
+    text-align: center;
+    color: wheat;
+}
+
+.content1,
+.content2 {
     background-color: rgba(0, 0, 0, 0.5);
     margin: 0 19px auto 19px;
     border-radius: 16px;
@@ -209,24 +235,27 @@ main {
     align-items: center;
 }
 
-main h1 {
+.content1 h1 {
     text-align: center;
-    font-family: 'lugra';
     font-size: 30px;
-    color: wheat;
+    /* color: wheat; */
 }
 
-main img {
+.content1 img {
     width: 50%;
     border-radius: 80px;
 }
 
-main h2{
+.content1 h2 {
     text-align: center;
     font-family: 'lugra';
-    color: wheat;
+    /* color: wheat; */
 }
 
-main span{
+main span {
     color: red;
+}
+
+.content2 img {
+    width: 72%;
 }
