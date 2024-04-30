@@ -35,7 +35,52 @@
     </div>
 
     <div class="column-right">
+        <form>
+            <fieldset>
 
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Title" name="title" required />
+                    <label for="title" class="form__label">Title</label>
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="description" name="description" required />
+                    <label for="description" class="form__label">Description</label>
+                </div>
+                <div class="form__group field">
+                    <input type="date" class="form__field" placeholder="description" name="date" />
+                    <label for="date" class="form__label">Due Date</label>
+                </div>
+                <div class="form__group field radio">
+                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="low"
+                        value="low" />Low
+                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="medium"
+                        value="medium" />Medium
+                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="high"
+                        value="high" />High
+
+                    <label for="priority" class="form__label">Priority</label>
+
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Notes" name="notes" />
+                    <label for="notes" class="form__label">Notes</label>
+                </div>
+
+                <div class="form__group field radio" >
+                    <input type="checkbox"  class="form__field" name="group1[]" />Complete
+                    <input type="checkbox" name="group1[]" class="form__field"/>Incomplete
+                    <label for="checklist" class="form__label">Checklist</label>
+                    
+                </div>
+
+                <button>Add</button>
+
+
+            </fieldset>
+        </form>
+        <div id="to-do-list">
+
+        </div>
     </div>
 </body>
 
