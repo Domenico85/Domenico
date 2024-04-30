@@ -79,6 +79,7 @@ body {
 #exit:hover {
     color: red;
 }
+
 #overlay.hidden {
     display: none;
 }
@@ -97,7 +98,7 @@ body {
 
 .logo {
     width: 20%;
-    border-radius: 40px;
+    border-radius: 100%;
     margin: 20px;
 }
 
@@ -222,6 +223,7 @@ main {
     font-family: 'lugra';
     text-align: center;
     color: wheat;
+    font-size: 20px;
 }
 
 .content1,
@@ -237,19 +239,16 @@ main {
 
 .content1 h1 {
     text-align: center;
-    font-size: 30px;
-    /* color: wheat; */
 }
 
 .content1 img {
     width: 50%;
-    border-radius: 80px;
+    border-radius: 100%;
 }
 
 .content1 h2 {
     text-align: center;
     font-family: 'lugra';
-    /* color: wheat; */
 }
 
 main span {
@@ -258,4 +257,24 @@ main span {
 
 .content2 img {
     width: 72%;
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 500px) {
+
+    main{
+        font-size: 30px;
+    }
+    .content2 {
+        max-width: 80%;
+    }
+    
 }
