@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'platy';
+    src: url(font/Platypi-Regular.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'platy';
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    margin: 0 auto;
+}
+
+.title span {
+    color: white;
+}
+
+.logo {
+    max-width: 30%;
+    border-radius: 100%;
+    margin: 10px auto 0 8px;
+}
+
+.column-left {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+ul a {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+ul a:hover{
+    background-color: beige;
+}
+.column-right {
+    background-color: black;
+
+}
