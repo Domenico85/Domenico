@@ -2,9 +2,11 @@
     font-family: 'platy';
     src: url(font/Platypi-Regular.ttf);
 }
-*{
+
+* {
     font-family: 'platy';
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -51,9 +53,11 @@ ul a {
     text-decoration: none;
     color: black;
 }
-ul a:hover{
+
+ul a:hover {
     background-color: beige;
 }
+
 .column-right {
     background-color: black;
     display: flex;
@@ -67,20 +71,23 @@ ul a:hover{
     --secondary: #38ef7d;
     --white: #fff;
     --gray: #9b9b9b;
-  }
-fieldset{
+}
+
+fieldset {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin: 10px;
 }
-  .form__group {
+
+.form__group {
     position: relative;
     padding: 15px 0 0;
     margin-top: 10px;
     width: 100%;
-  }
-  
-  .form__field {
+}
+
+.form__field {
     font-family: inherit;
     width: 100%;
     border: 0;
@@ -91,36 +98,36 @@ fieldset{
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
-  }
-  
-  .form__field::placeholder {
+}
+
+.form__field::placeholder {
     color: transparent;
-  }
-  
-  .form__field:placeholder-shown ~ .form__label {
+}
+
+.form__field:placeholder-shown~.form__label {
     font-size: 1.3rem;
     cursor: text;
     top: 20px;
-  }
-  
-  .form__label {
+}
+
+.form__label {
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: var(--gray);
-  }
-  
-  .form__field:focus {
+}
+
+.form__field:focus {
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, var(--primary), var(--secondary));
     border-image-slice: 1;
-  }
-  
-  .form__field:focus ~ .form__label {
+}
+
+.form__field:focus~.form__label {
     position: absolute;
     top: 0;
     display: block;
@@ -128,21 +135,28 @@ fieldset{
     font-size: 1rem;
     color: var(--primary);
     font-weight: 700;
-  }
-  
-  .form__field:required,
-  .form__field:invalid {
-    box-shadow: none;
-  }
+}
 
-  #to-do-list{
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+#to-do-list {
     color: white;
-  }
-.radio{
+}
+
+.radio {
     color: white;
     display: flex;
-  }
+}
 
-  .radio #low{
+.radio input #low {
     color: green;
-  }
+}
+.checklist input{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

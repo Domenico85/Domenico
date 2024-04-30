@@ -2,14 +2,16 @@ function MyDay(day){
 
     this.title = day.title;
     this.description = day.description;
-    this.dueDate = day.dueDate;
+
+    console.log(day)
+    this.date = day.date;
     this.priority = day.priority;
     this.notes = day.notes;
     this.checklist = day.checklist;
     this.info = function () {
         return `Title: ${this.title}
         \nDescription: ${this.description}
-        \ndueDate: ${this.dueDate}
+        \ndueDate: ${this.date}
         \nPriority: ${this.priority}
         \nNotes: ${this.notes}
         \nCheckList: ${this.checklist}`;
@@ -25,15 +27,17 @@ form.addEventListener('submit', function(event){
         for (const [name,value] of data) {
             dayEntry[name] = value
         }
+        // console.log(dayEntry)
         const day  = new MyDay(dayEntry)
-        console.log(day)
+        // console.log(day)
         addNewDaytoDOM(day);
 
 })
 function addNewDaytoDOM(day){
     const newDayBox = document.createElement('div');
     newDayBox.classList.add('day');
-    newDayBox.innerText = `${day.title} ${day.description}` 
+    newDayBox.innerText = `${day.title} ${day.description}${day.date}
+    ${day.priority} ${day.notes} ${day.checklist}` 
 
     document.querySelector('#to-do-list').appendChild(newDayBox)
     
