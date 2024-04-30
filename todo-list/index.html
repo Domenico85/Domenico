@@ -43,22 +43,41 @@
                     <label for="title" class="form__label">Title</label>
                 </div>
                 <div class="form__group field">
-                    <input type="input" class="form__field" placeholder="description" name="description" required />
+                    <input type="input" class="form__field" placeholder="description" name="description" />
                     <label for="description" class="form__label">Description</label>
                 </div>
                 <div class="form__group field">
                     <input type="date" class="form__field" placeholder="description" name="date" />
                     <label for="date" class="form__label">Due Date</label>
                 </div>
-                <div class="form__group field radio">
-                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="low"
-                        value="low" />Low
-                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="medium"
-                        value="medium" />Medium
-                    <input type="radio" class="form__field" placeholder="priority" name="priority" id="high"
-                        value="high" />High
 
-                    <label for="priority" class="form__label">Priority</label>
+                <label for="priority" class="form__label prio">Priority</label>
+                <div class="form__group field radio priority">
+                    <div class="priority">
+
+                        <div class="low">
+
+                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="low"
+                                value="low" />
+                            Low
+                        </div>
+
+                        <div class="medium">
+
+                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="medium"
+                                value="medium" />
+                            Medium
+                        </div>
+
+                        <div class="high">
+
+                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="high"
+                                value="high" />
+                            High
+                        </div>
+
+                    </div>
+
 
                 </div>
                 <div class="form__group field">
@@ -66,10 +85,19 @@
                     <label for="notes" class="form__label">Notes</label>
                 </div>
 
-                <div class="form__group field radio checklist">
-                    <input type="checkbox" class="form__field" value="Done" name="checklist" />Done
-                    <input type="checkbox" name="checklist" value="To Do" class="form__field" />To Do
-                    <label for="checklist" class="form__label">Checklist</label>
+                <label for="checklist" class="form__label check">Checklist</label>
+                <div class="form__group field radio">
+
+                    <div class="checklist">
+                        <div class="done">
+
+                            <input type="checkbox" class="form__field" value="Done" name="checklist" />Done
+                        </div>
+                        <div class="to-do">
+
+                            <input type="checkbox" name="checklist" value="To Do" class="form__field" />To Do
+                        </div>
+                    </div>
 
                 </div>
 
