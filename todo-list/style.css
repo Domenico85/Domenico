@@ -165,7 +165,7 @@ fieldset {
     font-size: 1.3rem;
 }
 
-.done input {
+.checklist input {
     width: 80%;
 
 }
@@ -185,6 +185,8 @@ button {
     touch-action: manipulation;
     display: block;
     margin: 10px auto;
+    width: 92%;
+    font-size: 15px
 }
 
 button:before {
@@ -211,6 +213,7 @@ button:before {
     animation: glowing-button 20s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
+    
 }
 
 @keyframes glowing-button {
@@ -267,4 +270,15 @@ button:after {
 .prio,
 .check {
     text-align: center;
+}
+
+input[type=checkbox]
+{
+  
+  -ms-transform: scale(2);
+  -moz-transform: scale(2); 
+  -webkit-transform: scale(2); 
+  -o-transform: scale(2);
+  transform: scale(2);
+  padding: 10px;
 }
