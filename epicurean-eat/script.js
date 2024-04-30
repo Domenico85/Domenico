@@ -36,14 +36,11 @@ document.querySelector('.menu-toggle').onclick = function(){
 
 window.addEventListener('scroll', function() {
     let scrollTop = window.scrollY;
-    // console.log('top:', scrollTop);
     
     let windowHeight = window.innerHeight;
     let documentHeight = document.querySelector('main').clientHeight;
-    // console.log('documentHeight:', documentHeight);
     
-    let scrollPercent = ((scrollTop) / (documentHeight - windowHeight) * 10) + 0;
-    console.log('perc:', scrollPercent);
+    let scrollPercent = ((scrollTop) / (documentHeight - windowHeight) * 100);
 
     document.querySelector('.scroll-watcher').style.width = scrollPercent + '%';
 });
