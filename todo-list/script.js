@@ -1,4 +1,4 @@
-function MyDay(day){
+function MyDay(day) {
 
     this.title = day.title;
     this.description = day.description;
@@ -17,40 +17,40 @@ function MyDay(day){
         \nCheckList: ${this.checklist}`;
     }
 }
-const form= document.querySelector('form');
-form.addEventListener('submit', function(event){
-        event.preventDefault();
-        
-        const data = new FormData(form);
-        const dayEntry = {}
-     
-        for (const [name,value] of data) {
-            dayEntry[name] = value
-        }
-     
-        const day  = new MyDay(dayEntry)
-        addNewDaytoDOM(day);
+const form = document.querySelector('form');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const data = new FormData(form);
+    const dayEntry = {}
+
+    for (const [name, value] of data) {
+        dayEntry[name] = value
+    }
+
+    const day = new MyDay(dayEntry)
+    addNewDaytoDOM(day);
 
 })
-function addNewDaytoDOM(day){
+function addNewDaytoDOM(day) {
     const newDayBox = document.createElement('div');
     newDayBox.classList.add('day');
     newDayBox.innerText = `${day.title} ${day.description}${day.date}
-    ${day.priority} ${day.notes} ${day.checklist}` 
+    ${day.priority} ${day.notes} ${day.checklist}`
 
     document.querySelector('#to-do-list').appendChild(newDayBox)
-    
+
 }
 
 
 let checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-checkboxes.forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
+checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
         let name = this.name;
         let otherCheckboxes = document.querySelectorAll('input[name="' + name + '"]');
-        
-        otherCheckboxes.forEach(function(otherCheckbox) {
+
+        otherCheckboxes.forEach(function (otherCheckbox) {
             if (otherCheckbox !== checkbox) {
                 otherCheckbox.checked = false;
             }
@@ -58,20 +58,20 @@ checkboxes.forEach(function(checkbox) {
     });
 });
 
-function formAppear(){
+function formAppear() {
     let btnFormAppear = document.querySelector(".new-task button");
-    btnFormAppear.addEventListener ('click', function(){
-        let form = document.querySelector ('form');
+    btnFormAppear.addEventListener('click', function () {
+        let form = document.querySelector('form');
         form.style.display = 'block'
     })
 }
 
 formAppear();
 
-function formDisappear(){
+function formDisappear() {
     let btnFormDisappear = document.querySelector("form button");
-    btnFormDisappear.addEventListener('click', function(){
-        let form = document.querySelector ('form');
+    btnFormDisappear.addEventListener('click', function () {
+        let form = document.querySelector('form');
         form.style.display = 'none'
     })
 }
@@ -79,3 +79,26 @@ function formDisappear(){
 formDisappear();
 
 
+function showExampleDetails() {
+    const btnDetails = document.querySelector("#details");
+    const showOverlay = document.querySelector('.overlay');
+    btnDetails.addEventListener('click', function () {
+        const example = document.querySelector('.details-example');
+        example.classList.add('active');
+        showOverlay.style.zIndex = '1';
+    })
+}
+
+showExampleDetails();
+
+function closeDetails() {
+    const example = document.querySelector('.details-example');
+    example.classList.remove('active')
+    overlay.style.zIndex = '-1'
+}
+const xButton = document.querySelector('#exit')
+xButton.addEventListener('click', closeDetails)
+
+const overlay = document.querySelector('.overlay')
+
+overlay.addEventListener('click', closeDetails)
