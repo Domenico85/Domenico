@@ -35,8 +35,28 @@ form.addEventListener('submit', function (event) {
 function addNewDaytoDOM(day) {
     const newDayBox = document.createElement('div');
     newDayBox.classList.add('day');
-    newDayBox.innerText = `${day.title} ${day.description}${day.date}
-    ${day.priority} ${day.notes} ${day.checklist}`
+    const pTag = document.createElement('p');
+    pTag.innerText = day.title
+    newDayBox.appendChild(pTag)
+    const optionsDiv = document.createElement('div');;
+    optionsDiv.classList.add('options');
+    newDayBox.appendChild(optionsDiv);
+    const detailsBtn = document.createElement('button');
+    detailsBtn.classList.add('details');
+    detailsBtn.innerHTML = 'Details';
+    optionsDiv.appendChild(detailsBtn);
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('edit');
+    editBtn.innerHTML = '<img src=\"img/edit.svg"\ width=\"20px\""alt=\"edit\">';
+    optionsDiv.appendChild(editBtn)
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete');
+    deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
+    optionsDiv.appendChild(deleteBtn)
+
+
+    // newDayBox.innerText = `${day.title} ${day.description}${day.date}
+    // ${day.priority} ${day.notes} ${day.checklist}`
 
     document.querySelector('#to-do-list').appendChild(newDayBox)
 
@@ -80,7 +100,7 @@ formDisappear();
 
 
 function showExampleDetails() {
-    const btnDetails = document.querySelector("#details");
+    const btnDetails = document.querySelector(".details");
     const showOverlay = document.querySelector('.overlay');
     btnDetails.addEventListener('click', function () {
         const example = document.querySelector('.details-example');
@@ -102,3 +122,10 @@ xButton.addEventListener('click', closeDetails)
 const overlay = document.querySelector('.overlay')
 
 overlay.addEventListener('click', closeDetails)
+
+
+
+
+function insertTodoElement(){
+    
+}

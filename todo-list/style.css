@@ -360,13 +360,16 @@ input[type=radio] {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(254, 254, 254, 0.35) 0px -2px 6px 0px inset;
 }
 
-.example {
+.day {
     background-color: wheat;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 7px;
     color: red;
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 .example img {
@@ -382,13 +385,15 @@ input[type=radio] {
     transform: scale(0);
     opacity: .6;
     transition: all ease-in-out 1000ms;
+    position: absolute;
 }
 
 .details-example.active {
     transform: scale(1);
     opacity: 1;
     z-index: 2;
-    position: relative;
+    position: absolute;
+    padding: 30px;
   
 }
 
@@ -406,3 +411,53 @@ input[type=radio] {
     color: lawngreen;
     cursor: pointer;
 }
+
+.details {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  
+  .details:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  .details:hover {
+    background-color: #2c974b;
+  }
+  
+  .details:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+  }
+  
+  .details:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+  }
+  
+  .details:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  }
