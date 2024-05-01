@@ -44,6 +44,10 @@ function addNewDaytoDOM(day) {
     const detailsBtn = document.createElement('button');
     detailsBtn.classList.add('details');
     detailsBtn.innerHTML = 'Details';
+    detailsBtn.addEventListener('click', function() {
+        createDayDetails(day);
+        overlay.style.zIndex = '1';
+    });
     optionsDiv.appendChild(detailsBtn);
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit');
@@ -60,6 +64,44 @@ function addNewDaytoDOM(day) {
 
     document.querySelector('#to-do-list').appendChild(newDayBox)
 
+}
+function createDayDetails(day) {
+    const dayDetails = document.createElement('div');
+    dayDetails.classList.add('details-example', 'active');
+
+    
+    const exitButton = document.createElement('h2');
+    exitButton.id = 'exit';
+    exitButton.innerText = 'X';
+    exitButton.addEventListener('click', function() {
+        dayDetails.classList.remove('active');
+        overlay.style.zIndex = '-1'; 
+    });
+    dayDetails.appendChild(exitButton);
+
+    
+    const title = document.createElement('h1');
+    title.innerHTML = `<span>${day.title}</span>`;
+    dayDetails.appendChild(title);
+    const description = document.createElement('h2');
+    description.innerHTML = `<span>Description<span>: ${day.description}`
+    dayDetails.appendChild(description);
+    const dueDate = document.createElement ('h2');
+    dueDate.innerHTML = `DueDate: ${day.date}`;
+    dayDetails.appendChild(dueDate);
+    const priority = document.createElement('h2');
+    priority.innerHTML = `Priority:  ${day.priority}`
+    dayDetails.appendChild(priority);
+    const notes = document.createElement ('h2');
+    notes.innerHTML = `Notes: ${day.notes}`
+    dayDetails.appendChild(notes);
+    const checklist = document.createElement('h2');
+    checklist.innerHTML = `Checklist: ${day.checklist}`;
+    dayDetails.appendChild(checklist);
+
+   
+
+    document.querySelector('#to-do-list').appendChild(dayDetails);
 }
 
 
@@ -112,8 +154,9 @@ function showExampleDetails() {
 showExampleDetails();
 
 function closeDetails() {
+    console.log ('close')
     const example = document.querySelector('.details-example');
-    example.classList.remove('active')
+    example.classList.remove('active');
     overlay.style.zIndex = '-1'
 }
 const xButton = document.querySelector('#exit')
