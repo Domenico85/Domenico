@@ -63,7 +63,55 @@ ul a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
 
+.new-task {
+    display: flex;
+    color: white;
+    gap: 10px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    align-items: center;
+}
+
+.new-task button {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 50px;
+    line-height: 33px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    cursor: pointer;
+}
+
+.new-task button:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.new-task button:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.new-task button:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 :root {
@@ -71,6 +119,14 @@ ul a:hover {
     --secondary: #38ef7d;
     --white: #fff;
     --gray: #9b9b9b;
+}
+
+form {
+    position: absolute;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    z-index: 10000;
+    background-color: black;
+    display: none;
 }
 
 fieldset {
@@ -144,6 +200,7 @@ fieldset {
 
 #to-do-list {
     color: white;
+    width: 50%;
 }
 
 .radio {
@@ -170,7 +227,7 @@ fieldset {
 
 }
 
-button {
+form button {
     padding: 0.6em 2em;
     border: none;
     outline: none;
@@ -189,7 +246,7 @@ button {
     font-size: 15px
 }
 
-button:before {
+form button:before {
     content: "";
     background: linear-gradient(45deg,
             #ff0000,
@@ -213,7 +270,7 @@ button:before {
     animation: glowing-button 20s linear infinite;
     transition: opacity 0.3s ease-in-out;
     border-radius: 10px;
-    
+
 }
 
 @keyframes glowing-button {
@@ -230,7 +287,7 @@ button:before {
     }
 }
 
-button:after {
+form button:after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -270,15 +327,21 @@ button:after {
 .prio,
 .check {
     text-align: center;
+    margin-top: 20px;
 }
 
-input[type=checkbox]
-{
-  
-  -ms-transform: scale(2);
-  -moz-transform: scale(2); 
-  -webkit-transform: scale(2); 
-  -o-transform: scale(2);
-  transform: scale(2);
-  padding: 10px;
+input[type=checkbox],
+input[type=radio] {
+
+    -ms-transform: scale(2);
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+    padding: 10px;
+}
+
+.day {
+    background-color: #222;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(254, 254, 254, 0.35) 0px -2px 6px 0px inset;
 }
