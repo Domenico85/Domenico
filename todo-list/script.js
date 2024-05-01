@@ -23,13 +23,12 @@ form.addEventListener('submit', function(event){
         
         const data = new FormData(form);
         const dayEntry = {}
-        // console.log(data)
+     
         for (const [name,value] of data) {
             dayEntry[name] = value
         }
-        // console.log(dayEntry)
+     
         const day  = new MyDay(dayEntry)
-        // console.log(day)
         addNewDaytoDOM(day);
 
 })
@@ -58,5 +57,25 @@ checkboxes.forEach(function(checkbox) {
         });
     });
 });
+
+function formAppear(){
+    let btnFormAppear = document.querySelector(".new-task button");
+    btnFormAppear.addEventListener ('click', function(){
+        let form = document.querySelector ('form');
+        form.style.display = 'block'
+    })
+}
+
+formAppear();
+
+function formDisappear(){
+    let btnFormDisappear = document.querySelector("form button");
+    btnFormDisappear.addEventListener('click', function(){
+        let form = document.querySelector ('form');
+        form.style.display = 'none'
+    })
+}
+
+formDisappear();
 
 

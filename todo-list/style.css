@@ -75,7 +75,9 @@ ul a:hover {
     right: 10px;
     align-items: center;
 }
-
+.new-task span{
+    color: red;
+}
 .new-task button {
     text-align: center;
     width: 40px;
