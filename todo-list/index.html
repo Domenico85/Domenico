@@ -20,29 +20,29 @@
         </div>
 
         <ul>
-            <a href="">
+            <a href="#">
                 <li>My Day</li>
             </a>
-            <a href="">
+            <a href="#">
                 <li>Next 7 Days</li>
             </a>
-            <a href="">
+            <a href="#">
                 <li>Tasks</li>
             </a>
-            <a href="">
+            <a href="#">
                 <li>Calendar</li>
             </a>
         </ul>
     </div>
 
     <div class="column-right">
-       
+
         <div class="new-task">
             <h2>Add <span>New</span> Task</h2>
             <button>+</button>
         </div>
-       
-       
+
+
         <form>
             <fieldset>
 
@@ -58,36 +58,36 @@
                     <input type="date" class="form__field" placeholder="description" name="date" />
                     <label for="date" class="form__label">Due Date</label>
                 </div>
-                
+
                 <div class="radios">
 
                     <label for="priority" class="form__label prio">Priority</label>
                     <div class="form__group field radio priority">
-                    <div class="priority">
-                        
-                        <div class="low">
+                        <div class="priority">
 
-                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="low"
-                            value="low" />
-                            Low
+                            <div class="low">
+
+                                <input type="radio" class="form__field" placeholder="priority" name="priority" id="low"
+                                    value="low" />
+                                Low
+                            </div>
+
+                            <div class="medium">
+
+                                <input type="radio" class="form__field" placeholder="priority" name="priority"
+                                    id="medium" value="medium" />
+                                Medium
+                            </div>
+
+                            <div class="high">
+
+                                <input type="radio" class="form__field" placeholder="priority" name="priority" id="high"
+                                    value="high" />
+                                High
+                            </div>
+
                         </div>
-                        
-                        <div class="medium">
-                            
-                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="medium"
-                            value="medium" />
-                            Medium
-                        </div>
-                        
-                        <div class="high">
-                            
-                            <input type="radio" class="form__field" placeholder="priority" name="priority" id="high"
-                            value="high" />
-                            High
-                        </div>
-                        
                     </div>
-                </div>
 
 
                 </div>
@@ -101,22 +101,22 @@
 
                     <label for="checklist" class="form__label check">Checklist</label>
                     <div class="form__group field radio">
-                        
+
                         <div class="checklist">
                             <div class="done">
-                                
+
                                 <input type="checkbox" class="form__field" value="Done" name="checklist" />Done
                             </div>
                             <div class="to-do">
-                                
+
                                 <input type="checkbox" name="checklist" value="To Do" class="form__field" />To Do
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                    
-                <button>Add</button>      
+
+                <button>Add</button>
 
 
             </fieldset>
@@ -125,10 +125,18 @@
 
 
             <div class="example day">
+                <h3>Example:</h3>
                 <p>Buy Groceries</p>
-                <div class="options"><button class="details">Details</button><button class="edit"><img src="img/edit.svg" alt="edit">
-                    </button><button class="delete">
+                <div class="options">
+
+                    <button class="details">Details</button>
+
+                    <button class="edit"><img src="img/edit.svg" alt="edit">
+                    </button>
+
+                    <button class="delete">
                         <img src="img/delete.svg" alt="delete">
+
                     </button>
                 </div>
             </div>

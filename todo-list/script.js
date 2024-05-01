@@ -50,13 +50,29 @@ function addNewDaytoDOM(day) {
         overlay.style.zIndex = '1';
     });
     optionsDiv.appendChild(detailsBtn);
+   
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit');
     editBtn.innerHTML = '<img src=\"img/edit.svg"\ width=\"20px\""alt=\"edit\">';
+    editBtn.addEventListener('click', function(){
+        document.querySelector('input[name="title"]').value = day.title;
+        document.querySelector('input[name="description"]').value = day.description;
+        document.querySelector('input[name="date"]').value = day.date;
+        // document.querySelector('input[name="priority"][value="${day.priority}"]').checked = true;
+        document.querySelector('input[name="notes"]').value = day.notes;
+        // document.querySelector('input[name="checklist"][value="${day.checklist}"]').checked = true;
+
+        const form = document.querySelector('form');
+        form.style.display = 'block';
+    })  
     optionsDiv.appendChild(editBtn)
+    
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
+    deleteBtn.addEventListener('click',function(){
+        newDayBox.remove();
+    });
     optionsDiv.appendChild(deleteBtn)
 
 
