@@ -45,6 +45,7 @@ function addNewDaytoDOM(day) {
     detailsBtn.classList.add('details');
     detailsBtn.innerHTML = 'Details';
     detailsBtn.addEventListener('click', function() {
+        showExampleDetails();
         createDayDetails(day);
         overlay.style.zIndex = '1';
     });
@@ -58,9 +59,6 @@ function addNewDaytoDOM(day) {
     deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
     optionsDiv.appendChild(deleteBtn)
 
-
-    // newDayBox.innerText = `${day.title} ${day.description}${day.date}
-    // ${day.priority} ${day.notes} ${day.checklist}`
 
     document.querySelector('#to-do-list').appendChild(newDayBox)
 
