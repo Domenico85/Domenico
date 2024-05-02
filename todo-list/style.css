@@ -355,9 +355,11 @@ input[type=radio] {
     transform: scale(2);
     padding: 10px;
 }
-#to-do-list{
+
+#to-do-list {
     padding-top: 100px;
 }
+
 .day {
     background-color: wheat;
     display: flex;
@@ -368,14 +370,28 @@ input[type=radio] {
     font-size: 25px;
     margin-bottom: 10px;
     border-radius: 10px;
+    height: 2rem;
+}
+
+.day:hover {
+    -webkit-transform: scale(1.003);
+    transform: scale(1.003);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
 }
 
 .example img {
     width: 20px;
 }
-.example h3{
+
+.example h3 {
     color: black;
 }
+
 .details-example {
     background-color: #222;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(254, 254, 254, 0.35) 0px -2px 6px 0px inset;

@@ -109,6 +109,7 @@ function addNewDaytoDOM(day) {
         form.date.value = day.date;
         form.priority.value = day.priority;
         form.notes.value = day.notes;
+        form.checklist.value = day.checklist;
         form.style.display = 'block'
         newEntryForm = false
     });
