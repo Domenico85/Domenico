@@ -70,7 +70,7 @@ ul a:hover {
 }
 
 .column-right {
-    background-color: black;
+    background-color: rgb(214, 214, 214);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +79,7 @@ ul a:hover {
 
 .new-task {
     display: flex;
-    color: white;
+    color: rgb(9, 9, 9);
     gap: 10px;
     position: fixed;
     top: 10px;
@@ -345,8 +345,7 @@ form button:after {
     margin-top: 20px;
 }
 
-input[type=checkbox],
-input[type=radio] {
+input[type=checkbox] {
 
     -ms-transform: scale(2);
     -moz-transform: scale(2);
@@ -482,3 +481,66 @@ input[type=radio] {
     display: flex;
     gap: 7px;
 }
+
+.priority-btn {
+    display: inline-block;
+    margin: 0 1.5rem 0 -5px;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.priority-btn:hover {
+    color: white;
+}
+
+.button-low {
+    border: 1px solid green;
+    color: green;
+}
+
+.button-medium {
+    border: 1px solid orange;
+    color: orange;
+}
+
+.button-high {
+    border: 1px solid red;
+    color: red;
+}
+
+
+input[type="radio"]:checked + label.button-low, 
+.button-low:hover {
+    background-color: green;
+    color: white
+}
+
+input[type="radio"]:checked + label.button-medium, 
+.button-medium:hover {
+    background-color: orange;
+    color: white;
+}
+input[type="radio"]:checked + label.button-high, 
+.button-high:hover {
+    background-color: red;
+    color: white;
+}
+
+.priority input[type="radio"] {
+
+    position: relative;
+    left: 2.2rem;
+    height: 1px;
+    width: 8px;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    
+}
+

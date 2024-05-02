@@ -1,4 +1,5 @@
 let newEntryForm = true
+let selectedToDoId;
 const storedEntries = JSON.parse(localStorage.getItem('entries'));
 let entries = storedEntries || [];
 const form = document.querySelector('form');
@@ -52,21 +53,24 @@ form.addEventListener('submit', function (event) {
         dayEntry[name] = value
     }
 
-    const day = new MyDay(dayEntry)
-    console.log('day', day);
+
     if (newEntryForm) {
+        const day = new MyDay(dayEntry)
         addNewDaytoDOM(day);
         entries.push(day);
         console.log('new');
 
     } else {
-
-        console.log('edit');
-        const index = entries.findIndex(entry => entry.id === day.id);
-        if (index !== -1) {
-            Object.assign(entries[index], dayEntry);
-            editDayOnDOM(day);
-        }
+        console.log('dayentry',dayEntry)
+        const entry = entries.find(entry => entry.id === selectedToDoId);
+        console.log(' updating this: ', entry)
+        console.log(' entries  ', entries)
+        
+        // console.log('edit', entry);
+        // if (index !== -1) {
+        //     Object.assign(entries[index], dayEntry);
+        //     editDayOnDOM(day);
+        // }
     }
 
     console.log(entries);
@@ -104,14 +108,15 @@ function addNewDaytoDOM(day) {
 
         console.log('miao', day)
 
+        selectedToDoId = day.id
         form.title.value = day.title;
         form.description.value = day.description;
         form.date.value = day.date;
         form.priority.value = day.priority;
         form.notes.value = day.notes;
         form.checklist.value = day.checklist;
-        form.style.display = 'block'
-        newEntryForm = false
+        form.style.display = 'block';
+        newEntryForm = false;
     });
     optionsDiv.appendChild(editBtn)
 
