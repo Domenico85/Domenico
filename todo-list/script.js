@@ -1,4 +1,3 @@
-let newEntryForm = true
 let selectedToDoId;
 const storedEntries = JSON.parse(localStorage.getItem('entries'));
 let entries = storedEntries || [];
@@ -9,8 +8,9 @@ function saveEntries() {
 }
 
 function loadEntries() {
+    document.querySelectorAll('.day:not(.example)').forEach(e =>{ console.log(e); e.remove()} )
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
-    // console.log(storedEntries);
+
     if (storedEntries) {
         entries.length = 0;
         storedEntries.forEach(dayData => {
@@ -24,7 +24,11 @@ function loadEntries() {
 window.addEventListener('load', loadEntries);
 
 function MyDay(day) {
-    this.id = Math.floor(Math.random() * 1000);
+    if (day.id) {
+        this.id = day.id
+    } else {
+        this.id = Math.floor(Math.random() * 1000);
+    }
     this.title = day.title;
     this.description = day.description;
     this.date = day.date;
@@ -41,10 +45,8 @@ function MyDay(day) {
     }
 }
 
-// form.reset();
 form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    console.log('submit', newEntryForm);
+    event.preventDefault(); 
 
     const data = new FormData(form);
     const dayEntry = {}
@@ -54,30 +56,31 @@ form.addEventListener('submit', function (event) {
     }
 
 
-    if (newEntryForm) {
+    if (!selectedToDoId) {
+        console.log('NEW')
         const day = new MyDay(dayEntry)
         addNewDaytoDOM(day);
-        entries.push(day);
-        console.log('new');
+        entries.push(day); 
 
     } else {
-        console.log('dayentry',dayEntry)
-        const entry = entries.find(entry => entry.id === selectedToDoId);
-        console.log(' updating this: ', entry)
-        console.log(' entries  ', entries)
-        
-        // console.log('edit', entry);
-        // if (index !== -1) {
-        //     Object.assign(entries[index], dayEntry);
-        //     editDayOnDOM(day);
-        // }
+        console.log('EDTI')
+        dayEntry.id = selectedToDoId
+        const updatedDay = new MyDay(dayEntry)
+
+        entries = entries.map((entry) => {
+            if (entry.id == selectedToDoId) {
+                return updatedDay
+            } else {
+                return entry
+            }
+        }) 
+
     }
 
-    console.log(entries);
     saveEntries();
     form.reset();
     form.style.display = 'none'
-
+    loadEntries()
 })
 
 function addNewDaytoDOM(day) {
@@ -103,10 +106,6 @@ function addNewDaytoDOM(day) {
     editBtn.classList.add('edit');
     editBtn.innerHTML = '<img src=\"img/edit.svg"\ width=\"20px\""alt=\"edit\">';
     editBtn.addEventListener('click', function () {
-
-        console.log('we have', entries)
-
-        console.log('miao', day)
 
         selectedToDoId = day.id
         form.title.value = day.title;
@@ -152,7 +151,6 @@ function createDayDetails(day) {
     });
     dayDetails.appendChild(exitButton);
 
-
     const title = document.createElement('h1');
     title.innerHTML = `<span>${day.title}</span>`;
     dayDetails.appendChild(title);
@@ -172,30 +170,11 @@ function createDayDetails(day) {
     checklist.innerHTML = `Checklist: ${day.checklist}`;
     dayDetails.appendChild(checklist);
 
-
-
     document.querySelector('#to-do-list').appendChild(dayDetails);
 }
 
-function editDayOnDOM(day) {
-    // console.log()
-
-    // console.log('miao',day)
-
-    //     form.style.display = 'block'
-
-
-    // form.title.value = day.title;
-    // form.description.value = day.description;
-    // form.date.value = day.date;
-    // form.priority.value = day.priority;
-    // form.notes.value = day.notes;
-
-}
-
-
+  
 let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
 checkboxes.forEach(function (checkbox) {
     checkbox.addEventListener('change', function () {
         let name = this.name;
@@ -212,6 +191,7 @@ checkboxes.forEach(function (checkbox) {
 
 let btnFormAppear = document.querySelector(".new-task button");
 btnFormAppear.addEventListener('click', function () {
+    selectedToDoId = null
     form.style.display = 'block'
 })
 

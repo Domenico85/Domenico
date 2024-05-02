@@ -142,6 +142,7 @@ form {
     z-index: 10000;
     background-color: black;
     display: none;
+    margin-top: 30px;
 }
 
 fieldset {
@@ -353,6 +354,11 @@ input[type=checkbox] {
     -o-transform: scale(2);
     transform: scale(2);
     padding: 10px;
+    accent-color: red;
+}
+
+.done input[type=checkbox] {
+    accent-color: green;
 }
 
 #to-do-list {
@@ -515,18 +521,19 @@ input[type=checkbox] {
 }
 
 
-input[type="radio"]:checked + label.button-low, 
+input[type="radio"]:checked+label.button-low,
 .button-low:hover {
     background-color: green;
     color: white
 }
 
-input[type="radio"]:checked + label.button-medium, 
+input[type="radio"]:checked+label.button-medium,
 .button-medium:hover {
     background-color: orange;
     color: white;
 }
-input[type="radio"]:checked + label.button-high, 
+
+input[type="radio"]:checked+label.button-high,
 .button-high:hover {
     background-color: red;
     color: white;
@@ -541,6 +548,5 @@ input[type="radio"]:checked + label.button-high,
     padding: 0;
     margin: 0;
     opacity: 0;
-    
-}
 
+}
