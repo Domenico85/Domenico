@@ -7,20 +7,20 @@ function saveEntries() {
     localStorage.setItem('entries', JSON.stringify(entries));
 }
 
-function loadEntries(){
+function loadEntries() {
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
     // console.log(storedEntries);
-    if (storedEntries){
+    if (storedEntries) {
         entries.length = 0;
-        storedEntries.forEach(dayData =>{
+        storedEntries.forEach(dayData => {
             const day = new MyDay(dayData);
             entries.push(day);
             addNewDaytoDOM(day);
-        }) 
+        })
     }
 }
 
- window.addEventListener('load', loadEntries);
+window.addEventListener('load', loadEntries);
 
 function MyDay(day) {
     this.id = Math.floor(Math.random() * 1000);
@@ -43,6 +43,7 @@ function MyDay(day) {
 // form.reset();
 form.addEventListener('submit', function (event) {
     event.preventDefault();
+    console.log('submit', newEntryForm);
 
     const data = new FormData(form);
     const dayEntry = {}
@@ -56,7 +57,11 @@ form.addEventListener('submit', function (event) {
     if (newEntryForm) {
         addNewDaytoDOM(day);
         entries.push(day);
+        console.log('new');
+
     } else {
+
+        console.log('edit');
         const index = entries.findIndex(entry => entry.id === day.id);
         if (index !== -1) {
             Object.assign(entries[index], dayEntry);
@@ -93,18 +98,31 @@ function addNewDaytoDOM(day) {
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit');
     editBtn.innerHTML = '<img src=\"img/edit.svg"\ width=\"20px\""alt=\"edit\">';
-    editBtn.addEventListener('click', editDayOnDOM(day))
+    editBtn.addEventListener('click', function () {
+
+        console.log('we have', entries)
+
+        console.log('miao', day)
+
+        form.title.value = day.title;
+        form.description.value = day.description;
+        form.date.value = day.date;
+        form.priority.value = day.priority;
+        form.notes.value = day.notes;
+        form.style.display = 'block'
+        newEntryForm = false
+    });
     optionsDiv.appendChild(editBtn)
 
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
     deleteBtn.addEventListener('click', function () {
-        
+
         entries = entries.filter(entry => entry.id !== day.id);
-            
+
         saveEntries();
-        
+
 
         newDayBox.remove();
     });
@@ -154,7 +172,13 @@ function createDayDetails(day) {
 }
 
 function editDayOnDOM(day) {
-    // const form = document.querySelector('form');
+    // console.log()
+
+    // console.log('miao',day)
+
+    //     form.style.display = 'block'
+
+
     // form.title.value = day.title;
     // form.description.value = day.description;
     // form.date.value = day.date;
@@ -179,12 +203,12 @@ checkboxes.forEach(function (checkbox) {
     });
 });
 
- 
-    let btnFormAppear = document.querySelector(".new-task button");
-    btnFormAppear.addEventListener('click', function () {
-        form.style.display = 'block'
-    })
- 
+
+let btnFormAppear = document.querySelector(".new-task button");
+btnFormAppear.addEventListener('click', function () {
+    form.style.display = 'block'
+})
+
 function showExampleDetails() {
     const btnDetails = document.querySelector(".details");
     const showOverlay = document.querySelector('.overlay');
