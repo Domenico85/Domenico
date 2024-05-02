@@ -1,26 +1,25 @@
 let newEntryForm = true
 const storedEntries = JSON.parse(localStorage.getItem('entries'));
 let entries = storedEntries || [];
-const form = document.querySelector('form');
 
 function saveEntries() {
     localStorage.setItem('entries', JSON.stringify(entries));
 }
 
-function loadEntries(){
+function loadEntries() {
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
-    // console.log(storedEntries);
-    if (storedEntries){
+    console.log(storedEntries);
+    if (storedEntries) {
         entries.length = 0;
-        storedEntries.forEach(dayData =>{
+        storedEntries.forEach(dayData => {
             const day = new MyDay(dayData);
             entries.push(day);
             addNewDaytoDOM(day);
-        }) 
+        })
     }
 }
 
- window.addEventListener('load', loadEntries);
+window.addEventListener('load', loadEntries);
 
 function MyDay(day) {
     this.id = Math.floor(Math.random() * 1000);
@@ -39,37 +38,32 @@ function MyDay(day) {
         \nCheckList: ${this.checklist}`;
     }
 }
-
-// form.reset();
+const form = document.querySelector('form');
+form.reset();
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const data = new FormData(form);
-    const dayEntry = {}
+    if (form.checkValidity()) {
+        const data = new FormData(form);
+        const dayEntry = {};
 
-    for (const [name, value] of data) {
-        dayEntry[name] = value
-    }
+        for (const [name, value] of data) {
+            dayEntry[name] = value
+        }
 
-    const day = new MyDay(dayEntry)
-    console.log('day', day);
-    if (newEntryForm) {
+        const day = new MyDay(dayEntry);
+
         addNewDaytoDOM(day);
         entries.push(day);
-    } else {
-        const index = entries.findIndex(entry => entry.id === day.id);
-        if (index !== -1) {
-            Object.assign(entries[index], dayEntry);
-            editDayOnDOM(day);
-        }
+        saveEntries();
+        form.reset();
+
+    }else {
+
+        alert("Please fill out the required fields.")
     }
 
-    console.log(entries);
-    saveEntries();
-    form.reset();
-    form.style.display = 'none'
-
-})
+});
 
 function addNewDaytoDOM(day) {
     const newDayBox = document.createElement('div');
@@ -100,11 +94,11 @@ function addNewDaytoDOM(day) {
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
     deleteBtn.addEventListener('click', function () {
-        
+
         entries = entries.filter(entry => entry.id !== day.id);
-            
+
         saveEntries();
-        
+
 
         newDayBox.remove();
     });
@@ -154,12 +148,12 @@ function createDayDetails(day) {
 }
 
 function editDayOnDOM(day) {
-    // const form = document.querySelector('form');
-    // form.title.value = day.title;
-    // form.description.value = day.description;
-    // form.date.value = day.date;
-    // form.priority.value = day.priority;
-    // form.notes.value = day.notes;
+    const form = document.querySelector('form');
+    form.title.value = day.title;
+    form.description.value = day.description;
+    form.date.value = day.date;
+    form.priority.value = day.priority;
+    form.notes.value = day.notes;
 
 }
 
@@ -179,12 +173,27 @@ checkboxes.forEach(function (checkbox) {
     });
 });
 
- 
+function formAppear() {
     let btnFormAppear = document.querySelector(".new-task button");
     btnFormAppear.addEventListener('click', function () {
+        let form = document.querySelector('form');
         form.style.display = 'block'
     })
- 
+}
+
+formAppear();
+
+function formDisappear() {
+    let btnFormDisappear = document.querySelector("form button");
+    btnFormDisappear.addEventListener('click', function () {
+        let form = document.querySelector('form');
+        form.style.display = 'none'
+    })
+}
+
+formDisappear();
+
+
 function showExampleDetails() {
     const btnDetails = document.querySelector(".details");
     const showOverlay = document.querySelector('.overlay');

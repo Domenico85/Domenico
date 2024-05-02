@@ -355,7 +355,9 @@ input[type=radio] {
     transform: scale(2);
     padding: 10px;
 }
-
+#to-do-list{
+    padding-top: 100px;
+}
 .day {
     background-color: wheat;
     display: flex;
@@ -366,8 +368,6 @@ input[type=radio] {
     font-size: 25px;
     margin-bottom: 10px;
     border-radius: 10px;
-    position: relative;
-    top: 60%;
 }
 
 .example img {
