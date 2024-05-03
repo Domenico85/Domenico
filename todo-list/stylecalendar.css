@@ -102,16 +102,21 @@
     background: #2b4450;
     border-radius: 4px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
-    height: 501px;
+    min-height: 520px;
     perspective: 1000;
     transition: .9s;
     transform-style: preserve-3d;
     width: 100%;
+    position: relative;
   }
   
 
   .front {
     transform: rotateY(0deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
   
   .current-date {
@@ -190,8 +195,10 @@
  
   
   .back {
-    height: 100%;
+   min-height: 520px;
     transform: rotateY(180deg);
+    position: relative;
+    
   }
   
   .back input {
@@ -286,4 +293,9 @@
 
   .fa-xmark{
     color: red;
+  }
+
+  .weeks span:hover{
+    background-color: orange;
+    border-radius: 50%;
   }
