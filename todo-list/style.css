@@ -70,16 +70,14 @@ ul a {
     color: black;
     width: fit-content;
     color: black;
-    padding: 6px;
-
+    padding: 6px 20px;
 }
 
 ul a:hover {
     background-color: beige;
-    padding: 3px;
 }
 
-li:hover::marker {
+li::marker {
     content: "⏵";
     color: red;
 }
