@@ -97,6 +97,9 @@ li::marker {
     top: 10px;
     right: 10px;
     align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .new-task span {

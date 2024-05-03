@@ -185,22 +185,23 @@ function createDayDetails(day) {
 
     //data in the details box
     const title = document.createElement('h1');
+    title.style.color = 'blue';
     title.innerHTML = `${day.title}`;
     dayDetails.appendChild(title);
     const description = document.createElement('h2');
-    description.innerHTML = `Description: ${day.description}`
+    description.innerHTML = `<span style="color:red">Description:</span> ${day.description}`
     dayDetails.appendChild(description);
     const dueDate = document.createElement('h2');
-    dueDate.innerHTML = `DueDate: ${day.date}`;
+    dueDate.innerHTML = `<span style="color:red">DueDate:</span> ${day.date}`;
     dayDetails.appendChild(dueDate);
     const priority = document.createElement('h2');
-    priority.innerHTML = `Priority:  ${day.priority}`
+    priority.innerHTML = `<span style="color:red">Priority:</span>  ${day.priority}`
     dayDetails.appendChild(priority);
     const notes = document.createElement('h2');
-    notes.innerHTML = `Notes: ${day.notes}`
+    notes.innerHTML = `<span style="color:red">Notes:</span> ${day.notes}`
     dayDetails.appendChild(notes);
     const checklist = document.createElement('h2');
-    checklist.innerHTML = `Checklist: ${day.checklist}`;
+    checklist.innerHTML = `<span style="color:red">Checklist:</span> ${day.checklist}`;
     dayDetails.appendChild(checklist);
 
 
