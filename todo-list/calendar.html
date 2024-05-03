@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo Calendar</title>
-    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="stylecalendar.css">
-    <script src="calendar.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo Calendar</title>
+  <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="stylecalendar.css">
+  <script src="calendar.js" defer></script>
 </head>
+
 <body>
-    
-     <div class="container">
-        <div class="calendar">
-          <div class="front">
-            <div class="current-date">
-              <!-- <h1>Friday 15th</h1>
-              <h1>January 2016</h1>  -->
+  <div class="column-left">
+    <div class="title">
+
+      <img src="img/logo.jpeg" alt="logo" class="logo">
+      <h1>Todo <span>List</span></h1>
+    </div>
+
+    <ul class="nav">
+
+      <li> <a href="index.html">My Day</a> </li>
+      <li> <a href="#">Next 7 Days</a> </li>
+      <li> <a href="#">Calendar</a> </li>
+      <li> <a href="#">Profile</a> </li>
+
+
+
+    </ul>
+  </div>
+<div class="column-right">
+
+
+  <div class="container">
+    <div class="calendar">
+      <div class="front">
+        <div class="current-date">
+
+        </div>
+
+        <div class="current-month">
+          <ul class="week-days">
+
+          </ul>
+
+          <div class="weeks">
+            <div class="first">
+
             </div>
-  
-            <div class="current-month">
-              <ul class="week-days">
-               
-              </ul>
-  
-              <div class="weeks">
-                <div class="first">
-                 
-                </div>
-  
-                <div class="second">
-                 
-                </div>
-  
-                <div class="third">
-                 
-                </div>
-  
-                <div class="fourth">
-                  
-                </div>
-  
-                <div class="fifth">
-                  
-                </div>
-              </div>
+
+            <div class="second">
+
             </div>
-          </div>
-  
-          <div class="back">
-            <input placeholder="What's the event?">
-            <div class="info">
-              <div class="date">
-                <p class="info-date">
-                Date: <span>Jan 15th, 2016</span>
-                </p>
-                <p class="info-time">
-                  Time: <span>6:35 PM</span>
-                </p>
-              </div>
-              <div class="address">
-                <p>
-                  Address: <span>129 W 81st St, New York, NY</span>
-                </p>
-              </div>
-              <div class="observations">
-                <p>
-                  Observations: <span>Be there 15 minutes earlier</span>
-                </p>
-              </div>
+
+            <div class="third">
+
             </div>
-  
-            <div class="actions">
-              <button class="save">
-                Save <i class="ion-checkmark"></i>
-              </button>
-              <button class="dismiss">
-                Dismiss <i class="ion-android-close"></i>
-              </button>
+
+            <div class="fourth">
+
+            </div>
+
+            <div class="fifth">
+
             </div>
           </div>
-  
         </div>
       </div>
+
+      <div class="back">
+        <input placeholder="What's the event?">
+        <div class="info">
+          <div class="date">
+            <p class="info-date">
+              Date: <span>Jan 15th, 2016</span>
+            </p>
+            <p class="info-time">
+              Time: <span>6:35 PM</span>
+            </p>
+          </div>
+          <div class="address">
+            <p>
+              Address: <span>129 W 81st St, New York, NY</span>
+            </p>
+          </div>
+          <div class="observations">
+            <p>
+              Observations: <span>Be there 15 minutes earlier</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="save">
+            Save <i class="ion-checkmark"></i>
+          </button>
+          <button class="dismiss">
+            Dismiss <i class="ion-android-close"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
+
 </html>

@@ -46,7 +46,7 @@ function getDaysOfTheMonth(){
     }
 }
 
-function addMonthtoCalendar() {
+function addMonthToCalendar() {
     const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth();
     const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
@@ -93,7 +93,7 @@ function addMonthtoCalendar() {
     });
 }
 
-addMonthtoCalendar();
+addMonthToCalendar();
 
 const app = {
     settings: {
