@@ -386,7 +386,7 @@ input[type=checkbox] {
     justify-content: space-between;
     align-items: center;
     padding: 7px;
-    color: red;
+    color: #434343;
     font-size: 25px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -557,5 +557,22 @@ input[type="radio"]:checked+label.button-high,
     padding: 0;
     margin: 0;
     opacity: 0;
+
+}
+
+.priority-high {
+    border-left: 6px solid red;
+    border-radius: 10px;
+}
+
+.priority-medium {
+    border-left: 6px solid orange;
+    border-radius: 10px;
+
+}
+
+.priority-low {
+    border-left: 6px solid green;
+    border-radius: 10px;
 
 }

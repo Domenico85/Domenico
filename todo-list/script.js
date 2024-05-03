@@ -6,8 +6,7 @@ const overlayElement = document.querySelector('.overlay');
 const form = document.querySelector('form');
 form.reset();
 
-
-
+ 
 function editDayOnDOM(day) {
     let detailsDiv = document.querySelector(`#day-${day.id}`);
     detailsDiv.querySelector('h1').innerText = `${day.title}`
@@ -161,8 +160,8 @@ function addNewDaytoDOM(day) {
     const detailsDiv = createDayDetails(day);
     wrapper.appendChild(newDayBox)
     wrapper.appendChild(detailsDiv)
-
     document.querySelector('#to-do-list').appendChild(wrapper)
+    setPriorityColor(day)
 
 }
 
@@ -290,3 +289,10 @@ overlayElement.addEventListener('click', function () {
     });
     this.style.zIndex = '-1';
 });
+
+function setPriorityColor(day) {
+    const priority = day.priority;
+    const dayDiv = document.querySelector(`#day-${day.id}`);
+    dayDiv.className = ''; // Reset any existing classes
+    dayDiv.classList.add('day-wrapper', `priority-${priority}`);
+}
