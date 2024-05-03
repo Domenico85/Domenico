@@ -5,13 +5,21 @@ let entries = storedEntries || [];
 const form = document.querySelector('form');
 
 
+function editDayOnDOM(day){
+    let detailsDiv = document.querySelector(`#day-${day.id}`);
+    detailsDiv.querySelector('h1').innerText = `${day.title}`   
+}
+
+
 // function to save data
 function saveEntries() {
     localStorage.setItem('entries', JSON.stringify(entries));
 }
 //function to load the data
 function loadEntries() {
-    document.querySelectorAll('.day:not(.example)').forEach(e => { console.log(e); e.remove() })
+    document.querySelectorAll('.day-wrapper').forEach(e => { 
+        console.log("REmoving this", e);
+        e.remove() })
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
 
     if (storedEntries) {
@@ -26,7 +34,7 @@ function loadEntries() {
 
 window.addEventListener('load', loadEntries);
 
-//array of objects
+// day object
 function MyDay(day) {
     if (day.id) {
         this.id = day.id
@@ -76,7 +84,7 @@ form.addEventListener('submit', function (event) {
                 return entry
             }
         })
-
+        editDayOnDOM(updatedDay);
     }
 
     saveEntries();
@@ -89,6 +97,7 @@ function addNewDaytoDOM(day) {
     //creation of box
     const wrapper = document.createElement('div');
     wrapper.id = "day-" + day.id
+    wrapper.classList.add('day-wrapper')
     const newDayBox = document.createElement('div');
     newDayBox.classList.add('day');
     const pTag = document.createElement('p');
@@ -115,6 +124,8 @@ function addNewDaytoDOM(day) {
     editBtn.innerHTML = '<img src=\"img/edit.svg"\ width=\"20px\""alt=\"edit\">';
     editBtn.addEventListener('click', function () {
 
+        form.querySelector('button').innerText = 'Edit'
+        console.log(form.querySelector('button'))
         selectedToDoId = day.id
         form.title.value = day.title;
         form.description.value = day.description;
@@ -170,10 +181,10 @@ function createDayDetails(day) {
 
     //data in the details box
     const title = document.createElement('h1');
-    title.innerHTML = `<span>${day.title}</span>`;
+    title.innerHTML = `${day.title}`;
     dayDetails.appendChild(title);
     const description = document.createElement('h2');
-    description.innerHTML = `<span>Description<span>: ${day.description}`
+    description.innerHTML = `Description: ${day.description}`
     dayDetails.appendChild(description);
     const dueDate = document.createElement('h2');
     dueDate.innerHTML = `DueDate: ${day.date}`;
@@ -234,6 +245,8 @@ checkboxes.forEach(function (checkbox) {
 //creation & function of the "Add New Task" button
 let btnFormAppear = document.querySelector(".new-task button");
 btnFormAppear.addEventListener('click', function () {
+    form.querySelector('button').innerText = 'Add'
+
     selectedToDoId = null
     form.style.display = 'block'
 })
