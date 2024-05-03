@@ -11,7 +11,7 @@ function saveEntries() {
 }
 //function to load the data
 function loadEntries() {
-    document.querySelectorAll('.day:not(.example)').forEach(e =>{ console.log(e); e.remove()} )
+    document.querySelectorAll('.day:not(.example)').forEach(e => { console.log(e); e.remove() })
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
 
     if (storedEntries) {
@@ -50,7 +50,7 @@ function MyDay(day) {
 }
 //submit of the Form
 form.addEventListener('submit', function (event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const data = new FormData(form);
     const dayEntry = {}
@@ -63,7 +63,7 @@ form.addEventListener('submit', function (event) {
     if (!selectedToDoId) {
         const day = new MyDay(dayEntry)
         addNewDaytoDOM(day);
-        entries.push(day); 
+        entries.push(day);
 
     } else {
         dayEntry.id = selectedToDoId
@@ -75,7 +75,7 @@ form.addEventListener('submit', function (event) {
             } else {
                 return entry
             }
-        }) 
+        })
 
     }
 
@@ -94,24 +94,21 @@ function addNewDaytoDOM(day) {
     const pTag = document.createElement('p');
     pTag.innerText = day.title
     newDayBox.appendChild(pTag)
-    
+
     //div with all the buttons
     const optionsDiv = document.createElement('div');;
     optionsDiv.classList.add('options');
     newDayBox.appendChild(optionsDiv);
-    
+
     //creation & function of the details button
     const detailsBtn = document.createElement('button');
     detailsBtn.classList.add('details-btn');
     detailsBtn.innerHTML = 'Details';
     detailsBtn.addEventListener('click', function () {
-        console.log(day)
-
-        showDetails();
-        overlay.style.zIndex = '1';
+        showDetails(day.id)
     });
     optionsDiv.appendChild(detailsBtn);
-    
+
     //creation & function of the edit button
     const editBtn = document.createElement('button');
     editBtn.classList.add('edit');
@@ -129,38 +126,38 @@ function addNewDaytoDOM(day) {
         newEntryForm = false;
     });
     optionsDiv.appendChild(editBtn)
-    
+
     //creation & function of the delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('delete');
     deleteBtn.innerHTML = '<img src=\"img/delete.svg"\ width=\"20px\""alt=\"edit\">';
     deleteBtn.addEventListener('click', function () {
-        
+
         entries = entries.filter(entry => entry.id !== day.id);
-        
+
         saveEntries();
-        
-        
+
+
         newDayBox.remove();
     });
     optionsDiv.appendChild(deleteBtn)
-    
+
     //calling function
     const detailsDiv = createDayDetails(day);
     wrapper.appendChild(newDayBox)
     wrapper.appendChild(detailsDiv)
-    
+
     document.querySelector('#to-do-list').appendChild(wrapper)
-    
+
 }
 
 //Function to create all the data details
 function createDayDetails(day) {
-   
+
     //creation of the details box
     const dayDetails = document.createElement('div');
-    dayDetails.classList.add('details-day');
-   
+    dayDetails.classList.add(`details-day`);
+
     //close button of the details box
     const exitButton = document.createElement('h2');
     exitButton.id = 'exit';
@@ -191,23 +188,30 @@ function createDayDetails(day) {
     checklist.innerHTML = `Checklist: ${day.checklist}`;
     dayDetails.appendChild(checklist);
 
+
+    dayDetails.id = `details-${day.id}`;
     return dayDetails
     // document.querySelector('#to-do-list').appendChild(dayDetails);
 }
 
 
 //Function to show the details after click of the details button
-function showDetails(){
-    const btnDetails = document.querySelector(".details-btn");
-    console.log('Showing deatils', btnDetails)
-    const showOverlay = document.querySelector('.overlay');
-    btnDetails.addEventListener('click', function(){
-        const details = document.querySelector('.details-day');
-        console.log(details)
-        details.classList.add('active');
-        showOverlay.style.zIndex = '1';
-    });
+function showDetails(dayId) {
+    const detailsDiv = document.querySelector(`#details-${dayId}`);
+    const overlay = document.querySelector('.overlay');
+
+    // Toggle the 'active' class to show or hide the details
+    detailsDiv.classList.toggle('active');
+    overlay.style.zIndex = detailsDiv.classList.contains('active') ? '1' : '-1';
 }
+    document.querySelector('.overlay').addEventListener('click', function () {
+
+    document.querySelectorAll('.details-day.active').forEach(function (detail) {
+        detail.classList.remove('active');
+    });
+
+    this.style.zIndex = '-1';
+});
 
 
 
@@ -235,7 +239,8 @@ btnFormAppear.addEventListener('click', function () {
 })
 
 
-//function to show ONLY the example details
+//function to show ONLY the example
+
 function showExampleDetails() {
     const btnDetails = document.querySelector(".details-btn-example");
     const showOverlay = document.querySelector('.overlay');
@@ -248,7 +253,7 @@ function showExampleDetails() {
 
 showExampleDetails();
 
-//Function to close the details button
+
 function closeDetails() {
     const example = document.querySelector('.details-example');
     example.classList.remove('active');
