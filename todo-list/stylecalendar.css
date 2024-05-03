@@ -278,3 +278,12 @@
   .front, .back {
     backface-visibility: hidden;
   }
+
+  .fa-check{
+    color: green;
+    size: 20%;
+  }
+
+  .fa-xmark{
+    color: red;
+  }
