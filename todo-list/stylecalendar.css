@@ -137,7 +137,8 @@
     display: flex;
     justify-content: space-between;
     font-weight: 600;
-    padding: 30px 40px;
+    padding-left: 46px;
+    padding-right: 54px;
   }
   
   .days {
@@ -168,6 +169,10 @@
   
   .weeks span {
     padding: 10px;
+    min-width: 50px;
+    min-height: 50px;
+    text-align: center;
+    margin-top: 10px;
   }
   
   .weeks span.active {

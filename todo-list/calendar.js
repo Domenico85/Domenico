@@ -91,6 +91,15 @@ function addMonthToCalendar() {
             }
         }
     });
+
+    const lastWeek = currentWeeks[currentWeeks.length - 1];
+    const lastWeekChildrenCount = lastWeek.children.length;
+    for (let i = lastWeekChildrenCount; i < 7; i++) {
+        let emptyDay = document.createElement('span');
+        emptyDay.classList.add('next-month');
+        emptyDay.innerText = ' ';
+        lastWeek.appendChild(emptyDay);
+    }
 }
 
 addMonthToCalendar();
