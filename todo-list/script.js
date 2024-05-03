@@ -2,12 +2,15 @@
 let selectedToDoId;
 const storedEntries = JSON.parse(localStorage.getItem('entries'));
 let entries = storedEntries || [];
+const overlayElement = document.querySelector('.overlay');
 const form = document.querySelector('form');
+form.reset();
 
 
-function editDayOnDOM(day){
+
+function editDayOnDOM(day) {
     let detailsDiv = document.querySelector(`#day-${day.id}`);
-    detailsDiv.querySelector('h1').innerText = `${day.title}`   
+    detailsDiv.querySelector('h1').innerText = `${day.title}`
 }
 
 
@@ -17,9 +20,10 @@ function saveEntries() {
 }
 //function to load the data
 function loadEntries() {
-    document.querySelectorAll('.day-wrapper').forEach(e => { 
+    document.querySelectorAll('.day-wrapper').forEach(e => {
         console.log("REmoving this", e);
-        e.remove() })
+        e.remove()
+    })
     const storedEntries = JSON.parse(localStorage.getItem('entries'));
 
     if (storedEntries) {
@@ -175,7 +179,7 @@ function createDayDetails(day) {
     exitButton.innerText = 'X';
     exitButton.addEventListener('click', function () {
         dayDetails.classList.remove('active');
-        overlay.style.zIndex = '-1';
+        overlayElement.style.zIndex = '-1';
     });
     dayDetails.appendChild(exitButton);
 
@@ -209,13 +213,12 @@ function createDayDetails(day) {
 //Function to show the details after click of the details button
 function showDetails(dayId) {
     const detailsDiv = document.querySelector(`#details-${dayId}`);
-    const overlay = document.querySelector('.overlay');
 
     // Toggle the 'active' class to show or hide the details
     detailsDiv.classList.toggle('active');
-    overlay.style.zIndex = detailsDiv.classList.contains('active') ? '1' : '-1';
+    overlayElement.style.zIndex = detailsDiv.classList.contains('active') ? '1' : '-1';
 }
-    document.querySelector('.overlay').addEventListener('click', function () {
+    overlayElement.addEventListener('click', function () {
 
     document.querySelectorAll('.details-day.active').forEach(function (detail) {
         detail.classList.remove('active');
@@ -245,10 +248,11 @@ checkboxes.forEach(function (checkbox) {
 //creation & function of the "Add New Task" button
 let btnFormAppear = document.querySelector(".new-task button");
 btnFormAppear.addEventListener('click', function () {
-    form.querySelector('button').innerText = 'Add'
-
-    selectedToDoId = null
-    form.style.display = 'block'
+    form.querySelector('button').innerText = 'Add';
+    selectedToDoId = null;
+    form.style.display = 'block';
+    overlayElement.style.zIndex = '1';
+   
 })
 
 
@@ -256,11 +260,10 @@ btnFormAppear.addEventListener('click', function () {
 
 function showExampleDetails() {
     const btnDetails = document.querySelector(".details-btn-example");
-    const showOverlay = document.querySelector('.overlay');
     btnDetails.addEventListener('click', function () {
         const example = document.querySelector('.details-example');
         example.classList.add('active');
-        showOverlay.style.zIndex = '1';
+        overlayElement.style.zIndex = '1';
     })
 }
 
@@ -270,13 +273,19 @@ showExampleDetails();
 function closeDetails() {
     const example = document.querySelector('.details-example');
     example.classList.remove('active');
-    overlay.style.zIndex = '-1'
+    overlayElement.style.zIndex = '-1'
 }
 const xButton = document.querySelector('#exit')
 xButton.addEventListener('click', closeDetails)
 
-const overlay = document.querySelector('.overlay')
-
-overlay.addEventListener('click', closeDetails)
+overlayElement.addEventListener('click', closeDetails)
 
 
+overlayElement.addEventListener('click', function () {
+    form.style.display = 'none';
+    selectedToDoId = null;
+    document.querySelectorAll('.details-day.active').forEach(function (detail) {
+        detail.classList.remove('active');
+    });
+    this.style.zIndex = '-1';
+});
