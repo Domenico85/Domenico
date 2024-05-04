@@ -22,19 +22,26 @@ function getDateData(date) {
 }
 
 function showTodayDate(date) {
-  const { dayLong, year, dayNumber, month } = getDateData(date)
-  const arrow = document.querySelector('#arrow_1')
-  let todayElement = document.createElement('h1');
-  todayElement.innerText = (dayLong + '  ' + dayNumber);
-  let todayElement2 = document.createElement('h1')
-  todayElement2.innerText = (month + '  ' + year)
-  arrow.insertAdjacentElement('afterend', todayElement2)
-  arrow.insertAdjacentElement('afterend', todayElement);
-}
-showTodayDate(currentDate)
+    const { dayLong, year, dayNumber, month } = getDateData(date)
+    const arrow = document.querySelector('#arrow_1')
+    let todayElement = document.createElement('h1');
+    todayElement.innerText = (dayLong + '  ' + dayNumber);
+    let todayElement2 = document.createElement('h1')
+    todayElement2.innerText = (month + '  ' + year)
+  
+    // Clear the current-date div before adding new elements
+    const currentDateDiv = document.querySelector('.current-date');
+    console.log("Current date div content before clearing:", currentDateDiv.innerHTML);
+    currentDateDiv.innerHTML = '';
+    console.log("Current date div content after clearing:", currentDateDiv.innerHTML);
+  
+    arrow.insertAdjacentElement('afterend', todayElement2)
+    arrow.insertAdjacentElement('afterend', todayElement);
+  }
+  
 
-function getDaysOfTheMonth() {
-  const { year, monthNumber } = getDateData(currentDate);
+function getDaysOfTheMonth(date) {
+  const { year, monthNumber } = getDateData(date);
   const firstDayOfMonth = new Date(year, monthNumber - 1, 1);
   const dayOne = firstDayOfMonth.getDay();
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -46,8 +53,8 @@ function getDaysOfTheMonth() {
   }
 }
 
-function addMonthToCalendar() {
-  const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth();
+function addMonthToCalendar(date) {
+  const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth(date);
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   let weekDaysList = document.querySelector('.week-days');
@@ -64,7 +71,6 @@ function addMonthToCalendar() {
   let currentDay = 1;
   let currentDayOfWeek = weekday.indexOf(firstDayName);
   let currentWeeks = document.querySelectorAll('.weeks > div');
-
 
   currentWeeks.forEach((week, index) => {
     week.innerHTML = '';
@@ -102,7 +108,7 @@ function addMonthToCalendar() {
   assignUniqueDayIds();
 }
 
-addMonthToCalendar();
+addMonthToCalendar(currentDate);
 
 const app = {
   settings: {
@@ -122,7 +128,6 @@ const app = {
     this.settings.container.classList.toggle('flip');
 
     currentSide.style.transition = 'opacity 0.9s';
-    currentSide.style.opacity = '0';
 
     setTimeout(function () {
       currentSide.style.display = 'none';
@@ -141,10 +146,18 @@ const app = {
       });
     });
 
-    settings.buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        app.swap(settings.form, settings.calendar);
-      });
+    document.getElementById('arrow_1').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() - 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
+    });
+
+    document.getElementById('arrow_2').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() + 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
     });
   }
 };
@@ -161,30 +174,3 @@ function assignUniqueDayIds() {
     dayIdCounter++;
   });
 }
-
-// function prevNextMonths() {
-//   const currentDate = new Date();
-//   let newDate = new Date(currentDate);
-
-//   
-//   function showNewMonthDate() {
-//       showTodayDate(newDate);
-//   }
-
-//   
-//   document.getElementById('arrow_1').addEventListener('click', function() {
-//       // Set the date to the first day of the previous month
-//       newDate.setDate(1);
-//       newDate.setMonth(newDate.getMonth() - 1);
-//       showNewMonthDate();
-//   });
-
-//   
-//   document.getElementById('arrow_2').addEventListener('click', function() {
-//       // Set the date to the first day of the next month
-//       newDate.setDate(1);
-//       newDate.setMonth(newDate.getMonth() + 1);
-//       showNewMonthDate();
-//   });
-// }
-//   prevNextMonths()
