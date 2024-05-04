@@ -22,15 +22,13 @@ function getDateData (){
 
 function showTodayDate() {
     const {dayLong, year, dayNumber, month } = getDateData()
-    // let todayDate = document.querySelector('.current-date');
-    const arrow = document.querySelector('#arrow_1')
+    let todayDate = document.querySelector('.current-date');
     let todayElement = document.createElement('h1');
     todayElement.innerText = (dayLong + '  ' + dayNumber);
-    // todayDate.appendChild(todayElement);
+    todayDate.appendChild(todayElement);
     let todayElement2 = document.createElement('h1')
     todayElement2.innerText = (month + '  ' + year)
-    arrow.insertAdjacentElement('afterend' , todayElement2)
-    arrow.insertAdjacentElement('afterend', todayElement);
+    todayDate.appendChild(todayElement2)
 }
 showTodayDate()
 

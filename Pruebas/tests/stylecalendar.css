@@ -334,7 +334,7 @@ html {
   width: 3em;
   opacity: 0;
   transition: opacity 0.3s 0s;
-  padding: 0 0;
+  padding: 0 0.5em;
 }
 
 .arrow-wrapper .arrow:hover span {
