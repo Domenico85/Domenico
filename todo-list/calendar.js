@@ -22,16 +22,21 @@ function getDateData(date) {
 }
 
 function showTodayDate(date) {
+  console.log("show today")
   const { dayLong, year, dayNumber, month } = getDateData(date)
   const arrow = document.querySelector('#arrow_1')
   let todayElement = document.createElement('h1');
   todayElement.innerText = (dayLong + '  ' + dayNumber);
+  
+  const currentDateH1Elements = document.querySelectorAll('.current-date h1');
+currentDateH1Elements.forEach((h1)=> h1.remove())
+
   let todayElement2 = document.createElement('h1')
   todayElement2.innerText = (month + '  ' + year)
   arrow.insertAdjacentElement('afterend', todayElement2)
   arrow.insertAdjacentElement('afterend', todayElement);
 }
-showTodayDate(currentDate)
+
 
 function getDaysOfTheMonth() {
   const { year, monthNumber } = getDateData(currentDate);
@@ -101,56 +106,6 @@ function addMonthToCalendar() {
   }
   assignUniqueDayIds();
 }
-
-addMonthToCalendar();
-
-const app = {
-  settings: {
-    container: document.querySelector('.calendar'),
-    calendar: document.querySelector('.front'),
-    form: document.querySelector('.back'),
-    days: document.querySelectorAll('.weeks span'),
-    input: document.querySelector('.back input'),
-    buttons: document.querySelectorAll('.actions button')
-  },
-
-  init: function () {
-    this.bindUIActions();
-  },
-
-  swap: function (currentSide, desiredSide) {
-    this.settings.container.classList.toggle('flip');
-
-    currentSide.style.transition = 'opacity 0.9s';
-    currentSide.style.opacity = '0';
-
-    setTimeout(function () {
-      currentSide.style.display = 'none';
-      desiredSide.style.display = 'block';
-      desiredSide.style.opacity = '1';
-    }, 900);
-  },
-
-  bindUIActions: function () {
-    const settings = this.settings;
-
-    settings.days.forEach(function (day) {
-      day.addEventListener('click', function () {
-        app.swap(settings.calendar, settings.form);
-        settings.input.focus();
-      });
-    });
-
-    settings.buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        app.swap(settings.form, settings.calendar);
-      });
-    });
-  }
-};
-
-app.init();
-
 function assignUniqueDayIds() {
   const daysContainer = document.querySelector('.weeks');
   const dayElements = daysContainer.querySelectorAll('span');
@@ -187,4 +142,58 @@ function prevNextMonths() {
       showNewMonthDate();
   });
 }
-  prevNextMonths()
+
+const app = {
+  settings: {
+    container: document.querySelector('.calendar'),
+    calendar: document.querySelector('.front'),
+    form: document.querySelector('.back'),
+    days: document.querySelectorAll('.weeks span'),
+    input: document.querySelector('.back input'),
+    buttons: document.querySelectorAll('.actions button')
+  },
+
+  init: function () {
+
+console.log('ini 0 ')
+    this.bindUIActions();
+    addMonthToCalendar(currentDate);
+    console.log("ini")
+    showTodayDate(currentDate)
+    prevNextMonths()
+  },
+
+  swap: function (currentSide, desiredSide) {
+    this.settings.container.classList.toggle('flip');
+
+    currentSide.style.transition = 'opacity 0.9s';
+    currentSide.style.opacity = '0';
+
+    setTimeout(function () {
+      currentSide.style.display = 'none';
+      desiredSide.style.display = 'block';
+      desiredSide.style.opacity = '1';
+    }, 900);
+  },
+
+  bindUIActions: function () {
+    const settings = this.settings;
+
+    settings.days.forEach(function (day) {
+      day.addEventListener('click', function () {
+        app.swap(settings.calendar, settings.form);
+        settings.input.focus();
+      });
+    });
+
+    settings.buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        app.swap(settings.form, settings.calendar);
+      });
+    });
+  }
+};
+
+console.log('before inbiu')
+app.init();
+
