@@ -27,9 +27,9 @@ function showTodayDate(date) {
   const arrow = document.querySelector('#arrow_1')
   let todayElement = document.createElement('h1');
   todayElement.innerText = (dayLong + '  ' + dayNumber);
-  
+
   const currentDateH1Elements = document.querySelectorAll('.current-date h1');
-currentDateH1Elements.forEach((h1)=> h1.remove())
+  currentDateH1Elements.forEach((h1) => h1.remove())
 
   let todayElement2 = document.createElement('h1')
   todayElement2.innerText = (month + '  ' + year)
@@ -38,8 +38,8 @@ currentDateH1Elements.forEach((h1)=> h1.remove())
 }
 
 
-function getDaysOfTheMonth() {
-  const { year, monthNumber } = getDateData(currentDate);
+function getDaysOfTheMonth(date) {
+  const { year, monthNumber } = getDateData(date);
   const firstDayOfMonth = new Date(year, monthNumber - 1, 1);
   const dayOne = firstDayOfMonth.getDay();
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -51,8 +51,9 @@ function getDaysOfTheMonth() {
   }
 }
 
-function addMonthToCalendar() {
-  const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth();
+
+function addMonthToCalendar(date) {
+  const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth(date);
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   let weekDaysList = document.querySelector('.week-days');
@@ -70,6 +71,8 @@ function addMonthToCalendar() {
   let currentDayOfWeek = weekday.indexOf(firstDayName);
   let currentWeeks = document.querySelectorAll('.weeks > div');
 
+
+  const settings = app.settings;
 
   currentWeeks.forEach((week, index) => {
     week.innerHTML = '';
@@ -96,16 +99,20 @@ function addMonthToCalendar() {
     }
   });
 
-  const lastWeek = currentWeeks[currentWeeks.length - 1];
-  const lastWeekChildrenCount = lastWeek.children.length;
-  for (let i = lastWeekChildrenCount; i < 7; i++) {
-    let emptyDay = document.createElement('span');
-    emptyDay.classList.add('next-month');
-    emptyDay.innerText = ' ';
-    lastWeek.appendChild(emptyDay);
-  }
+
+  settings.days = document.querySelectorAll('.weeks span');
+
+  settings.days.forEach(function (day) {
+    day.addEventListener('click', function () {
+      app.swap(settings.calendar, settings.form);
+      settings.input.focus();
+    });
+  });
+
+
   assignUniqueDayIds();
 }
+
 function assignUniqueDayIds() {
   const daysContainer = document.querySelector('.weeks');
   const dayElements = daysContainer.querySelectorAll('span');
@@ -128,7 +135,6 @@ function prevNextMonths() {
 
   
   document.getElementById('arrow_1').addEventListener('click', function() {
-      // Set the date to the first day of the previous month
       newDate.setDate(1);
       newDate.setMonth(newDate.getMonth() - 1);
       showNewMonthDate();
@@ -136,7 +142,6 @@ function prevNextMonths() {
 
   
   document.getElementById('arrow_2').addEventListener('click', function() {
-      // Set the date to the first day of the next month
       newDate.setDate(1);
       newDate.setMonth(newDate.getMonth() + 1);
       showNewMonthDate();
@@ -154,20 +159,17 @@ const app = {
   },
 
   init: function () {
-
-console.log('ini 0 ')
     this.bindUIActions();
+
     addMonthToCalendar(currentDate);
-    console.log("ini")
+
     showTodayDate(currentDate)
     prevNextMonths()
   },
 
   swap: function (currentSide, desiredSide) {
     this.settings.container.classList.toggle('flip');
-
     currentSide.style.transition = 'opacity 0.9s';
-    currentSide.style.opacity = '0';
 
     setTimeout(function () {
       currentSide.style.display = 'none';
@@ -187,13 +189,32 @@ console.log('ini 0 ')
     });
 
     settings.buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        app.swap(settings.form, settings.calendar);
+      button.addEventListener('click', function (event) {
+        if (event.target.classList.contains('save')) {
+          console.log('Save button clicked');
+          app.swap(settings.form, settings.calendar);
+        } else if (event.target.classList.contains('dismiss')) {
+          console.log('Dismiss button clicked');
+          app.swap(settings.form, settings.calendar);
+        }
       });
+    });
+
+    document.getElementById('arrow_1').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() - 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
+    });
+
+    document.getElementById('arrow_2').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() + 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
     });
   }
 };
 
-console.log('before inbiu')
 app.init();
 
