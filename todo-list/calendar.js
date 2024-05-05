@@ -162,29 +162,29 @@ function assignUniqueDayIds() {
   });
 }
 
-// function prevNextMonths() {
-//   const currentDate = new Date();
-//   let newDate = new Date(currentDate);
+function prevNextMonths() {
+  const currentDate = new Date();
+  let newDate = new Date(currentDate);
 
-//   
-//   function showNewMonthDate() {
-//       showTodayDate(newDate);
-//   }
+  
+  function showNewMonthDate() {
+      showTodayDate(newDate);
+  }
 
-//   
-//   document.getElementById('arrow_1').addEventListener('click', function() {
-//       // Set the date to the first day of the previous month
-//       newDate.setDate(1);
-//       newDate.setMonth(newDate.getMonth() - 1);
-//       showNewMonthDate();
-//   });
+  
+  document.getElementById('arrow_1').addEventListener('click', function() {
+      // Set the date to the first day of the previous month
+      newDate.setDate(1);
+      newDate.setMonth(newDate.getMonth() - 1);
+      showNewMonthDate();
+  });
 
-//   
-//   document.getElementById('arrow_2').addEventListener('click', function() {
-//       // Set the date to the first day of the next month
-//       newDate.setDate(1);
-//       newDate.setMonth(newDate.getMonth() + 1);
-//       showNewMonthDate();
-//   });
-// }
-//   prevNextMonths()
+  
+  document.getElementById('arrow_2').addEventListener('click', function() {
+      // Set the date to the first day of the next month
+      newDate.setDate(1);
+      newDate.setMonth(newDate.getMonth() + 1);
+      showNewMonthDate();
+  });
+}
+  prevNextMonths()

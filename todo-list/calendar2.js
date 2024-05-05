@@ -29,7 +29,7 @@ function showTodayDate(date) {
     let todayElement2 = document.createElement('h1')
     todayElement2.innerText = (month + '  ' + year)
   
-    // Clear the current-date div before adding new elements
+    
     const currentDateDiv = document.querySelector('.current-date');
     console.log("Current date div content before clearing:", currentDateDiv.innerHTML);
     currentDateDiv.innerHTML = '';
@@ -52,6 +52,71 @@ function getDaysOfTheMonth(date) {
     firstDayName
   }
 }
+const app = {
+  settings: {
+    container: document.querySelector('.calendar'),
+    calendar: document.querySelector('.front'),
+    form: document.querySelector('.back'),
+    days: document.querySelectorAll('.weeks span'),
+    input: document.querySelector('.back input'),
+    buttons: document.querySelectorAll('.actions button')
+  },
+
+  init: function () {
+    this.bindUIActions();
+  },
+
+  swap: function (currentSide, desiredSide) {
+    this.settings.container.classList.toggle('flip');
+    currentSide.style.transition = 'opacity 0.9s';
+
+    setTimeout(function () {
+      currentSide.style.display = 'none';
+      desiredSide.style.display = 'block';
+      desiredSide.style.opacity = '1';
+    }, 900);
+  },
+
+  bindUIActions: function () {
+    const settings = this.settings;
+  
+    settings.days.forEach(function (day) {
+      day.addEventListener('click', function () {
+        app.swap(settings.calendar, settings.form);
+        settings.input.focus();
+      });
+    });
+  
+    settings.buttons.forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        if (event.target.classList.contains('save')) {
+          console.log('Save button clicked');
+          app.swap(settings.form, settings.calendar);
+        } else if (event.target.classList.contains('dismiss')) {
+          console.log('Dismiss button clicked');
+          app.swap(settings.form, settings.calendar);
+        }
+      });
+    });
+  
+    document.getElementById('arrow_1').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() - 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
+    });
+  
+    document.getElementById('arrow_2').addEventListener('click', function () {
+      let newDate = new Date(currentDate);
+      newDate.setMonth(newDate.getMonth() + 1);
+      currentDate.setTime(newDate.getTime());
+      addMonthToCalendar(currentDate);
+    });
+  }
+};
+
+app.init();
+
 
 function addMonthToCalendar(date) {
   const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth(date);
@@ -71,6 +136,9 @@ function addMonthToCalendar(date) {
   let currentDay = 1;
   let currentDayOfWeek = weekday.indexOf(firstDayName);
   let currentWeeks = document.querySelectorAll('.weeks > div');
+
+
+  const settings = app.settings;
 
   currentWeeks.forEach((week, index) => {
     week.innerHTML = '';
@@ -97,72 +165,23 @@ function addMonthToCalendar(date) {
     }
   });
 
-  const lastWeek = currentWeeks[currentWeeks.length - 1];
-  const lastWeekChildrenCount = lastWeek.children.length;
-  for (let i = lastWeekChildrenCount; i < 7; i++) {
-    let emptyDay = document.createElement('span');
-    emptyDay.classList.add('next-month');
-    emptyDay.innerText = ' ';
-    lastWeek.appendChild(emptyDay);
-  }
+ 
+  settings.days = document.querySelectorAll('.weeks span'); 
+
+  settings.days.forEach(function (day) {
+    day.addEventListener('click', function () {
+      app.swap(settings.calendar, settings.form);
+      settings.input.focus();
+    });
+  });
+
+
   assignUniqueDayIds();
 }
 
 addMonthToCalendar(currentDate);
 
-const app = {
-  settings: {
-    container: document.querySelector('.calendar'),
-    calendar: document.querySelector('.front'),
-    form: document.querySelector('.back'),
-    days: document.querySelectorAll('.weeks span'),
-    input: document.querySelector('.back input'),
-    buttons: document.querySelectorAll('.actions button')
-  },
 
-  init: function () {
-    this.bindUIActions();
-  },
-
-  swap: function (currentSide, desiredSide) {
-    this.settings.container.classList.toggle('flip');
-
-    currentSide.style.transition = 'opacity 0.9s';
-
-    setTimeout(function () {
-      currentSide.style.display = 'none';
-      desiredSide.style.display = 'block';
-      desiredSide.style.opacity = '1';
-    }, 900);
-  },
-
-  bindUIActions: function () {
-    const settings = this.settings;
-
-    settings.days.forEach(function (day) {
-      day.addEventListener('click', function () {
-        app.swap(settings.calendar, settings.form);
-        settings.input.focus();
-      });
-    });
-
-    document.getElementById('arrow_1').addEventListener('click', function () {
-      let newDate = new Date(currentDate);
-      newDate.setMonth(newDate.getMonth() - 1);
-      currentDate.setTime(newDate.getTime());
-      addMonthToCalendar(currentDate);
-    });
-
-    document.getElementById('arrow_2').addEventListener('click', function () {
-      let newDate = new Date(currentDate);
-      newDate.setMonth(newDate.getMonth() + 1);
-      currentDate.setTime(newDate.getTime());
-      addMonthToCalendar(currentDate);
-    });
-  }
-};
-
-app.init();
 
 function assignUniqueDayIds() {
   const daysContainer = document.querySelector('.weeks');
