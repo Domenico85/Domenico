@@ -37,6 +37,18 @@ function showTodayDate(date) {
   arrow.insertAdjacentElement('afterend', todayElement);
 }
 
+function removeDayToDate (date) {
+  date.setDate(date.getDate() - 1)
+  
+  return date
+}
+
+function addDayToDate (date) {
+  date.setDate(date.getDate() + 1)
+  
+  return date
+}
+ 
 
 function getDaysOfTheMonth(date) {
   const { year, monthNumber } = getDateData(date);
@@ -44,17 +56,21 @@ function getDaysOfTheMonth(date) {
   const dayOne = firstDayOfMonth.getDay();
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
   const firstDayName = weekday[dayOne];
+  const lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
+  // console.log(lastDayOfMonth)
   return {
     firstDayOfMonth,
-    firstDayName
+    firstDayName, 
+    lastDayOfMonth
   }
 }
 
 
 function addMonthToCalendar(date) {
-  const { firstDayName, firstDayOfMonth } = getDaysOfTheMonth(date);
+  const { firstDayName, firstDayOfMonth, lastDayOfMonth } = getDaysOfTheMonth(date);
   const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const firstDayInMonth = new Date(date.getFullYear(), date.getMonth(), 1);
 
   let weekDaysList = document.querySelector('.week-days');
 
@@ -74,21 +90,132 @@ function addMonthToCalendar(date) {
 
   const settings = app.settings;
 
+  let nextMonthDayCounter = 0
   currentWeeks.forEach((week, index) => {
     week.innerHTML = '';
     if (index === 0) {
-      for (let i = 0; i < currentDayOfWeek; i++) {
+      for (let i = currentDayOfWeek; i > 0; i--) {
         let emptyDay = document.createElement('span');
         emptyDay.classList.add('last-month');
-        emptyDay.innerText = '';
-        week.appendChild(emptyDay);
+        
+        const dayNum = removeDayToDate(firstDayInMonth, i).getDate();
+        emptyDay.innerText = dayNum
+        week.insertAdjacentElement('afterbegin',  emptyDay)
+
       }
+
       for (let i = currentDayOfWeek; i < 7; i++) {
         let dayElement = document.createElement('span');
         dayElement.innerText = currentDay;
         week.appendChild(dayElement);
         currentDay++;
       }
+    } else if (index === 4) {
+      // Add week 4 days
+      let weekdayCounter = 7
+      for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
+        let dayElement = document.createElement('span');
+        dayElement.innerText = currentDay;
+        week.appendChild(dayElement);
+        currentDay++;
+        weekdayCounter--
+      }
+
+      // Add week 4 next month days
+      for (let i = 1; i <= weekdayCounter; i++) {
+        nextMonthDayCounter++
+        let emptyDay = document.createElement('span');
+        emptyDay.classList.add('next-month');
+        
+        emptyDay.innerText = i
+        week.appendChild(emptyDay);
+
+      }
+    } else if (index === 5) {
+
+      console.log(currentDayOfWeek)
+      let weekdayCounter = 7
+      for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
+        let dayElement = document.createElement('span');
+        dayElement.innerText = currentDay;
+        week.appendChild(dayElement);
+        currentDay++;
+        weekdayCounter--
+      }
+
+      // Add week 5 next month days
+      for (let i = nextMonthDayCounter +1; i <= weekdayCounter; i++) {
+        weekdayCounter++
+        
+        // lastDayOfMonth
+        let emptyDay = document.createElement('span');
+        emptyDay.classList.add('next-month');
+        
+        emptyDay.innerText = i
+        // if (weekdayCounter < 7) {
+          week.appendChild(emptyDay);
+        // }
+
+      }
+
+      // console.log('mas')
+
+      // let weekDaysCounter = 0 
+
+      // console.log('mas2') 
+
+
+      // for (let i = weekDaysCounter; i > 8; i++) {
+        
+        // console.log('got', i)
+        // let emptyDay = document.createElement('span');
+        // emptyDay.classList.add('next-month');
+        
+        // const dayNum = addDayToDate(firstDayInMonth, i).getDate();
+        // emptyDay.innerText = dayNum
+        // week.insertAdjacentElement('afterbegin',  emptyDay)
+
+      // }
+
+      // for (let i = 1; i < 7; i++) {
+      //   let dayElement = document.createElement('span');
+      //   dayElement.innerText = i;
+      //   week.appendChild(dayElement);
+      //   currentDay++;
+      // }
+
+ 
+
+      
+      // for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
+      //   let dayElement = document.createElement('span');
+      //   dayElement.innerText = currentDay;
+      //   week.appendChild(dayElement);
+      //   currentDay++;
+      // }
+
+
+
+      // for (let i = currentDayOfWeek; i > 0; i--) {
+      //   let emptyDay = document.createElement('span');
+      //   emptyDay.classList.add('next-month');
+        
+      //   const dayNum = addDayToDate(firstDayInMonth, i).getDate();
+      //   emptyDay.innerText = dayNum
+      //   week.insertAdjacentElement('afterbegin',  emptyDay)
+
+      // }
+
+      // for (let i = 1; i < 7; i+1+) {
+      //   let dayElement = document.createElement('span');
+      //   dayElement.innerText = i;
+      //   week.appendChild(dayElement);
+      //   currentDay++;
+      // }
+
+
+ 
+
     } else {
       for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
         let dayElement = document.createElement('span');
