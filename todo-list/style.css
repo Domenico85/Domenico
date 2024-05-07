@@ -576,3 +576,49 @@ input[type="radio"]:checked+label.button-high,
     border-radius: 10px;
 
 }
+
+.profile {
+    background: rgba(255, 255, 255, 0.5);
+    max-width: 400px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    padding-bottom: 40px;
+    color: white;
+
+}
+
+.background-img {
+    width: 100%;
+    max-height: 400px;
+}
+
+.img-profile {
+    width: 50%;
+    margin-top: -90px;
+}
+
+.profile form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: transparent;
+    box-shadow: none;
+    gap: 10px;
+}
+
+.profile-form label {
+    color: black;
+}
+
+.fieldset-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    padding: 20px;
+}
