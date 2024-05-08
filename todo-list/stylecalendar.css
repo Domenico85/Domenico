@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'platy';
+  font-family: "platy";
   src: url(font/Platypi-Regular.ttf);
 }
 
@@ -20,7 +20,7 @@ body {
   padding: 0;
   display: grid;
   grid-template-columns: 20% 80%;
-  font-family: 'platy';
+  font-family: "platy";
 }
 
 body,
@@ -28,7 +28,6 @@ html {
   height: 100%;
   overflow: hidden;
 }
-
 
 .title {
   display: flex;
@@ -52,7 +51,7 @@ html {
 }
 
 .column-left {
-  background-color: #ECE5F0;
+  background-color: #ece5f0;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -98,21 +97,19 @@ html {
   margin: 0 auto;
   max-width: 600px;
   width: 100%;
-
 }
 
 .calendar {
   background: #2b4450;
   border-radius: 4px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   min-height: 600px;
   perspective: 1000;
-  transition: .9s;
+  transition: 0.9s;
   transform-style: preserve-3d;
   width: 100%;
   position: relative;
 }
-
 
 .front {
   transform: rotateY(0deg);
@@ -123,7 +120,7 @@ html {
 }
 
 .current-date {
-  border-bottom: 1px solid rgba(73, 114, 133, .6);
+  border-bottom: 1px solid rgba(73, 114, 133, 0.6);
   display: flex;
   justify-content: space-between;
   padding: 30px 40px;
@@ -166,8 +163,9 @@ html {
   width: 100%;
 }
 
-.last-month, .next-month {
-  opacity: .3;
+.last-month,
+.next-month {
+  opacity: 0.3;
 }
 
 .weeks span {
@@ -193,7 +191,7 @@ html {
 }
 
 .event:after {
-  content: '•';
+  content: "•";
   color: #f78536;
   font-size: 1.4em;
   position: absolute;
@@ -201,18 +199,16 @@ html {
   top: -4px;
 }
 
-
 .back {
-  min-height: 520px;
+  min-height: 600px;
   transform: rotateY(180deg);
   position: relative;
-
 }
 
 .back input {
   background: none;
   border: none;
-  border-bottom: 1px solid rgba(73, 114, 133, .6);
+  border-bottom: 1px solid rgba(73, 114, 133, 0.6);
   color: #dfebed;
   font-size: 1.4em;
   font-weight: 300;
@@ -252,7 +248,7 @@ html {
 
 .actions {
   bottom: 0;
-  border-top: 1px solid rgba(73, 114, 133, .6);
+  border-top: 1px solid rgba(73, 114, 133, 0.6);
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -272,7 +268,7 @@ html {
 }
 
 .actions button:first-of-type {
-  border-right: 1px solid rgba(73, 114, 133, .6);
+  border-right: 1px solid rgba(73, 114, 133, 0.6);
 }
 
 .actions button:hover {
@@ -284,7 +280,6 @@ html {
   background: #5889a0;
   outline: none;
 }
-
 
 .flip {
   transform: rotateY(180deg);
@@ -314,7 +309,7 @@ html {
   display: flex;
   align-items: center;
 }
-  
+
 .arrow-wrapper:hover {
   opacity: 1;
 }
@@ -343,7 +338,7 @@ html {
 }
 
 .arrow-wrapper .arrow:before {
-  content: '';
+  content: "";
   display: block;
   border: solid #fff;
   border-width: 2px 2px 0 0;
