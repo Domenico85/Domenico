@@ -140,7 +140,10 @@ function addMonthToCalendar(date) {
         week.appendChild(emptyDay);
       }
     } else if (index === 5) {
-      let weekdayCounter = 7;
+ 
+
+
+      let weekdayCounter = 7
       for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
         let dayElement = document.createElement("span");
         dayElement.innerText = currentDay;
@@ -151,18 +154,21 @@ function addMonthToCalendar(date) {
 
       // Add week 5 next month days
       for (let i = nextMonthDayCounter; i <= 10; i++) {
-        console.log("i", weekdayCounter);
-        nextMonthDayCounter++;
-        weekdayCounter--;
+
+        console.log('i', weekdayCounter)
+        nextMonthDayCounter++
+        weekdayCounter--
         if (weekdayCounter < 0) {
-          break;
+           break
         }
+        
+        let emptyDay = document.createElement('span');
+        emptyDay.classList.add('next-month');
+        emptyDay.innerText = nextMonthDayCounter
+        
+          week.appendChild(emptyDay);
+        
 
-        let emptyDay = document.createElement("span");
-        emptyDay.classList.add("next-month");
-        emptyDay.innerText = nextMonthDayCounter;
-
-        week.appendChild(emptyDay);
       }
     } else {
       for (let i = 0; i < 7 && currentDay <= daysInMonth; i++) {
