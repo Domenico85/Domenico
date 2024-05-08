@@ -203,7 +203,7 @@ html {
 
 
 .back {
-  min-height: 520px;
+  min-height: 600px;
   transform: rotateY(180deg);
   position: relative;
 
