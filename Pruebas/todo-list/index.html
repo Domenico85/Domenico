@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="column-left">
+        <div class="title">
+
+            <img src="img/logo.jpeg" alt="logo" class="logo">
+            <h1>Todo <span>List</span></h1>
+        </div>
+
+        <ul>
+
+            <li> <a href="index.html">My Day</a> </li>
+            <li> <a href="calendar.html">Calendar</a> </li>
+            <li> <a href="profile.html">Profile</a> </li>
+
+
+
+        </ul>
+    </div>
+
+    <div class="column-right">
+
+        <div class="new-task">
+            <h2>Add <span>New</span> Task</h2>
+            <button>+</button>
+        </div>
+
+
+        <form>
+
+            <fieldset>
+
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Title" name="title" required />
+                    <label for="title" class="form__label">Title</label>
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="description" name="description" />
+                    <label for="description" class="form__label">Description</label>
+                </div>
+                <div class="form__group field">
+                    <input type="date" class="form__field" placeholder="description" name="date" />
+                    <label for="date" class="form__label">Due Date</label>
+                </div>
+
+                <div class="radios">
+
+                    <label for="priority" class="form__label prio">Priority</label>
+                    <div class="form__group field radio priority">
+                        <div class="priority">
+
+                            <div class="low">
+                                <input type="radio" class="priority-radio" placeholder="priority" name="priority"
+                                    id="low" value="low" />
+                                <label class="button-low priority-btn" for="low">Low</label>
+                            </div>
+
+                            <div class="medium">
+
+                                <input type="radio" class="priority-radio" placeholder="priority" name="priority"
+                                    id="medium" value="medium" />
+                                <label class="button-medium priority-btn" for="medium">Medium</label>
+                            </div>
+
+                            <div class="high">
+
+                                <input type="radio" class="priority-radio" placeholder="priority" name="priority"
+                                    id="high" value="high" />
+                                <label class="button-high priority-btn" for="high">High</label>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Notes" name="notes" />
+                    <label for="notes" class="form__label">Notes</label>
+                </div>
+
+
+                <div class="radios2">
+
+                    <label for="checklist" class="form__label check">Checklist</label>
+                    <div class="form__group field radio">
+
+                        <div class="checklist">
+                            <div class="done">
+
+                                <input type="checkbox" class="form__field" value="Done" name="checklist" />Done
+                            </div>
+                            <div class="to-do">
+
+                                <input type="checkbox" name="checklist" value="To Do" class="form__field" />To Do
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button type="submit">Add</button>
+
+
+            </fieldset>
+        </form>
+        <div id="to-do-list">
+
+            <div id="example">
+
+                <div class="example day">
+                    <h3>Example:</h3>
+                    <p>Buy Groceries</p>
+                    <div class="options">
+
+                        <button class="details-btn-example">Details</button>
+
+                        <button class="edit"><img src="img/edit.svg" alt="edit">
+                        </button>
+
+                        <button class="delete">
+                            <img src="img/delete.svg" alt="delete">
+
+                        </button>
+                    </div>
+                </div>
+
+                <div class="details-example">
+                    <h2 id="exit">X</h2>
+                    <h1><span>Buy Groceries</span></h1>
+                    <h2>Bread , Milk , Water, etc.</h2>
+                    <h2><span>DueDate</span>: 01/05/2024</h2>
+                    <h2><span>Priority</span>: Medium</h2>
+                    <h2><span>Notes</span>: Asian Supermarket</h2>
+                    <h2><span>Checklist</span>: To-Do</h2>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
