@@ -194,8 +194,49 @@ function assignUniqueDayIds() {
   dayElements.forEach((dayElement) => {
     dayElement.id = `day-${dayIdCounter}`;
     dayIdCounter++;
+
+    dayElement.addEventListener("click", function () {
+      const dayDate = new Date(getDateForDay(dayElement));
+
+      updateSelectedDate(dayDate);
+    });
   });
 }
+function getDateForDay(dayElement) {
+  const dayId = parseInt(dayElement.id.split("-")[1]);
+  const currentDate = new Date();
+  const firstDayOfMonth = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    1
+  );
+  const firstDayOfMonthIndex = firstDayOfMonth.getDay();
+  const selectedDay = dayId - firstDayOfMonthIndex;
+
+  const selectedDate = new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    selectedDay
+  );
+
+  return selectedDate;
+}
+
+function updateSelectedDate(selectedDate) {
+  const dateSpan = document.querySelector(".info .info-date span");
+
+  const formattedDate = selectedDate.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  dateSpan.textContent = formattedDate;
+}
+
+const selectedDate = new Date();
+updateSelectedDate(selectedDate);
 
 function prevNextMonths() {
   const currentDate = new Date();
@@ -217,22 +258,6 @@ function prevNextMonths() {
     showNewMonthDate();
   });
 }
-
-function updateSelectedDate(selectedDate) {
-  const dateSpan = document.querySelector(".info .info-date span");
-
-  const formattedDate = selectedDate.toLocaleDateString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
-
-  dateSpan.textContent = formattedDate;
-}
-
-const selectedDate = new Date();
-updateSelectedDate(selectedDate);
 
 const app = {
   settings: {
