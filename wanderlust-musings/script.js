@@ -61,6 +61,7 @@ function showSlide(index) {
 }
 
 function prevSlide() {
+  console.log("prevSlide");
   clearInterval(intervalId);
   slideIndex--;
   showSlide(slideIndex);
@@ -96,3 +97,18 @@ function setupCarouselDots() {
   });
 }
 setupCarouselDots();
+
+function setupSlideNavigation() {
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+
+  prevButton.addEventListener("click", prevSlide);
+  nextButton.addEventListener("click", nextSlide);
+
+  //   prevButton.addEventListener("touchstart", prevSlide);
+  //   nextButton.addEventListener("touchstart", nextSlide);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  setupSlideNavigation();
+});
