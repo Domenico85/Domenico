@@ -13,20 +13,42 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <nav class="top-right open">
-      <a class="disc l1">
-        <div>Messages</div>
-      </a>
-      <a class="disc l2">
-        <div>Photos</div>
-      </a>
-      <a class="disc l3">
-        <div>Profile</div>
-      </a>
-      <a class="disc l4">
-        <div>Likes</div>
-      </a>
-      <a class="disc l5 toggle"> Menu </a>
-    </nav>
+    <header>
+      <h1>Wanderlust Musings</h1>
+      <img src="img/logo.jpg" alt="logo" />
+      <nav class="top-right open">
+        <a class="disc l1">
+          <div>Messages</div>
+        </a>
+        <a class="disc l2">
+          <div>Photos</div>
+        </a>
+        <a class="disc l3">
+          <div>Profile</div>
+        </a>
+        <a class="disc l4">
+          <div>Likes</div>
+        </a>
+        <a class="disc l5 toggle"> Menu </a>
+      </nav>
+    </header>
+
+    <div class="slider">
+        <div class="slides">
+           
+            <img src="img/nature1.jpg" alt="nature#1" class="slide">
+            <img src="img/nature2.jpg" alt="nature#2" class="slide">
+            <img src="img/nature3.jpg" alt="nature#3" class="slide">
+
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+
+    </div>
+    <div class="carousel-buttons-container">
+        <ul class="carousel-dots">
+      
+        </ul> 
+    </div>
   </body>
 </html>

@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Alegreya+Sans:800,900");
 html,
 body {
-  height: 100%;
+  height: 100svh;
+  overflow: hidden;
 }
 
 body {
-  background: beige;
+  background: #fc5c7d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6a82fb,
+    #fc5c7d
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6a82fb,
+    #fc5c7d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   font-family: Alegreya Sans, sans-serif;
 }
 
@@ -25,7 +37,9 @@ nav.open {
 }
 nav.top-right {
   top: -140px;
-  right: -140px;
+  z-index: 5;
+  position: fixed;
+  left: -18px;
 }
 
 .disc {
@@ -204,3 +218,103 @@ nav.top-right {
   transform: scale(0.9);
   transition-duration: 0s;
 } /*# sourceMappingURL=style.css.map */
+
+header img {
+  max-width: 100px;
+  border-radius: 100%;
+  position: relative;
+  top: 27px;
+}
+
+header h1 {
+  font-size: 24px;
+  text-align: center;
+  top: 0px;
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  top: 40px;
+}
+
+.slider img {
+  width: 100%;
+  display: none;
+}
+img.displaySlide {
+  display: block;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  background-color: hsl(0, 0%, 0%, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-buttons-container {
+  width: 600px;
+  text-align: center;
+  margin: 15px 0 0 0;
+  padding: 0;
+}
+
+.carousel-dots {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.carousel-dot {
+  background-color: #dddddd;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.carousel-dot:last-of-type {
+  margin-right: 0;
+}
+
+.carousel-dot.active {
+  background-color: #e67e22;
+}
