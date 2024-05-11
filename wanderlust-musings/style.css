@@ -320,3 +320,13 @@ img.displaySlide {
 .carousel-dot.active {
   background-color: #e67e22;
 }
+
+@media only screen and (min-width: 500px) {
+  nav.top-right {
+    left: 154px;
+  }
+
+  .slider {
+    width: 60%;
+  }
+}
