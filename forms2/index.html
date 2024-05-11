@@ -14,16 +14,31 @@
   </head>
   <body>
     <fieldset>
-      <form
-        name="myForm"
-        action="/action_page.php"
-        onsubmit="return validateForm()"
-        method="post"
-      >
+      <form name="myForm" method="post">
         <label for="mail">
           I would like you to provide me with an email address:
         </label>
-        <input type="email" name="mail" id="mail" />
+        <input type="email" name="mail" id="mail" required />
+        <br />
+        <label for="phone">
+          I would like you to provide me with a phone number:
+        </label>
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          pattern="[0-9]{2}"
+          placeholder="39"
+        />
+
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          pattern="[0-9]{10}"
+          placeholder="3405689743"
+        />
+        <br />
         <button>Submit</button>
       </form>
     </fieldset>
