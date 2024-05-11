@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form2</title>
+    <link
+      rel="shortcut icon"
+      href="img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <fieldset>
+      <form
+        name="myForm"
+        action="/action_page.php"
+        onsubmit="return validateForm()"
+        method="post"
+      >
+        <label for="mail">
+          I would like you to provide me with an email address:
+        </label>
+        <input type="email" name="mail" id="mail" />
+        <button>Submit</button>
+      </form>
+    </fieldset>
+  </body>
+</html>
