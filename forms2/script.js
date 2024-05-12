@@ -19,9 +19,6 @@ validateField("mail", "Insert a valid e-mail");
 validateField("phone", "Insert a valid Phone Number");
 
 function validatePassword() {
-  const passwordInput = document.querySelector("#password");
-  const confirmPasswordInput = document.querySelector("#confirm_password");
-
   if (
     passwordInput.value === confirmPasswordInput.value &&
     passwordInput.value !== ""
@@ -32,14 +29,12 @@ function validatePassword() {
     console.log("not match", passwordInput.value);
     confirmPasswordInput.setCustomValidity("Passwords don't match");
   }
-  // confirmPasswordInput.reportValidity();
 }
 
 const passwordInput = document.querySelector("#password");
 const confirmPasswordInput = document.querySelector("#confirm_password");
-passwordInput.addEventListener("blur", validatePassword);
-confirmPasswordInput.addEventListener("blur", validatePassword);
 
 confirmPasswordInput.addEventListener("input", () => {
+  validatePassword();
   confirmPasswordInput.reportValidity();
 });
