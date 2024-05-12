@@ -23,21 +23,23 @@
         <label for="phone">
           I would like you to provide me with a phone number:
         </label>
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          pattern="[0-9]{2}"
-          placeholder="39"
-        />
+        <div class="phone-container">
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            pattern="[0-9]{2}"
+            placeholder="39"
+          />
 
-        <input
-          type="tel"
-          name="phone"
-          id="phone"
-          pattern="[0-9]{10}"
-          placeholder="3405689743"
-        />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            pattern="[0-9]{10}"
+            placeholder="3405689743"
+          />
+        </div>
         <br />
         <label for="country" id="country"> Country </label>
         <select name="country" id="country">
@@ -309,6 +311,10 @@
           <option value="Zimbabwe">Zimbabwe</option>
         </select>
         <br />
+        <label for="zip"
+          >Zip Code
+          <input id="zip" name="zip" type="text" pattern="[0-9]*" />
+        </label>
         <label class="password-field" for="password"
           >Password:
           <input type="password" id="password" name="password" required />
@@ -324,7 +330,9 @@
           />
         </label>
         <br />
-        <button>Submit</button>
+        <div class="submit-button">
+          <button>Submit</button>
+        </div>
       </form>
     </fieldset>
   </body>

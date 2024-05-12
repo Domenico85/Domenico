@@ -17,6 +17,7 @@ function validateField(id, message) {
 
 validateField("mail", "Insert a valid e-mail");
 validateField("phone", "Insert a valid Phone Number");
+validateField("zip", "Insert a valid zip code");
 
 function validatePassword() {
   if (
