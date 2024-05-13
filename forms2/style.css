@@ -1,3 +1,12 @@
+body {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100svw;
+  height: 100svh;
+  margin: 0;
+  padding: 0;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -154,4 +163,12 @@ button:disabled {
 
 .submit-button {
   margin: 0 auto;
+}
+
+.column-right {
+  width: 100dvw;
+}
+.column-right img {
+  max-width: 50%;
+  max-height: 100svh;
 }
