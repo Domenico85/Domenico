@@ -1,12 +1,19 @@
 body {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 32% 68%;
   width: 100svw;
   height: 100svh;
   margin: 0;
   padding: 0;
+  background-color: #f4d03f;
+  background-image: linear-gradient(132deg, #f4d03f 0%, #16a085 100%);
+  overflow: hidden;
 }
-
+fieldset {
+  margin-right: 20px;
+  max-height: 76vh;
+  margin-top: 10px;
+}
 form {
   display: flex;
   flex-direction: column;
