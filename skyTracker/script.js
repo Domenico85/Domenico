@@ -38,7 +38,7 @@ function searchWeather() {
       .then((data) => {
         console.log(data);
         updateWeatherInfo(data);
-        cityInput.value = "";
+        document.querySelector(".input-search").value = "";
       })
       .catch((error) => {
         console.log("There was a problem with the fetch operation:", error);
@@ -85,10 +85,40 @@ function updateWeatherInfo(data) {
   fetch("weather/conditions.json")
     .then((response) => response.json())
     .then((conditions) => {
-      const condition = data.current.condition.code.toString();
-      const icon = conditions[condition];
-      const iconUrl = icon ? `weather/${icon}` : "weather/default.png";
-      const iconElement = weatherInfo.querySelector(".weather-info__icon svg");
+      const conditionCode = data.current.condition.code;
+
+      const condition = conditions.find((item) => item.code === conditionCode);
+
+      const icon = condition ? condition.icon : null;
+
+      let iconUrl = "img/default.svg";
+      if (icon) {
+        const timeOfDay = data.current.is_day ? "day" : "night";
+        iconUrl = `weather/64x64/${timeOfDay}/${icon}.png`;
+      }
+
+      const iconElement = weatherInfo.querySelector(".weather-info__icon");
       iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
-    });
+
+      if (!icon) {
+        const defaultIcon = iconElement.querySelector("img");
+        defaultIcon.style.width = "50px";
+      }
+    })
+    .catch((error) => console.error("Error fetching conditions:", error));
+
+  const weatherDetails = document.querySelector(".weather-details");
+  console.log("con", data.current.condition);
+  weatherDetails.querySelector(
+    ".feels-like div span"
+  ).innerText = `${data.current.feelslike_c}°C / ${data.current.feelslike_f}°F`;
+  weatherDetails.querySelector(
+    ".humidity div span"
+  ).innerText = `${data.current.humidity}%`;
+  weatherDetails.querySelector(
+    ".rain div span"
+  ).innerText = `${data.current.precip_mm}%`;
+  weatherDetails.querySelector(
+    ".wind div span"
+  ).innerText = `${data.current.wind_kph}km/h`;
 }
