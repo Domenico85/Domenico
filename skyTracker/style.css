@@ -6,11 +6,27 @@ body {
   background-image: url("img/background.jpg");
   background-size: cover;
 }
-
+header {
+  max-height: 150px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+header span {
+  color: #fff;
+}
+header img {
+  width: 120px;
+}
 .search-box {
   width: fit-content;
   height: fit-content;
   position: relative;
+  margin: 0 auto;
 }
 
 .input-search {
@@ -82,7 +98,9 @@ footer {
   color: #fff;
   font-family: "Pacifico", cursive;
 }
-
+footer p span {
+  color: blue;
+}
 @font-face {
   font-family: "Freeman";
   src: url(Freeman-Regular.ttf);
