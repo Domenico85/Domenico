@@ -82,8 +82,13 @@ function updateWeatherInfo(data) {
     ".weather-info__units-c"
   ).innerText = `Celsius: ${data.current.temp_c}°C`;
 
-  const iconUrl = `https:${data.current.condition.icon}`;
-  weatherInfo.querySelector(
-    ".weather-info__icon svg"
-  ).innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+  fetch("weather/conditions.json")
+    .then((response) => response.json())
+    .then((conditions) => {
+      const condition = data.current.condition.code.toString();
+      const icon = conditions[condition];
+      const iconUrl = icon ? `weather/${icon}` : "weather/default.png";
+      const iconElement = weatherInfo.querySelector(".weather-info__icon svg");
+      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+    });
 }
