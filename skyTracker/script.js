@@ -117,7 +117,7 @@ function updateWeatherInfo(data) {
   ).innerText = `${data.current.humidity}%`;
   weatherDetails.querySelector(
     ".rain div span"
-  ).innerText = `${data.current.precip_mm}%`;
+  ).innerText = `${data.current.precip_mm}mm`;
   weatherDetails.querySelector(
     ".wind div span"
   ).innerText = `${data.current.wind_kph}km/h`;
