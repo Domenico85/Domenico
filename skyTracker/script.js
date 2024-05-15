@@ -8,7 +8,7 @@ function hiddenPlaceholder() {
   });
 
   inputSearch.addEventListener("focus", () => {
-    inputSearch.setAttribute("placeholder", "Type to Search...");
+    inputSearch.setAttribute("placeholder", "Search a City...");
   });
 
   inputSearch.addEventListener("blur", () => {

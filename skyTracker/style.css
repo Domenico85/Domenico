@@ -151,3 +151,38 @@ footer p span {
 footer span {
   color: blue;
 }
+
+@media only screen and (max-width: 800px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+  header h1 {
+    font-size: 32px;
+  }
+
+  .input-search:focus {
+    width: 175px;
+  }
+
+  .weather-details img {
+    width: 35px;
+  }
+  .feels-like,
+  .humidity,
+  .rain,
+  .wind {
+    font-size: 16px;
+    margin-right: -37px;
+  }
+
+  .weather-info__city {
+    font-size: 21px;
+  }
+  footer {
+    font-size: 8px;
+  }
+  footer img {
+    width: 70px;
+  }
+}
