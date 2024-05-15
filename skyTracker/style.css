@@ -119,6 +119,17 @@ footer p span {
   color: #fff;
   font-size: 40px;
 }
+.weather-info__description {
+  color: red;
+  font-size: 35px;
+}
+.weather-info__units-f,
+.weather-info__units-c {
+  color: blue;
+}
+.weather-info__icon img {
+  width: 130px;
+}
 .weather-details {
   display: flex;
   flex-direction: column;
