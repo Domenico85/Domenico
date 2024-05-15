@@ -37,11 +37,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
       })
       .then((data) => {
         console.log(data);
-        document.getElementById("weather-result").innerText = JSON.stringify(
-          data,
-          null,
-          2
-        );
+        updateWeatherInfo(data);
       })
       .catch((error) => {
         console.log("There was a problem with the fetch operation:", error);
@@ -50,3 +46,33 @@ document.querySelector(".btn-search").addEventListener("click", () => {
     alert("Please enter a city name.");
   }
 });
+
+function updateWeatherInfo(data) {
+  const weatherInfo = document.querySelector(".weather-info");
+  const location = data.location;
+  weatherInfo.querySelector(
+    ".weather-info__city"
+  ).innerText = `${location.name}, ${location.region}, ${location.country}`;
+  weatherInfo.querySelector(".weather-info__description").innerText =
+    data.current.condition.text;
+  weatherInfo.querySelector(".weather-info__date").innerText = new Date(
+    data.location.localtime
+  ).toLocaleDateString();
+  weatherInfo.querySelector(".weather-info__time").innerText = new Date(
+    data.location.localtime
+  ).toLocaleTimeString();
+  weatherInfo.querySelector(
+    ".weather-info__temperature"
+  ).innerText = `${data.current.temp_c}°C / ${data.current.temp_f}°F`;
+  weatherInfo.querySelector(
+    ".weather-info__units-f"
+  ).innerText = `Fahrenheit: ${data.current.temp_f}°F`;
+  weatherInfo.querySelector(
+    ".weather-info__units-c"
+  ).innerText = `Celsius: ${data.current.temp_c}°C`;
+
+  const iconUrl = `https:${data.current.condition.icon}`;
+  weatherInfo.querySelector(
+    ".weather-info__icon svg"
+  ).innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+}
