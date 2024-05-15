@@ -83,6 +83,21 @@ footer {
   font-family: "Pacifico", cursive;
 }
 
+@font-face {
+  font-family: "Freeman";
+  src: url(Freeman-Regular.ttf);
+}
+
+.weather-info {
+  margin-left: 10px;
+  font-family: "Freeman", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.weather-info__city {
+  color: #fff;
+  font-size: 40px;
+}
 footer span {
   color: blue;
 }

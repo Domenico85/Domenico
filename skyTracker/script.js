@@ -22,7 +22,7 @@ hiddenPlaceholder();
 
 const apiKey = "ae761484c1284fce82f91509241405";
 
-document.querySelector(".btn-search").addEventListener("click", () => {
+function searchWeather() {
   const city = document.querySelector(".input-search").value.trim();
   if (city) {
     const url = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=yes`;
@@ -38,6 +38,7 @@ document.querySelector(".btn-search").addEventListener("click", () => {
       .then((data) => {
         console.log(data);
         updateWeatherInfo(data);
+        cityInput.value = "";
       })
       .catch((error) => {
         console.log("There was a problem with the fetch operation:", error);
@@ -45,7 +46,17 @@ document.querySelector(".btn-search").addEventListener("click", () => {
   } else {
     alert("Please enter a city name.");
   }
-});
+}
+
+document.querySelector(".btn-search").addEventListener("click", searchWeather);
+
+document
+  .querySelector(".input-search")
+  .addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+      searchWeather();
+    }
+  });
 
 function updateWeatherInfo(data) {
   const weatherInfo = document.querySelector(".weather-info");
