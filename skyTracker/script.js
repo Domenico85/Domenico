@@ -53,7 +53,7 @@ document.querySelector(".btn-search").addEventListener("click", searchWeather);
 document
   .querySelector(".input-search")
   .addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" || event.keyCode === 13) {
       searchWeather();
     }
   });
