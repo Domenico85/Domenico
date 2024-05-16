@@ -90,31 +90,19 @@ function updateWeatherInfo(data) {
     ".weather-info__units-c"
   ).innerText = `Celsius: ${data.current.temp_c}°C`;
 
-  fetch("weather/conditions.json")
-    .then((response) => response.json())
-    .then((conditions) => {
-      const conditionCode = data.current.condition.code;
-
-      const condition = conditions.find((item) => item.code === conditionCode);
-
-      const icon = condition ? condition.icon : null;
-
-      let iconUrl = "img/default.svg";
-      if (icon) {
-        const timeOfDay = data.current.is_day ? "day" : "night";
-        iconUrl = `weather/64x64/${timeOfDay}/${icon}.png`;
-      }
-
+  getWeatherIconUrl(data.current.condition.code, data.current.is_day)
+    .then((iconUrl) => {
       const iconElement = weatherInfo.querySelector(".weather-info__icon");
       iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
 
-      if (!icon) {
+      if (!iconUrl.includes("default.svg")) {
         const defaultIcon = iconElement.querySelector("img");
-        defaultIcon.style.width = "50px";
+        defaultIcon.style.width = "110px";
       }
     })
-    .catch((error) => console.error("Error fetching conditions:", error));
-
+    .catch((error) => {
+      console.error("Error getting weather icon URL:", error);
+    });
   const weatherDetails = document.querySelector(".weather-details");
   console.log("con", data.current.condition);
   weatherDetails.querySelector(
@@ -130,7 +118,7 @@ function updateWeatherInfo(data) {
     ".wind div span"
   ).innerText = `${data.current.wind_kph}km/h`;
 
-  const weatherNextDays = document.querySelector(".next-days-info");
+  const weatherNextDays = document.querySelector(".next-days-info-day1");
   const dayName = getDayName(data.forecast.forecastday[1].date);
   weatherNextDays.querySelector(".day").innerText = `${dayName}`;
   weatherNextDays.querySelector(
@@ -139,4 +127,25 @@ function updateWeatherInfo(data) {
   weatherNextDays.querySelector(
     ".min-temp"
   ).innerText = `${data.forecast.forecastday[1].day.mintemp_c}°C`;
+}
+
+function getWeatherIconUrl(conditionCode, isDay) {
+  return fetch("weather/conditions.json")
+    .then((response) => response.json())
+    .then((conditions) => {
+      const condition = conditions.find((item) => item.code === conditionCode);
+      const icon = condition ? condition.icon : null;
+
+      let iconUrl = "img/default.svg";
+      if (icon) {
+        const timeOfDay = isDay ? "day" : "night";
+        iconUrl = `weather/64x64/${timeOfDay}/${icon}.png`;
+      }
+
+      return iconUrl;
+    })
+    .catch((error) => {
+      console.error("Error fetching conditions:", error);
+      return "img/default.svg"; // Return a default icon URL in case of an error
+    });
 }
