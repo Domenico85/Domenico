@@ -20,6 +20,10 @@ function hiddenPlaceholder() {
 
 hiddenPlaceholder();
 
+function getDayName(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", { weekday: "long" });
+}
 const apiKey = "ae761484c1284fce82f91509241405";
 
 function searchWeather() {
@@ -62,11 +66,14 @@ document
 function updateWeatherInfo(data) {
   const weatherInfo = document.querySelector(".weather-info");
   const location = data.location;
+  const todayDayName = getDayName(data.location.localtime);
+
   weatherInfo.querySelector(
     ".weather-info__city"
   ).innerText = `${location.name}, ${location.region}, ${location.country}`;
   weatherInfo.querySelector(".weather-info__description").innerText =
     data.current.condition.text;
+  weatherInfo.querySelector(".weather-info__day").innerText = todayDayName;
   weatherInfo.querySelector(".weather-info__date").innerText = new Date(
     data.location.localtime
   ).toLocaleDateString();
@@ -118,8 +125,18 @@ function updateWeatherInfo(data) {
   ).innerText = `${data.current.humidity}%`;
   weatherDetails.querySelector(
     ".rain div span"
-  ).innerText = `${data.current.precip_mm}mm`;
+  ).innerText = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
   weatherDetails.querySelector(
     ".wind div span"
   ).innerText = `${data.current.wind_kph}km/h`;
+
+  const weatherNextDays = document.querySelector(".next-days-info");
+  const dayName = getDayName(data.forecast.forecastday[1].date);
+  weatherNextDays.querySelector(".day").innerText = `${dayName}`;
+  weatherNextDays.querySelector(
+    ".max-temp"
+  ).innerText = `${data.forecast.forecastday[1].day.maxtemp_c}°C`;
+  weatherNextDays.querySelector(
+    ".min-temp"
+  ).innerText = `${data.forecast.forecastday[1].day.mintemp_c}°C`;
 }
