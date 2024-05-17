@@ -123,6 +123,9 @@ footer p span {
   color: red;
   font-size: 35px;
 }
+.weather-info__date {
+  color: red;
+}
 .weather-info__units-f,
 .weather-info__units-c {
   color: blue;
