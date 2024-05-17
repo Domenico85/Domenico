@@ -19,8 +19,12 @@ body {
 .cats h1 span {
   color: white;
 }
+#catImage {
+  width: 250px;
+}
 .cats img {
-  width: 100svw;
+  width: 250px;
+  margin: 0 auto;
 }
 
 button {

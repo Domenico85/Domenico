@@ -1,19 +1,17 @@
-function getRandomCat() {
-  const img = document.querySelector("img");
+async function getRandomCat() {
+  const img = document.querySelector("#catImage");
   const apiUrl = "https://cataas.com/cat/gif";
-  const apiUrl2 =
-    "https://api.giphy.com/v1/gifs/translate?api_key=R2XyezYv6ZrqOtjNvceIvOtdLm9vjsEX&s=cats";
-  fetch(apiUrl, { mode: "cors" })
-    .then(function (response) {
-      console.log(response);
-      return response.blob();
-    })
-    .then(function (blob) {
-      img.src = URL.createObjectURL(blob);
-    })
-    .catch((e) => {
-      console.log(e);
-    });
+
+  try {
+    const response = await fetch(apiUrl, { mode: "cors" });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const blob = await response.blob();
+    img.src = URL.createObjectURL(blob);
+  } catch (error) {
+    console.error("Error fetching the cat image:", error);
+  }
 }
 
 function buttonRandomCat() {
