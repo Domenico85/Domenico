@@ -92,7 +92,7 @@ footer {
   align-items: center;
   justify-content: center;
   position: absolute;
-  bottom: 0;
+  /* bottom: 0; */
   left: 0;
   right: 0;
   color: #fff;
@@ -192,7 +192,7 @@ footer span {
 @media only screen and (max-width: 800px) {
   html,
   body {
-    overflow: hidden;
+    overflow-x: hidden;
   }
   header h1 {
     font-size: 32px;
@@ -219,6 +219,10 @@ footer span {
 
   .weather-info__description {
     font-size: 18px;
+  }
+
+  .next-days {
+    margin-right: 13px;
   }
   footer {
     font-size: 8px;

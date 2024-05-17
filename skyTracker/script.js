@@ -29,7 +29,6 @@ const apiKey = "ae761484c1284fce82f91509241405";
 function searchWeather() {
   const city = document.querySelector(".input-search").value.trim();
   if (city) {
-    // const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3`;
     console.log(url);
 
