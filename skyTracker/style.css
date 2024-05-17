@@ -148,6 +148,38 @@ footer p span {
   color: #fff;
   font-family: "Freeman";
 }
+.next-days {
+  display: flex;
+}
+.next-days-info-day1,
+.next-days-info-day2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 15px;
+  margin-top: 80px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 18px;
+  max-width: 120px;
+  max-height: 187px;
+  text-align: center;
+}
+.next-days-info-day1 .day,
+.next-days-info-day2 .day {
+  color: white;
+  font-family: "Freeman";
+}
+.next-days-info-day1 .max-temp,
+.next-days-info-day2 .max-temp {
+  color: red;
+  font-family: "Freeman";
+}
+.next-days-info-day1 .min-temp,
+.next-days-info-day2 .min-temp {
+  color: blue;
+  font-family: "Freeman";
+}
 footer span {
   color: blue;
 }

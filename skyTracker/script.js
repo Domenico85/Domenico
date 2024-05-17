@@ -123,10 +123,54 @@ function updateWeatherInfo(data) {
   weatherNextDays.querySelector(".day").innerText = `${dayName}`;
   weatherNextDays.querySelector(
     ".max-temp"
-  ).innerText = `${data.forecast.forecastday[1].day.maxtemp_c}°C`;
+  ).innerText = `Max ${data.forecast.forecastday[1].day.maxtemp_c}°C`;
   weatherNextDays.querySelector(
     ".min-temp"
-  ).innerText = `${data.forecast.forecastday[1].day.mintemp_c}°C`;
+  ).innerText = `Min ${data.forecast.forecastday[1].day.mintemp_c}°C`;
+
+  getWeatherIconUrl(
+    data.forecast.forecastday[1].day.condition.code,
+    data.forecast.forecastday[1].is_day
+  )
+    .then((iconUrl) => {
+      const iconElement = weatherNextDays.querySelector(".icon-next-day");
+      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+
+      if (!iconUrl.includes("default.svg")) {
+        const defaultIcon = iconElement.querySelector("img");
+        defaultIcon.style.width = "110px";
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting weather icon URL:", error);
+    });
+
+  const weatherNextDays2 = document.querySelector(".next-days-info-day2");
+  const dayName2 = getDayName(data.forecast.forecastday[2].date);
+  weatherNextDays2.querySelector(".day").innerText = `${dayName2}`;
+  weatherNextDays2.querySelector(
+    ".max-temp"
+  ).innerText = `Max ${data.forecast.forecastday[2].day.maxtemp_c}°C`;
+  weatherNextDays2.querySelector(
+    ".min-temp"
+  ).innerText = `Min ${data.forecast.forecastday[2].day.mintemp_c}°C`;
+
+  getWeatherIconUrl(
+    data.forecast.forecastday[2].day.condition.code,
+    data.forecast.forecastday[2].is_day
+  )
+    .then((iconUrl) => {
+      const iconElement = weatherNextDays2.querySelector(".icon-next-day");
+      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+
+      if (!iconUrl.includes("default.svg")) {
+        const defaultIcon = iconElement.querySelector("img");
+        defaultIcon.style.width = "110px";
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting weather icon URL:", error);
+    });
 }
 
 function getWeatherIconUrl(conditionCode, isDay) {
@@ -146,6 +190,6 @@ function getWeatherIconUrl(conditionCode, isDay) {
     })
     .catch((error) => {
       console.error("Error fetching conditions:", error);
-      return "img/default.svg"; // Return a default icon URL in case of an error
+      return "img/default.svg";
     });
 }
