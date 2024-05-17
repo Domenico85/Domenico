@@ -150,6 +150,7 @@ footer p span {
 }
 .next-days {
   display: flex;
+  justify-content: center;
 }
 .next-days-info-day1,
 .next-days-info-day2 {
@@ -158,12 +159,13 @@ footer p span {
   justify-content: center;
   margin-left: 15px;
   margin-top: 80px;
-  background: rgba(255, 255, 255, 0.5);
+  background: none;
   border-radius: 5px;
   padding: 18px;
   max-width: 120px;
   max-height: 187px;
   text-align: center;
+  transition: background 0.3s;
 }
 .next-days-info-day1 .day,
 .next-days-info-day2 .day {

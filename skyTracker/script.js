@@ -140,6 +140,7 @@ function updateWeatherInfo(data) {
         const defaultIcon = iconElement.querySelector("img");
         defaultIcon.style.width = "110px";
       }
+      weatherNextDays.style.background = "rgba(255, 255, 255, 0.5)";
     })
     .catch((error) => {
       console.error("Error getting weather icon URL:", error);
@@ -167,6 +168,7 @@ function updateWeatherInfo(data) {
         const defaultIcon = iconElement.querySelector("img");
         defaultIcon.style.width = "110px";
       }
+      weatherNextDays2.style.background = "rgba(255, 255, 255, 0.5)";
     })
     .catch((error) => {
       console.error("Error getting weather icon URL:", error);
