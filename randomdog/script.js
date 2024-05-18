@@ -14,9 +14,15 @@ async function getRandomDog() {
     console.error("Error fetching the dog image:", error);
   }
 }
-async function getBreedDog(breed) {
+async function getBreedDog(breed, subBreed) {
   const img = document.querySelector("#random-dog");
-  const apiUrl = `https://dog.ceo/api/breed/${breed.toLowerCase()}/images/random`;
+  let apiUrl;
+
+  if (subBreed) {
+    apiUrl = `https://dog.ceo/api/breeds/${breed}/${subBreed}/images/random`;
+  } else {
+    apiUrl = `https://dog.ceo/api/breed/${breed}/images/random`;
+  }
 
   try {
     const response = await fetch(apiUrl, { mode: "cors" });
@@ -47,7 +53,7 @@ function getBreedList() {
             const subBreedName =
               subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
             const option = document.createElement("option");
-            option.value = `${subBreed} ${breed}`;
+            option.value = `${breed}-${subBreed}`;
             option.textContent = subBreedName;
             optgroup.appendChild(option);
           });
