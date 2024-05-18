@@ -73,15 +73,14 @@ function getBreedList() {
         if (selectedValue) {
           const [breed, subBreed] = selectedValue.split("-");
           getBreedDog(breed, subBreed);
-          breedRandomButton.style.display = "block"; // Show the "Get More!" button
+          breedRandomButton.style.display = "block";
         } else {
-          breedRandomButton.style.display = "none"; // Hide the "Get More!" button
+          breedRandomButton.style.display = "none";
         }
       });
 
-      // Set the default selection
       select.selectedIndex = 0;
-      breedRandomButton.style.display = "none"; // Initially hide the "Get More!" button
+      breedRandomButton.style.display = "none";
     })
     .catch((error) => console.error("Error fetching the dog breeds:", error));
 }
@@ -101,7 +100,6 @@ function setupEventListeners() {
   });
 }
 
-// Initial setup
 const img = document.querySelector("#random-dog");
 img.src = "img/dog.jpg";
 
