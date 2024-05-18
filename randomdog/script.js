@@ -4,7 +4,6 @@ async function getRandomDog() {
 
   try {
     const response = await fetch(apiUrl, { mode: "cors" });
-    console.log(response);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -14,12 +13,13 @@ async function getRandomDog() {
     console.error("Error fetching the dog image:", error);
   }
 }
+
 async function getBreedDog(breed, subBreed) {
   const img = document.querySelector("#random-dog");
   let apiUrl;
 
   if (subBreed) {
-    apiUrl = `https://dog.ceo/api/breeds/${breed}/${subBreed}/images/random`;
+    apiUrl = `https://dog.ceo/api/breed/${breed}/${subBreed}/images/random`;
   } else {
     apiUrl = `https://dog.ceo/api/breed/${breed}/images/random`;
   }
@@ -42,6 +42,7 @@ function getBreedList() {
     .then((data) => {
       const breeds = data.message;
       const select = document.querySelector("#breedSelect");
+      const breedRandomButton = document.querySelector(".breed-random");
 
       for (const breed in breeds) {
         const breedName = breed.charAt(0).toUpperCase() + breed.slice(1);
@@ -54,7 +55,7 @@ function getBreedList() {
               subBreed.charAt(0).toUpperCase() + subBreed.slice(1);
             const option = document.createElement("option");
             option.value = `${breed}-${subBreed}`;
-            option.textContent = subBreedName;
+            option.textContent = `${subBreedName} (${breedName})`;
             optgroup.appendChild(option);
           });
         } else {
@@ -68,30 +69,43 @@ function getBreedList() {
       }
 
       select.addEventListener("change", () => {
-        const selectedBreed = select.value;
-        if (selectedBreed) {
-          const breedParts = selectedBreed.split(" ");
-          const mainBreed = breedParts[0];
-          getBreedDog(mainBreed);
+        const selectedValue = select.value;
+        if (selectedValue) {
+          const [breed, subBreed] = selectedValue.split("-");
+          getBreedDog(breed, subBreed);
+          breedRandomButton.style.display = "block"; // Show the "Get More!" button
+        } else {
+          breedRandomButton.style.display = "none"; // Hide the "Get More!" button
         }
       });
 
+      // Set the default selection
       select.selectedIndex = 0;
-      const initialBreed = select.value;
-      if (initialBreed) {
-        const [subBreed, mainBreed] = initialBreed.split(" ");
-        getBreedDog(mainBreed, subBreed);
-      }
+      breedRandomButton.style.display = "none"; // Initially hide the "Get More!" button
     })
     .catch((error) => console.error("Error fetching the dog breeds:", error));
 }
 
-function buttonRandomDog() {
-  const btn = document.querySelector("button");
-  btn.addEventListener("click", getRandomDog);
+function setupEventListeners() {
+  const randomDogButton = document.querySelector("#btn-random-dog");
+  randomDogButton.addEventListener("click", getRandomDog);
+
+  const breedRandomButton = document.querySelector(".breed-random");
+  breedRandomButton.addEventListener("click", () => {
+    const select = document.querySelector("#breedSelect");
+    const selectedValue = select.value;
+    if (selectedValue) {
+      const [breed, subBreed] = selectedValue.split("-");
+      getBreedDog(breed, subBreed);
+    }
+  });
 }
 
+// Initial setup
 const img = document.querySelector("#random-dog");
 img.src = "img/dog.jpg";
-buttonRandomDog();
-getBreedList();
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupEventListeners();
+  getBreedList();
+});
