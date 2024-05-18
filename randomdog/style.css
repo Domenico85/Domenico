@@ -30,7 +30,19 @@ body {
 #random-dog {
   max-width: 500px;
 }
-button {
+#breedSelect {
+  margin-top: 15px;
+  text-align: center;
+}
+#breedSelect option {
+  background-color: #2bd2ff;
+  width: 200px;
+}
+#breedSelect optgroup {
+  padding-left: 10px; /* Add padding to indent sub-breeds */
+}
+button,
+#breedSelect {
   background-color: transparent;
   border: 1px solid #266db6;
   box-sizing: border-box;
@@ -46,6 +58,7 @@ button {
   -webkit-user-select: none;
   touch-action: manipulation;
   margin-top: 20px;
+  width: 300px;
 }
 
 button:hover,
@@ -73,7 +86,9 @@ button:before {
 button:hover:before {
   background-color: #6dcff6;
 }
-
+.breed-random {
+  display: none;
+}
 @media (max-width: 500px) {
   button {
     padding: 16px 32px;
