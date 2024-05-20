@@ -15,7 +15,17 @@ header {
 header img {
   max-width: 100px;
 }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 
+#categories {
+  width: 200px;
+}
 .btns {
   display: flex;
   justify-content: center;
@@ -24,7 +34,7 @@ header img {
   flex-direction: column;
 }
 
-button {
+.btn-difficulties {
   display: inline-block;
   padding: 10px 20px;
   font-size: 24px;
@@ -39,14 +49,14 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.btn-difficulties:hover {
   background-color: #fff;
   color: #ff5252;
   border: 2px solid #ff5252;
   box-shadow: 5px 5px 0px #ff5252;
 }
 
-button:active {
+.btn-difficulties:active {
   background-color: #fcf414;
   box-shadow: none;
   transform: translateY(4px);
@@ -60,4 +70,38 @@ button:active {
 }
 #hard {
   background-color: red;
+}
+.question {
+  text-align: center;
+}
+.answer {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(
+    0deg,
+    rgba(20, 167, 62, 1) 0%,
+    rgba(102, 247, 113, 1) 100%
+  );
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.answer:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.answer:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 }

@@ -2,9 +2,11 @@ const easyBtn = document.getElementById("easy");
 const mediumBtn = document.getElementById("medium");
 const hardBtn = document.getElementById("hard");
 const questionsContainer = document.querySelector(".questions");
+const categorySelect = document.getElementById("categories");
+const numberSelect = document.getElementById("number-question");
 
-async function fetchTrivia(difficulty) {
-  const apiUrl = `https://opentdb.com/api.php?amount=10&difficulty=${difficulty}`;
+async function fetchTrivia(difficulty, category, number) {
+  const apiUrl = `https://opentdb.com/api.php?amount=${number}&difficulty=${difficulty}&category=${category}`;
 
   try {
     const response = await fetch(apiUrl, { mode: "cors" });
@@ -36,13 +38,55 @@ function generateQuestionHTML(questionObj) {
     <div class="question">
       <h2>${questionObj.category}</h2>
       <p>${questionObj.question}</p>
-      ${answers
-        .map((answer) => `<button class="answer">${answer}</button>`)
-        .join("")}
+      <div class="answers">
+        ${answers
+          .map((answer) => `<button class="answer">${answer}</button>`)
+          .join("")}
+      </div>
     </div>
   `;
 }
 
-easyBtn.addEventListener("click", () => fetchTrivia("easy"));
-mediumBtn.addEventListener("click", () => fetchTrivia("medium"));
-hardBtn.addEventListener("click", () => fetchTrivia("hard"));
+function getCategoryList() {
+  fetch("https://opentdb.com/api_category.php")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const categories = data.trivia_categories;
+      const select = document.querySelector("#categories");
+
+      categories.forEach((category) => {
+        const option = document.createElement("option");
+        option.value = category.id;
+        option.textContent = category.name;
+        select.appendChild(option);
+      });
+    })
+    .catch((error) =>
+      console.error("Error fetching the category list:", error)
+    );
+}
+
+getCategoryList();
+
+easyBtn.addEventListener("click", () => {
+  const category = categorySelect.value;
+  const number = numberSelect.value;
+  fetchTrivia("easy", category, number);
+});
+
+mediumBtn.addEventListener("click", () => {
+  const category = categorySelect.value;
+  const number = numberSelect.value;
+  fetchTrivia("medium", category, number);
+});
+
+hardBtn.addEventListener("click", () => {
+  const category = categorySelect.value;
+  const number = numberSelect.value;
+  fetchTrivia("hard", category, number);
+});
