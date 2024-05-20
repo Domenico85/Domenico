@@ -7,6 +7,23 @@ categorySelect.selectedIndex = 0;
 const numberSelect = document.getElementById("number-question");
 numberSelect.selectedIndex = 0;
 
+easyBtn.disabled = true;
+mediumBtn.disabled = true;
+hardBtn.disabled = true;
+
+numberSelect.addEventListener("change", () => {
+  const selectedValue = numberSelect.value;
+  if (selectedValue) {
+    easyBtn.disabled = false;
+    mediumBtn.disabled = false;
+    hardBtn.disabled = false;
+  } else {
+    easyBtn.disabled = true;
+    mediumBtn.disabled = true;
+    hardBtn.disabled = true;
+  }
+});
+
 async function fetchTrivia(difficulty, category, number) {
   const apiUrl = `https://opentdb.com/api.php?amount=${number}&difficulty=${difficulty}&category=${category}`;
 
@@ -35,8 +52,8 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
   return `
   <div class="question" data-index="${index}">
     <h2>${questionObj.category}</h2>
-    <p>${questionObj.question}</p>
-    <p>${index + 1}/${totalQuestions}</p>
+    <p class="question-text">${questionObj.question}</p>
+    <p class="question-number">${index + 1}/${totalQuestions}</p>
     <div class="answers">
       ${answers
         .map((answer) => `<button class="answer">${answer}</button>`)

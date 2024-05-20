@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: gray;
+  background-color: rgb(0, 0, 0);
   font-family: "jose";
 }
 
@@ -21,6 +21,13 @@ header {
 header img {
   max-width: 80px;
   border-radius: 100%;
+}
+header h1 {
+  color: red;
+}
+
+header h1 span {
+  color: white;
 }
 main {
   display: flex;
@@ -163,6 +170,12 @@ main {
 .question h2 {
   color: red;
 }
+.question-text {
+  color: white;
+}
+.question-number {
+  color: black;
+}
 .answers {
   display: flex;
   justify-content: center;
@@ -215,11 +228,11 @@ main {
   color: greenyellow;
 }
 .to-top {
-  color: black;
+  color: rgb(254, 254, 254);
   padding-top: 1.8em;
   display: block;
   position: relative;
-  border-color: black;
+  border-color: rgb(255, 255, 255);
   text-decoration: none;
   text-align: center;
   font-size: 20px;
@@ -258,5 +271,10 @@ main {
   .btns {
     flex-direction: row;
     margin-top: 20px;
+  }
+
+  header {
+    justify-content: center;
+    gap: 20px;
   }
 }
