@@ -43,9 +43,10 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
   </div>
 `;
 }
+let correctAnswersCount = 0;
+let totalQuestions = 0;
 
 function displayQuestions(questions) {
-  let correctAnswersCount = 0;
   const totalQuestions = questions.length;
   updateCorrectAnswersCount(correctAnswersCount, totalQuestions);
 
@@ -146,8 +147,10 @@ restartBtn.addEventListener("click", () => {
   hardBtn.style.display = "block";
 
   restartBtn.style.display = "none";
-
+  correctAnswersCount = 0;
   questionsContainer.innerHTML = "";
+
+  updateCorrectAnswersCount(correctAnswersCount, totalQuestions);
 });
 
 function toogleButtons() {
