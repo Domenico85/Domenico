@@ -3,7 +3,9 @@ const mediumBtn = document.getElementById("medium");
 const hardBtn = document.getElementById("hard");
 const questionsContainer = document.querySelector(".questions");
 const categorySelect = document.getElementById("categories");
+categorySelect.selectedIndex = 0;
 const numberSelect = document.getElementById("number-question");
+numberSelect.selectedIndex = 0;
 
 async function fetchTrivia(difficulty, category, number) {
   const apiUrl = `https://opentdb.com/api.php?amount=${number}&difficulty=${difficulty}&category=${category}`;

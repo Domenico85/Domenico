@@ -30,9 +30,12 @@ main {
   gap: 5px;
 }
 
-#categories {
+#categories,
+#number-question {
   width: 200px;
+  text-align: center;
 }
+
 .btns {
   display: flex;
   justify-content: center;
@@ -55,6 +58,7 @@ main {
   transition: all 0.3s ease;
   cursor: pointer;
   font-family: "jose";
+  width: 200px;
 }
 
 .btn-difficulties:hover {
@@ -248,4 +252,11 @@ main {
 
 .to-top:hover:before {
   transform: rotate(360deg);
+}
+
+@media only screen and (min-width: 500px) {
+  .btns {
+    flex-direction: row;
+    margin-top: 20px;
+  }
 }
