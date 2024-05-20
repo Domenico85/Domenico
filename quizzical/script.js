@@ -30,20 +30,18 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
 
   const questionNumber = index + 1;
   const questionCountText = `${questionNumber}/${totalQuestions}`;
-
   return `
-      <div class="question">
-      <p>${questionCountText}</p>  
-      <h2>${questionObj.category}</h2>
-        <p>${questionObj.question}</p>
-    
-        <div class="answers">
-          ${answers
-            .map((answer) => `<button class="answer">${answer}</button>`)
-            .join("")}
-        </div>
-      </div>
-    `;
+  <div class="question" data-index="${index}">
+    <h2>${questionObj.category}</h2>
+    <p>${questionObj.question}</p>
+    <p>${index + 1}/${totalQuestions}</p>
+    <div class="answers">
+      ${answers
+        .map((answer) => `<button class="answer">${answer}</button>`)
+        .join("")}
+    </div>
+  </div>
+`;
 }
 
 function displayQuestions(questions) {
@@ -53,6 +51,27 @@ function displayQuestions(questions) {
       generateQuestionHTML(question, index, totalQuestions)
     )
     .join("");
+
+  const answerButtons = document.querySelectorAll(".answer");
+  answerButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const selectedAnswer = event.target.textContent;
+      const questionElement = event.target.closest(".question");
+      const questionIndex = parseInt(questionElement.dataset.index);
+      console.log("Question Index:", questionIndex);
+      console.log("Questions:", questions);
+      const correctAnswer = questions[questionIndex].correct_answer;
+      console.log("Correct Answer:", correctAnswer);
+      const feedbackText = document.createElement("p");
+      feedbackText.classList.add("feedback");
+      if (selectedAnswer === correctAnswer) {
+        feedbackText.textContent = "Correct!";
+      } else {
+        feedbackText.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+      }
+      questionElement.appendChild(feedbackText);
+    });
+  });
 }
 
 function getCategoryList() {
