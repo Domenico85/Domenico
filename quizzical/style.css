@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "jose";
+  src: url(JosefinSans-Light.ttf);
+}
 body {
   width: 100svw;
   height: 100svh;
@@ -5,6 +9,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: gray;
+  font-family: "jose";
 }
 
 header {
