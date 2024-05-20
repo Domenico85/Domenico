@@ -45,6 +45,8 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
 }
 
 function displayQuestions(questions) {
+  let correctAnswersCount = 0;
+
   const totalQuestions = questions.length;
   questionsContainer.innerHTML = questions
     .map((question, index) =>
@@ -67,6 +69,7 @@ function displayQuestions(questions) {
       if (selectedAnswer === correctAnswer) {
         feedbackText.textContent = "Correct!";
         feedbackText.style.color = "green";
+        correctAnswersCount++;
       } else {
         feedbackText.innerHTML = `<span class="incorrect">Incorrect.</span> The correct answer is: <span class="correct"> ${correctAnswer}</span>`;
       }
@@ -77,8 +80,15 @@ function displayQuestions(questions) {
       currentQuestionAnswerButtons.forEach((btn) => {
         btn.disabled = true;
       });
+      updateCorrectAnswersCount(correctAnswersCount);
     });
   });
+}
+function updateCorrectAnswersCount(count) {
+  const correctAnswersCountElement = document.getElementById(
+    "correct-answers-count"
+  );
+  correctAnswersCountElement.textContent = count;
 }
 
 function getCategoryList() {

@@ -204,3 +204,9 @@ main {
 .correct {
   color: green;
 }
+.correct-answers {
+  color: white;
+}
+#correct-answers-count {
+  color: greenyellow;
+}
