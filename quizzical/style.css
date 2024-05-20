@@ -36,7 +36,10 @@ main {
   align-items: center;
   gap: 5px;
 }
-
+main h3 {
+  color: white;
+  text-align: center;
+}
 #categories,
 #number-question {
   width: 200px;
