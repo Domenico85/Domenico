@@ -28,14 +28,15 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
     questionObj.correct_answer
   );
 
-  const questionNumber = index + 1; // Question number starts from 1
+  const questionNumber = index + 1;
   const questionCountText = `${questionNumber}/${totalQuestions}`;
 
   return `
       <div class="question">
-        <h2>${questionObj.category}</h2>
+      <p>${questionCountText}</p>  
+      <h2>${questionObj.category}</h2>
         <p>${questionObj.question}</p>
-        <p>${questionCountText}</p> <!-- Display question number here -->
+    
         <div class="answers">
           ${answers
             .map((answer) => `<button class="answer">${answer}</button>`)
@@ -84,16 +85,38 @@ easyBtn.addEventListener("click", () => {
   const category = categorySelect.value;
   const number = numberSelect.value;
   fetchTrivia("easy", category, number);
+  toogleButtons();
 });
 
 mediumBtn.addEventListener("click", () => {
   const category = categorySelect.value;
   const number = numberSelect.value;
   fetchTrivia("medium", category, number);
+  toogleButtons();
 });
 
 hardBtn.addEventListener("click", () => {
   const category = categorySelect.value;
   const number = numberSelect.value;
   fetchTrivia("hard", category, number);
+  toogleButtons();
 });
+
+const restartBtn = document.querySelector("#restartBtn");
+restartBtn.addEventListener("click", () => {
+  easyBtn.style.display = "block";
+  mediumBtn.style.display = "block";
+  hardBtn.style.display = "block";
+
+  restartBtn.style.display = "none";
+
+  questionsContainer.innerHTML = "";
+});
+
+function toogleButtons() {
+  easyBtn.style.display = "none";
+  mediumBtn.style.display = "none";
+  hardBtn.style.display = "none";
+
+  restartBtn.style.display = "block";
+}
