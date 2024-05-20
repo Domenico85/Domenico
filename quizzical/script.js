@@ -6,6 +6,8 @@ const categorySelect = document.getElementById("categories");
 categorySelect.selectedIndex = 0;
 const numberSelect = document.getElementById("number-question");
 numberSelect.selectedIndex = 0;
+const correctAnswersElement = document.querySelector(".correct-answers");
+const toTopLink = document.querySelector(".to-top");
 
 easyBtn.disabled = true;
 mediumBtn.disabled = true;
@@ -143,6 +145,8 @@ easyBtn.addEventListener("click", () => {
   const number = numberSelect.value;
   fetchTrivia("easy", category, number);
   toogleButtons();
+  correctAnswersElement.style.display = "block";
+  toTopLink.style.display = "block";
 });
 
 mediumBtn.addEventListener("click", () => {
@@ -150,6 +154,8 @@ mediumBtn.addEventListener("click", () => {
   const number = numberSelect.value;
   fetchTrivia("medium", category, number);
   toogleButtons();
+  correctAnswersElement.style.display = "block";
+  toTopLink.style.display = "block";
 });
 
 hardBtn.addEventListener("click", () => {
@@ -157,6 +163,8 @@ hardBtn.addEventListener("click", () => {
   const number = numberSelect.value;
   fetchTrivia("hard", category, number);
   toogleButtons();
+  correctAnswersElement.style.display = "block";
+  toTopLink.style.display = "block";
 });
 
 const restartBtn = document.querySelector("#restartBtn");
@@ -164,7 +172,8 @@ restartBtn.addEventListener("click", () => {
   easyBtn.style.display = "block";
   mediumBtn.style.display = "block";
   hardBtn.style.display = "block";
-
+  correctAnswersElement.style.display = "none";
+  toTopLink.style.display = "none";
   restartBtn.style.display = "none";
   correctAnswersCount = 0;
   questionsContainer.innerHTML = "";

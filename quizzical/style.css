@@ -168,7 +168,7 @@ main {
   margin: 10px 6px 0px 4px;
 }
 .question h2 {
-  color: red;
+  color: black;
 }
 .question-text {
   color: white;
@@ -266,6 +266,10 @@ main {
 .to-top:hover:before {
   transform: rotate(360deg);
 }
+.correct-answers,
+.to-top {
+  display: none;
+}
 
 @media only screen and (min-width: 500px) {
   .btns {
@@ -276,5 +280,9 @@ main {
   header {
     justify-content: center;
     gap: 20px;
+  }
+
+  #categories {
+    margin-top: 10px;
   }
 }
