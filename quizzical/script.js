@@ -20,13 +20,7 @@ async function fetchTrivia(difficulty, category, number) {
   }
 }
 
-function displayQuestions(questions) {
-  questionsContainer.innerHTML = questions
-    .map((question) => generateQuestionHTML(question))
-    .join("");
-}
-
-function generateQuestionHTML(questionObj) {
+function generateQuestionHTML(questionObj, index, totalQuestions) {
   const answers = [...questionObj.incorrect_answers];
   answers.splice(
     Math.floor(Math.random() * (answers.length + 1)),
@@ -34,17 +28,30 @@ function generateQuestionHTML(questionObj) {
     questionObj.correct_answer
   );
 
+  const questionNumber = index + 1; // Question number starts from 1
+  const questionCountText = `${questionNumber}/${totalQuestions}`;
+
   return `
-    <div class="question">
-      <h2>${questionObj.category}</h2>
-      <p>${questionObj.question}</p>
-      <div class="answers">
-        ${answers
-          .map((answer) => `<button class="answer">${answer}</button>`)
-          .join("")}
+      <div class="question">
+        <h2>${questionObj.category}</h2>
+        <p>${questionObj.question}</p>
+        <p>${questionCountText}</p> <!-- Display question number here -->
+        <div class="answers">
+          ${answers
+            .map((answer) => `<button class="answer">${answer}</button>`)
+            .join("")}
+        </div>
       </div>
-    </div>
-  `;
+    `;
+}
+
+function displayQuestions(questions) {
+  const totalQuestions = questions.length;
+  questionsContainer.innerHTML = questions
+    .map((question, index) =>
+      generateQuestionHTML(question, index, totalQuestions)
+    )
+    .join("");
 }
 
 function getCategoryList() {
