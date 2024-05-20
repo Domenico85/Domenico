@@ -46,8 +46,9 @@ function generateQuestionHTML(questionObj, index, totalQuestions) {
 
 function displayQuestions(questions) {
   let correctAnswersCount = 0;
-
   const totalQuestions = questions.length;
+  updateCorrectAnswersCount(correctAnswersCount, totalQuestions);
+
   questionsContainer.innerHTML = questions
     .map((question, index) =>
       generateQuestionHTML(question, index, totalQuestions)
@@ -80,15 +81,15 @@ function displayQuestions(questions) {
       currentQuestionAnswerButtons.forEach((btn) => {
         btn.disabled = true;
       });
-      updateCorrectAnswersCount(correctAnswersCount);
+      updateCorrectAnswersCount(correctAnswersCount, totalQuestions);
     });
   });
 }
-function updateCorrectAnswersCount(count) {
+function updateCorrectAnswersCount(count, totalQuestions) {
   const correctAnswersCountElement = document.getElementById(
     "correct-answers-count"
   );
-  correctAnswersCountElement.textContent = count;
+  correctAnswersCountElement.textContent = `${count}/${totalQuestions}`;
 }
 
 function getCategoryList() {
