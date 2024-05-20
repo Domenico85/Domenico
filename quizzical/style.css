@@ -75,6 +75,20 @@ main {
 }
 .question {
   text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  padding: 4px;
+  margin: 10px 6px 0px 4px;
+}
+.question h2 {
+  color: red;
+}
+.answers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .answer {
   display: flex;
