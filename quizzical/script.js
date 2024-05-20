@@ -66,10 +66,17 @@ function displayQuestions(questions) {
       feedbackText.classList.add("feedback");
       if (selectedAnswer === correctAnswer) {
         feedbackText.textContent = "Correct!";
+        feedbackText.style.color = "green";
       } else {
-        feedbackText.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+        feedbackText.innerHTML = `<span class="incorrect">Incorrect.</span> The correct answer is: <span class="correct"> ${correctAnswer}</span>`;
       }
       questionElement.appendChild(feedbackText);
+
+      const currentQuestionAnswerButtons =
+        questionElement.querySelectorAll(".answer");
+      currentQuestionAnswerButtons.forEach((btn) => {
+        btn.disabled = true;
+      });
     });
   });
 }
