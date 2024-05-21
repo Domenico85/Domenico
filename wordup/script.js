@@ -3,7 +3,7 @@ const wordElement = wordContainer.querySelector(".word");
 const definitionElement = wordContainer.querySelector(".definition");
 const phoneticElement = wordContainer.querySelector(".phonetic");
 const audioElement = wordContainer.querySelector(".audio");
-const originElement = wordContainer.querySelector(".origin");
+const synonymsElement = wordContainer.querySelector(".synonyms");
 
 async function fetchWord(word) {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
@@ -48,7 +48,13 @@ function updateWordInfo(data) {
     audioElement.innerHTML = "";
   }
 
-  originElement.innerText = data.origin ? `Origin: ${data.origin}` : "";
+  const synonyms = data.meanings[0].synonyms;
+  synonymsElement.innerHTML =
+    synonyms && synonyms.length > 0
+      ? `<span class="color-text">Synonyms:</span> ${synonyms
+          .slice(0, 3)
+          .join(", ")}`
+      : `<span class="color-text">Synonyms:</span> None`;
 }
 
 function showError(message) {
@@ -56,5 +62,5 @@ function showError(message) {
   definitionElement.innerText = message;
   phoneticElement.innerText = "";
   audioElement.innerHTML = "";
-  originElement.innerText = "";
+  synonymsElement.innerText = "";
 }
