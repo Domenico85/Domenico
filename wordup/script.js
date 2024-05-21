@@ -18,8 +18,11 @@ document
   .querySelector(".search-bar")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    const word = document.querySelector("#search").value;
+    const searchInput = document.querySelector("#search");
+    const word = searchInput.value;
     fetchWord(word);
+    searchInput.value = "";
+    searchInput.blur();
   });
 
 function updateWordInfo(data) {

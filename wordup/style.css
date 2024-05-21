@@ -1,8 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+.nunito-font {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 * {
   border: 0;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Nunito";
 }
 :root {
   font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1920 - 320));
