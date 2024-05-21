@@ -8,7 +8,7 @@ async function fetchWord(word) {
     }
     const data = await response.json();
     console.log(data);
-    //displayQuestions(data.results);
+    updateWordInfo(data[0]);
   } catch (error) {
     console.error("Error fetching the word:", error);
   }
@@ -21,3 +21,30 @@ document
     const word = document.querySelector("#search").value;
     fetchWord(word);
   });
+
+function updateWordInfo(data) {
+  const wordContainer = document.querySelector(".container-word");
+
+  const wordElement = wordContainer.querySelector(".word");
+  const definitionElement = wordContainer.querySelector(".definition");
+  const phoneticElement = wordContainer.querySelector(".phonetic");
+  const audioElement = wordContainer.querySelector(".audio");
+  const originElement = wordContainer.querySelector(".origin");
+
+  wordElement.innerHTML = `<span class="color-text">Word:</span> ${data.word}`;
+
+  definitionElement.innerHTML = `<span class="color-text">Definition:</span> ${data.meanings[0].definitions[0].definition}`;
+
+  phoneticElement.innerHTML = data.phonetic
+    ? `<span class="color-text">Phonetic</span>: ${data.phonetic}`
+    : "";
+
+  if (data.phonetics[0] && data.phonetics[0].audio) {
+    const audioUrl = data.phonetics[0].audio;
+    audioElement.innerHTML = `<audio controls src="${audioUrl}"></audio>`;
+  } else {
+    audioElement.innerHTML = "";
+  }
+
+  originElement.innerText = data.origin ? `Origin: ${data.origin}` : "";
+}

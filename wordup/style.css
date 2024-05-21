@@ -63,7 +63,6 @@ form {
   outline: transparent;
 }
 .search-bar {
-  /* margin: auto; */
   padding: 1.5em;
   justify-content: center;
   max-width: 30em;
@@ -129,7 +128,6 @@ form {
   height: 1px;
 }
 
-/* Active state */
 .search-bar input:focus + .search-btn,
 .search-bar input:valid + .search-btn {
   background: #2762f3;
@@ -151,7 +149,20 @@ form {
 .search-bar input:valid + .search-btn:active {
   transform: translateY(1px);
 }
-
+.container-word {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.color-text {
+  color: black;
+}
 @media screen and (prefers-color-scheme: dark) {
   body,
   input {
