@@ -31,15 +31,11 @@ nav {
   user-select: none;
   transform: translate3d(25px, -25px, 0);
   transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 0.9);
+  top: -140px;
+  z-index: 5;
 }
 nav.open {
   transform: translate3d(0, 0, 0);
-}
-nav.top-right {
-  top: -140px;
-  z-index: 5;
-  position: fixed;
-  left: -18px;
 }
 
 .disc {
