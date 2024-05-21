@@ -1,5 +1,4 @@
-async function fetchWord() {
-  const word = "hello";
+async function fetchWord(word) {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
   try {
@@ -14,4 +13,11 @@ async function fetchWord() {
     console.error("Error fetching the word:", error);
   }
 }
-fetchWord();
+
+document
+  .querySelector(".search-bar")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const word = document.querySelector("#search").value;
+    fetchWord(word);
+  });
