@@ -24,7 +24,8 @@ header {
   margin-top: -30px;
 }
 
-select {
+select,
+.select-characters {
   appearance: none;
   border: 0;
   outline: 0;
@@ -33,11 +34,13 @@ select {
   box-shadow: none;
 }
 
-select::-ms-expand {
+select::-ms-expand,
+.select-characters::-ms-expand {
   display: none;
 }
 
-.select {
+.select,
+.select-characters {
   position: relative;
   display: flex;
   width: min(20rem, 90vw);
@@ -47,13 +50,15 @@ select::-ms-expand {
   margin: 0 auto;
 }
 
-.select select {
+.select select,
+.select-characters {
   flex: 1;
   padding: 1em;
   cursor: pointer;
 }
 
-.select::after {
+.select::after,
+.select-characters::after {
   content: "\25BC";
   position: absolute;
   right: 1rem;
@@ -62,11 +67,14 @@ select::-ms-expand {
   pointer-events: none;
 }
 
-.select:hover::after {
+.select:hover::after,
+.select-characters:hover::after {
   color: #f39c12;
   animation: bounce 0.5s infinite;
 }
-
+.select-characters {
+  margin-top: 10px;
+}
 @keyframes bounce {
   25% {
     transform: translateY(5px);

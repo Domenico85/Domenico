@@ -21,13 +21,16 @@
       <img class="logo" src="img/logo.png" alt="logo" />
       <img class="title" src="img/title.png" alt="title" />
     </header>
-
-    <label class="select">
-      <select>
-        <option value="1">Characters</option>
-        <option value="2">Locations</option>
-        <option value="3">Episodes</option>
-      </select>
-    </label>
+    <main>
+      <label class="select" aria-label="Select Category">
+        <select class="select-category">
+          <option value="" disabled selected hidden>Choose</option>
+          <option value="1">Characters</option>
+          <option value="2">Locations</option>
+          <option value="3">Episodes</option>
+        </select>
+      </label>
+      <div id="content-placeholder"></div>
+    </main>
   </body>
 </html>
