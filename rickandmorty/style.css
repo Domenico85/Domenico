@@ -25,7 +25,7 @@ header {
 }
 
 select,
-.select-characters {
+.select-content {
   appearance: none;
   border: 0;
   outline: 0;
@@ -35,12 +35,12 @@ select,
 }
 
 select::-ms-expand,
-.select-characters::-ms-expand {
+.select-content::-ms-expand {
   display: none;
 }
 
 .select,
-.select-characters {
+.select-content {
   position: relative;
   display: flex;
   width: min(20rem, 90vw);
@@ -51,14 +51,14 @@ select::-ms-expand,
 }
 
 .select select,
-.select-characters {
+.select-content {
   flex: 1;
   padding: 1em;
   cursor: pointer;
 }
 
 .select::after,
-.select-characters::after {
+.select-content::after {
   content: "\25BC";
   position: absolute;
   right: 1rem;
@@ -68,11 +68,11 @@ select::-ms-expand,
 }
 
 .select:hover::after,
-.select-characters:hover::after {
+.select-content:hover::after {
   color: #f39c12;
   animation: bounce 0.5s infinite;
 }
-.select-characters {
+.select-content {
   margin-top: 10px;
 }
 @keyframes bounce {
