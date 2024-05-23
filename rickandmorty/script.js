@@ -99,21 +99,70 @@ async function renderSelect(items, next, prev) {
 }
 
 function displayItemDescription(item) {
+  const descriptionDiv = document.querySelector("#description");
+
   descriptionDiv.innerHTML = "";
+  console.log("1", item);
 
   if (!item) {
+    const message = document.createElement("p");
+    message.textContent = "Sorry, the details for this item are not available.";
+    descriptionDiv.appendChild(message);
+    descriptionDiv.style.display = "flex";
+    console.log("2", message);
     return;
   }
 
   const itemDetails = document.createElement("div");
   itemDetails.classList.add("detail-description");
-  itemDetails.innerHTML = `
-    <h2>${item.name || item.title}</h2>
-    <p>Status: ${item.status || "No description available."}</p>
-    <p>Type: ${item.type || "Unknown"}</p>
-    <p>Gender: ${item.gender || "Unknown"}</p>
-    <img src="${item.image}" />
-  `;
+
+  if (item.type === "character" || !item.type) {
+    itemDetails.innerHTML = `
+      <h2>${item.name}</h2>
+      <p>Status: ${item.status || "Unknown"}</p>
+      <p>Species: ${item.species || "Unknown"}</p>
+      <p>Gender: ${item.gender || "Unknown"}</p>
+      ${item.image ? `<img src="${item.image}" alt="${item.name}" />` : ""}
+    `;
+  } else if (item.type === "location" || item.residents) {
+    itemDetails.innerHTML = `
+      <h2>${item.name}</h2>
+      <p>Type: ${item.type || "Unknown"}</p>
+      <p>Dimension: ${item.dimension || "Unknown"}</p>
+      <p>${item.residents.length} Residents</p>
+    `;
+  } else if (item.type === "episode" || (item.type && item.episode)) {
+    console.log("3", item);
+    itemDetails.innerHTML = `
+      <h2>${item.name}</h2>
+      <p>Episode: ${item.episode || "Unknown"}</p>
+      <p>Air Date: ${item.air_date || "Unknown"}</p>
+      <p>${item.characters.length} Characters</p>
+    `;
+  } else {
+    itemDetails.innerHTML = `
+      <h2>${item.name || item.title}</h2>
+      <p>Status: ${item.status || "No description available."}</p>
+      <p>Type: ${item.type || "Unknown"}</p>
+      <p>Gender: ${item.gender || "Unknown"}</p>
+      ${item.image ? `<img src="${item.image}" />` : ""}
+    `;
+  }
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.classList.add("close-button");
+
+  closeButton.addEventListener("click", () => {
+    descriptionDiv.style.display = "none";
+  });
+
+  descriptionDiv.addEventListener("click", (event) => {
+    if (!descriptionDiv.contains(event.target)) {
+      descriptionDiv.style.display = "none";
+    }
+  });
+
+  itemDetails.appendChild(closeButton);
   descriptionDiv.style.display = "flex";
   descriptionDiv.appendChild(itemDetails);
 }
@@ -127,13 +176,13 @@ selectCategory.addEventListener("change", async (event) => {
     let data;
     if (selectedValue === "1") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/character");
-      console.log("character", data);
+      // console.log("character", data);
     } else if (selectedValue === "2") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/location");
-      console.log("location", data);
+      // console.log("location", data);
     } else if (selectedValue === "3") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/episode");
-      console.log("episodes", data);
+      // console.log("episodes", data);
     } else {
       contentPlaceholder.innerHTML = "";
       return;

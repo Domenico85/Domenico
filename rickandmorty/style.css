@@ -191,3 +191,13 @@ a:hover .arrow.right::after {
 .page-number {
   color: whitesmoke;
 }
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: greenyellow;
+  position: absolute;
+  top: 40px;
+  right: 19px;
+  font-family: "r&m";
+  font-size: 40px;
+}
