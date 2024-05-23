@@ -10,10 +10,12 @@ async function fetchFromAPI(url) {
   const data = await response.json();
   return data;
 }
+
 function getCurrentPage(url) {
   const urlParams = new URLSearchParams(new URL(url).search);
   return parseInt(urlParams.get("page")) || 1;
 }
+
 async function renderSelect(items, next, prev) {
   contentPlaceholder.innerHTML = "";
 
@@ -52,6 +54,7 @@ async function renderSelect(items, next, prev) {
   } else if (next) {
     currentPage = getCurrentPage(next) - 1;
   }
+
   const arrowsContainer = document.createElement("div");
   arrowsContainer.classList.add("arrows-container");
 
@@ -79,7 +82,6 @@ async function renderSelect(items, next, prev) {
   rightArrow.classList.add("arrow", "right");
   rightArrowLink.appendChild(rightArrow);
 
-  // Add click event listener to the right arrow for pagination
   rightArrowLink.addEventListener("click", async (event) => {
     event.preventDefault();
     if (next) {
@@ -104,11 +106,13 @@ function displayItemDescription(item) {
   }
 
   const itemDetails = document.createElement("div");
+  itemDetails.classList.add("detail-description");
   itemDetails.innerHTML = `
     <h2>${item.name || item.title}</h2>
     <p>Status: ${item.status || "No description available."}</p>
     <p>Type: ${item.type || "Unknown"}</p>
     <p>Gender: ${item.gender || "Unknown"}</p>
+    <img src="${item.image}" />
   `;
 
   descriptionDiv.appendChild(itemDetails);
@@ -123,6 +127,7 @@ selectCategory.addEventListener("change", async (event) => {
     let data;
     if (selectedValue === "1") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/character");
+      console.log(data);
     } else if (selectedValue === "2") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/location");
     } else if (selectedValue === "3") {
