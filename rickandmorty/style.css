@@ -106,7 +106,7 @@ main {
   color: white;
 }
 .items-container a:hover {
-  color: blue;
+  color: greenyellow;
 }
 .main-desc {
   color: greenyellow;
@@ -216,4 +216,7 @@ a:hover .arrow.right::after {
   right: 5px;
   font-family: "r&m";
   font-size: 40px;
+}
+.color-text {
+  color: #06ff27;
 }

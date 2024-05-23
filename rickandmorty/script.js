@@ -119,27 +119,41 @@ function displayItemDescription(item, type) {
   if (type == "1") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
-      <p>Status: ${item.status || "Unknown"}</p>
-      <p>Species: ${item.species || "Unknown"}</p>
-      <p>Gender: ${item.gender || "Unknown"}</p>
+      <p><span class="color-text">Status:</span> ${item.status || "Unknown"}</p>
+      <p><span class="color-text">Species: </span>${
+        item.species || "Unknown"
+      }</p>
+      <p><span class="color-text">Gender:</span> ${item.gender || "Unknown"}</p>
       ${item.image ? `<img src="${item.image}" alt="${item.name}" />` : ""}
     `;
   } else if (type == "2") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
-      <p>Type: ${item.type || "Unknown"}</p>
-      <p>Dimension: ${item.dimension || "Unknown"}</p>
-      <p>${item.residents.length} Residents</p>
+      <p><span class="color-text">Type:</span> ${item.type || "Unknown"}</p>
+      <p><span class="color-text">Dimension:</span> ${
+        item.dimension || "Unknown"
+      }</p>
+      <p><span class="color-text">Residents:</span> ${
+        item.residents.length
+      } </p>
     `;
+    itemDetails.style.margin = "50%";
   } else if (type == "3") {
     console.log("3", item.type);
     console.log("4", item.episode);
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
-      <p>Episode: ${item.episode || "Unknown"}</p>
-      <p>Air Date: ${item.air_date || "Unknown"}</p>
-      <p>${item.characters.length} Characters</p>
+      <p><span class="color-text">Episode:</span> ${
+        item.episode || "Unknown"
+      }</p>
+      <p><span class="color-text">Air Date:</span> ${
+        item.air_date || "Unknown"
+      }</p>
+      <p><span class="color-text">Characters:</span> ${
+        item.characters.length
+      } </p>
     `;
+    itemDetails.style.margin = "50%";
   } else {
     itemDetails.innerHTML = `
       <h2>${item.name || item.title}</h2>
@@ -148,6 +162,7 @@ function displayItemDescription(item, type) {
       <p>Gender: ${item.gender || "Unknown"}</p>
       ${item.image ? `<img src="${item.image}" />` : ""}
     `;
+    itemDetails.style.margin = "50%";
   }
   const closeButton = document.createElement("button");
   closeButton.textContent = "X";
