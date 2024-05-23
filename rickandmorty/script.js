@@ -139,8 +139,6 @@ function displayItemDescription(item, type) {
     `;
     itemDetails.style.margin = "50%";
   } else if (type == "3") {
-    console.log("3", item.type);
-    console.log("4", item.episode);
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
       <p><span class="color-text">Episode:</span> ${
