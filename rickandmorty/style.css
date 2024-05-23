@@ -100,6 +100,13 @@ main {
   align-items: center;
   margin-top: 15px;
 }
+.items-container a {
+  text-decoration: underline;
+  color: white;
+}
+.items-container a:hover {
+  color: blue;
+}
 #description {
   color: white;
   display: none;
@@ -189,7 +196,7 @@ a:hover .arrow.right::after {
     var(--arrow-color);
 }
 .page-number {
-  color: whitesmoke;
+  color: blue;
 }
 .close-button {
   background-color: transparent;

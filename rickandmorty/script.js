@@ -16,7 +16,7 @@ function getCurrentPage(url) {
   return parseInt(urlParams.get("page")) || 1;
 }
 
-async function renderSelect(items, next, prev) {
+async function renderSelect(items, next, prev, type) {
   contentPlaceholder.innerHTML = "";
 
   const itemsContainer = document.createElement("div");
@@ -41,7 +41,7 @@ async function renderSelect(items, next, prev) {
         const selectedItem = items.find(
           (item) => item.id === parseInt(selectedItemId)
         );
-        displayItemDescription(selectedItem);
+        displayItemDescription(selectedItem, type);
       });
 
       itemsContainer.appendChild(itemLink);
@@ -98,7 +98,7 @@ async function renderSelect(items, next, prev) {
   contentPlaceholder.appendChild(arrowsContainer);
 }
 
-function displayItemDescription(item) {
+function displayItemDescription(item, type) {
   const descriptionDiv = document.querySelector("#description");
 
   descriptionDiv.innerHTML = "";
@@ -116,7 +116,7 @@ function displayItemDescription(item) {
   const itemDetails = document.createElement("div");
   itemDetails.classList.add("detail-description");
 
-  if (item.type === "character" || !item.type) {
+  if (type == "1") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
       <p>Status: ${item.status || "Unknown"}</p>
@@ -124,15 +124,16 @@ function displayItemDescription(item) {
       <p>Gender: ${item.gender || "Unknown"}</p>
       ${item.image ? `<img src="${item.image}" alt="${item.name}" />` : ""}
     `;
-  } else if (item.type === "location" || item.residents) {
+  } else if (type == "2") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
       <p>Type: ${item.type || "Unknown"}</p>
       <p>Dimension: ${item.dimension || "Unknown"}</p>
       <p>${item.residents.length} Residents</p>
     `;
-  } else if (item.type === "episode" || (item.type && item.episode)) {
-    console.log("3", item);
+  } else if (type == "3") {
+    console.log("3", item.type);
+    console.log("4", item.episode);
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
       <p>Episode: ${item.episode || "Unknown"}</p>
@@ -157,6 +158,7 @@ function displayItemDescription(item) {
   });
 
   descriptionDiv.addEventListener("click", (event) => {
+    console.log("desc", descriptionDiv);
     if (!descriptionDiv.contains(event.target)) {
       descriptionDiv.style.display = "none";
     }
@@ -188,7 +190,7 @@ selectCategory.addEventListener("change", async (event) => {
       return;
     }
 
-    renderSelect(data.results, data.info.next, data.info.prev);
+    renderSelect(data.results, data.info.next, data.info.prev, selectedValue);
   } catch (error) {
     contentPlaceholder.innerHTML = "Failed to load data. Please try again.";
   }
