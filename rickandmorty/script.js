@@ -114,7 +114,7 @@ function displayItemDescription(item) {
     <p>Gender: ${item.gender || "Unknown"}</p>
     <img src="${item.image}" />
   `;
-
+  descriptionDiv.style.display = "flex";
   descriptionDiv.appendChild(itemDetails);
 }
 
@@ -127,11 +127,13 @@ selectCategory.addEventListener("change", async (event) => {
     let data;
     if (selectedValue === "1") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/character");
-      console.log(data);
+      console.log("character", data);
     } else if (selectedValue === "2") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/location");
+      console.log("location", data);
     } else if (selectedValue === "3") {
       data = await fetchFromAPI("https://rickandmortyapi.com/api/episode");
+      console.log("episodes", data);
     } else {
       contentPlaceholder.innerHTML = "";
       return;
