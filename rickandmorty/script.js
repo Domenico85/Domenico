@@ -1,49 +1,124 @@
 const selectHidden = document.querySelector(".select-category");
 selectHidden.selectedIndex = 0;
 const selectCategory = document.querySelector(".select-category");
-const contentPlaceholder = document.getElementById("content-placeholder");
-
-selectCategory.addEventListener("change", async (event) => {
-  const selectedValue = event.target.value;
-
-  if (selectedValue === "1") {
-    const characters = await fetchFromAPI(
-      "https://rickandmortyapi.com/api/character"
-    );
-    renderSelect(characters);
-  } else if (selectedValue === "2") {
-    const locations = await fetchFromAPI(
-      "https://rickandmortyapi.com/api/location"
-    );
-    renderSelect(locations);
-  } else if (selectedValue === "3") {
-    const episodes = await fetchFromAPI(
-      "https://rickandmortyapi.com/api/episode"
-    );
-    renderSelect(episodes);
-  } else {
-    contentPlaceholder.innerHTML = "";
-  }
-});
+const contentPlaceholder = document.querySelector("#select-placeholder");
+const descriptionDiv = document.querySelector("#description");
 
 async function fetchFromAPI(url) {
   const response = await fetch(url);
+  if (!response.ok) throw new Error("Network response was not ok");
   const data = await response.json();
-  return data.results;
+  return data;
 }
 
-function renderSelect(items) {
-  const selectElement = document.createElement("select");
-  selectElement.classList.add("select-content");
-  selectElement.innerHTML = `<option value="" disabled selected hidden>Choose an option</option>`;
+async function renderSelect(items, next, prev) {
+  contentPlaceholder.innerHTML = "";
 
-  items.forEach((item) => {
-    const option = document.createElement("option");
-    option.value = item.id;
-    option.textContent = item.name || item.title;
-    selectElement.appendChild(option);
+  const itemsContainer = document.createElement("div");
+  itemsContainer.classList.add("items-container");
+
+  if (Array.isArray(items)) {
+    items.forEach((item) => {
+      const itemLink = document.createElement("a");
+      itemLink.href = "#";
+      itemLink.dataset.id = item.id;
+      itemLink.textContent = item.name || item.title;
+      itemLink.classList.add("item-link");
+
+      itemLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        const selectedItemId = event.target.dataset.id;
+
+        if (!selectedItemId) {
+          return;
+        }
+
+        const selectedItem = items.find(
+          (item) => item.id === parseInt(selectedItemId)
+        );
+        displayItemDescription(selectedItem);
+      });
+
+      itemsContainer.appendChild(itemLink);
+    });
+  }
+
+  const arrowsContainer = document.createElement("div");
+  arrowsContainer.classList.add("arrows-container");
+
+  const leftArrowLink = document.createElement("a");
+  leftArrowLink.href = prev ? prev : "#";
+  const leftArrow = document.createElement("span");
+  leftArrow.classList.add("arrow", "left");
+  leftArrowLink.appendChild(leftArrow);
+
+  leftArrowLink.addEventListener("click", async (event) => {
+    event.preventDefault();
+    if (prev) {
+      const data = await fetchFromAPI(prev);
+      renderSelect(data.results, data.info.next, data.info.prev);
+    }
   });
 
-  contentPlaceholder.innerHTML = "";
-  contentPlaceholder.appendChild(selectElement);
+  const rightArrowLink = document.createElement("a");
+  rightArrowLink.href = next ? next : "#";
+  const rightArrow = document.createElement("span");
+  rightArrow.classList.add("arrow", "right");
+  rightArrowLink.appendChild(rightArrow);
+
+  rightArrowLink.addEventListener("click", async (event) => {
+    event.preventDefault();
+    if (next) {
+      const data = await fetchFromAPI(next);
+      renderSelect(data.results, data.info.next, data.info.prev);
+    }
+  });
+
+  arrowsContainer.appendChild(leftArrowLink);
+  arrowsContainer.appendChild(rightArrowLink);
+
+  contentPlaceholder.appendChild(itemsContainer);
+  contentPlaceholder.appendChild(arrowsContainer);
 }
+
+function displayItemDescription(item) {
+  descriptionDiv.innerHTML = "";
+
+  if (!item) {
+    return;
+  }
+
+  const itemDetails = document.createElement("div");
+  itemDetails.innerHTML = `
+    <h2>${item.name || item.title}</h2>
+    <p>Status: ${item.status || "No description available."}</p>
+    <p>Type: ${item.type || "Unknown"}</p>
+    <p>Gender: ${item.gender || "Unknown"}</p>
+  `;
+
+  descriptionDiv.appendChild(itemDetails);
+}
+
+selectCategory.addEventListener("change", async (event) => {
+  const selectedValue = event.target.value;
+  contentPlaceholder.innerHTML = "Loading...";
+  descriptionDiv.innerHTML = "";
+
+  try {
+    let data;
+    if (selectedValue === "1") {
+      data = await fetchFromAPI("https://rickandmortyapi.com/api/character");
+    } else if (selectedValue === "2") {
+      data = await fetchFromAPI("https://rickandmortyapi.com/api/location");
+    } else if (selectedValue === "3") {
+      data = await fetchFromAPI("https://rickandmortyapi.com/api/episode");
+    } else {
+      contentPlaceholder.innerHTML = "";
+      return;
+    }
+
+    renderSelect(data.results, data.info.next, data.info.prev);
+  } catch (error) {
+    contentPlaceholder.innerHTML = "Failed to load data. Please try again.";
+  }
+});
