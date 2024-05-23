@@ -99,6 +99,7 @@ main {
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  text-align: center;
 }
 .items-container a {
   text-decoration: underline;
@@ -106,6 +107,12 @@ main {
 }
 .items-container a:hover {
   color: blue;
+}
+.main-desc {
+  color: greenyellow;
+  font-family: "r&m";
+  font-size: 50px;
+  text-align: center;
 }
 #description {
   color: white;
@@ -120,7 +127,7 @@ main {
     rgba(254, 254, 254, 0.35) 0px -2px 6px 0px inset;
   width: 333px;
   bottom: 17px;
-  height: 540px;
+  max-height: 600px;
   text-align: center;
 }
 #description h2 {
@@ -196,7 +203,9 @@ a:hover .arrow.right::after {
     var(--arrow-color);
 }
 .page-number {
-  color: blue;
+  font-size: 25px;
+  color: greenyellow;
+  font-family: "r&m";
 }
 .close-button {
   background-color: transparent;
