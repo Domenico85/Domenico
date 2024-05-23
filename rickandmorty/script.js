@@ -126,6 +126,7 @@ function displayItemDescription(item, type) {
       <p><span class="color-text">Gender:</span> ${item.gender || "Unknown"}</p>
       ${item.image ? `<img src="${item.image}" alt="${item.name}" />` : ""}
     `;
+    descriptionDiv.style.maxHeight = "600px";
   } else if (type == "2") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
@@ -138,6 +139,7 @@ function displayItemDescription(item, type) {
       } </p>
     `;
     itemDetails.style.margin = "50%";
+    descriptionDiv.style.maxHeight = "482px";
   } else if (type == "3") {
     itemDetails.innerHTML = `
       <h2>${item.name}</h2>
@@ -152,6 +154,8 @@ function displayItemDescription(item, type) {
       } </p>
     `;
     itemDetails.style.margin = "50%";
+
+    descriptionDiv.style.maxHeight = "482px";
   } else {
     itemDetails.innerHTML = `
       <h2>${item.name || item.title}</h2>
