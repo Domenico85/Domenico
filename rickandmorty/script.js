@@ -10,7 +10,10 @@ async function fetchFromAPI(url) {
   const data = await response.json();
   return data;
 }
-
+function getCurrentPage(url) {
+  const urlParams = new URLSearchParams(new URL(url).search);
+  return parseInt(urlParams.get("page")) || 1;
+}
 async function renderSelect(items, next, prev) {
   contentPlaceholder.innerHTML = "";
 
@@ -43,6 +46,12 @@ async function renderSelect(items, next, prev) {
     });
   }
 
+  let currentPage = 1;
+  if (prev) {
+    currentPage = getCurrentPage(prev) + 1;
+  } else if (next) {
+    currentPage = getCurrentPage(next) - 1;
+  }
   const arrowsContainer = document.createElement("div");
   arrowsContainer.classList.add("arrows-container");
 
@@ -60,12 +69,17 @@ async function renderSelect(items, next, prev) {
     }
   });
 
+  const pageNumber = document.createElement("p");
+  pageNumber.textContent = `Page ${currentPage}`;
+  pageNumber.classList.add("page-number");
+
   const rightArrowLink = document.createElement("a");
   rightArrowLink.href = next ? next : "#";
   const rightArrow = document.createElement("span");
   rightArrow.classList.add("arrow", "right");
   rightArrowLink.appendChild(rightArrow);
 
+  // Add click event listener to the right arrow for pagination
   rightArrowLink.addEventListener("click", async (event) => {
     event.preventDefault();
     if (next) {
@@ -75,6 +89,7 @@ async function renderSelect(items, next, prev) {
   });
 
   arrowsContainer.appendChild(leftArrowLink);
+  arrowsContainer.appendChild(pageNumber);
   arrowsContainer.appendChild(rightArrowLink);
 
   contentPlaceholder.appendChild(itemsContainer);

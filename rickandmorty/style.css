@@ -161,3 +161,6 @@ a:hover .arrow.right::after {
   box-shadow: calc(var(--arrow-size) / 8) calc(var(--arrow-size) / -8) 0
     var(--arrow-color);
 }
+.page-number {
+  color: whitesmoke;
+}
