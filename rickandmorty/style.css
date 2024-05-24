@@ -212,8 +212,8 @@ a:hover .arrow.right::after {
   border: none;
   color: greenyellow;
   position: absolute;
-  top: -7px;
-  right: 5px;
+  top: 15px;
+  right: 15px;
   font-family: "r&m";
   font-size: 40px;
 }
