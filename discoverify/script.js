@@ -164,6 +164,7 @@
       },
     })
   );
+
   const response = await fetch(
     `https://parseapi.back4app.com/classes/Continentscountriescities_Country?count=1&limit=60&include=continent&where=${where}`,
     {
@@ -176,16 +177,31 @@
   const data = await response.json();
   console.log(JSON.stringify(data, null, 2));
 
-  const countryNames = data.results.map((country) => country.name);
-  console.log(countryNames);
   const selectCountries = document.createElement("select");
-  selectCountries.id = "countries-names";
-  const listOfCountries = document.querySelector("#countries");
-  listOfCountries.appendChild(selectCountries);
-  countryNames.forEach((countryName) => {
+  selectCountries.id = "countries";
+
+  const container = document.querySelector("#countries");
+
+  container.appendChild(selectCountries);
+
+  data.results.forEach((country, index) => {
     const option = document.createElement("option");
-    option.text = countryName;
-    option.value = countryName.objectId;
+    option.text = country.name;
+    option.value = index;
     selectCountries.appendChild(option);
+  });
+
+  const detailsCountry = document.querySelector(".details-country");
+
+  selectCountries.addEventListener("change", (event) => {
+    const selectedIndex = event.target.value;
+    const selectedCountry = data.results[selectedIndex];
+
+    detailsCountry.innerHTML = `
+      <h2>${selectedCountry.name}</h2>
+      <p>Capital: ${selectedCountry.capital}</p>
+      <p>Currency: ${selectedCountry.currency}</p>
+      <p>Flag: ${selectedCountry.emoji}</p>
+    `;
   });
 })();
