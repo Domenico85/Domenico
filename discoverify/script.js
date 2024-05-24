@@ -153,3 +153,39 @@
     .querySelector(`.${menuClassesNames.toggleClass}`)
     .addEventListener("click", toggleMenu);
 })();
+
+(async () => {
+  const where = encodeURIComponent(
+    JSON.stringify({
+      continent: {
+        __type: "Pointer",
+        className: "Continentscountriescities_Continent",
+        objectId: "28HX8qDZHw",
+      },
+    })
+  );
+  const response = await fetch(
+    `https://parseapi.back4app.com/classes/Continentscountriescities_Country?count=1&limit=60&include=continent&where=${where}`,
+    {
+      headers: {
+        "X-Parse-Application-Id": "Q0Ey6x9UWkCTMhWZs4deNROh5AF60rJob85xIogK",
+        "X-Parse-REST-API-Key": "CWVIKyb84JV4pde9S94APsKTXwBvWx0BohTQ6Bah",
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(JSON.stringify(data, null, 2));
+
+  const countryNames = data.results.map((country) => country.name);
+  console.log(countryNames);
+  const selectCountries = document.createElement("select");
+  selectCountries.id = "countries-names";
+  const listOfCountries = document.querySelector("#countries");
+  listOfCountries.appendChild(selectCountries);
+  countryNames.forEach((countryName) => {
+    const option = document.createElement("option");
+    option.text = countryName;
+    option.value = countryName.objectId;
+    selectCountries.appendChild(option);
+  });
+})();

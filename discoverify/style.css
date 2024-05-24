@@ -398,3 +398,24 @@ body {
   position: absolute;
   right: 18px;
 }
+.page-europe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.page-europe img {
+  width: 100px;
+}
+.page-europe span {
+  color: #fff;
+}
+#countries {
+  margin: 15px auto;
+}
+@media only screen and (min-width: 900px) {
+  body {
+    background-size: cover;
+  }
+}
