@@ -409,7 +409,7 @@ body {
   width: 100px;
 }
 .page-europe span {
-  color: #fff;
+  color: #3a08ff;
 }
 main {
   display: flex;
@@ -434,4 +434,34 @@ main {
 .color-text {
   font-family: "Kanit", sans-serif;
   font-weight: 600;
+}
+.europe {
+  background: url("https://source.unsplash.com/manarola-italia-rknrvCrfS1k");
+  background-position: center;
+  background-size: cover;
+}
+.africa {
+  background: url("https://source.unsplash.com/tronco-de-arbol-marron-en-campo-de-hierba-verde-bajo-nubes-blancas-y-cielo-azul-durante-el-dia-NENohXmkXMM");
+  background-position: center;
+  background-size: cover;
+}
+.asia {
+  background: url("https://source.unsplash.com/aerial-photography-of-people-walking-around-bhumishparsha-mudra-monument-iEJVyyevw-U");
+  background-position: center;
+  background-size: cover;
+}
+.north-america {
+  background: url("https://source.unsplash.com/foto-aerea-de-arboles-WqKPJm9_bBs");
+  background-position: center;
+  background-size: cover;
+}
+.oceania {
+  background: url("https://source.unsplash.com/formacion-rocosa-blanca-y-negra-yZzb5_nvcI8");
+  background-position: center;
+  background-size: cover;
+}
+.south-america {
+  background: url("https://source.unsplash.com/castillo-de-hormigon-gris-durante-el-dia-iyYMqhLwDQE");
+  background-position: center;
+  background-size: cover;
 }
