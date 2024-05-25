@@ -132,7 +132,6 @@
     function handleEscape(event) {
       let key = event.which || event.keyCode;
 
-      // remove the listener after click the button if he doesn't pust the ESC key
       if (menuIsDisplayed === false) {
         document.removeEventListener("keyup", handleEscape);
       }
@@ -193,15 +192,18 @@
 
   const detailsCountry = document.querySelector(".details-country");
 
-  selectCountries.addEventListener("change", (event) => {
+  selectCountries.addEventListener("change", async (event) => {
     const selectedIndex = event.target.value;
     const selectedCountry = data.results[selectedIndex];
 
     detailsCountry.innerHTML = `
       <h2>${selectedCountry.name}</h2>
-      <p>Capital: ${selectedCountry.capital}</p>
-      <p>Currency: ${selectedCountry.currency}</p>
-      <p>Flag: ${selectedCountry.emoji}</p>
+      <p><span class="color-text">Native:</span> ${selectedCountry.native}</p>
+      <p><span class="color-text">Capital:</span> ${selectedCountry.capital}</p>
+      <p><span class="color-text">Currency:</span> ${selectedCountry.currency}</p>
+      <p><span class="color-text">Phone Prefix:</span> ${selectedCountry.phone}</p>
+      <p><span class="color-text">Code:</span> ${selectedCountry.code}</p>
+      <p><span class="color-text">Flag:</span> ${selectedCountry.emoji}</p>
     `;
   });
 })();
