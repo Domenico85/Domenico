@@ -160,7 +160,9 @@
   justify-content: center;
   text-align: center;
 }
-
+.menu__group a:hover {
+  color: yellow;
+}
 .menu__toggle {
   box-sizing: border-box;
   inline-size: var(--_menu-circle-size);
