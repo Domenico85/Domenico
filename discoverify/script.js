@@ -202,18 +202,36 @@ const pathname = window.location.pathname;
   };
   console.log(pathname);
   let where = "miao";
-  if (pathname == "/discoverify/south-america.html") {
+  if (
+    pathname == "/discoverify/south-america.html" ||
+    pathname == "/Domenico/discoverify/south-america.html"
+  ) {
     console.log("yes");
     where = encodeURIComponent(JSON.stringify(southAmericaCode));
-  } else if (pathname == "/discoverify/europe.html") {
+  } else if (
+    pathname == "/discoverify/europe.html" ||
+    pathname == "/Domenico/discoverify/europe.html"
+  ) {
     where = encodeURIComponent(JSON.stringify(EuropeCode));
-  } else if (pathname == "/discoverify/asia.html") {
+  } else if (
+    pathname == "/discoverify/asia.html" ||
+    pathname == "/Domenico/discoverify/asia.html"
+  ) {
     where = encodeURIComponent(JSON.stringify(asiaCode));
-  } else if (pathname == "/discoverify/africa.html") {
+  } else if (
+    pathname == "/discoverify/africa.html" ||
+    pathname == "/Domenico/discoverify/africa.html"
+  ) {
     where = encodeURIComponent(JSON.stringify(africaCode));
-  } else if (pathname == "/discoverify/north-america.html") {
+  } else if (
+    pathname == "/discoverify/north-america.html" ||
+    pathname == "/Domenico/discoverify/north-america.html"
+  ) {
     where = encodeURIComponent(JSON.stringify(northAmericaCode));
-  } else if (pathname == "/discoverify/oceania.html") {
+  } else if (
+    pathname == "/discoverify/oceania.html" ||
+    pathname == "/Domenico/discoverify/oceania.html"
+  ) {
     where = encodeURIComponent(JSON.stringify(oceaniaCode));
   }
 
