@@ -356,7 +356,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans,
     Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
   background-image: url(img/background.jpg);
-  background-size: 915px;
+  background-size: cover;
   background-position: center;
 }
 .page img {
@@ -400,10 +400,10 @@ body {
 }
 .page-europe {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  text-align: center;
 }
 .page-europe img {
   width: 100px;
@@ -418,13 +418,20 @@ main {
   justify-content: center;
   text-align: center;
 }
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap");
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 .details-country {
   background: rgba(255, 255, 255, 0.5);
   margin-top: 15px;
   width: 215px;
+  line-height: 20px;
 }
-@media only screen and (min-width: 900px) {
-  body {
-    background-size: cover;
-  }
+.details-country h2,
+.color-text {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
 }

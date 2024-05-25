@@ -182,6 +182,11 @@
   const container = document.querySelector("#countries");
 
   container.appendChild(selectCountries);
+  const placeholder = document.createElement("option");
+  placeholder.text = "Choose a country";
+  placeholder.disabled = true;
+  placeholder.hidden = true;
+  placeholder.selected = selectCountries.appendChild(placeholder);
 
   data.results.forEach((country, index) => {
     const option = document.createElement("option");
