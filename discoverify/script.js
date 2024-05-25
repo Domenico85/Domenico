@@ -152,20 +152,73 @@
     .querySelector(`.${menuClassesNames.toggleClass}`)
     .addEventListener("click", toggleMenu);
 })();
-
+const currentUrl = window.location.href;
+const pathname = window.location.pathname;
 (async () => {
-  const where = encodeURIComponent(
-    JSON.stringify({
-      continent: {
-        __type: "Pointer",
-        className: "Continentscountriescities_Continent",
-        objectId: "28HX8qDZHw",
-      },
-    })
-  );
+  let EuropeCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "28HX8qDZHw",
+    },
+  };
+  let southAmericaCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "ISPUD93Or8",
+    },
+  };
+  let africaCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "X2rEcTJnsE",
+    },
+  };
+
+  let northAmericaCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "vZNZcahFvu",
+    },
+  };
+
+  let asiaCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "mSxk54vkg6",
+    },
+  };
+
+  let oceaniaCode = {
+    continent: {
+      __type: "Pointer",
+      className: "Continentscountriescities_Continent",
+      objectId: "E6LHZzkHr6",
+    },
+  };
+  console.log(pathname);
+  let where = "miao";
+  if (pathname == "/discoverify/south-america.html") {
+    console.log("yes");
+    where = encodeURIComponent(JSON.stringify(southAmericaCode));
+  } else if (pathname == "/discoverify/europe.html") {
+    where = encodeURIComponent(JSON.stringify(EuropeCode));
+  } else if (pathname == "/discoverify/asia.html") {
+    where = encodeURIComponent(JSON.stringify(asiaCode));
+  } else if (pathname == "/discoverify/africa.html") {
+    where = encodeURIComponent(JSON.stringify(africaCode));
+  } else if (pathname == "/discoverify/north-america.html") {
+    where = encodeURIComponent(JSON.stringify(northAmericaCode));
+  } else if (pathname == "/discoverify/oceania.html") {
+    where = encodeURIComponent(JSON.stringify(oceaniaCode));
+  }
 
   const response = await fetch(
-    `https://parseapi.back4app.com/classes/Continentscountriescities_Country?count=1&limit=60&include=continent&where=${where}`,
+    `https://parseapi.back4app.com/classes/Continentscountriescities_Country?count=1&limit=1000&order=name&include=continent&keys=name,emoji,code,capital,continent,continent.name,phone,native,currency,shape&where=${where}`,
     {
       headers: {
         "X-Parse-Application-Id": "Q0Ey6x9UWkCTMhWZs4deNROh5AF60rJob85xIogK",

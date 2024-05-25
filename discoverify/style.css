@@ -430,7 +430,11 @@ main {
   width: 215px;
   line-height: 20px;
 }
-.details-country h2,
+.details-country h2 {
+  color: #3a08ff;
+  font-family: "Pacifico";
+}
+
 .color-text {
   font-family: "Kanit", sans-serif;
   font-weight: 600;
