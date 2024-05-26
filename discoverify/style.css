@@ -212,7 +212,7 @@
   will-change: opacity;
   transition-duration: 0.2s;
   transition-delay: 0.3s;
-  margin-top: 20px;
+  justify-content: center;
 }
 
 .menu_activated .menu__toggle::before {
