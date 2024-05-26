@@ -406,12 +406,17 @@ body {
   align-items: center;
   gap: 10px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.7);
 }
 .page-europe img {
   width: 100px;
 }
 .page-europe span {
   color: #3a08ff;
+}
+
+#countries {
+  margin-top: 20px;
 }
 main {
   display: flex;
@@ -427,10 +432,11 @@ main {
   font-style: normal;
 }
 .details-country {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   margin-top: 15px;
   width: 215px;
   line-height: 20px;
+  border-radius: 5px;
 }
 .details-country h2 {
   color: #3a08ff;
