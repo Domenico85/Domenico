@@ -541,4 +541,7 @@ main {
   header {
     gap: 20px;
   }
+  .text {
+    font-size: 50px;
+  }
 }
