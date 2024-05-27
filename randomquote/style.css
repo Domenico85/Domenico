@@ -519,7 +519,13 @@ header h1 {
 .button:not(:last-child) {
   margin-bottom: 80px;
 }
-
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 74svh;
+}
 .text {
   text-align: center;
   font-family: "Great Vibes", cursive;
