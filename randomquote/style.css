@@ -24,7 +24,7 @@ header {
 }
 
 header img {
-  width: 100px;
+  width: 91px;
   border-radius: 100%;
   margin-left: 20px;
 }
@@ -514,7 +514,7 @@ header h1 {
   justify-content: center;
   align-items: center;
   background: #fc7b7b;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 .button:not(:last-child) {
   margin-bottom: 80px;
@@ -523,10 +523,16 @@ header h1 {
 .text {
   text-align: center;
   font-family: "Great Vibes", cursive;
-  font-size: 35px;
+  font-size: 30px;
   padding: 10px;
 }
 
 .author {
   color: #fff;
+}
+
+@media only screen and (min-width: 500px) {
+  header {
+    gap: 20px;
+  }
 }
