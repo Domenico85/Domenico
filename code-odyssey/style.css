@@ -32,10 +32,12 @@ section {
   display: flex;
 }
 .html,
-.js {
+.js,
+.browers {
   width: 100px;
 }
-.css {
+.css,
+.chrome {
   width: 136px;
   margin-top: -10px;
 }
@@ -61,4 +63,7 @@ section {
 }
 .logo:nth-child(3) {
   transition-delay: 400ms;
+}
+.logo:nth-child(4) {
+  transition-delay: 600ms;
 }
