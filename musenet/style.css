@@ -141,7 +141,9 @@ nav .fa-solid {
 }
 
 .course p,
-.campus p {
+.campus p,
+.facilities p,
+.feedback p {
   color: #777;
   font-size: 14px;
   font-weight: 300;
@@ -220,4 +222,95 @@ nav .fa-solid {
 
 .tokio {
   height: 120%;
+}
+
+.facilities {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.facilities-col {
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin-bottom: 15%;
+  text-align: left;
+}
+
+.facilities-col img {
+  width: 100%;
+  border-radius: 10px;
+  height: 60%;
+}
+
+.facilities-col p {
+  padding: 0;
+}
+
+.facilities-col h3 {
+  margin-top: 16px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.feedback {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-col {
+  flex-basis: 33%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  background: #fff3f3;
+  padding: 25px;
+  /* cursor: pointer; */
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
+
+.feedback-col img {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.feedback h3 {
+  position: relative;
+  bottom: 0;
+  text-align: left;
+}
+
+.feedback-row {
+  gap: 20px;
+}
+
+.feedback-col .fa-star,
+.fa-star-half-stroke {
+  color: #f44336;
+}
+
+.cta {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/online.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
 }
