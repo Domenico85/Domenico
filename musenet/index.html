@@ -17,6 +17,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <section class="header">
@@ -25,7 +29,8 @@
           <img src="img/logo.png" alt="logo" />
           <p>MUSENET</p></a
         >
-        <div class="nav-links">
+        <div class="nav-links" id="nav-links">
+          <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
           <ul>
             <li><a href="">HOME</a></li>
             <li><a href="">ABOUT</a></li>
@@ -34,7 +39,18 @@
             <li><a href="">CONTACT</a></li>
           </ul>
         </div>
+        <i class="fa-solid fa-bars" onclick="showMenu()"></i>
       </nav>
+
+      <div class="text-box">
+        <h1>Your Digital University</h1>
+        <p>
+          MuseNet University: Unleash your creative potential. <br />We blend
+          cutting-edge AI with diverse academic fields, fostering innovation
+          across disciplines.
+        </p>
+        <a href="" class="visit-btn">Visit Us to know more</a>
+      </div>
     </section>
   </body>
 </html>
