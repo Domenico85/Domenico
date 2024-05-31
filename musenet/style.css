@@ -314,7 +314,8 @@ footer h4 {
 }
 
 .about-header,
-.courses-header {
+.courses-header,
+.blog-header {
   height: 50vh;
   width: 100%;
   background-position: center;
@@ -327,7 +328,8 @@ footer h4 {
     url(img/about-background.jpg);
 }
 .about-header h1,
-.courses-header h1 {
+.courses-header h1,
+.blog-header h1 {
   margin-top: 100px;
 }
 .about-us {
@@ -381,6 +383,53 @@ footer h4 {
 
 .online-btn {
   margin-top: 20px;
+}
+
+.blog-header {
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url(img/blog-background.jpg);
+}
+
+.blog-content {
+  width: 80%;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.blog-left {
+  flex-basis: 65%;
+}
+.blog-left img {
+  width: 100%;
+}
+.blog-left h2 {
+  color: #222;
+  font-weight: 600;
+  margin: 30px 0;
+}
+.blog-left p {
+  color: #999;
+  padding: 0;
+}
+
+.blog-right {
+  flex-basis: 32%;
+}
+.blog-right h3 {
+  background: #f44336;
+  color: #fff;
+  padding: 7px 0;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.blog-right div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+  padding: 8px;
+  box-sizing: border-box;
 }
 @media (max-width: 700px) {
   .text-box h1 {
