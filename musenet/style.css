@@ -363,7 +363,25 @@ footer h4 {
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
     url(img/courses-background.jpg);
 }
+.online-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.html,
+.js {
+  width: 200px;
+  margin-top: 10px;
+}
 
+.css {
+  width: 240px;
+}
+
+.online-btn {
+  margin-top: 20px;
+}
 @media (max-width: 700px) {
   .text-box h1 {
     font-size: 20px;
