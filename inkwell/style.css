@@ -105,7 +105,8 @@ main {
   bottom: -54px;
   left: 50%;
 }
-.dragon.anim {
+.dragon.anim,
+.dragon2.anim {
   animation-delay: 1.5s;
 }
 .anim {
@@ -113,7 +114,35 @@ main {
   transform: translateY(30px);
   animation: moveup 0.5s linear forwards;
 }
-
+footer {
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.main-about {
+  display: flex;
+}
+.presentation-about {
+  width: 100%;
+  padding: 10px 10%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dragon2 {
+  width: 400px;
+}
+.presentation-about ul {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.presentation-about ul li span {
+  font-weight: bold;
+}
 @keyframes moveup {
   100% {
     opacity: 1;
