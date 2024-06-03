@@ -120,3 +120,24 @@ main {
     transform: translateY(0px);
   }
 }
+
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  main {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dragon {
+    width: 288px;
+    bottom: 0;
+    left: 0;
+  }
+  nav div {
+    margin-top: 15px;
+  }
+}
