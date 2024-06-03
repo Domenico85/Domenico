@@ -1,213 +1,206 @@
 body {
-    border: 0;
-    margin: 0;
+  border: 0;
+  margin: 0;
 }
 
 #overlay a {
-    color: red;
+  color: red;
 }
 
 .image {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .textnav {
-    font-size: 14px;
-    display: flex;
-    /* outline: 2px solid black; */
-    justify-content: center;
-    border-bottom: 2px solid black;
-
+  font-size: 14px;
+  display: flex;
+  /* outline: 2px solid black; */
+  justify-content: center;
+  border-bottom: 2px solid black;
 }
 
 nav {
-    display: flex;
-    gap: 40px;
-
-
+  display: flex;
+  gap: 40px;
 }
 
 nav a {
-    text-decoration: none;
-    color: black;
-
+  text-decoration: none;
+  color: black;
 }
 
 .content {
-    display: flex;
-    margin: 0 auto;
-    max-width: 60%;
-    border-bottom-width: medium;
-    border-bottom-style: double;
-    border-bottom-color: rgb(0, 0, 0);
+  display: flex;
+  margin: 0 auto;
+  max-width: 60%;
+  border-bottom-width: medium;
+  border-bottom-style: double;
+  border-bottom-color: rgb(0, 0, 0);
 }
 
-
-
 .leftcolumn {
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid rgb(235, 235, 232);
-    padding: 25px;
-    min-width: 25%;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgb(235, 235, 232);
+  padding: 25px;
+  min-width: 25%;
 }
 
 .article1 {
-    display: inline-block;
-    max-width: 350px;
+  display: inline-block;
+  max-width: 350px;
 }
 
 .writers {
-    color: gray;
+  color: gray;
 }
 
 #e {
-    width: 17px;
-    height: 17px;
-    margin-right: 4px;
+  width: 17px;
+  height: 17px;
+  margin-right: 4px;
 }
 
 .centercolumn {
-    max-width: 500px;
-    max-height: 800px;
-    display: inline-block;
-    margin-inline: 25px;
-    margin-top: 20px;
+  max-width: 500px;
+  max-height: 800px;
+  display: inline-block;
+  margin-inline: 25px;
+  margin-top: 20px;
 }
 
 .centercolumn img {
-    max-width: 500px;
-    max-height: 500px;
+  max-width: 500px;
+  max-height: 500px;
 }
 
 .rightcolumn {
-    border-left: 1px solid rgb(235, 235, 232);
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
+  border-left: 1px solid rgb(235, 235, 232);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .opicol {
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
 }
 
 .opi {
-    font-style: oblique;
-    font-weight: bold;
-
+  font-style: oblique;
+  font-weight: bold;
 }
 
 .opiart {
-    color: gray;
-    font-size: 14px;
+  color: gray;
+  font-size: 14px;
 }
 
 .content2 {
-    display: flex;
-    margin: 0 auto;
-    max-width: 60%;
-    border-top: 5px solid black;
-    margin-top: 40px;
-    border-bottom: 1px solid rgb(235, 235, 232);
+  display: flex;
+  margin: 0 auto;
+  max-width: 60%;
+  border-top: 5px solid black;
+  margin-top: 40px;
+  border-bottom: 1px solid rgb(235, 235, 232);
 }
 
 @font-face {
-    font-family: "Majerit";
-    src: url(font/e54f2787dc204d85532c83894e4f4283.ttf);
+  font-family: "Majerit";
+  src: url(font/e54f2787dc204d85532c83894e4f4283.ttf);
 }
 
 .leftcolumn2 {
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    min-width: 25%;
-    max-width: 25%;
-    text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  min-width: 25%;
+  max-width: 25%;
+  text-align: center;
 }
 
 .leftcolumn2 h1 {
-    font-family: "Majerit";
+  font-family: "Majerit";
 }
 
 .rightcolumn2 img {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .rightcolumn2 h6 {
-    color: gray;
-    margin-left: 463px;
-    margin-top: 1px;
-
+  color: gray;
+  margin-left: 463px;
+  margin-top: 1px;
 }
 
 .A {
-    color: black;
+  color: black;
 }
 
 .content3 {
-    display: flex;
-    margin: 0 auto;
-    max-width: 60%;
-    flex-direction: row;
-    gap: 45px;
-    border-top: 1px solid rgb(235, 235, 232);
-    margin-top: 40px;
-    border-bottom-width: medium;
-    border-bottom-style: double;
-    border-bottom-color: rgb(0, 0, 0);
+  display: flex;
+  margin: 0 auto;
+  max-width: 60%;
+  flex-direction: row;
+  gap: 45px;
+  border-top: 1px solid rgb(235, 235, 232);
+  margin-top: 40px;
+  border-bottom-width: medium;
+  border-bottom-style: double;
+  border-bottom-color: rgb(0, 0, 0);
 }
 
 .contentimage {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .smallimg {
-    height: 150px;
-    width: 250px;
-    border-right: 1px solid rgb(235, 235, 232);
+  height: 150px;
+  width: 250px;
+  border-right: 1px solid rgb(235, 235, 232);
 }
 
 .contentimage h1 {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .contentimage h6 {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 
 #overlay {
-    position: fixed;
-    background-color: #0000007a;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  background-color: #0000007a;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #overlay div {
-    background-color: white;
-    color: black;
-    margin-top: inherit;
-    max-width: 50%;
-    border: 2px solid black;
+  background-color: white;
+  color: black;
+  margin-top: inherit;
+  max-width: 50%;
+  border: 2px solid black;
 }
 
 #overlay.hidden {
-    display: none;
+  display: none;
 }
-@media screen and (max-width: 480px) {
-    .content {
-        flex-direction: column;
-        outline: 2px solid green;
-        
-    }
-    img.cambio{
-        max-width: 100%;
-    }
+@media screen and (max-width: 500px) {
+  .content {
+    flex-direction: column;
+    outline: 2px solid green;
+  }
+  img.cambio {
+    max-width: 100%;
+  }
+  .image img {
+    width: 300px;
+  }
 }
