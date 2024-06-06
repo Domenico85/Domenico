@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100svh;
   margin: 0;
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
 }
 
 .container {
@@ -14,12 +18,16 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(135deg, #ffdb01 10%, #0e197d 100%);
 }
 .slot-img {
   width: 200px;
 }
 h1 {
   margin-bottom: 20px;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .input-group {
