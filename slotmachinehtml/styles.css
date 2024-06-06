@@ -181,7 +181,7 @@ h1 {
 @media (max-width: 500px) {
   .container {
     position: relative;
-    top: -35px;
+    top: 70px;
   }
 
   .container h1 {
@@ -190,6 +190,7 @@ h1 {
   }
   .slot-logo {
     width: 100px;
+    margin-top: -20px;
   }
   #deposit,
   #bet,
