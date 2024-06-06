@@ -200,6 +200,9 @@ h1 {
   input {
     font-size: 19px;
   }
+  label {
+    font-size: 19px;
+  }
   #deposit-btn {
     height: 40px;
     padding: 0px 10px;
