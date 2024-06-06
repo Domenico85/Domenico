@@ -76,3 +76,15 @@ main {
 #sec::after {
   content: "SEC";
 }
+
+@media (max-width: 900px) {
+  .clock {
+    flex-direction: column;
+  }
+  #sec {
+    margin-top: -40px;
+  }
+  main {
+    overflow: hidden;
+  }
+}
