@@ -46,9 +46,9 @@ h1 {
   justify-content: center;
   margin-top: 20px;
 }
-/* .hidden {
+.hidden {
   display: none;
-} */
+}
 .reel {
   width: 70px;
   height: 180px;
@@ -177,4 +177,31 @@ h1 {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+@media (max-width: 500px) {
+  .container {
+    position: relative;
+    top: -35px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  .slot-logo {
+    width: 100px;
+  }
+  #deposit,
+  #bet,
+  #lines {
+    width: 90px;
+  }
+  input {
+    font-size: 19px;
+  }
+  #deposit-btn {
+    height: 40px;
+    padding: 0px 10px;
+    margin-top: 15px;
+  }
 }
