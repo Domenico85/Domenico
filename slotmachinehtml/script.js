@@ -50,6 +50,8 @@ document.getElementById("spin-btn").addEventListener("click", () => {
   balance -= bet * lines;
   updateBalance();
 
+  document.querySelector(".slot-machine").classList.remove("hidden");
+
   const reels = spin();
   const rows = transpose(reels);
   displayReels(rows);

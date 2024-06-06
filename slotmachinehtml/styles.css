@@ -20,7 +20,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(135deg, #ffdb01 10%, #0e197d 100%);
 }
-.slot-img {
+.slot-logo {
   width: 200px;
 }
 h1 {
@@ -39,7 +39,9 @@ h1 {
   justify-content: center;
   margin-top: 20px;
 }
-
+/* .hidden {
+  display: none;
+} */
 .reel {
   width: 70px;
   height: 180px;
