@@ -14,7 +14,12 @@ const SYMBOLS_VALUES = {
   C: 3,
   D: 2,
 };
-
+const SYMBOLS_IMAGES = {
+  A: "img/A.png",
+  B: "img/B.png",
+  C: "img/C.png",
+  D: "img/D.png",
+};
 let balance = 0;
 
 document.getElementById("deposit-btn").addEventListener("click", () => {
@@ -94,9 +99,13 @@ const transpose = (reels) => {
 };
 
 const displayReels = (rows) => {
-  for (let i = 0; i < COLS; i++) {
-    const reel = document.getElementById(`reel${i + 1}`);
-    reel.innerHTML = rows.map((row) => `<div>${row[i]}</div>`).join("");
+  for (let col = 0; col < COLS; col++) {
+    const reel = document.getElementById(`reel${col + 1}`);
+    const images = reel.getElementsByClassName("slot-img");
+    for (let row = 0; row < ROWS; row++) {
+      images[row].src = SYMBOLS_IMAGES[rows[row][col]];
+      images[row].alt = rows[row][col];
+    }
   }
 };
 

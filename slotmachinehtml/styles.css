@@ -41,8 +41,8 @@ h1 {
 }
 
 .reel {
-  width: 50px;
-  height: 150px;
+  width: 70px;
+  height: 180px;
   border: 1px solid #ccc;
   margin: 0 5px;
   display: flex;
@@ -52,7 +52,11 @@ h1 {
   font-size: 24px;
   background-color: #e9ecef;
 }
-
+.slot-img {
+  width: 50px;
+  height: 80px;
+  margin: 5px;
+}
 .message {
   margin-top: 20px;
   font-size: 18px;
