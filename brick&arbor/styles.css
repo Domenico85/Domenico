@@ -709,7 +709,12 @@ footer small a:hover {
   p {
     font-size: 0.8rem;
   }
-
+  #logo img {
+    width: 100px;
+  }
+  header .flex {
+    align-items: center;
+  }
   .container {
     max-width: 540px;
   }
