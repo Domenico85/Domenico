@@ -729,6 +729,9 @@ footer small a:hover {
   #the-best .flex > div {
     width: 100%;
   }
+  .the-best-images {
+    width: 0px;
+  }
   .the-best-images img {
     display: none;
   }
@@ -747,10 +750,6 @@ footer small a:hover {
 
   #properties button.rounded {
     width: 300px;
-  }
-
-  #services .flex > div {
-    width: 48%;
   }
 
   #contact .flex {
@@ -831,15 +830,6 @@ footer small a:hover {
 
   #properties button.btn {
     width: 250px;
-  }
-
-  #services {
-    padding: 4rem 0 3rem;
-    margin: 4rem 0;
-  }
-
-  #services .flex > div {
-    width: 100%;
   }
 
   #testimonials {
