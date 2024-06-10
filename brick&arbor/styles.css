@@ -235,8 +235,8 @@ header ul.is-sticky li a.active {
 #properties .container::before {
   content: "/";
   position: absolute;
-  right: 80px;
-  top: 18px;
+  right: 84px;
+  top: 42px;
   color: #999;
 }
 
