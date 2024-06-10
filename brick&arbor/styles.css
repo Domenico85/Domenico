@@ -745,7 +745,7 @@ footer small a:hover {
   }
 
   #properties .container:before {
-    top: 2px;
+    top: 24px;
     font-size: 0.85rem;
   }
 
@@ -864,6 +864,9 @@ footer small a:hover {
   footer {
     padding: 4rem 0;
   }
+  .the-best-images {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -879,5 +882,17 @@ footer small a:hover {
 
   nav ul {
     width: 200px;
+  }
+
+  #properties-slider a.slick-arrow {
+    margin-top: 20px;
+  }
+
+  #properties .container::before {
+    top: 44px;
+  }
+
+  .the-best-images {
+    display: none;
   }
 }
