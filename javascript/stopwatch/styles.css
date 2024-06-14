@@ -20,6 +20,9 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+.watch img {
+  width: 100px;
+}
 .watch-btns {
   display: inline-flex;
   gap: 10px;
