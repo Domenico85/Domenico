@@ -29,3 +29,5 @@ subButtonElement.addEventListener("click", () => {
   total -= 1;
   updateCounterDisplay();
 });
+
+updateCounterDisplay();
