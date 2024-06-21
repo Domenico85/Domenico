@@ -14,6 +14,11 @@ const dataArray = [
     detail:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores a qu fugiat perferendis voluptatem porro, quo eius doloremque corporis ea quodrepellat veritatis similique iusto illo eveniet. Aut, impedit ad!",
   },
+  {
+    title: "Where Can I learn JavaScript?",
+    detail:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores a qu fugiat perferendis voluptatem porro, quo eius doloremque corporis ea quodrepellat veritatis similique iusto illo eveniet. Aut, impedit ad!",
+  },
 ];
 
 const makeHTML = (data) => {
