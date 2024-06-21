@@ -2,6 +2,9 @@ body {
   font-family: sans-serif;
 }
 
+body h1 {
+  text-align: center;
+}
 #testimonials-container {
   width: 400px;
   margin: 0 auto;
@@ -30,4 +33,24 @@ body {
   text-align: right;
   display: block;
   font-style: italic;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+nav button {
+  cursor: pointer;
+  width: 6rem;
+  background-color: steelblue;
+  color: white;
+  border: 0;
+  padding: 0.5rem 1rem;
+}
+
+nav button:hover {
+  background-color: royalblue;
 }
