@@ -72,16 +72,21 @@ const data = [
 ];
 
 const createTable = (productData) => {
-  const tableElement = document.createElement("table");
+  const tableElem = document.createElement("table");
   const tableHead = document.createElement("thead");
   const tableBody = document.createElement("tbody");
 
   const headers = Object.keys(productData[0]);
   tableHead.appendChild(createHeaderRow(headers));
 
-  tableElement.appendChild(tableHead);
+  productData.forEach((rowData) => {
+    tableBody.appendChild(createProductRow(rowData));
+  });
 
-  return tableElement;
+  tableElem.appendChild(tableHead);
+  tableElem.appendChild(tableBody);
+
+  return tableElem;
 };
 
 const createHeaderRow = (columnNames) => {
@@ -89,11 +94,13 @@ const createHeaderRow = (columnNames) => {
   columnNames.forEach((columnName) => {
     const th = document.createElement("th");
     th.textContent = columnName[0].toUpperCase() + columnName.slice(1);
-
     const searchUp = document.createElement("span");
     searchUp.textContent = "🔼";
     const searchDown = document.createElement("span");
     searchDown.textContent = "🔽";
+
+    searchUp.onclick = () => sortDataBy(columnName, "ASC");
+    searchDown.onclick = () => sortDataBy(columnName, "DESC");
 
     th.appendChild(searchDown);
     th.appendChild(searchUp);
@@ -103,8 +110,29 @@ const createHeaderRow = (columnNames) => {
   return tr;
 };
 
+const createProductRow = (product) => {
+  const tr = document.createElement("tr");
+  Object.values(product).forEach((value) => {
+    const td = document.createElement("td");
+    td.textContent = value;
+    tr.appendChild(td);
+  });
+
+  return tr;
+};
+
+const sortDataBy = (columnName, direction) => {
+  const sortedASCData = [
+    ...data.sort((a, b) => (a[columnName] > b[columnName] ? 1 : -1)),
+  ];
+  const sortedDESCData = [
+    ...data.sort((a, b) => (a[columnName] < b[columnName] ? 1 : -1)),
+  ];
+  renderTable(direction === "ASC" ? sortedASCData : sortedDESCData);
+};
+
 const renderTable = (productData) => {
-  const sortableTableElement = document.querySelector("#sortableTable");
+  const sortableTableElement = document.getElementById("sortableTable");
   sortableTableElement.innerHTML = "";
   sortableTableElement.appendChild(createTable(productData));
 };
