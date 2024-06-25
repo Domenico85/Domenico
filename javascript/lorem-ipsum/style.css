@@ -1,0 +1,36 @@
+#lorem-ipsum-generator {
+  font-family: sans-serif;
+  margin: 1rem;
+}
+
+#paragraphs-count {
+  width: 4rem;
+}
+
+#result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed gray;
+  font-size: 0.75rem;
+  position: relative;
+  display: none;
+}
+
+#result.show {
+  display: block;
+}
+
+.copy {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  border: 0;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.copy:hover {
+  background-color: blanchedalmond;
+}
