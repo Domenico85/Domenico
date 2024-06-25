@@ -30,6 +30,4 @@ imgLoad("https://images.unsplash.com/photo-1497493292307-31c376b6e479")
     imageContainer.appendChild(myImage);
     alert("Image loaded");
   })
-  .catch((error) => {
-    console.error(error);
-  });
+  .catch((error) => alert(error));
