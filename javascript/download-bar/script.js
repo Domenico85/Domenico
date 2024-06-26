@@ -1,11 +1,15 @@
-const fileToDownload = "wallpapers.zip";
+const fileToDownload = "/javascript/download-bar/wallpapers.zip";
 
 const startDownloadElement = document.querySelector("#start-download");
+
+const downloadProgressElement = document.querySelector(
+  ".download-progress-bar__progress"
+);
 
 startDownloadElement.addEventListener("click", () => {
   console.log("Download Started");
 
-  fetch(`/${fileToDownload}`).then((response) => {
+  fetch(`${fileToDownload}`).then((response) => {
     const reader = response.body.getReader();
     const totalSize = Number(response.headers.get("content-length"));
     let totalSizeDownloaded = 0;
@@ -19,6 +23,8 @@ startDownloadElement.addEventListener("click", () => {
           );
 
           console.log(`${totalSizeDownloaded}/${totalSize} (${percentage}%)`);
+
+          downloadProgressElement.computedStyleMap.width = `$`;
         }
         if (!result.done) {
           return readData();
