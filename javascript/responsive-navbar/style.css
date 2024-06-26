@@ -1,0 +1,65 @@
+:root {
+  --light-text: rgb(217, 215, 215);
+  --white: rgb(254, 253, 253);
+}
+
+body {
+  margin: 0;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+section#hero {
+  background-image: url(img/background.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
+
+section#hero h1 {
+  padding: 1rem;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+section#description {
+  padding: 1rem;
+}
+
+section#description p {
+  font-family: sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.navbar .brand {
+  padding: 0.75rem 1rem;
+  color: var(--light-text);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding-right: 1rem;
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  font-family: sans-serif;
+}
+
+.navbar-links ul li a {
+  color: var(--light-text);
+  text-decoration: none;
+}
