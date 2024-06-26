@@ -28,6 +28,7 @@ section#hero h1 {
 
 section#description {
   padding: 1rem;
+  text-align: center;
 }
 
 section#description p {
