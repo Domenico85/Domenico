@@ -32,6 +32,10 @@ body {
   padding: 10px;
 }
 
+#start-download:disabled {
+  background-color: rgb(39, 92, 74);
+}
+
 .download-progress-bar__container {
   margin: 20px 0;
   width: 400px;
@@ -51,4 +55,8 @@ body {
   justify-content: center;
   width: 0;
   height: 100%;
+}
+
+.download-progress-bar__progress.error {
+  background: red;
 }
