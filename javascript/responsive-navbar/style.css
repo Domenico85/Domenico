@@ -22,7 +22,8 @@ section#hero {
 section#hero h1 {
   padding: 1rem;
   font-size: 3rem;
-  color: var(--white);
+  color: black;
+  text-align: center;
 }
 
 section#description {
@@ -104,7 +105,24 @@ section#description p {
     display: block;
   }
 
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .navbar-links {
+    width: 100%;
     display: none;
+  }
+
+  .navbar-links.open {
+    display: block;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
