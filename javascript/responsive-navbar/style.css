@@ -63,3 +63,48 @@ section#description p {
   color: var(--light-text);
   text-decoration: none;
 }
+
+#menu-toggle-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#menu-toggle-btn svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: var(--light-text);
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+#menu-toggle-btn .open-icon {
+  display: block;
+}
+
+#menu-toggle-btn .close-icon {
+  display: none;
+}
+
+#menu-toggle-btn.open .open-icon {
+  display: none;
+}
+
+#menu-toggle-btn.open .close-icon {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  #menu-toggle-btn {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
