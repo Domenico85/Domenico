@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  height: 100svh;
+  background-color: black;
+}
+
+span {
+  background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png");
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-size: cover;
+}
