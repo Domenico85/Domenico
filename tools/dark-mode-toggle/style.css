@@ -4,6 +4,7 @@ body {
   justify-content: center;
   height: 100svh;
   align-items: center;
+  transition: 0.4s;
 }
 
 .input {
@@ -31,11 +32,18 @@ body {
 }
 
 .input:checked + .label {
-  background-color: salmon;
+  background-color: white;
 }
 
 .input:checked + .label .circle {
   animation: toggleOn 0.4s linear forwards;
+  background-color: black;
+}
+
+#mode-text {
+  margin-top: 42px;
+  font-size: 1.2em;
+  text-align: center;
 }
 
 @keyframes toggleOn {
