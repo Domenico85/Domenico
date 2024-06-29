@@ -18,6 +18,7 @@
       <p>
         Loan Amount $
         <input
+          onchange="calculateLoan()"
           class="input"
           type="number"
           id="loan-amount"
@@ -29,6 +30,7 @@
       <p>
         Interest Rate %
         <input
+          onchange="calculateLoan()"
           class="input"
           type="number"
           id="interest-rate"
@@ -41,6 +43,7 @@
       <p>
         Months to pay $
         <input
+          onchange="calculateLoan()"
           class="input"
           type="number"
           id="months-to-pay"
