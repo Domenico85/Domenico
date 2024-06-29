@@ -13,11 +13,12 @@
     />
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>Loan Calculator</h1>
       <p>
         Loan Amount $
         <input
+          class="input"
           type="number"
           id="loan-amount"
           min="1"
@@ -28,6 +29,7 @@
       <p>
         Interest Rate %
         <input
+          class="input"
           type="number"
           id="interest-rate"
           min="1"
@@ -38,9 +40,16 @@
       </p>
       <p>
         Months to pay $
-        <input type="number" id="months-to-pay" min="6" max="48" value="12" />
+        <input
+          class="input"
+          type="number"
+          id="months-to-pay"
+          min="6"
+          max="48"
+          value="12"
+        />
       </p>
-      <p>Monthly Payment:</p>
+      <p class="payment">Monthly Payment:</p>
     </div>
   </body>
 </html>
