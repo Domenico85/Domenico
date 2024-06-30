@@ -4,7 +4,7 @@ const resetElement = document.querySelector("#reset");
 const timerElement = document.querySelector("#timer");
 
 let interval;
-let timeLeft = 1500;
+let timeLeft = 10;
 
 function updateTimer() {
   let minutes = Math.floor(timeLeft / 60);
@@ -22,12 +22,24 @@ function startTimer() {
     updateTimer();
     if (timeLeft === 0) {
       clearInterval(interval);
+      playAlertSound();
       alert("Time's up!");
       timeLeft = 1500;
       updateTimer();
     }
   }, 1000);
 }
+
+function playAlertSound() {
+  const alertSound = document.querySelector("#alert");
+  alertSound.play();
+}
+
+const alertSound = document.querySelector("#alert");
+alertSound.addEventListener("ended", () => {
+  alertSound.currentTime = 0;
+});
+
 function stopTimer() {
   clearInterval(interval);
 }
@@ -40,3 +52,5 @@ function resetTimer() {
 startElement.addEventListener("click", startTimer);
 stopElement.addEventListener("click", stopTimer);
 resetElement.addEventListener("click", resetTimer);
+
+updateTimer();
