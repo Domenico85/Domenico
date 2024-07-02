@@ -96,6 +96,6 @@ img {
 }
 
 .arrows .second {
-  transform: rotate(250deg);
+  /* transform: rotate(250deg); */
   background-color: goldenrod;
 }
