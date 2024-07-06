@@ -68,3 +68,27 @@ body {
 .anime-container {
   display: none;
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    height: 90svh;
+  }
+
+  .logo {
+    width: 100px;
+    margin-top: 20px;
+  }
+
+  .anime-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .anime-name {
+    height: 50px;
+    text-align: center;
+    font-size: 10px;
+    position: relative;
+    top: -18px;
+  }
+}
