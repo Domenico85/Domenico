@@ -27,6 +27,8 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   place-items: center;
+  width: 85%;
+  margin: auto;
   padding: 12px;
 }
 
@@ -82,4 +84,14 @@ nav {
   border-radius: 50%;
   color: white;
   font-size: 13px;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  position: relative;
+  bottom: 8px;
+  right: 10px;
+}
+
+#wishlist-link {
+  margin-left: 15px;
 }
