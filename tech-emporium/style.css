@@ -95,3 +95,11 @@ nav {
 #wishlist-link {
   margin-left: 15px;
 }
+
+#product-page-body {
+  padding: 0 100px;
+}
+
+#product-top-image img {
+  width: 500px;
+}
