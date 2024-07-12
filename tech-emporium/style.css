@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+button {
+  border: 0;
+}
+
+nav {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  place-items: center;
+  padding: 12px;
+}
+
+#navbar-logo img {
+  width: 140px;
+  height: 120px;
+}
+
+#navbar-links {
+  display: flex;
+  place-items: center;
+  flex-direction: row;
+}
+
+#navbar-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar-links li {
+  margin-left: 60px;
+}
+
+#navbar-links a {
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+#navbar-links ul a:hover {
+  color: rgb(65, 105, 255);
+}
+
+#navbar-tools {
+  display: flex;
+  flex-direction: row;
+  margin-left: 60px;
+}
+
+#navbar-tools a {
+  display: flex;
+  place-items: center;
+}
+
+#navbar-tools span {
+  background-color: red;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+}
