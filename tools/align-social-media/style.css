@@ -1,0 +1,155 @@
+body {
+  background-color: #3b3b3b;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 500px;
+  position: fixed;
+}
+
+i {
+  margin-top: 8px;
+}
+
+.content h1,
+h2 {
+  text-align: center;
+}
+
+.content h1 {
+  color: green;
+}
+
+.content h2 {
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 50%;
+  margin-left: 40px;
+  height: 37px;
+  border: none;
+  border-radius: 9px;
+}
+
+.search-bar input::placeholder {
+  margin-left: 100px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.outer-cards {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
+  border-radius: 20px;
+  flex-wrap: wrap;
+  height: fit-content;
+  color: white;
+  padding: 20px 10px;
+  margin-left: 100px;
+  margin-top: 30px;
+  gap: 15px;
+  text-align: center;
+}
+
+.cards #card1 {
+  width: 350px;
+  background-color: #1e1e1f;
+  border-radius: 7px;
+  color: white;
+  transition-duration: 0.2s;
+}
+
+#card1:hover {
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+#card2:hover {
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+}
+
+.cards #card2 {
+  background-color: #1e1e1f;
+  color: white;
+  border-radius: 7px;
+  width: 350px;
+  transition-duration: 0.2s;
+}
+
+img {
+  border-radius: 7px;
+  width: 350px;
+}
+
+h4 {
+  margin-top: 2px;
+  padding: 3px 3px;
+}
+
+p {
+  margin-top: -15px;
+  padding: 3px 3px;
+  color: #a5a5a5;
+}
+
+@media screen and (max-width: 850px) {
+  .cards {
+    height: 90%;
+    width: 50%;
+  }
+  .search-bar input {
+    margin-left: 55px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .cards {
+    height: 450px;
+  }
+  .cards #card1,
+  #card2 {
+    width: 200px;
+  }
+  .cards #card2 {
+    width: 200px;
+  }
+  img {
+    border-radius: 7px;
+    width: 200px;
+  }
+  .search-bar input {
+    margin-left: 90px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .cards {
+    height: 500px;
+  }
+  .cards #card1,
+  #card2 {
+    width: 150px;
+  }
+  .cards #card2 {
+    width: 150px;
+  }
+  img {
+    border-radius: 7px;
+    width: 150px;
+  }
+}
