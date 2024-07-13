@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "K2D", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100svh;
+  background: url(img/back.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  max-width: 1366px;
+  width: 100%;
+  padding-left: 12%;
+  padding-right: 12%;
+  margin: auto;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  color: #000;
+  opacity: 0.85;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+
+.logo {
+  order: 1;
+  font-size: 1.8rem;
+}
+
+.menu-items li {
+  list-style: none;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.navbar a {
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: orangered;
+}
+
+.navbar .active {
+  color: orangered;
+}
+
+section {
+  padding: 0px 12%;
+  padding-top: 150px;
+}
+
+#home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#home-text {
+  max-width: 520px;
+}
+
+#home h1 {
+  font-size: 60px;
+  line-height: 70px;
+}
+
+#home h3 {
+  font-size: 22px;
+}
+
+#home h5 {
+  font-size: 30px;
+  color: orangered;
+}
+
+#home p {
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.home-img {
+  display: flex;
+  justify-content: flex-end;
+  width: 550px;
+}
+
+.home-img img {
+  width: 300px;
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+  margin-top: 40px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  border: 2px solid orangered;
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.btn a:first-child {
+  background: orangered;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn a:first-child:hover {
+  background: transparent;
+  border: 2px solid orangered;
+  color: #000;
+}
+
+.btn a:last-child:hover {
+  background: orangered;
+  border: 2px solid orangered;
+  color: #fff;
+}
