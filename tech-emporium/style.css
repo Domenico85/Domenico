@@ -101,7 +101,7 @@ nav {
 
 #home-top-container {
   background: #edf2fb;
-  height: 80svh;
+  height: 50svh;
   padding: 20px;
   padding-top: 150px;
   padding-bottom: 70px;
@@ -147,6 +147,21 @@ nav {
 
 #home-top-image {
   max-width: 450px;
+}
+
+#collection-container {
+  background-color: #c7d5f1;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding: 20px;
+}
+
+#collection-container h1 {
+  color: rgb(64, 64, 64);
+  font-weight: 500;
+  font-size: 50px;
+  margin-top: 40px;
 }
 
 /* Products Page */
