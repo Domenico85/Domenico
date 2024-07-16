@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Ubuntu", sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .navbar {
@@ -24,6 +24,11 @@
   text-decoration: none;
   font-weight: 700;
   margin-left: 50px;
+  transition: 0.5s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #ba972f;
 }
 
 .navbar ul {
@@ -39,7 +44,6 @@ main {
   background-color: white;
   width: 100%;
   height: 100svh;
-  /* overflow-y: hidden; */
   position: relative;
 }
 
@@ -60,6 +64,13 @@ main {
 .gradient h1 {
   font-size: 70px;
   margin-bottom: 25px;
+}
+
+.gradient span {
+  background-image: linear-gradient(90deg, #b569d8 0%, #7366ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .gradient p {
@@ -84,20 +95,22 @@ main img {
 }
 
 #btn1 {
-  background-color: #ba972f;
-  border: 2px solid #ba972f;
+  background-color: #b569d8;
+  border: 2px solid #b569d8;
   padding: 17px 28px;
+  background-image: linear-gradient(90deg, #b569d8 0%, #7366ff 100%);
   font-size: 22px;
   border-radius: 10px;
   color: white;
   font-weight: 500;
   transition: 0.5s ease-in-out;
   margin-right: 50px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #btn1:hover {
-  background-color: #d6b34b;
-  border: 2px solid #d6b34b;
+  background-image: linear-gradient(90deg, #7366ff 0%, #b569d8 100%);
 }
 
 #btn2 {
@@ -113,5 +126,5 @@ main img {
 
 #btn2:hover {
   background-color: white;
-  color: #ba972f;
+  color: #b569d8;
 }
