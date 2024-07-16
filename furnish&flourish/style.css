@@ -28,7 +28,7 @@
 }
 
 .navbar a:hover {
-  color: #ba972f;
+  color: #b569d8;
 }
 
 .navbar ul {
@@ -77,7 +77,7 @@ main {
   text-align: center;
   width: 50%;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 300;
 }
 
