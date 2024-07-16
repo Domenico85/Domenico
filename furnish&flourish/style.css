@@ -57,10 +57,17 @@ main {
   color: white;
 }
 
+.gradient h1 {
+  font-size: 70px;
+  margin-bottom: 25px;
+}
+
 .gradient p {
   text-align: center;
   width: 50%;
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 main img {
@@ -69,4 +76,42 @@ main img {
   object-position: center;
   object-fit: cover;
   overflow: hidden;
+}
+
+.main-buttons {
+  margin-left: 2em;
+  margin-top: 50px;
+}
+
+#btn1 {
+  background-color: #ba972f;
+  border: 2px solid #ba972f;
+  padding: 17px 28px;
+  font-size: 22px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  transition: 0.5s ease-in-out;
+  margin-right: 50px;
+}
+
+#btn1:hover {
+  background-color: #d6b34b;
+  border: 2px solid #d6b34b;
+}
+
+#btn2 {
+  padding: 17px 28px;
+  background-color: transparent;
+  font-size: 22px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  transition: 0.5s ease-in-out;
+}
+
+#btn2:hover {
+  background-color: white;
+  color: #ba972f;
 }
