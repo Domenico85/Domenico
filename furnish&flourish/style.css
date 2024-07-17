@@ -344,7 +344,7 @@ main img {
   background-color: white;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 20px 25px rgba(0, 0, 0, 0.05);
   width: 300px;
-  height: 330px;
+  height: 360px;
   border-radius: 10px;
   overflow: hidden;
   margin: 30px;
@@ -375,6 +375,7 @@ main img {
   display: flex;
   align-items: center;
   margin-top: 7px;
+  flex-direction: column;
 }
 
 .cart-btn {
@@ -386,6 +387,7 @@ main img {
   font-size: 14px;
   font-weight: 500;
   transition: 0.4s ease-in-out;
+  margin-top: 10px;
 }
 
 .product-section-2 .box-p {
