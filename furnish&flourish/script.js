@@ -29,4 +29,27 @@ document.addEventListener("DOMContentLoaded", () => {
       ".product-img"
     ).innerHTML = `<img src="img/products/${i + 1}.jpg">`;
   }
+
+  let num = 0;
+  let screenWidth = screen.width;
+  let cardsDisplayed = parseInt(screenWidth / (300 + 100));
+  let productList = document.querySelector(".slideshow");
+  let productLength = productList.length;
+
+  for (let i = num; i < num + cardsDisplayed; i++) {
+    productList[i % productLength].style.display = "flex";
+  }
+
+  function nextSlide() {
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "none";
+    }
+
+    num = num + cardsDisplayed;
+
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "flex";
+    }
+  }
+  setInterval(nextSlide, 5000);
 });
