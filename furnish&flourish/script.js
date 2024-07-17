@@ -12,7 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   localStorage.setItem("products", JSON.stringify(products));
-  x = JSON.parse(localStorage.getItem("products"));
 
-  console.log(x);
+  let productBox = document.querySelectorAll(".slideshow");
+
+  for (let i = 0; i < productBox.length; i++) {
+    console.log(productBox[i]);
+
+    let productTitle = JSON.parse(localStorage.getItem("products"))[i]["title"];
+    let productPrice = JSON.parse(localStorage.getItem("products"))[i]["price"];
+
+    productBox[i].querySelector(".product-title").innerHTML = productTitle;
+    productBox[i].querySelector(
+      ".box-p"
+    ).innerHTML = `Price: €${productPrice}.00`;
+    productBox[i].querySelector(
+      ".product-img"
+    ).innerHTML = `<img src="img/products/${i + 1}.jpg">`;
+  }
 });
