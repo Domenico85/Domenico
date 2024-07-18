@@ -619,3 +619,17 @@ footer {
   color: rgb(137, 137, 137);
   font-size: 15px;
 }
+
+/* Product Section */
+
+.product-section {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card-container {
+  text-align: center;
+}
