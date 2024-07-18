@@ -15,7 +15,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   align-items: center;
   background-color: white;
@@ -289,6 +289,8 @@ main img {
   font-size: 40px;
   color: rgb(50, 50, 50);
   margin-top: 2em;
+  width: 100%;
+  text-align: center;
 }
 
 .border-line {
@@ -323,12 +325,12 @@ main img {
 
 #prev-btn {
   top: 0;
-  left: 55px;
+  left: 95px;
 }
 
 #next-btn {
   top: 0;
-  left: -55px;
+  left: 1430px;
 }
 
 .product-list {
@@ -350,8 +352,12 @@ main img {
   margin: 30px;
 }
 
+.product-wrapper {
+  overflow: hidden;
+}
+
 .slideshow {
-  display: flex;
+  display: none;
 }
 
 .product-img {

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let productContainer = document.querySelector(".products-container");
-
+  let productList = document.getElementsByClassName("slideshow");
   //   localStorage.setItem("products", JSON.stringify(products));
 
   // console.log(slideShow[i]);
@@ -56,4 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
   let cardsDisplayed = parseInt(screenWidth / (300 + 100));
   let productLength = products.length;
   console.log(cardsDisplayed, productLength);
+
+  for (let i = num; i < num + cardsDisplayed; i++) {
+    productList[i % productLength].style.display = "flex";
+  }
+
+  function nextSlide() {
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "none";
+    }
+
+    num = num + cardsDisplayed;
+
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "flex";
+    }
+  }
+  setInterval(nextSlide, 5000);
 });
