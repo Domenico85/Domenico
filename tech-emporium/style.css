@@ -630,6 +630,22 @@ footer {
   align-items: center;
 }
 
+.section-category {
+  display: flex;
+}
+
+.section-category-text {
+  color: rgb(64, 64, 64);
+  font-size: 35px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.section-category-type {
+  display: flex;
+  align-items: center;
+}
+
 .product-card-container {
   text-align: center;
 }
