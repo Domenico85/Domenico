@@ -292,7 +292,7 @@ button.add-to-chart {
 
 .promo-box {
   width: 68%;
-  height: 450px;
+  height: 550px;
   display: flex;
   justify-content: center;
   border-radius: 10px;
@@ -364,12 +364,18 @@ footer {
   text-align: center;
   padding: 30px;
   color: rgb(64, 64, 64);
+  margin-top: 120px;
 }
 
 #footer-top {
   padding: 20px;
   width: 60%;
   margin: auto;
+}
+
+#footer-top img {
+  width: 140px;
+  height: 120px;
 }
 
 #footer-socials-wrapper {
