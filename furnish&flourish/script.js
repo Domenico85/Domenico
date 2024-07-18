@@ -20,11 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // let productTitle = JSON.parse(localStorage.getItem("products"))[i]["title"];
   // let productPrice = JSON.parse(localStorage.getItem("products"))[i]["price"];
 
-  //1: calcular ancho disponible
-  //2: calcular numeros imagenes
-  //3: cuantas imgs ensenar
-  //4: aplicar translateY para index
-
   products.forEach((product, index) => {
     let productTitle = product.title;
     let productPrice = product.price;
@@ -55,7 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let screenWidth = screen.width;
   let cardsDisplayed = parseInt(screenWidth / (300 + 100));
   let productLength = products.length;
-  console.log(cardsDisplayed, productLength);
+  // console.log(cardsDisplayed, productLength);
+
+  document.querySelector("#prev-btn").addEventListener("click", prevSlide);
+  document.querySelector("#next-btn").addEventListener("click", nextSlide);
 
   for (let i = num; i < num + cardsDisplayed; i++) {
     productList[i % productLength].style.display = "flex";
@@ -67,6 +65,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     num = num + cardsDisplayed;
+
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "flex";
+    }
+  }
+
+  function prevSlide() {
+    for (let i = num; i < num + cardsDisplayed; i++) {
+      productList[i % productLength].style.display = "none";
+    }
+
+    num = num - cardsDisplayed;
+    if (num < 0) {
+      num = productLength - cardsDisplayed;
+    }
 
     for (let i = num; i < num + cardsDisplayed; i++) {
       productList[i % productLength].style.display = "flex";
