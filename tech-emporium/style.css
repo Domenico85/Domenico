@@ -681,6 +681,10 @@ footer {
   margin-right: 15px;
 }
 
+.product-card {
+  margin-left: 100px;
+}
+
 .product-card-container {
   width: 100%;
   display: flex;
@@ -715,6 +719,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .product-image-container img {
@@ -731,4 +736,31 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 8px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-image-container .heart-btn svg {
+  stroke: rgb(64, 64, 64);
+  fill: none;
+}
+
+.product-text-container {
+  padding: 16px;
+}
+
+.product-text-container h1 {
+  color: #333;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.product-text-container p {
+  color: rgb(102, 102, 102);
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
 }
