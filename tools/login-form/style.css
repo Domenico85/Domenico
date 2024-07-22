@@ -147,3 +147,16 @@ input[type="password"]::-ms-reveal,
 input[type="password"]::-webkit-reveal {
   display: none;
 }
+
+@media (max-width: 500px) {
+  section {
+    overflow: hidden;
+  }
+  .form-box {
+    width: 200px;
+  }
+
+  .input-box {
+    width: 240px;
+  }
+}
