@@ -39,11 +39,39 @@ header nav a:hover {
   color: #ef4335;
 }
 
-.home img {
+.sun {
   position: absolute;
   pointer-events: none;
-  width: 25%;
-  right: 0;
+  width: 370px;
+  right: 15%;
   bottom: 0;
   top: 80px;
+}
+
+.mountains {
+  position: absolute;
+  pointer-events: none;
+  width: 55%;
+  right: 0;
+  bottom: 0;
+  top: 230px;
+}
+
+.birds {
+  position: absolute;
+  pointer-events: none;
+  width: 23%;
+  left: 46%;
+  bottom: 0;
+  top: 230px;
+}
+
+#shape {
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  width: 55%;
+  left: 46%;
+  bottom: 0;
+  top: 230px;
 }
