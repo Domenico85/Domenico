@@ -706,6 +706,7 @@ footer {
   width: 260px;
   height: 379px;
   transition: 0.8s ease-in-out;
+  margin-top: 20px;
 }
 
 .product-card-container .product-card:hover {
