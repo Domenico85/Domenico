@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  width: 80%;
+}
+
+.one {
+  background: url(img/one.jpg);
+}
+.two {
+  background: url(img/two.jpg);
+}
+.three {
+  background: url(img/three.jpg);
+}
+.four {
+  background: url(img/four.jpg);
+}
+
+.section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  cursor: pointer;
+  flex: 0.2;
+  margin: 8px;
+  position: relative;
+  transition: all 0.7s ease-out;
+}
+
+.section.active {
+  flex: 3;
+}
