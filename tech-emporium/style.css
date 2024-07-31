@@ -683,6 +683,13 @@ footer {
 
 .product-card {
   margin-left: 100px;
+  width: 0;
+  height: 0;
+}
+
+.product-card.active {
+  width: 260px;
+  height: 379px;
 }
 
 .product-card-container {
