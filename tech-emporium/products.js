@@ -2,9 +2,7 @@ let productContainerWidth = document.querySelector(
   ".product-card-container"
 ).offsetWidth;
 let productCardWidth = 260;
-let productCardPerRow = Math.floor(
-  productContainerWidth / (productCardWidth + 10)
-);
+let productCardPerRow = Math.floor(productContainerWidth / productCardWidth);
 let marginSpacing =
   (productContainerWidth - productCardPerRow * productCardWidth) /
   (productCardPerRow - 1);
