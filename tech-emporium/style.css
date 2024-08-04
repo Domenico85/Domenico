@@ -755,6 +755,11 @@ footer {
   fill: none;
 }
 
+.product-image-container .heart-btn.active svg {
+  stroke: red;
+  fill: red;
+}
+
 .product-text-container {
   padding: 16px;
 }

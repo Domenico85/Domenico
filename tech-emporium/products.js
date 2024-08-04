@@ -23,3 +23,35 @@ productSections.forEach((section) => {
     }
   }
 });
+
+let wishListCount = document.querySelector("#wishlist-link span");
+let heartBtn = document.querySelectorAll(".heart-btn");
+
+heartBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+
+    wishListCount.innerHTML =
+      document.querySelectorAll(".heart-btn.active").length;
+  });
+});
+
+let cartCount = document.querySelector("#cart-link span");
+let cartBtn = document.querySelectorAll(".product-card .add-to-chart");
+
+cartBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active");
+
+    if (button.innerHTML === "Add to Cart") {
+      button.innerHTML = "Remove";
+    } else if (button.innerHTML === "Remove") {
+      button.innerHTML = "Add to Cart";
+    } else {
+      console.log("Error: Adding items to cart failed", button.innerHTML);
+    }
+    cartCount.innerHTML = document.querySelectorAll(
+      ".add-to-chart.active"
+    ).length;
+  });
+});
