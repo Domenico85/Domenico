@@ -675,6 +675,7 @@ footer {
   justify-content: center;
   align-items: center;
   box-shadow: 0 2px 15px rgba(71, 71, 71, 0.1);
+  cursor: pointer;
 }
 
 .prev-button {
@@ -700,7 +701,7 @@ footer {
 
 .product-card-container ul {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: nowrap; */
   list-style: none;
 }
 
