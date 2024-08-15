@@ -79,7 +79,7 @@ ul.menu {
 }
 
 .banner {
-  background-image: url("https://res.cloudinary.com/dxssqb6l8/image/upload/v1605294054/young-woman-enjoying-beautiful-scenery-of-lago-di-braies-italy-picjumbo-com_aa0fvw.jpg");
+  background-image: url("img/front.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -302,6 +302,7 @@ ul.menu {
 .zoom-img .img-card {
   position: absolute;
   overflow: hidden;
+  width: 100%;
 }
 
 .img-card img {
@@ -396,7 +397,7 @@ ul.menu {
 }
 
 .footer {
-  background-image: url("https://res.cloudinary.com/dxssqb6l8/image/upload/v1605293781/pine-tree_mq2sgp.jpg");
+  background-image: url("img/footer.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
