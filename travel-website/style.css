@@ -62,7 +62,7 @@ ul.menu {
 .menu li {
   flex: 1;
   list-style-type: none;
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Barlow Condensed";
   text-align: center;
 }
