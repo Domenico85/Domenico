@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Matemasie&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #97ebe1, rgba(70, 120, 90, 0.7));
+  font-family: "Fira Sans", sans-serif;
+}
+
+.form-container {
+  background-color: #222;
+  height: 550px;
+  width: 350px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.form-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(form.jpg);
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+.signup-container {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  transition: 0.3s ease;
+}
+
+.form-container .form-title {
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+}
+
+.form-container .form-holder {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 50px;
+  transition: 0.3s ease;
+}
+
+.form-container .form-holder input {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 45px;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  font-size: 12px;
+}
+
+.form-container .form-holder input:last-child {
+  border-bottom: 0;
+}
+
+.form-container .form-holder input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form-container .submit-btn {
+  background-color: #63b28b;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  display: block;
+  padding: 15px 45px;
+  margin: 15px auto;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form-container .submit-btn:hover {
+  background-color: #53cb94;
+}
+
+.form-container .signup-container.slide-up {
+  top: 5%;
+  transform: translate(-50%, 0);
+}
+
+.form-container .slide-up .form-holder,
+.form-container .slide-up .submit-btn {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-container .slide-up .form-title {
+  font-size: 16px;
+}
+
+.login-container {
+  background-color: #fff;
+  z-index: 5;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s ease;
+}
+
+.form-container .login-container.slide-up {
+  top: 90%;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 200%;
+  height: 250px;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: -20px;
+  z-index: 4;
+  transition: 0.3s ease;
+}
+
+.form-container .login-wrapper {
+  z-index: 5;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.form-container .login-container.slide-up .login-wrapper {
+  top: 10%;
+  transform: translate(-50%, 0);
+}
+
+.form-container .login-container .form-title {
+  color: #000;
+}
+
+.form-container .login-container.slide-up .form-title {
+  margin: 0;
+}
+
+.form-container .login-container .form-holder {
+  border: 1px solid #eee;
+}
+
+.form-container .login-container .submit-btn {
+  margin-bottom: 10px;
+}
+
+.form-container a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #3db077;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}

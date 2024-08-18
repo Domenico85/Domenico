@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login and Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="form container">
+    <div class="form-container">
       <div class="signup-container">
-        <h2 class="form title">Sign Up</h2>
+        <h2 class="form-title">Sign Up</h2>
         <form accept="#">
           <div class="form-holder">
             <input type="text" class="input" placeholder="Name" />
@@ -17,6 +18,20 @@
           </div>
           <button class="submit-btn">Sign Up</button>
         </form>
+      </div>
+
+      <div class="login-container slide-up">
+        <div class="login-wrapper">
+          <h2 class="form-title">Log In</h2>
+          <form accept="#">
+            <div class="form-holder">
+              <input type="email" class="input" placeholder="Email" />
+              <input type="password" class="input" placeholder="Password" />
+            </div>
+            <button class="submit-btn">Sign Up</button>
+          </form>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
       </div>
     </div>
   </body>
