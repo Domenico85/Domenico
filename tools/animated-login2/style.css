@@ -9,7 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #97ebe1, rgba(70, 120, 90, 0.7));
+  background: linear-gradient(180deg, #d7ebe1, rgba(70, 120, 90, 0.7));
   font-family: "Fira Sans", sans-serif;
 }
 
