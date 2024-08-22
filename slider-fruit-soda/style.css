@@ -128,7 +128,7 @@ header ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  --left: 0%;
+  --left: 0;
   transform: translate(-50%, -50%);
   width: var(--width-mockup);
   height: var(--height-mockup);
@@ -151,8 +151,8 @@ header ul {
   height: 170px;
   background-image: url(img/leaves.png);
   background-size: 100%;
-  top: calc(50% - (var(--height-mockup) / 1.7));
-  left: calc(50% + (var(--width-mockup) / 5));
+  top: calc(40% - (var(--height-mockup) / 1.7));
+  left: calc(44% + (var(--width-mockup) / 5));
 }
 
 .shadow {
@@ -191,4 +191,22 @@ header ul {
 
 #next {
   right: 20px;
+}
+
+.right .item.hidden img.fruit {
+  animation: toOut 0.8s ease-in-out 1;
+  top: 100%;
+  opacity: 0;
+}
+
+@keyframes toActivePrev {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.right .item.active img.fruit,
+.right .item.active .content {
+  animation: toActivePrev 0.8s ease-in-out 1;
 }
