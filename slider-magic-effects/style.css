@@ -133,3 +133,116 @@ header .logo img {
   transform: translate(-50%, -50%) rotate(-170deg);
   transition: transform 1s;
 }
+
+.slider .list .item {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slider .list .item.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider .list .item.active .content h2 {
+  transform: translateY(0);
+}
+
+.slider .list .item.active .image {
+  transform: rotate(0);
+  filter: blur(0);
+}
+
+.slider .list .item.active .image::before,
+.slider .list .item.active .image::after {
+  transform: translate(-50%, -50%) rotate(0);
+}
+
+.slider .list .item.active ~ .item {
+  opacity: 0;
+}
+
+.slider .list .item.active ~ .item .content h2 {
+  transform: translateY(100%);
+}
+
+.slider .list .item.active ~ .item .image {
+  transform: rotate(60deg);
+  filter: blur(30px);
+}
+
+.slider .list .item.active ~ .item .image::before {
+  transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.slider .list .item.active ~ .item .image::after {
+  transform: translate(-50%, -50%) rotate(170deg);
+}
+
+.arrows {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  width: var(--width-df);
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrows button {
+  all: unset;
+  cursor: pointer;
+}
+
+.slider .list::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1000px, 100vw);
+  background-image: url(img/model.png);
+  height: 70%;
+  background-size: cover;
+  background-position: top;
+  pointer-events: none;
+  animation: showModel 1s ease-in-out 1 forwards;
+}
+
+@keyframes showModel {
+  from {
+    transform: translateX(-50%) scale(1.5) translateY(88px);
+  }
+}
+
+.arrows button.d-none {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media all and (max-width: 1024px) {
+  .slider .list .item .content {
+    grid-template-columns: repeat(2, 300px);
+    gap: 100px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .slider .list .item .content {
+    grid-template-columns: 80vw;
+    gap: 20px;
+    top: 70px;
+  }
+
+  .slider .list .item .content h2 {
+    font-size: 4em;
+  }
+
+  .slider .list .item .content p {
+    font-size: small;
+    text-align: right;
+    padding-left: 30%;
+    transform: translateY(-30px);
+  }
+}
