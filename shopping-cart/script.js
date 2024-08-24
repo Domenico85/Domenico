@@ -15,42 +15,12 @@ closeShopping.addEventListener("click", () => {
 });
 
 let products = [
-  {
-    id: 1,
-    name: "PRODUCT NAME 1",
-    image: "1.PNG",
-    price: 12,
-  },
-  {
-    id: 2,
-    name: "PRODUCT NAME 2",
-    image: "2.PNG",
-    price: 13,
-  },
-  {
-    id: 3,
-    name: "PRODUCT NAME 3",
-    image: "3.PNG",
-    price: 23,
-  },
-  {
-    id: 4,
-    name: "PRODUCT NAME 4",
-    image: "4.PNG",
-    price: 27,
-  },
-  {
-    id: 5,
-    name: "PRODUCT NAME 5",
-    image: "5.PNG",
-    price: 15,
-  },
-  {
-    id: 6,
-    name: "PRODUCT NAME 6",
-    image: "6.PNG",
-    price: 18,
-  },
+  { id: 1, name: "PRODUCT NAME 1", image: "1.PNG", price: 12 },
+  { id: 2, name: "PRODUCT NAME 2", image: "2.PNG", price: 13 },
+  { id: 3, name: "PRODUCT NAME 3", image: "3.PNG", price: 23 },
+  { id: 4, name: "PRODUCT NAME 4", image: "4.PNG", price: 27 },
+  { id: 5, name: "PRODUCT NAME 5", image: "5.PNG", price: 15 },
+  { id: 6, name: "PRODUCT NAME 6", image: "6.PNG", price: 18 },
 ];
 
 let listCarts = [];
@@ -72,8 +42,7 @@ initApp();
 
 function addToCart(key) {
   if (listCarts[key] == null) {
-    listCarts[key] = products[key];
-    listCarts[key].quantity = 1;
+    listCarts[key] = { ...products[key], quantity: 1 };
   }
   reloadCart();
 }
@@ -83,22 +52,22 @@ function reloadCart() {
   let count = 0;
   let totalPrice = 0;
   listCarts.forEach((value, key) => {
-    totalPrice = totalPrice + value.price;
-    count = count + value.quantity;
-
     if (value != null) {
+      let itemTotalPrice = value.price * value.quantity;
+      totalPrice += itemTotalPrice;
+      count += value.quantity;
+
       let newDiv = document.createElement("li");
       newDiv.innerHTML = `
       <div><img src="img/${value.image}"/></div>
       <div>${value.name}</div>
-      <div>${value.price.toLocaleString()} €</div>
-      <div>${value.quantity}</div>
+      <div>${itemTotalPrice.toLocaleString()} €</div>
       <div>
           <button onclick="changeQuantity(${key}, ${
         value.quantity - 1
       })">-</button>
           <div class="count">${value.quantity}</div>
-            <button onclick="changeQuantity(${key}, ${
+          <button onclick="changeQuantity(${key}, ${
         value.quantity + 1
       })">+</button>
       </div>    
@@ -108,4 +77,13 @@ function reloadCart() {
   });
   total.innerText = `${totalPrice.toLocaleString()} €`;
   quantity.innerText = count;
+}
+
+function changeQuantity(key, newQuantity) {
+  if (newQuantity <= 0) {
+    delete listCarts[key];
+  } else {
+    listCarts[key].quantity = newQuantity;
+  }
+  reloadCart();
 }

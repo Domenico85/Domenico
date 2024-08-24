@@ -123,3 +123,31 @@ header .shopping span {
   padding: 10px;
   width: 100%;
 }
+
+.list-cart li {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  color: #fff;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+
+.list-cart li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-cart li img {
+  width: 90%;
+}
+
+.list-cart button {
+  width: auto;
+  background-color: #fff5;
+  border: none;
+}
+
+.list-cart .count {
+  margin: 0 10px;
+}
