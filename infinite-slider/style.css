@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Matemasie&display=swap");
+
 body {
   margin: 0;
   background-color: #fbab7e;
   background-image: linear-gradient(238deg, #fbab7e 0%, #f7ce68 100%);
+  font-family: "Matemasie", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 main {
   width: min(1200px, 90vw);
@@ -11,10 +16,47 @@ main {
 .bg {
   width: 100svw;
   max-width: 1200px;
+  margin-top: 10px;
+  position: relative;
 }
 
 .bg img {
   width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.text-overlay h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+
+  background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-overlay h2 {
+  background: linear-gradient(180deg, #ffffff 0%, #6284ff 50%, #ff0000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-overlay h3 {
+  background: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .slider {
