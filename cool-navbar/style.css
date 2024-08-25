@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #111111;
+  --navBg: #1e1e1e;
+  --green: #56d453;
+}
+
+.container {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  font-family: sans-serif;
+  background-color: var(--bg);
+}
+
+.navbar {
+  width: 750px;
+  height: 120px;
+  padding: 0 3rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  background-color: var(--navBg);
+  position: relative;
+  z-index: 0;
+}
+
+.navbar-item {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons {
+  width: 3.5rem;
+  height: 3.5rem;
+  stroke: white;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 400;
+  stroke-miterlimit: 10;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.icons.active {
+  stroke: black;
+  stroke-width: 1.5px;
+  transform: translateY(-86%);
+}
+
+.navbar-item span {
+  color: white;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 5%;
+}
+
+#indicator {
+  width: 120px;
+  height: 120px;
+  background-color: var(--green);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  transform: translateY(-50%);
+  z-index: 1;
+  border: 1rem solid var(--bg);
+}
