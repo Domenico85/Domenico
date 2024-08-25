@@ -7,7 +7,7 @@ let mockup = document.querySelector(".mockup");
 let count = list.length;
 let active = 0;
 let leftMockup = 35;
-let left_each_item = 100 / (list.length - 1);
+let left_each_item = 130 / (list.length - 1);
 
 next.addEventListener("click", () => {
   active = active >= count - 1 ? 0 : active + 1;
