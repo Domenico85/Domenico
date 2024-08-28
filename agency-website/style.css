@@ -31,6 +31,13 @@ section {
   height: 100svh;
   align-items: center;
   padding: 100px;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+section.home {
+  flex-direction: row;
+  margin-top: 0;
 }
 
 .btn {
@@ -149,4 +156,24 @@ section {
   bottom: 0;
   right: 0;
   height: 110%;
+}
+
+@media (max-width: 1068px) {
+  .home-img {
+    display: none;
+  }
+
+  .logo {
+    top: 10px;
+    left: 40px;
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 100px 40px;
+  }
+
+  .navigation ul li a {
+    font-size: 2rem;
+  }
 }
