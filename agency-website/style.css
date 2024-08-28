@@ -233,6 +233,48 @@ section.home {
   padding: 5px 15px;
 }
 
+/* CONTACT PAGE */
+
+.contact {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contact-form {
+  position: relative;
+  background: #f9f9f9;
+  width: calc(100% - 400px);
+  padding: 60px 40px 20px;
+}
+
+.contact-form form {
+  width: 100%;
+}
+
+.contact-form .row {
+  width: 100%;
+  display: flex;
+}
+
+.contact-form .input50 {
+  width: 50%;
+  max-width: 0 10px;
+}
+
+.contact-form .input100 {
+  width: 100%;
+  max-width: 0 10px;
+}
+
+.contact-form .row input,
+.contact-form .row textarea {
+  position: relative;
+  border: 0;
+}
 /* MEDIA QUERIES */
 @media (max-width: 1068px) {
   .home-img {
