@@ -20,7 +20,7 @@ h1 {
 }
 
 .box {
-  background-color: #867893;
+  background-color: rgb(106, 57, 57);
   color: #fff;
   display: flex;
   align-items: center;
