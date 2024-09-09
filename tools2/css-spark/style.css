@@ -514,9 +514,6 @@ body {
   animation: smokeRight 7s 6.3s infinite;
 }
 
-/* #Switched
- ================================================== */
-
 body.fire-off .fire-on {
   opacity: 0;
 }
@@ -537,9 +534,6 @@ body.fire-off .fire span {
   transform: scale(0.15, 0.15) rotate(45deg);
 }
 
-/* #Link to page
- ================================================== */
-
 .link-to-portfolio {
   position: fixed;
   top: 30px;
@@ -552,7 +546,7 @@ body.fire-off .fire span {
   border-radius: 3px;
   background-position: center center;
   background-size: cover;
-  background-image: url("https://ivang-design.com/ig-logo.jpg");
+  background-image: url("dom2.jpeg");
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
   transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
   transition-timing-function: ease-out;
