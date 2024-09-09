@@ -62,7 +62,7 @@ body {
   border-color: #000 !important;
 }
 .switched #circle {
-  margin-left: 55%;
+  margin-left: 50%;
   box-shadow: inset 4px -1px 0 0 #2ecc71;
 }
 .main-wrapper {
