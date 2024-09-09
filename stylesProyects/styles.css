@@ -6,14 +6,14 @@ body {
   font-family: "Raleway", sans-serif;
   background-image: url("mountain.jpg");
   background-position: center;
-  background-size: auto;
+  background-size: cover;
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;
   background-color: black;
 }
 @font-face {
-  font-family: 'kanit';
+  font-family: "kanit";
   src: url(Kanit-ExtraLight.ttf);
 }
 .project-links {
@@ -23,36 +23,37 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: 'kanit';
+  font-family: "kanit";
   font-size: 20px;
 }
 
 h1 {
   margin: 0;
   font-size: 70px;
-  color: rgba(225,225,225, .01);
+  color: rgba(225, 225, 225, 0.01);
   background-image: url("reggae.webp");
   background-repeat: repeat;
-  -webkit-background-clip:text;
+  -webkit-background-clip: text;
   animation: animate 15s ease-in-out infinite;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  font-family: 'Raleway';
+  font-family: "Raleway";
 }
 @keyframes animate {
-  0%, 100% {
+  0%,
+  100% {
     background-position: left top;
   }
-  25%{
+  25% {
     background-position: right bottom;
-   }
+  }
   50% {
     background-position: left bottom;
   }
   75% {
     background-position: right top;
-  }   
+  }
 }
 
 ul {
