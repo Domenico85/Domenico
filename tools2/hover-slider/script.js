@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  // Page cursors
   document.body.addEventListener("mousemove", function (event) {
     var cursor = document.getElementById("cursor");
     var cursor2 = document.getElementById("cursor2");
@@ -38,8 +37,6 @@
   });
 
   document.addEventListener("DOMContentLoaded", function () {
-    // Hero Case study images
-
     var caseStudyNames = document.querySelectorAll(".case-study-name");
 
     function showImage(index) {
