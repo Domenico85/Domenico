@@ -103,45 +103,26 @@ main {
   border: 4px solid #fff;
   box-shadow: 0 10px 50px #555;
 }
-/* #title,
-#description,
-#colors,
-#sizes,
-#price{
-    border: 1px solid red;
-    position: relative;
-    --content: '#price';
-    width: max-content;
-    min-width: 100px;
-    max-width: 400px;
-    min-height: 40px;
+
+.link-to-portfolio {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 20;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
 }
-#description{
-    --content: '#description';
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
 }
-#colors{
-    --content: '#colors';
-}
-#sizes{
-    --content: '#sizes';
-}
-#colors{
-    --content: '#colors';
-}
-#title{
-    --content: '#title';
-}
-#title::after,
-#description::after,
-#colors::after,
-#sizes::after,
-#price::after{
-    content: var(--content);
-    position: absolute;
-    background-color: red;
-    color: #fff;
-    font-size: 20px;
-    bottom: 100%;
-    right: 0;
-    pointer-events: none;
-} */
