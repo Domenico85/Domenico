@@ -83,6 +83,8 @@ const refreshInfo = () => {
       'li[data-color="' + option.color + '"]'
     );
     colorNewActive.classList.add("active");
+
+    image.src = `img/${option.color.replace("#", "")}.jpg`;
   }
   // size
   sizeOldActive = sizeHTML.querySelector("li.active");
