@@ -13,7 +13,7 @@ let product = {
     { color: "#810284", size: "XL", price: 170 },
     { color: "#9c2f46", size: "M", price: 140 },
     { color: "#9c2f46", size: "L", price: 120 },
-    { color: "#9c2f46", size: "XL", price: 150 },
+    { color: "#9c2f46", size: "XL", price: 170 },
     { color: "#000", size: "M", price: 100 },
     { color: "#000", size: "L", price: 120 },
     { color: "#000", size: "XL", price: 170 },
