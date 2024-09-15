@@ -85,7 +85,16 @@ main {
   font-size: small;
   padding: 10px 0;
   border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #0e0c0d;
+  border: 1px solid #0e0c0d;
+}
+
 .detail .content {
   display: flex;
   flex-direction: column;
@@ -93,10 +102,10 @@ main {
 }
 .detail .content .des {
   font-size: small;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
 }
 .detail b {
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 .detail li.active {

@@ -1,7 +1,7 @@
 let product = {
   name: "T-Shirt LD02",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus ratione consectetur architecto accusamus iste assumenda velit molestiae reiciendis facere",
+    "Comfort meets style with our T-Shirt LD02. Crafted from premium, breathable cotton, this shirt offers a perfect fit for everyday wear. Available in multiple vibrant colors and sizes, it’s designed to keep you looking sharp while staying comfortable all day long. Whether you’re dressing it up or keeping it casual, this T-shirt is a wardrobe essential.",
   image: "image.png",
   price: "100 ~ 200",
   children: [
