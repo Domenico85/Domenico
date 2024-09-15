@@ -106,3 +106,34 @@ const refreshInfo = () => {
     price.innerText = childFound.price;
   }
 };
+
+const sizeFitLink = document.querySelector("#size-fit-link");
+const sizeText = document.querySelector("#size-text");
+const descText = document.querySelector(".desc-text");
+
+sizeFitLink.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  descText.style.display = "none";
+  sizeText.style.display = "block";
+});
+
+const descriptionLink = document.getElementById("desc-link");
+descriptionLink.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  descText.style.display = "block";
+  sizeText.style.display = "none";
+});
+
+const footerLinks = document.querySelectorAll(".desc-footer a");
+
+footerLinks.forEach((link) => {
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    footerLinks.forEach((l) => l.classList.remove("active"));
+
+    this.classList.add("active");
+  });
+});
