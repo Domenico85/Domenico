@@ -81,6 +81,7 @@ body {
     #5fc3e4 51%,
     #e55d87 100%
   );
+  background-size: 200% auto;
   transition: 0.5s;
   color: #fff;
   border: 0;
@@ -110,4 +111,5 @@ body {
   background-position: right center;
   color: #fff;
   text-decoration: none;
+  background-size: 200% auto;
 }
