@@ -20,6 +20,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
+  transition: 1s all;
+  backdrop-filter: blur(20px);
 }
 
 .dot-container {
@@ -177,4 +179,38 @@ span {
   gap: 15px;
   position: relative;
   top: -15px;
+  cursor: pointer;
+}
+
+.active {
+  transition: 1s all;
+}
+
+.container.active {
+  width: 100px;
+}
+
+.container.active h1 {
+  font-size: 16px;
+  position: relative;
+  left: 6px;
+}
+
+.container.active span {
+  display: none;
+}
+
+.container.active i {
+  position: relative;
+  left: 40px;
+}
+
+.container.active .toggle-box i .fa-plus {
+  position: relative;
+  left: -5px;
+  font-size: 0px;
+}
+
+.container.active .profile-text {
+  display: none;
 }
