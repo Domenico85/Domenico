@@ -146,7 +146,7 @@ footer {
   grid-template-rows: auto;
   padding: 20px;
   position: relative;
-  bottom: -55px;
+  bottom: -5px;
 }
 
 footer p {
