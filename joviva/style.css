@@ -20,6 +20,8 @@ body {
   height: 100svh;
   width: 100svw;
   overflow-y: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 .top-right {
