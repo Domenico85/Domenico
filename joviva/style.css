@@ -47,6 +47,36 @@ main h2 {
   margin-left: 60px;
 }
 
+.text-changer {
+  position: relative;
+  font-size: 2em;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+@keyframes textSlide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  33% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  34% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  66% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .countdown {
   width: 500px;
   height: 200px;
