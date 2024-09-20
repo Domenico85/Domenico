@@ -7,12 +7,13 @@ function changeText() {
   textChanger.style.animation = "textSlide 1s forwards";
 
   setTimeout(() => {
+    index = (index + 1) % texts.length;
     textChanger.textContent = texts[index];
     textChanger.style.color = colors[index];
 
-    textChanger.style.animation = "";
-
-    index = (index + 1) % texts.length;
+    textChanger.style.animation = "none";
+    void textChanger.offsetWidth;
+    textChanger.style.animation = "textSlide 1s forwards";
   }, 1000);
 }
 
@@ -32,10 +33,18 @@ const countdownFunction = setInterval(() => {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  document.getElementById("days").textContent = days
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("hours").textContent = hours
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("minutes").textContent = minutes
+    .toString()
+    .padStart(2, "0");
+  document.getElementById("seconds").textContent = seconds
+    .toString()
+    .padStart(2, "0");
 
   if (distance < 0) {
     clearInterval(countdownFunction);
