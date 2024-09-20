@@ -156,6 +156,20 @@ footer p {
   font-size: 16px;
 }
 
+@media (max-width: 1500px) {
+  main h2 {
+    font-size: 30px;
+  }
+
+  #timer {
+    font-size: 50px;
+  }
+
+  footer {
+    margin-top: -40px;
+  }
+}
+
 @media (max-width: 1024px) {
   main h2 {
     font-size: 36px;
@@ -183,6 +197,7 @@ footer p {
 
   main h2 {
     font-size: 28px;
+    margin-top: 30px;
   }
 
   .text-changer {
@@ -190,13 +205,31 @@ footer p {
   }
 
   .countdown {
-    width: 100%;
+    width: 90%;
     height: auto;
     padding: 20px;
+    margin: 0 auto;
+    margin-left: -10px;
+  }
+  #timer {
+    font-size: 50px;
+  }
+
+  .linkedin {
+    margin-left: -5px;
   }
 
   .linkedin p {
     font-size: 24px;
+  }
+
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 400px;
+  }
+  footer {
+    margin-top: -58px;
   }
 }
 
