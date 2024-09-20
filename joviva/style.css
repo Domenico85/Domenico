@@ -45,3 +45,50 @@ main h2 {
   font-size: 40px;
   margin-left: 60px;
 }
+
+.countdown {
+  width: 500px;
+  height: 200px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 20px;
+  margin-left: 60px;
+  position: relative;
+}
+
+.countdown p {
+  top: 15px;
+  left: 55px;
+  position: absolute;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.linkedin {
+  width: 550px;
+  height: 60px;
+  background-color: #121212;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  margin-left: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.linkedin p {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.linkedin i {
+  font-size: 30px;
+}
+
+.linkedin:hover {
+  background-color: gray;
+}
