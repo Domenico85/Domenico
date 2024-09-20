@@ -132,7 +132,7 @@ header nav {
   font-family: "Aboreto";
   font-weight: bold;
   font-size: 1.3em;
-  text-align: right;
+  text-align: center;
   margin-bottom: 30px;
   width: 70%;
 }
@@ -148,7 +148,7 @@ header nav {
 }
 
 .carousel .list .item .main-content .content h2 {
-  font-size: 5em;
+  font-size: 4.5em;
   font-family: "Aboreto";
 }
 
@@ -324,7 +324,7 @@ header nav {
   box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1200px) {
   :root {
     --calculate: 1;
     --w-image: 400px;
@@ -340,6 +340,10 @@ header nav {
 
   .arrows {
     bottom: 110px;
+  }
+
+  .carousel .list .image img {
+    width: 65%;
   }
 }
 
@@ -357,8 +361,12 @@ header nav {
     width: 100%;
     left: 0;
     justify-content: center;
+    margin-top: 44px;
   }
 
+  .carousel .list .item .image img {
+    width: 70%;
+  }
   .carousel .list .item .image figcaption {
     color: #fff;
     width: 100%;
@@ -373,5 +381,20 @@ header nav {
   .arrows {
     left: 50%;
     justify-content: center;
+    bottom: 6px;
+  }
+
+  .link-to-portfolio {
+    top: 15px;
+    right: 17px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .link-to-portfolio {
+    top: 83px;
+    right: 34px;
   }
 }
