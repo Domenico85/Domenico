@@ -267,3 +267,32 @@ footer p {
     font-size: 14px;
   }
 }
+
+@media (max-width: 400px) {
+  .logo img {
+    width: 80%;
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+
+  body {
+    overflow: scroll;
+  }
+
+  .text-changer {
+    margin-top: 80px;
+  }
+  #timer {
+    font-size: 40px;
+  }
+  .linkedin p {
+    font-size: 16px;
+  }
+  footer {
+    margin-top: -25px;
+  }
+
+  .bottom-right {
+    bottom: -430px;
+  }
+}
