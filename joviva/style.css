@@ -84,6 +84,10 @@ main h2 {
   border-radius: 20px;
   margin-left: 60px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .countdown p {
@@ -91,6 +95,12 @@ main h2 {
   left: 55px;
   position: absolute;
   font-size: 25px;
+  font-weight: 500;
+}
+
+#timer {
+  font-size: 70px;
+  margin-top: 65px;
   font-weight: 500;
 }
 
