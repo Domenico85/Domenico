@@ -70,6 +70,17 @@ header .content-fit nav ul {
   gap: 2em;
 }
 
+header .content-fit nav ul li a,
+header .content-fit .logo a {
+  text-decoration: none;
+  color: #eef8ce;
+}
+
+header .content-fit nav ul li a:hover,
+header .content-fit .logo a:hover {
+  color: #d1ff48;
+}
+
 #banner .title {
   color: #d1ff48;
   font-size: 11em;
