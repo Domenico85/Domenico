@@ -66,3 +66,87 @@ body {
 .banner .bg:nth-child(1) {
   background-image: url(img/banner_0.png);
 }
+
+.tab {
+  min-height: 100svh;
+  background-color: #010302;
+  z-index: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab::before {
+  content: "";
+  position: absolute;
+  height: 200px;
+  width: 100svw;
+  background: linear-gradient(to top, #010302, transparent);
+  bottom: 100%;
+  left: 0;
+}
+
+.tab.tab1 {
+  background-image: linear-gradient(
+      to top,
+      #010302 0%,
+      transparent 20%,
+      #010302 80%
+    ),
+    url(img/tab1.jpg);
+}
+
+.tab.tab1 .content {
+  width: 700px;
+  max-width: 90%;
+}
+
+.tab.tab2 {
+  background-image: linear-gradient(
+      to top,
+      #010302 0%,
+      transparent 20%,
+      #010302 80%
+    ),
+    url(img/tab2.jpg);
+}
+
+.tab.tab2 .content {
+  width: 900px;
+  max-width: 90%;
+}
+
+.tab.tab2 .content .des {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.des ul li h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fa-html5 {
+  color: #e34c26;
+}
+
+.fa-css3-alt {
+  color: #264de4;
+}
+
+.fa-js {
+  color: #f0db4f;
+}
+
+.fa-paintbrush {
+  color: green;
+}
+
+.fa-uikit {
+  color: purple;
+}
