@@ -173,3 +173,25 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
 }
+
+@media (max-width: 500px) {
+  .banner .bg:nth-child(3) h1 {
+    font-size: 34px;
+  }
+
+  .banner .bg:nth-child(3) h5 {
+    font-size: 22px;
+  }
+  .tab.tab1 .content {
+    margin-top: 615px;
+  }
+
+  .link-to-portfolio {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tab.tab2 .content {
+    margin-left: -22px;
+  }
+}
