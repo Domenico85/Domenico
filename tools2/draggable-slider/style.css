@@ -66,3 +66,44 @@ h1 {
   border-radius: 50%;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
 }
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 75px;
+  left: 0;
+  right: 0;
+  gap: 25px;
+}
+
+.links i {
+  /* color: white; */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.fa-github,
+.fa-envelope {
+  color: white;
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-facebook {
+  color: #1877f2;
+}
+
+.fa-square-instagram {
+  background: -webkit-linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.links img {
+  width: 40px;
+  cursor: pointer;
+}
