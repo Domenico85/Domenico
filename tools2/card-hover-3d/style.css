@@ -23,7 +23,7 @@ body {
   font-style: normal;
   font-size: 30px;
   background: #121fcf;
-  background: linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 61%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Mochiy Pop P One", sans-serif;
@@ -124,7 +124,7 @@ body {
   font-style: normal;
   font-size: 30px;
   background: #121fcf;
-  background: linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 61%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: "Mochiy Pop P One", sans-serif;
