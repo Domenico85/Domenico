@@ -7,7 +7,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: cadetblue;
+  background-image: url(img/urban-vintage-78A265wPiO4-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .text-header {
@@ -175,8 +178,8 @@ p {
   font-weight: 800;
   font-style: normal;
   font-size: 30px;
-  background: #121fcf;
-  background: linear-gradient(to right, #121fcf 0%, #cf1512 100%);
+  background: #ff0000;
+  background: linear-gradient(to left, #ff0000 0%, #000000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
