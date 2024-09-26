@@ -9,18 +9,32 @@ let active = 0;
 let countItem = items.length;
 let rotateAdd = 360 / countItem;
 
+let autoNext;
+
+function startAutoSlide() {
+  autoNext = setInterval(nextSlider, 3000);
+}
+
+function resetAutoSlide() {
+  clearInterval(autoNext);
+  startAutoSlide();
+}
+
 function nextSlider() {
   active = active + 1 > countItem - 1 ? 0 : active + 1;
   rotate = rotate + rotateAdd;
   show();
+  resetAutoSlide();
 }
+
 function prevSlider() {
   active = active - 1 < 0 ? countItem - 1 : active - 1;
   rotate = rotate - rotateAdd;
   show();
+  resetAutoSlide();
 }
+
 function show() {
-  image.style.setProperty("--rotate", rotate + "deg");
   image.style.setProperty("--rotate", rotate + "deg");
   contents.forEach((content, key) => {
     if (key == active) {
@@ -30,6 +44,8 @@ function show() {
     }
   });
 }
+
 next.onclick = nextSlider;
 prev.onclick = prevSlider;
-// const autoNext = setInterval(nextSlider, 3000);
+
+startAutoSlide();
