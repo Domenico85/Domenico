@@ -184,3 +184,58 @@ header li:hover {
   border-radius: 50%;
   box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
 }
+
+.links {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 28px;
+  left: 140px;
+  right: 0;
+  gap: 25px;
+  z-index: 2000;
+}
+
+.links i {
+  /* color: white; */
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.fa-github {
+  color: #0d0e12;
+}
+
+.fa-envelope {
+  color: white;
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-facebook {
+  color: #1877f2;
+}
+
+.links img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.dome {
+  position: absolute;
+  top: 0;
+  right: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sofadi One", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
