@@ -36,8 +36,15 @@ body {
   bottom: 0;
 }
 .content {
-  font-size: xxx-large;
   transform: translateZ(10px);
+}
+
+.content h1 {
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
 }
 .container {
   width: 1200px;
@@ -56,6 +63,10 @@ header {
 }
 header .logo {
   font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 header .signin {
   display: flex;
@@ -68,6 +79,14 @@ header button {
   padding: 10px 20px;
   border-radius: 20px;
 }
+
+header button:hover {
+  background-color: #fff;
+  color: #010001;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -75,6 +94,11 @@ nav ul {
 }
 nav ul li {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }
 .library {
   display: grid;
@@ -122,4 +146,40 @@ nav ul li {
 .des.active {
   opacity: 1;
   transform: translateY(0px);
+}
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.fa-facebook {
+  color: #1877f2;
+}
+
+.insta {
+  width: 30px;
+  margin-top: -5px;
+}
+
+.fa-globe {
+  color: orangered;
 }
