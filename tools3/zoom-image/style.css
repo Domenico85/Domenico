@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 body {
   min-height: 100vh;
   background-image: linear-gradient(to top, #f064a3, #a97cdf);
@@ -5,13 +7,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
 }
 .zoom {
   width: max-content;
   position: relative;
 }
 .zoom img {
-  width: 500px;
+  width: 1000px;
 }
 #imgZoom {
   position: absolute;
@@ -23,4 +38,27 @@ body {
   pointer-events: none;
   clip-path: circle(100px at var(--zoom-x) var(--zoom-y));
   opacity: 0;
+}
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
 }
