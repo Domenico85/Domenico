@@ -1,0 +1,26 @@
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #f064a3, #a97cdf);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.zoom {
+  width: max-content;
+  position: relative;
+}
+.zoom img {
+  width: 500px;
+}
+#imgZoom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  --zoom-x: 50%;
+  --zoom-y: 50%;
+  transform: scale(1.5);
+  pointer-events: none;
+  clip-path: circle(100px at var(--zoom-x) var(--zoom-y));
+  opacity: 0;
+}
