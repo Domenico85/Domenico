@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import Container from "./Container";
 import AboutMeImg from "../assets/aboutMe.jpg";
 import Button from "./ui/Button";

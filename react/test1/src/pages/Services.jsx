@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import Features from "../components/Features";
 
 const Services = () => {

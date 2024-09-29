@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/dom2.jpeg";
 import Button from "./ui/Button";
 import { useLocation } from "react-router-dom";
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
       <div className="h-full max-w-screen-xl mx-auto flex items-center justify-between ">
         <div>
           <Link to={"/"}>
-            <img src={logo} alt="logo" className="w-24" />
+            <img src={logo} alt="logo" className="w-12" />
           </Link>
         </div>
         <div className="flex items-center gap-6">
