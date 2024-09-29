@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import AboutMe from "./components/AboutMe";
+import ContactMe from "./components/ContactMe";
+import Features from "./components/Features";
+import Hero from "./components/Hero";
+import Portfolio from "./components/Portfolio";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      <h1>Simple Application</h1>
+    <div className="relative bg-primaryColor text-lightText">
+      <Hero />
+      <AboutMe />
+      <Features />
+      <Portfolio />
+      <ContactMe />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
