@@ -3,6 +3,7 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  position: relative;
 }
 header {
   position: absolute;
@@ -197,7 +198,6 @@ header li:hover {
 }
 
 .links i {
-  /* color: white; */
   font-size: 30px;
   cursor: pointer;
 }
