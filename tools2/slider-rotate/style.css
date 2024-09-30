@@ -24,6 +24,9 @@ header ul {
 header li {
   padding: 30px 40px;
   color: #fff;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 2000;
 }
 header li.active,
 header li:hover {
