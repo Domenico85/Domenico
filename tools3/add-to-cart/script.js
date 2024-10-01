@@ -45,6 +45,7 @@ let ArrProducts = [
 
 const body = document.querySelector("body");
 products = document.querySelector(".products");
+let checkOutList = [];
 
 function addItems() {
   ArrProducts.forEach((item, key) => {
@@ -55,10 +56,17 @@ function addItems() {
     div.innerHTML = `<img src="img/${item.image}" />
     <div class="name">${item.name}</div>
     <div class="price">${item.price}<small>€</small></div>
-    <button>Add to Cart</button>
+    <button onclick="addToCart(${key})"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
     `;
 
     products.appendChild(div);
   });
 }
 addItems();
+
+function addToCart(Id) {
+  //   console.log(ArrProducts[Id]);
+  if (checkOutList[Id] == null) {
+    checkOutList[Id] = ArrProducts[Id];
+  }
+}
