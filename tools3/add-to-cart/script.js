@@ -142,7 +142,7 @@ function reloadCart() {
     `<small>Subtotal <br> (${count} items)</small>€` + totalPrice;
   quantity.innerHTML = count;
 
-  document.querySelectorAll(".quantity-button").forEach((button) => {
+  document.querySelectorAll(".quantity-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       e.stopPropagation();
     });

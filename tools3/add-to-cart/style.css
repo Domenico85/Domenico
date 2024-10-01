@@ -125,13 +125,13 @@ header {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  cursor: pointer;
   background-color: beige;
 }
 
 .cart .checkout div:nth-child(2) {
   background-color: #000;
   color: #fff;
+  cursor: pointer;
 }
 
 .active .cart {
