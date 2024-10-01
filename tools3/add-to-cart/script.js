@@ -23,7 +23,7 @@ let ArrProducts = [
   {
     id: 4,
     name: "jQUERY",
-    image: "jquery.png",
+    image: "jquery2.png",
     price: "200",
     rating: 3,
   },
@@ -52,7 +52,11 @@ function addItems() {
     let div = document.createElement("div");
     div.classList.add("item");
 
-    div.innerHTML = `<img src="img/${item.image}" />`;
+    div.innerHTML = `<img src="img/${item.image}" />
+    <div class="name">${item.name}</div>
+    <div class="price">${item.price}<small>€</small></div>
+    <button>Add to Cart</button>
+    `;
 
     products.appendChild(div);
   });

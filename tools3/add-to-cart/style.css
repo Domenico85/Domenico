@@ -40,3 +40,31 @@ header {
   top: -15px;
   left: 20px;
 }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 25px;
+  row-gap: 25px;
+  margin: 10px 30px;
+  padding: 0 55px;
+}
+
+.products .item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0px 50px #757676;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products .item img {
+  height: 130px;
+  width: 130px;
+  filter: drop-shadow(10px 10px 5px #d3d3d3);
+}
