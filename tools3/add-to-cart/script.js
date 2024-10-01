@@ -68,7 +68,9 @@ document.addEventListener("click", (event) => {
     !shoppingBasket.contains(event.target) &&
     body.classList.contains("active")
   ) {
-    body.classList.remove("active");
+    if (!event.target.classList.contains("quantity-btn")) {
+      body.classList.remove("active");
+    }
   }
 });
 
@@ -123,9 +125,13 @@ function reloadCart() {
       <div>${item.name}</div>
       <div>${item.price}</div>
       <div>
-      <button onclick="changeQuantity(${key},${item.quantity - 1})">-</button>
+      <button class="quantity-btn" onclick="changeQuantity(${key},${
+      item.quantity - 1
+    })">-</button>
       <div class="count">${item.quantity}</div>
-      <button  onclick="changeQuantity(${key},${item.quantity + 1})">+</button>
+      <button class="quantity-btn" onclick="changeQuantity(${key},${
+      item.quantity + 1
+    })">+</button>
       </div>
     `;
 
@@ -135,6 +141,12 @@ function reloadCart() {
   total.innerHTML =
     `<small>Subtotal <br> (${count} items)</small>€` + totalPrice;
   quantity.innerHTML = count;
+
+  document.querySelectorAll(".quantity-button").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  });
 }
 
 function changeQuantity(key, quantity) {
