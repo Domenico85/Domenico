@@ -184,3 +184,33 @@ header {
   display: flex;
   justify-content: space-around;
 }
+
+@media only screen and (max-width: 550px) {
+  header {
+    padding: 25px;
+  }
+
+  .products {
+    display: block;
+    padding: 5px;
+  }
+
+  .products .item {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .products {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: fit-content;
+  }
+}
