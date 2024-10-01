@@ -92,3 +92,95 @@ header {
   border: none;
   outline: none;
 }
+
+.cart {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 400px;
+  background: #453e3b;
+  height: 100svh;
+  transition: 0.5s;
+}
+
+.cart h3 {
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.cart .checkout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cart .checkout div {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: beige;
+}
+
+.cart .checkout div:nth-child(2) {
+  background-color: #000;
+  color: #fff;
+}
+
+.active .cart {
+  left: calc(100% - 400px);
+}
+
+.fa-star {
+  color: #ff9c1a;
+}
+
+.product-list {
+  padding: 15px;
+  height: auto;
+}
+
+.product-list li {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  color: #fff;
+  row-gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+.product-list li img {
+  width: 50px;
+  background: #fff;
+}
+
+.product-list li div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-list li button {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.product-list li .count {
+  padding: 10px;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+}
