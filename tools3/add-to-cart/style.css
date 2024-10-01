@@ -213,4 +213,14 @@ header {
     grid-template-columns: repeat(1, 1fr);
     width: fit-content;
   }
+
+  header {
+    justify-content: flex-start;
+    gap: 25px;
+  }
+
+  .active .cart {
+    left: 0;
+    width: 100svw;
+  }
 }

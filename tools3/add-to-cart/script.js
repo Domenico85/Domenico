@@ -50,6 +50,7 @@ const close = document.querySelector(".close");
 let productList = document.querySelector(".product-list");
 let quantity = document.querySelector(".quantity");
 let total = document.querySelector(".total");
+let cart = document.querySelector(".cart");
 
 let checkOutList = [];
 
@@ -59,6 +60,16 @@ shoppingBasket.addEventListener("click", () => {
 
 close.addEventListener("click", () => {
   body.classList.remove("active");
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    !cart.contains(event.target) &&
+    !shoppingBasket.contains(event.target) &&
+    body.classList.contains("active")
+  ) {
+    body.classList.remove("active");
+  }
 });
 
 function addItems() {
