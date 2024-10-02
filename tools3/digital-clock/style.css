@@ -197,3 +197,30 @@ header .socials img {
   font-weight: bold;
   border: none;
 }
+
+@media (max-width: 765px) {
+  #time {
+    flex-direction: column;
+    top: 8px;
+    gap: 28px;
+  }
+
+  #toggleFormat {
+    font-size: 0.8rem;
+    top: 538px;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .link-to-portfolio {
+    left: 10px;
+  }
+
+  #ampm {
+    top: -388px;
+    position: absolute;
+    left: 77px;
+  }
+}
