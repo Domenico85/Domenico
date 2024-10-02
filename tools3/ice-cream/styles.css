@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pompiere&display=swap");
 
 *,
 *::before,
@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* ========= VARIABLES ========== */
 :root {
   --primary-clr: #6c467a;
   --primary-clr-alt: #d6c0e3;
@@ -27,7 +26,6 @@
   --bx-shadow-clr: #6d477b33;
 }
 
-/* ======== White Theme ======== */
 .lightmode {
   --primary-clr-alt: #6c467a;
   --second-clr-alt: #027c97;
@@ -41,7 +39,6 @@
   --bx-shadow-clr: #2d425333;
 }
 
-/* ------------ BASE ------------ */
 body {
   scroll-behavior: smooth;
   font-family: "Pompiere", cursive;
@@ -67,15 +64,14 @@ img {
   letter-spacing: 0.05rem;
   line-height: 2rem;
 }
-/* -- transitions -- */
+
 .clr-transition {
   transition: color 1000ms;
 }
 .bg-clr__transition {
   transition: background-color 1s;
 }
-/* ================= */
-/* -- buttons -- */
+
 .button {
   cursor: pointer;
   font-size: 1rem;
@@ -92,7 +88,6 @@ img {
   border: thin solid var(--text-clr);
   color: var(--text-clr);
 }
-/* ================= */
 
 .container {
   padding: 1.8rem 3rem;
@@ -108,9 +103,6 @@ img {
   }
 }
 
-/* ------------------------- */
-
-/* -------- HEADER -------- */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -197,7 +189,7 @@ header {
     transform: scaleX(1);
   }
 }
-/* ----- ----------- ------ */
+
 .social-links {
   display: flex;
   align-items: center;
@@ -276,7 +268,6 @@ header {
   }
 }
 
-/* -------- SECTION ONE: Hero section -------- */
 .section-one {
   height: 81.5vh;
 }
@@ -399,7 +390,6 @@ header {
   }
 }
 
-/* -------- SECTION TWO: Product section -------- */
 .section-two {
   background-color: var(--sec-two-bg-clr);
 }
@@ -435,7 +425,6 @@ header {
 }
 .product {
   cursor: pointer;
-  /* From https://css.glass */
   background: rgba(54, 79, 99, 0.04);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.4px);
@@ -505,7 +494,6 @@ header {
   color: var(--primary-clr-alt);
 }
 
-/* ----- section three: Ad products section ----- */
 .section-three {
   margin-bottom: 2rem;
   display: flex;
@@ -570,7 +558,6 @@ header {
   box-shadow: 5px 5px var(--text-clr);
 }
 
-/* ----- section four: oath section ----- */
 .section-four {
   display: flex;
   flex-wrap: wrap;
@@ -637,7 +624,6 @@ header {
   }
 }
 
-/* ----- section five: promo section ----- */
 .section-five {
   z-index: -1;
   background: rgba(108, 70, 122, 0.1);
@@ -692,8 +678,6 @@ header {
   width: 30%;
 }
 
-/* ----- footer section ----- */
-/* ---- contact form ---- */
 .contact-form {
   margin-bottom: 3rem;
 }
@@ -777,7 +761,6 @@ header {
     width: 850px;
   }
 }
-/* ---------------------- */
 
 .other-footer-infos-container {
   display: flex;
@@ -832,7 +815,6 @@ header {
   }
 }
 
-/* ---- lower footer ---- */
 .lower-footer {
   display: flex;
   flex-direction: column;
