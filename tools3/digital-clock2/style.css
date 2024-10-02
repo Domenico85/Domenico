@@ -320,10 +320,14 @@ header .socials img {
     right: 51px;
     left: 36px;
   }
+
+  .snap {
+    display: none;
+  }
 }
 
-@media (max-height: 900px) {
+/* @media (max-height: 900px) {
   .glowing-btn {
     top: 576px;
   }
-}
+} */
