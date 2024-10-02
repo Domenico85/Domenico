@@ -278,7 +278,7 @@ header .socials img {
   cursor: pointer;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
   canvas {
     width: 300px;
   }
@@ -319,5 +319,11 @@ header .socials img {
     top: 435px;
     right: 51px;
     left: 36px;
+  }
+}
+
+@media (max-height: 900px) {
+  .glowing-btn {
+    top: 576px;
   }
 }
