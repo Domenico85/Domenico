@@ -55,7 +55,7 @@
 #time div {
   position: absolute;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 
@@ -92,4 +92,15 @@
   background: var(--color);
   border-radius: 50%;
   box-shadow: 0 0 20px var(--color), 0 0 60px var(--color);
+}
+
+#hours,
+#minutes,
+#seconds {
+  margin-bottom: 25px;
+}
+
+#toggleFormat {
+  position: absolute;
+  bottom: 320px;
 }
