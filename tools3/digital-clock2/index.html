@@ -2,17 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>JS + CSS Clock</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Clock</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
-    </div>
+    <canvas id="canv" width="500" height="500"></canvas>
+    <button class="glowing-btn" id="toggleMode">
+      <span class="glowing-txt">
+        <span class="modeText">12</span>
+        <span class="faulty-letter">H</span>OURS
+      </span>
+    </button>
   </body>
 </html>
