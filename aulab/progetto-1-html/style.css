@@ -33,8 +33,11 @@ nav ul {
 }
 
 nav ul li {
-  margin-top: 8px;
+  margin-top: -7px;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav ul li a {
