@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -24,7 +25,8 @@ body {
   --chat-background: #fff;
   --link-color: #c0c1c5;
   --navigation-bg: #fff;
-  --navigation-box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2), 0 24px 20px -24px rgba(71, 82, 107, 0.1);
+  --navigation-box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
+    0 24px 20px -24px rgba(71, 82, 107, 0.1);
   --main-color: #3d42df;
   --message-bg: #f3f4f9;
   --message-bg-2: #3d42df;
@@ -38,7 +40,7 @@ body.dark {
   --navigation-box-shadow: 0px 0px 8px 0px #282b33;
   --chat-background: #3c3f56;
   --message-bg: #2c3046;
-  --message-text: rgba(255,255,255,0.8);
+  --message-text: rgba(255, 255, 255, 0.8);
   --placeholder-text: #fff;
   --navigation-bg: #3c3f56;
   --button-bg: #3c3f56;
@@ -169,7 +171,7 @@ a {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .message-wrapper {
@@ -331,7 +333,7 @@ a {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .name-tag {
@@ -352,7 +354,8 @@ a {
   top: 12px;
 }
 
-.btn-mute, .btn-camera {
+.btn-mute,
+.btn-camera {
   width: 32px;
   height: 32px;
   border-radius: 4px;
@@ -587,4 +590,27 @@ a {
     width: 50%;
     height: 33.3%;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
+
+.link-to-portfolio {
+  position: fixed;
+  top: 80px;
+  left: 24px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
