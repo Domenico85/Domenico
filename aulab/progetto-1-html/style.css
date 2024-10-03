@@ -46,6 +46,20 @@ nav ul li a:hover {
   color: rgb(8, 255, 144);
 }
 
+.main-logo-sx {
+  position: absolute;
+  left: 50px;
+  width: 300px;
+  top: 120px;
+}
+
+.main-logo-dx {
+  position: absolute;
+  right: 50px;
+  width: 300px;
+  top: 120px;
+}
+
 header {
   display: flex;
   flex-direction: column;
