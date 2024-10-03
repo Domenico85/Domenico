@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fa-microphone-lines,
+.fa-microphone-lines-slash {
+  font-size: 50px;
+  background-color: #fff;
+  border-radius: 50px;
+  height: 57px;
+  width: 57px;
+}
+
+#micOff {
+  display: none; /* Hide the 'off' icon initially */
+}
