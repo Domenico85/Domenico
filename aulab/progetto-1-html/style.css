@@ -152,3 +152,12 @@ iframe {
   top: -265px;
   left: 463px;
 }
+
+.dish-desc {
+  margin-top: -125px;
+  width: 71svw;
+}
+
+.mozza h3 {
+  color: rgb(8, 255, 144);
+}
