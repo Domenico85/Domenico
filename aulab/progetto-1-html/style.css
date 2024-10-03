@@ -132,3 +132,23 @@ footer {
 footer p {
   color: rgb(8, 255, 144);
 }
+
+.mozza {
+  margin-top: 25px;
+}
+
+iframe {
+  margin-top: 25px;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ul-desc {
+  position: relative;
+  top: -265px;
+  left: 463px;
+}
