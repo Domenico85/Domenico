@@ -17,6 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
+  overflow: hidden;
 }
 
 h1 {
@@ -124,4 +125,67 @@ h2 {
   opacity: 0.8;
   border-radius: 50%;
   box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 8px;
+  gap: 20px;
+  background: rgba(34, 33, 33, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(34, 33, 33, 1);
+}
+
+.socials img {
+  width: 40px;
+  cursor: pointer;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+button.reset {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+button.reset img {
+  display: block;
+  width: 205px;
+  height: auto;
+}
+
+button.reset img:hover {
+  transform: scale(1.2);
+}
+
+.reset-text {
+  position: absolute; /* Position text absolutely within the button */
+  top: 31%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  color: white; /* Text color */
+  font-weight: bold; /* Make text bold */
+  font-size: 25px; /* Adjust font size */
+  pointer-events: none; /* Prevent text from blocking button clicks */
 }

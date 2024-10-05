@@ -2,6 +2,7 @@ const smallCups = document.querySelectorAll(".cup-small");
 const liters = document.getElementById("liters");
 const percentage = document.getElementById("percentage");
 const remained = document.getElementById("remained");
+const resetButton = document.querySelector(".reset");
 
 const updateBigCup = () => {
   const fullCups = document.querySelectorAll(".cup-small.full").length;
@@ -37,6 +38,21 @@ const highlightCups = (index) => {
   });
   updateBigCup();
 };
+
+const resetCups = () => {
+  smallCups.forEach((cup) => {
+    cup.classList.remove("full");
+  });
+
+  percentage.style.visibility = "hidden";
+  percentage.style.height = 0;
+
+  remained.style.visibility = "visible";
+  liters.innerText = "2L";
+  remained.style.height = "auto";
+};
+
+resetButton.addEventListener("click", resetCups);
 
 smallCups.forEach((cup, index) =>
   cup.addEventListener("click", () => highlightCups(index))
