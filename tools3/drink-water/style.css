@@ -22,6 +22,7 @@ body {
 
 h1 {
   margin: 10px 0 0;
+  color: black;
 }
 
 h2 {
@@ -32,6 +33,7 @@ h2 {
 .text {
   text-align: center;
   margin: 0 0 5px;
+  color: black;
 }
 
 .cup {
@@ -133,6 +135,7 @@ h2 {
   background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .socials {
@@ -148,6 +151,7 @@ h2 {
   backdrop-filter: blur(2.7px);
   -webkit-backdrop-filter: blur(2.7px);
   border: 1px solid rgba(34, 33, 33, 1);
+  padding: 0px 10px 0px 10px;
 }
 
 .socials img {
@@ -180,12 +184,44 @@ button.reset img:hover {
 }
 
 .reset-text {
-  position: absolute; /* Position text absolutely within the button */
-  top: 31%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for centering */
-  color: white; /* Text color */
-  font-weight: bold; /* Make text bold */
-  font-size: 25px; /* Adjust font size */
-  pointer-events: none; /* Prevent text from blocking button clicks */
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 700px) {
+  body {
+    overflow: auto;
+  }
+
+  .link-to-portfolio {
+    width: 40px;
+    height: 40px;
+    top: 16px;
+    left: 8px;
+  }
+
+  .socials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    background: rgba(34, 33, 33, 0.5);
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
 }
