@@ -48,9 +48,17 @@ textarea:focus {
   padding: 10px 20px;
   margin: 0 5px 10px 0;
   font-size: 14px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
 }
 
 .tag.highlight {
   background-color: #273c75;
+}
+
+.tag svg {
+  margin-left: 10px;
+  cursor: pointer;
+  color: black;
 }
