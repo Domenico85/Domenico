@@ -69,3 +69,60 @@ h1 {
   margin: 15px 0 7px;
   letter-spacing: 1px;
 }
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+header .logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+header .socials img {
+  width: 70px;
+  cursor: pointer;
+}
+
+header .socials img:hover {
+  transform: scale(1.2);
+}
+
+header {
+  position: absolute;
+  top: 10px;
+  left: 120px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
