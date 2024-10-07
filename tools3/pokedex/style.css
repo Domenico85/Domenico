@@ -26,6 +26,10 @@ h1 {
   font-family: "Pokemon";
 }
 
+h1 span {
+  color: red;
+}
+
 .poke-container {
   display: flex;
   flex-wrap: wrap;
