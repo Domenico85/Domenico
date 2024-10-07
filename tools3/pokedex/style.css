@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:wght@300;400&display=swap");
+@font-face {
+  font-family: "Pokemon";
+  src: url(font/Pokemon_Solid.ttf) format("truetype");
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #efefbb;
-  background: linear-gradient(to right, #d4d3dd, #efefbb);
+  /* background: #efefbb;
+  background: linear-gradient(to right, #d4d3dd, #efefbb); */
+  background-image: url(img/bg.jpg);
   font-family: "Lato", sans-serif;
   display: flex;
   flex-direction: column;
@@ -17,6 +22,8 @@ body {
 
 h1 {
   letter-spacing: 3px;
+  color: yellow;
+  font-family: "Pokemon";
 }
 
 .poke-container {
@@ -99,7 +106,7 @@ header .logo-text {
   background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Pokemon";
   font-weight: 700;
   font-style: normal;
   margin: 0;
@@ -116,8 +123,13 @@ header .socials img:hover {
 
 header {
   position: absolute;
-  top: 10px;
+  top: 0px;
   left: 120px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.1vmin solid rgba(219, 219, 219, 0.1);
+  border-radius: 4vmin;
+  overflow: hidden;
+  box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.4);
 }
 
 .socials {
