@@ -37,6 +37,10 @@ h1 {
   text-align: center;
 }
 
+.pokemon:hover {
+  transform: scale(1.2);
+}
+
 .pokemon .img-container {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
