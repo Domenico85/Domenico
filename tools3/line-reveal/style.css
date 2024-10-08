@@ -106,34 +106,36 @@ h3 {
 .media-inner {
   display: block;
   position: relative;
+  overflow: hidden;
 }
+
 .media-image {
   display: block;
   max-width: 100%;
-  opacity: 0; /* Start hidden */
-  transform: translateY(20px); /* Slightly out of place to animate into view */
+  opacity: 0;
+  transform: translateY(20px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* Add a class to animate the image in when it's revealed */
 .media-image.reveal {
   opacity: 1;
-  transform: translateY(0); /* Back to its original place */
+  transform: translateY(0);
 }
-.block-revealer__element {
+
+.block-revealer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #000;
+  transform: scaleY(0);
   pointer-events: none;
-  opacity: 0; /* Start hidden */
-  transition: opacity 0.8s ease-in-out; /* Add a transition for opacity */
+  opacity: 0;
 }
 
-.block-revealer__element.reveal {
-  opacity: 1; /* Show when in view */
+.block-revealer.reveal {
+  transform: scaleY(1);
 }
 
 .link-to-portfolio {
