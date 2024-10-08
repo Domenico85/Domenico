@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  background-color: #1f2029;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.section-top {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  display: block;
+}
+
+h3 {
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: center;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 0;
+  animation: scroll 1.6s ease infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    margin-top: 30px;
+  }
+}
+
+.content {
+  position: relative;
+  min-height: 300px;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+.flexy {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexy--center {
+  justify-content: center;
+}
+
+.media {
+  width: 90%;
+  max-width: 650px;
+  position: relative;
+  margin: 50px 0;
+}
+
+.media h4 {
+  position: absolute;
+  bottom: -28px;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 62px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 800;
+  line-height: 1;
+  mix-blend-mode: difference;
+}
+
+@media (max-width: 991px) {
+  .media h4 {
+    bottom: -13px;
+    font-size: 32px;
+  }
+
+  .media__inner {
+    display: block;
+    position: relative;
+  }
+  .media__image {
+    display: block;
+    max-width: 100%;
+  }
+  .block-revealer__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+header .logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+header .socials img {
+  width: 70px;
+  cursor: pointer;
+}
+
+header .socials img:hover {
+  transform: scale(1.2);
+}
+
+header {
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  overflow: hidden;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
