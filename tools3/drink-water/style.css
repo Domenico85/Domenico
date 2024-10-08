@@ -11,6 +11,7 @@
 
 body {
   background-color: #3494e4;
+  background-image: url(https://images.unsplash.com/photo-1488215545351-57e673dc3789?q=80&w=2039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   color: #fff;
   font-family: "Montserrat", sans-serif;
   display: flex;
@@ -20,9 +21,20 @@ body {
   overflow: hidden;
 }
 
+.text-title {
+  text-align: center;
+  background: rgba(34, 33, 33, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.7px);
+  -webkit-backdrop-filter: blur(2.7px);
+  border: 1px solid rgba(34, 33, 33, 1);
+  width: 335px;
+}
+
 h1 {
   margin: 10px 0 0;
-  color: black;
+  color: white;
 }
 
 h2 {
@@ -197,6 +209,15 @@ button.reset img:hover {
 @media only screen and (max-width: 700px) {
   body {
     overflow: auto;
+    background-size: cover;
+  }
+
+  .text-title {
+    width: 300px;
+  }
+
+  .title {
+    color: black;
   }
 
   .link-to-portfolio {
