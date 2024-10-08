@@ -102,25 +102,38 @@ h3 {
     bottom: -13px;
     font-size: 32px;
   }
+}
+.media-inner {
+  display: block;
+  position: relative;
+}
+.media-image {
+  display: block;
+  max-width: 100%;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Slightly out of place to animate into view */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
 
-  .media__inner {
-    display: block;
-    position: relative;
-  }
-  .media__image {
-    display: block;
-    max-width: 100%;
-  }
-  .block-revealer__element {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    pointer-events: none;
-    opacity: 0;
-  }
+/* Add a class to animate the image in when it's revealed */
+.media-image.reveal {
+  opacity: 1;
+  transform: translateY(0); /* Back to its original place */
+}
+.block-revealer__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  pointer-events: none;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.8s ease-in-out; /* Add a transition for opacity */
+}
+
+.block-revealer__element.reveal {
+  opacity: 1; /* Show when in view */
 }
 
 .link-to-portfolio {
