@@ -94,3 +94,26 @@ p {
     color: var(--text-color);
   }
 }
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
