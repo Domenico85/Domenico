@@ -15,7 +15,9 @@
 }
 
 body {
-  background: #f6f5f7;
+  /* background: #f6f5f7; */
+  background-image: url(https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
   font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
@@ -23,6 +25,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 1rem 0;
+  overflow: hidden;
 }
 
 .link-to-portfolio {
@@ -46,6 +49,20 @@ body {
   opacity: 0.8;
   border-radius: 50%;
   box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+  position: absolute;
+  top: 35px;
+  left: 108px;
 }
 
 h1 {
