@@ -16,34 +16,48 @@ body {
   margin: 0;
 }
 
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+header .logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+  position: absolute;
+  top: 25px;
+  left: 105px;
+}
+
 button {
-  /* background-color: purple;
-  border: 1px purple solid; */
-  background: hsla(55, 96%, 69%, 1);
-
-  background: linear-gradient(
-    90deg,
-    hsla(55, 96%, 69%, 1) 0%,
-    hsla(41, 97%, 64%, 1) 50%,
-    hsla(343, 88%, 63%, 1) 100%
-  );
-
-  background: -moz-linear-gradient(
-    90deg,
-    hsla(55, 96%, 69%, 1) 0%,
-    hsla(41, 97%, 64%, 1) 50%,
-    hsla(343, 88%, 63%, 1) 100%
-  );
-
-  background: -webkit-linear-gradient(
-    90deg,
-    hsla(55, 96%, 69%, 1) 0%,
-    hsla(41, 97%, 64%, 1) 50%,
-    hsla(343, 88%, 63%, 1) 100%
-  );
-
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FCEF64", endColorstr="#FCC44B", GradientType=1 );
-  color: #000;
+  background-color: purple;
+  border: 1px purple solid;
+  color: #fff;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
