@@ -54,6 +54,41 @@ header .logo-text {
   left: 105px;
 }
 
+.socials {
+  position: absolute;
+  top: 25px;
+  right: 105px;
+  font-size: 35px;
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.fa-brands:hover,
+.fa-solid:hover {
+  transform: scale(1.2);
+}
+
+.fa-whatsapp {
+  color: green;
+}
+
+.fa-instagram {
+  color: purple;
+}
+
+.fa-github {
+  color: #fff;
+}
+
+.fa-facebook {
+  color: #121fcf;
+}
+
+.fa-globe {
+  color: orangered;
+}
+
 button {
   background-color: purple;
   border: 1px purple solid;
