@@ -11,3 +11,7 @@ body {
 .carousel-item img {
   height: 100svh;
 }
+
+.carousel-item h1 {
+  font-size: 100px;
+}
