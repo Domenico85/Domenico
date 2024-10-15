@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   font-style: normal;
   background-image: url(img/bg.jpg);
+  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -142,4 +143,17 @@ header h2 {
 
 .carousel-text p {
   color: #fff;
+}
+
+.services {
+  margin-top: 200px;
+}
+
+section {
+  background-image: url(img/boat.jpg);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
