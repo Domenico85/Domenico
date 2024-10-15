@@ -5,7 +5,6 @@ body {
   font-weight: 400;
   font-style: normal;
   background-image: url(img/bg.jpg);
-  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -25,6 +24,20 @@ body {
   cursor: pointer;
   list-style: none;
   font-size: 35px;
+}
+
+.nav-list li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-list li:hover::after {
+  width: 100%;
 }
 
 .nav-list li:hover {
@@ -63,7 +76,9 @@ body {
 }
 
 header h1,
-.services {
+.services,
+.card-title,
+footer span {
   background: hsla(33, 100%, 53%, 1);
 
   background: linear-gradient(
@@ -153,7 +168,24 @@ section {
   background-image: url(img/boat.jpg);
 }
 
+.card {
+  border: 2px solid blue;
+}
+
 .card:hover {
   transform: scale(1.05);
   cursor: pointer;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  gap: 10px;
+}
+
+.logo-footer {
+  width: 50px;
+  border-radius: 50%;
 }
