@@ -166,6 +166,7 @@ header h2 {
 
 section {
   background-image: url(img/boat.jpg);
+  background-position: bottom;
 }
 
 .card {
