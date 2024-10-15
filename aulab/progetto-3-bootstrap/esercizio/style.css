@@ -61,7 +61,8 @@ body {
   border-radius: 50%;
 }
 
-header h1 {
+header h1,
+.services {
   background: hsla(33, 100%, 53%, 1);
 
   background: linear-gradient(
