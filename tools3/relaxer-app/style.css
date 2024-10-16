@@ -194,8 +194,14 @@ h1 {
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 15px;
 }
 
 .mini-player audio {
   width: 200px;
+}
+
+#currentTime {
+  width: 30px;
 }
