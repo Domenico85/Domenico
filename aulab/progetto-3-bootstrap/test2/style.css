@@ -3,3 +3,12 @@
   justify-content: center;
   margin: 0 auto;
 }
+
+.card-title {
+  text-align: center;
+}
+
+.btn {
+  display: flex;
+  margin: 0 auto;
+}
