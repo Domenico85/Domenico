@@ -30,3 +30,34 @@ header {
 
   margin: 0 auto;
 }
+
+#how-it-works {
+  padding: 3rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+#how-it-works h2 {
+  margin-bottom: 3rem;
+}
+
+#how-it-works .flex > div {
+  width: 30%;
+}
+
+#how-it-works h4 {
+  color: #343a40;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#how-it-works i.fa-solid {
+  color: #f69314;
+  font-size: 35px;
+}
+
+.how-works {
+  padding: 10px;
+  gap: 50px;
+  margin: 0 auto;
+}
