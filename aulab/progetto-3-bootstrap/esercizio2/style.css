@@ -28,6 +28,11 @@ body {
   color: #fff;
 }
 
+.navbar-toggler {
+  position: absolute;
+  right: 0;
+}
+
 header {
   background-image: url(img/main.jpg);
   background-position: center;
@@ -52,27 +57,27 @@ header {
   margin: 0 auto;
 }
 
-#how-it-works {
+.how-it-works {
   padding: 3rem 0;
   background: #f8f9fa;
   text-align: center;
 }
 
-#how-it-works h2 {
+.how-it-works h2 {
   margin-bottom: 3rem;
 }
 
-#how-it-works .flex > div {
+.how-it-works .flex > div {
   width: 30%;
 }
 
-#how-it-works h4 {
+.how-it-works h4 {
   color: #343a40;
   margin-top: 1rem;
   font-weight: bold;
 }
 
-#how-it-works i.fa-solid {
+.how-it-works i.fa-solid {
   color: #f69314;
   font-size: 35px;
 }
@@ -80,5 +85,10 @@ header {
 .how-works {
   padding: 10px;
   gap: 50px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: flex;
   margin: 0 auto;
 }
