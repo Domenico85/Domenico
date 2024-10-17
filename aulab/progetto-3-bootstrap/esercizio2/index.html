@@ -52,7 +52,13 @@
             style="--bs-scroll-height: 100px"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: wheat"
+                >Home</a
+              >
             </li>
             <li class="nav-item dropdown">
               <a
@@ -61,6 +67,7 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                style="color: wheat"
               >
                 Services
               </a>
@@ -74,15 +81,19 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: wheat"
                 >About Us</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">News</a>
+              <a class="nav-link" href="#" style="color: wheat">News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#" style="color: wheat">Contact</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -116,7 +127,7 @@
       <div class="carousel-indicators">
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleInterval"
           data-bs-slide-to="0"
           class="active"
           aria-current="true"
@@ -124,13 +135,13 @@
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleInterval"
           data-bs-slide-to="1"
           aria-label="Slide 2"
         ></button>
         <button
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleInterval"
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
@@ -176,7 +187,7 @@
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target="#carouselExampleInterval"
         data-bs-slide="prev"
       >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -185,7 +196,7 @@
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleIndicators"
+        data-bs-target="#carouselExampleInterval"
         data-bs-slide="next"
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -227,6 +238,12 @@
       </div>
     </section>
     <main class="container">
+      <div class="container-fluid mt-5">
+        <h2 class="text-center">Properties</h2>
+        <p class="agents-desc text-center">
+          We offer a vast selection of Houses all around the Country
+        </p>
+      </div>
       <div class="row">
         <div class="col-md-4">
           <div class="card m-3" style="width: 18rem">
@@ -310,21 +327,90 @@
           </div>
         </div>
       </div>
+
+      <section class="agents mt-5 mb-5">
+        <div class="container-fluid mt-5">
+          <h2 class="text-center">Agents</h2>
+          <p class="agents-desc">
+            Real estate agents are licensed professionals who act as middlemen
+            in property transactions, representing either buyers or sellers.
+            They possess expertise in the local market, current trends, and the
+            legal aspects of real estate.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card m-3" style="width: 18rem">
+              <img src="img/agent_1.jpg" class="card-img-top" alt="agent1" />
+              <div class="card-body d-flex flex-column card-body-agent">
+                <h5 class="card-title text-center">Ben Thompson</h5>
+                <p class="card-text flex-grow-1 text-center">
+                  Real Estate Agent
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-auto"
+                  data-bs-toggle="modal"
+                  data-bs-target="#card4"
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card m-3" style="width: 18rem">
+              <img src="img/agent_2.jpg" class="card-img-top" alt="agent2" />
+              <div class="card-body d-flex flex-column card-body-agent">
+                <h5 class="card-title text-center">Anya Petrova</h5>
+                <p class="card-text flex-grow-1 text-center">
+                  Real Estate Agent
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-auto"
+                  data-bs-toggle="modal"
+                  data-bs-target="#card2"
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card m-3" style="width: 18rem">
+              <img src="img/agent_4.jpg" class="card-img-top" alt="agent4" />
+              <div class="card-body d-flex flex-column card-body-agent">
+                <h5 class="card-title text-center">Aisha Khan</h5>
+                <p class="card-text flex-grow-1 text-center">
+                  Real Estate Agent
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary mt-auto"
+                  data-bs-toggle="modal"
+                  data-bs-target="#card3"
+                >
+                  Contact
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-      <!-- Section: Social media -->
       <section
         class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
       >
-        <!-- Left -->
         <div class="me-5 d-none d-lg-block">
           <span>Get connected with us on social networks:</span>
         </div>
-        <!-- Left -->
 
-        <!-- Right -->
         <div>
           <a href="" class="me-4 text-reset">
             <i class="fab fa-facebook-f"></i>
@@ -345,18 +431,12 @@
             <i class="fab fa-github"></i>
           </a>
         </div>
-        <!-- Right -->
       </section>
-      <!-- Section: Social media -->
 
-      <!-- Section: Links  -->
       <section class="">
         <div class="container text-center text-md-start mt-5">
-          <!-- Grid row -->
           <div class="row mt-3">
-            <!-- Grid column -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <!-- Content -->
               <h6 class="text-uppercase fw-bold mb-4">
                 <i class="fas fa-gem me-3"></i>Aulab Real Estate
               </h6>

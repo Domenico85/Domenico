@@ -24,13 +24,17 @@ body {
   gap: 380px;
 }
 
-.nav-item a {
-  color: #fff;
+.nav-link:hover {
+  color: blue;
 }
 
 .navbar-toggler {
   position: absolute;
   right: 0;
+}
+
+.dropdown-item a {
+  color: black;
 }
 
 header {
@@ -115,4 +119,13 @@ address {
 
 i {
   color: steelblue;
+}
+
+.card-body-agent {
+  height: fit-content;
+}
+
+.agents {
+  background: #f8f9fa;
+  width: 100%;
 }
