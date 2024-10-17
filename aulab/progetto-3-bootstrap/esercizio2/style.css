@@ -92,3 +92,27 @@ header {
   display: flex;
   margin: 0 auto;
 }
+
+.card-body {
+  height: 450px;
+}
+
+.modal-title {
+  margin: 0 auto;
+}
+
+.price,
+.beds,
+.baths,
+.mq,
+address {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+i {
+  color: steelblue;
+}
