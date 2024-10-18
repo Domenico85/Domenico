@@ -38,3 +38,11 @@ input {
 input:focus {
   outline: none;
 }
+
+#text {
+  color: #fff;
+}
+
+label {
+  color: #fff;
+}
