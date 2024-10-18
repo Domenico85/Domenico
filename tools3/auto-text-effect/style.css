@@ -30,7 +30,7 @@ input {
   width: 50px;
   padding: 5px;
   font-size: 18px;
-  background-color: darksalmon;
+  background-color: steelblue;
   border: none;
   text-align: center;
 }
@@ -40,9 +40,90 @@ input:focus {
 }
 
 #text {
-  color: #fff;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 70px;
 }
 
 label {
   color: #fff;
+}
+
+.link-to-portfolio {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  z-index: 200;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 3px;
+  background-position: center center;
+  background-size: cover;
+  background-image: url("img/dom2.jpeg");
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  transition: opacity 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  transition-timing-function: ease-out;
+}
+.link-to-portfolio:hover {
+  opacity: 0.8;
+  border-radius: 50%;
+  box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+header .logo-text {
+  font-size: xx-large;
+  background: #121fcf;
+  background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Edu AU VIC WA NT Dots", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+  position: absolute;
+  top: 25px;
+  left: 105px;
+}
+
+.socials {
+  position: absolute;
+  top: 25px;
+  right: 105px;
+  font-size: 35px;
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+  height: fit-content;
+  background: transparent;
+}
+
+.fa-brands:hover,
+.fa-solid:hover {
+  transform: scale(1.2);
+}
+
+.fa-whatsapp {
+  color: green;
+}
+
+.fa-instagram {
+  color: purple;
+}
+
+.fa-github {
+  color: #000;
+}
+
+.fa-facebook {
+  color: #121fcf;
+}
+
+.fa-globe {
+  color: orangered;
 }
