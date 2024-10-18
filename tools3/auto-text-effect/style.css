@@ -5,7 +5,9 @@
 }
 
 body {
-  background-color: darksalmon;
+  /* background-color: darksalmon; */
+  background-image: url(img/bg.jpg);
+  background-size: cover;
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
