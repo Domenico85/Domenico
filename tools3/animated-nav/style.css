@@ -77,11 +77,14 @@ header .logo-text {
 }
 
 .fa-whatsapp {
-  color: green;
+  color: #25d366;
 }
 
 .fa-instagram {
-  color: purple;
+  background: #833ab4;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-github {
@@ -89,7 +92,10 @@ header .logo-text {
 }
 
 .fa-facebook {
-  color: #121fcf;
+  background: #3b5998;
+  background: linear-gradient(120deg, #3b5998, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .fa-globe {
@@ -142,6 +148,10 @@ nav ul a {
   color: #000;
   text-decoration: none;
   margin: 0 10px;
+}
+
+nav ul a:hover {
+  color: #5290f9;
 }
 
 .icon {
