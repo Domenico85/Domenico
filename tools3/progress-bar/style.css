@@ -12,7 +12,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100svh;
-  background: #363636;
+  /* background: #363636; */
+  background-image: url(https://img.freepik.com/free-vector/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.jpg?t=st=1729582393~exp=1729585993~hmac=da595b66f4f23945f0c0d51e8ef5e2af44fb94acc925d6f05911cc1fd08be9f8&w=1380);
 }
 
 .container {
