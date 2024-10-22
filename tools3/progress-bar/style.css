@@ -56,3 +56,26 @@ body {
     inset 0 4px 2px rgba(0, 0, 0, 0.25),
     inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
+
+.container .circle .number {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  line-height: 1em;
+  font-size: 2em;
+}
+
+.container .circle .number span {
+  font-size: 0.5em;
+  font-weight: 500;
+}
+
+.container .circle h4 {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+  font-weight: 500;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  line-height: 0.6em;
+}
