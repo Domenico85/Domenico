@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -41,9 +43,8 @@ header .logo-text {
   background: linear-gradient(to right, #121fcf 0%, #cf1512 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "Arima", system-ui;
-  font-optical-sizing: auto;
-  font-weight: 700;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
   font-style: normal;
   margin: 0;
   position: absolute;
@@ -90,6 +91,13 @@ header .logo-text {
 
 .fa-globe {
   color: orangered;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
 
 /* spinner */
