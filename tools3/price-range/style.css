@@ -1,6 +1,7 @@
 body {
   background-color: #e5ded8;
 }
+
 .group {
   margin: 100px auto;
   width: 300px;
@@ -25,7 +26,6 @@ body {
     #b7ca63 6px
   );
   box-shadow: inset 0 1px 2px #6f9163;
-  background-attachment: fixed;
 }
 
 .range-input input {
@@ -38,6 +38,7 @@ body {
   pointer-events: none;
   transform: translateY(2px);
 }
+
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   background: #98c787;
@@ -57,12 +58,13 @@ input[type="range"]::-webkit-slider-thumb {
   font-size: 7px;
   padding: 5px;
   left: 0;
-  width: 20px;
+  width: 30px;
   text-align: center;
   border-radius: 3px;
   top: 15px;
   transform: translateX(-50%);
 }
+
 .text-range .text-max {
   left: unset;
   right: 0;
