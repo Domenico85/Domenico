@@ -162,6 +162,10 @@ sub {
   bottom: -0.25em;
 }
 
+.js-fullheight {
+  height: 100vh;
+}
+
 sup {
   top: -0.5em;
 }
@@ -12625,5 +12629,9 @@ textarea.form-control {
 @media only screen and (max-width: 790px) {
   .mobile-text {
     display: none;
+  }
+
+  .js-fullheight {
+    height: auto;
   }
 }
