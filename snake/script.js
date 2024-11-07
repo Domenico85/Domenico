@@ -1,5 +1,3 @@
-// ADD time?
-
 var snakeTable = document.querySelector(".snakeTable");
 var boxes = document.getElementsByClassName("box");
 var modul = document.querySelector(".modul");
@@ -274,7 +272,6 @@ $("document").ready(function () {
     });
 });
 
-// swipe function --> credit: https://codepen.io/AlexEmashev/pen/BKgQdx?editors=0100
 (function ($) {
   $.fn.swipeDetector = function (options) {
     // States: 0 - no swipe, 1 - swipe started, 2 - swipe released
@@ -381,5 +378,3 @@ function enableScroll() {
   });
 }
 disableScroll();
-
-// https://www.theodinproject.com/courses/javascript-and-jquery/lessons/jquery-and-the-dom
