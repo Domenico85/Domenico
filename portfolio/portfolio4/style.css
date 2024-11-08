@@ -44,3 +44,45 @@
   font-size: 80px;
   color: green;
 }
+
+.socials {
+  position: relative;
+  top: -59px;
+  font-size: 50px;
+  display: flex;
+  gap: 25px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-brands:hover,
+.fa-solid:hover {
+  transform: scale(1.2);
+}
+
+.fa-whatsapp {
+  color: #25d366;
+}
+
+.fa-instagram {
+  background: #833ab4;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-github {
+  color: #000;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  background: linear-gradient(120deg, #3b5998, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-globe {
+  color: orangered;
+}
