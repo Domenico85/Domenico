@@ -24,3 +24,23 @@
 .logo {
   width: 400px;
 }
+
+.fa-html5 {
+  font-size: 80px;
+  color: orangered;
+}
+
+.fa-css3-alt {
+  font-size: 80px;
+  color: blue;
+}
+
+.fa-js {
+  font-size: 80px;
+  color: yellow;
+}
+
+.fa-database {
+  font-size: 80px;
+  color: green;
+}
