@@ -1,6 +1,6 @@
 .link-to-portfolio {
   position: fixed;
-  top: 20px;
+  top: 10px;
   left: 30px;
   z-index: 200;
   cursor: pointer;
@@ -23,6 +23,12 @@
 
 .logo {
   width: 400px;
+}
+
+.navbar-brand {
+  position: relative;
+  left: 80px;
+  color: orangered;
 }
 
 .fa-html5 {
@@ -85,4 +91,22 @@
 
 .fa-globe {
   color: orangered;
+}
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 190px;
+  }
+  .tm-font-big {
+    font-size: 0.9rem;
+  }
+  .tm-hero-title {
+    font-size: 2.5rem;
+  }
+  .skills {
+    text-align: center;
+  }
+  .socials {
+    font-size: 35px;
+  }
 }
