@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.bottoni {
+  display: flex;
+  gap: 25px;
+}
