@@ -41,7 +41,17 @@
   color: #888;
 }
 
-.bottoni {
+.buttons {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 25px;
+}
+
+.right {
+  color: green;
+}
+
+.wrong {
+  color: red;
 }
