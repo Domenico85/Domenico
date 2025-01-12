@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("Raleway-VariableFont_wght.ttf");
+}
+body {
+  font-family: "Raleway", sans-serif;
+  background-image: url("mountain.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+@font-face {
+  font-family: "kanit";
+  src: url(Kanit-ExtraLight.ttf);
+}
+.project-links {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(69, 67, 67, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: "kanit";
+  font-size: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 70px;
+  color: rgba(225, 225, 225, 0.01);
+  background-image: url("reggae.webp");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  animation: animate 15s ease-in-out infinite;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Raleway";
+}
+@keyframes animate {
+  0%,
+  100% {
+    background-position: left top;
+  }
+  25% {
+    background-position: right bottom;
+  }
+  50% {
+    background-position: left bottom;
+  }
+  75% {
+    background-position: right top;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+a:hover {
+  background-color: #3498db;
+  color: #fff;
+}
