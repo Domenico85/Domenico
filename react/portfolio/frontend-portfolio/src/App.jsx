@@ -20,8 +20,8 @@ const App = () => {
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
-        <section className="text-center my-10">
-          <h2 className="text-4xl font-bold mb-4">Hi, I am Domenico Ciardullo!</h2>
+        <section className="text-center flex justify-center my-10">
+          <h2 className="text-4xl font-bold flex justify-center mb-4">Hi, I am Domenico Ciardullo!</h2>
           <p className="text-lg text-gray-700">
             A passionate Frontend Developer who loves crafting beautiful and functional websites.
           </p>
