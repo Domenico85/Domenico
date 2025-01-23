@@ -48,6 +48,8 @@ body {
 
 .form-container h2 {
   margin-bottom: 20px;
+  color: #0056b3;
+  text-align: center;
 }
 
 .form-container label {
