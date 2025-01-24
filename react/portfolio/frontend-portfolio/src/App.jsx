@@ -6,7 +6,7 @@ const App = () => {
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-blue-600 text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-3xl font-bold title">Domenico Ciardullo</h1>
+          <h1 className="text-3xl bg-red-500 font-bold title">Domenico Ciardullo</h1>
           <nav>
             <ul className="flex space-x-4">
               <li><a href="#about" className="hover:underline">About</a></li>
@@ -21,7 +21,7 @@ const App = () => {
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section className="text-center flex justify-center my-10">
-          <h2 className="text-4xl font-bold flex justify-center mb-4 title">Hi, I am Domenico Ciardullo!</h2>
+          <h2 className="text-4xl font-bold flex justify-center  bg-blue-600 mb-4 title">Hi, I am Domenico Ciardullo!</h2>
           <p className="text-lg text-gray-700 title">
             A passionate Frontend Developer who loves crafting beautiful and functional websites.
           </p>
