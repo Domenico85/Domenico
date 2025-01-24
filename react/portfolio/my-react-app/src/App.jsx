@@ -6,6 +6,7 @@ const App = () => {
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-blue-600 text-white py-4">
         <div className="container mx-auto flex justify-between items-center">
+          <img className="logo" src="img/android-chrome-512x512.png" alt="" />
           <h1 className="text-3xl bg-red-500 font-bold title">Domenico Ciardullo</h1>
           <nav>
             <ul className="flex space-x-4">
