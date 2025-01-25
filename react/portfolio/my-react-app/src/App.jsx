@@ -63,13 +63,25 @@ const App = () => {
             <div className="bg-white shadow rounded p-4">
               <h3 className="text-xl font-bold mb-2">Project 1</h3>
               <p className="text-gray-700">
-                A stunning e-commerce platform built with React and Redux.
+               <img src="img/project-1.jpg" alt="project-1" />
               </p>
             </div>
             <div className="bg-white shadow rounded p-4">
               <h3 className="text-xl font-bold mb-2">Project 2</h3>
               <p className="text-gray-700">
-                A dynamic portfolio website showcasing my skills and projects.
+                <img src="img/project-2.jpg" alt="project-2" />
+              </p>
+            </div>
+            <div className="bg-white shadow rounded p-4">
+              <h3 className="text-xl font-bold mb-2">Project 3</h3>
+              <p className="text-gray-700">
+                <img src="img/project-3.jpg" alt="project-3" />
+              </p>
+            </div>
+            <div className="bg-white shadow rounded p-4">
+              <h3 className="text-xl font-bold mb-2">Project 4</h3>
+              <p className="text-gray-700">
+                <img src="img/project-4.jpg" alt="project-4" />
               </p>
             </div>
           </div>
