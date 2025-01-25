@@ -16,6 +16,7 @@ const App = () => {
               <li><a href="#contact" className="hover:underline">Contact</a></li>
             </ul>
           </nav>
+       
         </div>
       </header>
 
@@ -76,6 +77,7 @@ const App = () => {
               <h3 className="text-xl font-bold mb-2">Project 3</h3>
               <p className="text-gray-700">
                 <img src="img/project-3.jpg" alt="project-3" />
+              
               </p>
             </div>
             <div className="bg-white shadow rounded p-4">
