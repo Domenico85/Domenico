@@ -29,7 +29,7 @@ const App = () => {
   </p>
   <a
     href="#contact"
-    className="mt-6 inline-block bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700"
+    className="mt-6 btn-get-touch"
   >
     Get in Touch
   </a>
