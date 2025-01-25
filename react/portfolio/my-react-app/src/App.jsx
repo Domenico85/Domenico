@@ -49,10 +49,10 @@ const App = () => {
         <section id="skills" className="my-16">
           <h2 className="text-3xl font-bold mb-6 text-black">Skills</h2>
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <li className="bg-white p-4 shadow rounded"><img src="img/html.png" alt="html" /></li>
-            <li className="bg-white p-4 shadow rounded"><img className='w-[280px]' src="img/css.png" alt="css" /></li>
-            <li className="bg-white p-4 shadow rounded"><img src="img/js.png" alt="js" /></li>
-            <li className="bg-white p-4 shadow rounded"><img src="img/react.png" alt="html" /></li>
+            <li className="bg-white p-4 shadow rounded skills"><img src="img/html.png" alt="html" /></li>
+            <li className="bg-white p-4 shadow rounded flex justify-center skills"><img className='w-[280px]' src="img/css.png" alt="css" /></li>
+            <li className="bg-white p-4 shadow rounded skills"><img src="img/js.png" alt="js" /></li>
+            <li className="bg-white p-4 shadow rounded skills"><img src="img/react.png" alt="html" /></li>
           </ul>
         </section>
 
@@ -91,6 +91,7 @@ const App = () => {
             <a href="mailto:email@example.com" className="text-gray-700 hover:text-blue-600 text-3xl">
               <FaEnvelope />
             </a>
+          
           </div>
         </section>
       </main>
