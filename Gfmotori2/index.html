@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>G.F. Motori S.r.l. - Concessionaria e Riparatore Ufficiale</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome per le icone - versione aggiornata -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HEADER & NAVIGATION -->
+    <header class="main-header">
+      <div class="container header-container">
+        <div class="logo">
+          <h2>G.F. Motori</h2>
+          <span>S.r.l.</span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#inventario">Inventario</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <h1 class="animate-fade">
+          Benvenuti Presso <span>G.F. MOTORI S.R.L.</span>
+        </h1>
+        <p class="hero-subtitle animate-fade delay-1">
+          Unico riparatore autorizzato per la provincia di Reggio Calabria
+        </p>
+
+        <div class="hero-features animate-fade delay-2">
+          <div class="feature">
+            <i class="fas fa-award"></i>
+            <h3>Riparatore Ufficiale</h3>
+            <p>Interventi in garanzia su vetture Jaguar e Land Rover</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-tools"></i>
+            <h3>Assistenza Plurimarche</h3>
+            <p>Assistenza qualificata su veicoli di ogni marca</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-car"></i>
+            <h3>Vendita Plurimarche</h3>
+            <p>Vetture nuove ed usate nel nostro show room</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-handshake"></i>
+            <h3>Affidabilità</h3>
+            <p>La tua soddisfazione è la nostra priorità assoluta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH INVENTORY -->
+    <section class="search-section" id="inventario">
+      <div class="container">
+        <div class="search-box">
+          <h2>Cerca nel Nostro Inventario</h2>
+          <form class="search-form">
+            <select>
+              <option>Seleziona Marca</option>
+              <option>FIAT</option>
+              <option>Mazda</option>
+              <option>Jaguar</option>
+              <option>Land Rover</option>
+            </select>
+            <select>
+              <option>Seleziona Modello</option>
+            </select>
+            <select>
+              <option>Seleziona Anno</option>
+              <option>2023</option>
+              <option>2022</option>
+              <option>2021</option>
+              <option>Nuova da immatricolare</option>
+            </select>
+            <select>
+              <option>Chilometraggio</option>
+              <option>≤ 50.000 km</option>
+              <option>≤ 100.000 km</option>
+            </select>
+            <button type="submit"><i class="fas fa-search"></i> Cerca</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CARS -->
+    <section class="featured-cars" id="servizi">
+      <div class="container">
+        <h2 class="section-title">Soddisferemo Ogni Tua Richiesta</h2>
+        <div class="cars-grid">
+          <!-- Car 1 -->
+          <div class="car-card">
+            <div class="car-image">
+              <span class="badge">GARANZIA 12 MESI</span>
+              <img
+                src="img/fiat-500x.jpg"
+                alt="Fiat 500X"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="car-info">
+              <h3>FIAT 500X 1.6 MultiJet 130 CV Cross</h3>
+              <div class="car-meta">
+                <span><i class="fas fa-calendar"></i> 2021</span>
+                <span><i class="fas fa-tachometer-alt"></i> 76.898 km</span>
+              </div>
+              <div class="car-price">€ 17.900</div>
+              <a href="#" class="btn-details">Vedi Dettagli</a>
+            </div>
+          </div>
+
+          <!-- Car 2 -->
+          <div class="car-card">
+            <div class="car-image">
+              <span class="badge new-badge">NUOVA</span>
+              <img
+                src="img/mazda-cx60.jpg"
+                alt="Mazda CX-60"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="car-info">
+              <h3>Mazda CX-60 3.3 m-hybrid Homura Plus</h3>
+              <div class="car-meta">
+                <span><i class="fas fa-calendar"></i> Nuova da immat.</span>
+                <span><i class="fas fa-tachometer-alt"></i> 0 km</span>
+              </div>
+              <div class="car-price">€ 64.050 <small>€ 70.050</small></div>
+              <a href="#" class="btn-details">Vedi Dettagli</a>
+            </div>
+          </div>
+
+          <!-- Car 3 -->
+          <div class="car-card">
+            <div class="car-image">
+              <span class="badge new-badge">NUOVA</span>
+              <img
+                src="img/mazda-cx30.jpg"
+                alt="Mazda CX-30"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="car-info">
+              <h3>Mazda CX-30 2.5 m-hybrid Homura 2wd</h3>
+              <div class="car-meta">
+                <span><i class="fas fa-calendar"></i> Nuova da immat.</span>
+                <span><i class="fas fa-tachometer-alt"></i> 0 km</span>
+              </div>
+              <div class="car-price">€ 27.800 <small>€ 31.450</small></div>
+              <a href="#" class="btn-details">Vedi Dettagli</a>
+            </div>
+          </div>
+
+          <!-- Car 4 -->
+          <div class="car-card">
+            <div class="car-image">
+              <span class="badge new-badge">NUOVA</span>
+              <img
+                src="img/mazda-2.jpg"
+                alt="Mazda 2"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="car-info">
+              <h3>Mazda 2 1.5 vvt full hybrid electric</h3>
+              <div class="car-meta">
+                <span><i class="fas fa-calendar"></i> Nuova da immat.</span>
+                <span><i class="fas fa-tachometer-alt"></i> 0 km</span>
+              </div>
+              <div class="car-price">€ 20.250 <small>€ 26.090</small></div>
+              <a href="#" class="btn-details">Vedi Dettagli</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">Le Parole Dei Nostri Clienti</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p>
+              "Affidabilità e professionalità. Ho portato la mia Land Rover per
+              un intervento in garanzia e sono rimasto soddisfattissimo!"
+            </p>
+            <div class="client-info">
+              <h4>Marco R.</h4>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "Vasta scelta di auto nuove e usate. Lo staff mi ha aiutato a
+              trovare l'auto perfetta per la mia famiglia. Consigliatissimi!"
+            </p>
+            <div class="client-info">
+              <h4>Giulia S.</h4>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "Officina plurimarche eccellente. Prezzi onesti e meccanici molto
+              competenti. La nostra soddisfazione è garantita."
+            </p>
+            <div class="client-info">
+              <h4>Antonio M.</h4>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contatti">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3>G.F. Motori S.r.l.</h3>
+          <p>
+            Unico riparatore autorizzato per la provincia di Reggio Calabria.
+            Vendita, assistenza e garanzia per il tuo veicolo.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Reggio Calabria, RC</p>
+          <p><i class="fas fa-phone"></i> +39 000 000 0000</p>
+          <p><i class="fas fa-envelope"></i> info@gfmotorisrl.it</p>
+        </div>
+        <div class="footer-col">
+          <h4>Link Rapidi</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#inventario">Inventario Auto</a></li>
+            <li><a href="#servizi">La Nostra Officina</a></li>
+            <li><a href="#contatti">Dove Siamo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 G.F. Motori S.r.l. - P.IVA 00000000000 | Tutti i diritti
+          riservati.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

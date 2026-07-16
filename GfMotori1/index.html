@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GF Motori S.r.l. — Officina autorizzata Jaguar e Land Rover, Campo Calabro (RC)</title>
+<meta name="description" content="GF Motori: unico riparatore autorizzato Jaguar e Land Rover in provincia di Reggio Calabria. Assistenza plurimarche, ricambi originali, vendita auto nuove e usate, noleggio.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F3D33'/%3E%3Ctext x='32' y='42' font-family='Arial, sans-serif' font-weight='700' font-size='26' fill='%23D08F55' text-anchor='middle'%3EGF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Vai al contenuto principale</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+
+    <a href="#home" class="brand" aria-label="GF Motori — torna alla home">
+      <svg class="brand-badge" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="16" fill="var(--green-700)"/>
+        <path d="M14 40 C14 31 22 24 32 24 C42 24 50 31 50 40" fill="none" stroke="var(--copper-light)" stroke-width="3" stroke-linecap="round"/>
+        <text x="32" y="42" text-anchor="middle" font-family="'Big Shoulders Display', sans-serif" font-weight="800" font-size="22" fill="var(--ivory)">GF</text>
+      </svg>
+      <span class="brand-name">GF <strong>MOTORI</strong></span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Apri il menu di navigazione">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+        <li><a href="assistenza.html">Assistenza</a></li>
+        <li><a href="ricambi.html">Ricambi</a></li>
+        <li><a href="#auto">Auto Nuove e Usate</a></li>
+        <li><a href="noleggio.html">Noleggio</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+      <a href="tel:+390965042766" class="header-phone header-phone--mobile">0965 42766</a>
+    </nav>
+
+    <a href="tel:+390965042766" class="header-phone">
+      <span class="header-phone-label">Chiamaci ora</span>
+      <span class="header-phone-number">0965&nbsp;42766</span>
+    </a>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Unico riparatore autorizzato Jaguar e Land Rover · provincia di Reggio Calabria</p>
+        <h1>La cura della tua auto<br>è un lavoro di famiglia.</h1>
+        <p class="hero-lead">Interventi in garanzia su Jaguar e Land Rover, assistenza qualificata su veicoli di ogni marca e un parco auto nuove e usate selezionato a Campo Calabro. Passa a trovarci: non te ne farai pentire.</p>
+        <div class="hero-actions">
+          <a href="tel:+390965042766" class="btn btn-primary">Chiama ora</a>
+          <a href="#auto" class="btn btn-ghost">Guarda le auto disponibili</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 220" class="hero-art-svg">
+          <ellipse cx="160" cy="190" rx="140" ry="14" fill="rgba(0,0,0,.18)"/>
+          <use href="#icon-car" x="20" y="70" width="280" height="120" fill="var(--ivory)"/>
+          <circle cx="60" cy="40" r="3" fill="var(--copper-light)"/>
+          <circle cx="260" cy="20" r="2" fill="var(--copper-light)"/>
+          <circle cx="220" cy="50" r="2" fill="var(--ivory)"/>
+        </svg>
+      </div>
+    </div>
+
+    <form class="search-panel" id="search-form">
+      <p class="search-panel-title">Cerca nel nostro parco auto</p>
+      <div class="search-fields">
+        <div class="search-field">
+          <label for="search-brand">Marca</label>
+          <select id="search-brand" name="brand">
+            <option value="">Tutte le marche</option>
+            <option value="fiat">Fiat</option>
+            <option value="mazda">Mazda</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="search-condition">Condizione</label>
+          <select id="search-condition" name="condition">
+            <option value="">Nuove e usate</option>
+            <option value="nuova">Nuova da immatricolare</option>
+            <option value="usata">Usata</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="search-price">Prezzo massimo</label>
+          <select id="search-price" name="price">
+            <option value="">Qualsiasi prezzo</option>
+            <option value="20000">Fino a 20.000 €</option>
+            <option value="30000">Fino a 30.000 €</option>
+            <option value="50000">Fino a 50.000 €</option>
+            <option value="999999999">Oltre 50.000 €</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary search-submit">Cerca nell'inventario</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ VALUE PROPS ============ -->
+  <section class="values" id="servizi">
+    <div class="container">
+      <p class="eyebrow eyebrow--dark">Perché scegliere noi</p>
+      <h2>Quattro buoni motivi per fidarti di GF Motori</h2>
+
+      <div class="values-grid">
+        <article class="value-card">
+          <p class="value-label">Riparatore Ufficiale</p>
+          <p>Interventi in garanzia su vetture Jaguar e Land Rover, eseguiti con strumentazione e ricambi originali.</p>
+        </article>
+        <article class="value-card">
+          <p class="value-label">Assistenza Plurimarche</p>
+          <p>Forniamo assistenza qualificata su veicoli di ogni marca, non solo su Jaguar e Land Rover.</p>
+        </article>
+        <article class="value-card">
+          <p class="value-label">Vendita Plurimarche</p>
+          <p>Nel nostro show room trovi vetture nuove e usate, selezionate e pronte alla consegna.</p>
+        </article>
+        <article class="value-card">
+          <p class="value-label">Affidabilità</p>
+          <p>Per noi conta la tua soddisfazione. Passa a trovarci: non te ne farai pentire.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA STRIP ============ -->
+  <section class="cta-strip">
+    <div class="container cta-strip-inner">
+      <p class="cta-strip-text">Possiamo esserti utile in qualcosa? Chiamaci.</p>
+      <a href="tel:+390965042766" class="cta-strip-phone">0965&nbsp;42766</a>
+    </div>
+  </section>
+
+  <!-- ============ INVENTORY ============ -->
+  <section class="inventory" id="auto">
+    <div class="container">
+      <p class="eyebrow eyebrow--dark">Parco auto</p>
+      <h2>Dai un'occhiata alle auto disponibili</h2>
+      <p class="section-lead">Ogni giorno aggiorniamo il nostro inventario con vetture nuove e usate a prezzi imbattibili.</p>
+
+      <div class="inventory-filters" role="group" aria-label="Filtra per condizione">
+        <button type="button" class="chip is-active" data-condition="">Tutte</button>
+        <button type="button" class="chip" data-condition="nuova">Nuove</button>
+        <button type="button" class="chip" data-condition="usata">Usate</button>
+      </div>
+
+      <p class="inventory-status" id="inventory-status" aria-live="polite"></p>
+
+      <div class="car-grid" id="car-grid">
+
+        <article class="car-card" data-brand="fiat" data-condition="usata" data-price="17900">
+          <div class="car-media">
+            <svg viewBox="0 0 240 100" aria-hidden="true"><use href="#icon-car"/></svg>
+            <span class="car-brand-tag">FIAT</span>
+            <span class="car-condition-tag">Usata</span>
+          </div>
+          <div class="car-body">
+            <div class="car-meta">
+              <span>2021</span><span>76.898 km</span><span>Garanzia 12 mesi</span>
+            </div>
+            <h3 class="car-name">Fiat 500X 1.6 MultiJet 130 CV Cross</h3>
+            <p class="car-price">€&nbsp;17.900</p>
+            <a href="#" class="btn btn-outline">Scopri di più</a>
+          </div>
+        </article>
+
+        <article class="car-card" data-brand="mazda" data-condition="nuova" data-price="64050">
+          <div class="car-media">
+            <svg viewBox="0 0 240 100" aria-hidden="true"><use href="#icon-car"/></svg>
+            <span class="car-brand-tag">MAZDA</span>
+            <span class="car-condition-tag">Nuova</span>
+          </div>
+          <div class="car-body">
+            <div class="car-meta">
+              <span>Da immatricolare</span><span>Garanzia 6 anni / 150.000 km</span>
+            </div>
+            <h3 class="car-name">Mazda CX-60 3.3 m-hybrid Homura Plus awd 249cv auto</h3>
+            <p class="car-price"><span class="car-price-old">€&nbsp;70.050</span> €&nbsp;64.050</p>
+            <a href="#" class="btn btn-outline">Scopri di più</a>
+          </div>
+        </article>
+
+        <article class="car-card" data-brand="mazda" data-condition="nuova" data-price="27800">
+          <div class="car-media">
+            <svg viewBox="0 0 240 100" aria-hidden="true"><use href="#icon-car"/></svg>
+            <span class="car-brand-tag">MAZDA</span>
+            <span class="car-condition-tag">Nuova</span>
+          </div>
+          <div class="car-body">
+            <div class="car-meta">
+              <span>Da immatricolare</span><span>Garanzia 6 anni / 150.000 km</span>
+            </div>
+            <h3 class="car-name">Mazda CX-30 2.5 m-hybrid Homura 2wd 140cv 6mt</h3>
+            <p class="car-price"><span class="car-price-old">€&nbsp;31.450</span> €&nbsp;27.800</p>
+            <a href="#" class="btn btn-outline">Scopri di più</a>
+          </div>
+        </article>
+
+        <article class="car-card" data-brand="mazda" data-condition="nuova" data-price="20250">
+          <div class="car-media">
+            <svg viewBox="0 0 240 100" aria-hidden="true"><use href="#icon-car"/></svg>
+            <span class="car-brand-tag">MAZDA</span>
+            <span class="car-condition-tag">Nuova</span>
+          </div>
+          <div class="car-body">
+            <div class="car-meta">
+              <span>Da immatricolare</span><span>Garanzia 6 anni / 150.000 km</span>
+            </div>
+            <h3 class="car-name">Mazda 2 1.5 vvt full hybrid electric Prime Line e-cvt</h3>
+            <p class="car-price"><span class="car-price-old">€&nbsp;26.090</span> €&nbsp;20.250</p>
+            <a href="#" class="btn btn-outline">Scopri di più</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="no-results" id="no-results" hidden>
+        Nessuna auto corrisponde ai filtri scelti.
+        <button type="button" class="link-button" id="reset-filters">Azzera i filtri</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ DASHBOARD / NUMBERS ============ -->
+  <section class="dashboard">
+    <div class="container">
+      <p class="eyebrow">In cifre</p>
+      <h2>I numeri di GF Motori</h2>
+
+      <div class="gauges">
+
+        <div class="gauge" data-value="60" data-max="80" data-suffix="+">
+          <svg viewBox="0 0 200 110" class="gauge-svg" aria-hidden="true">
+            <path class="gauge-track" d="M20,100 A80,80 0 0 1 180,100"/>
+            <path class="gauge-fill" d="M20,100 A80,80 0 0 1 180,100"/>
+            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="32"/>
+            <circle class="gauge-pivot" cx="100" cy="100" r="5"/>
+          </svg>
+          <p class="gauge-value"><span class="gauge-number">0</span><span class="gauge-suffix">+</span></p>
+          <p class="gauge-label">Auto disponibili in pronta consegna</p>
+        </div>
+
+        <div class="gauge" data-value="28" data-max="40" data-suffix="">
+          <svg viewBox="0 0 200 110" class="gauge-svg" aria-hidden="true">
+            <path class="gauge-track" d="M20,100 A80,80 0 0 1 180,100"/>
+            <path class="gauge-fill" d="M20,100 A80,80 0 0 1 180,100"/>
+            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="32"/>
+            <circle class="gauge-pivot" cx="100" cy="100" r="5"/>
+          </svg>
+          <p class="gauge-value"><span class="gauge-number">0</span><span class="gauge-suffix"></span></p>
+          <p class="gauge-label">Anni di attività in provincia di Reggio Calabria</p>
+        </div>
+
+        <div class="gauge" data-value="15" data-max="20" data-suffix="+">
+          <svg viewBox="0 0 200 110" class="gauge-svg" aria-hidden="true">
+            <path class="gauge-track" d="M20,100 A80,80 0 0 1 180,100"/>
+            <path class="gauge-fill" d="M20,100 A80,80 0 0 1 180,100"/>
+            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="32"/>
+            <circle class="gauge-pivot" cx="100" cy="100" r="5"/>
+          </svg>
+          <p class="gauge-value"><span class="gauge-number">0</span><span class="gauge-suffix">+</span></p>
+          <p class="gauge-label">Marche diverse seguite in assistenza</p>
+        </div>
+
+        <div class="gauge" data-value="1200" data-max="1500" data-suffix="+">
+          <svg viewBox="0 0 200 110" class="gauge-svg" aria-hidden="true">
+            <path class="gauge-track" d="M20,100 A80,80 0 0 1 180,100"/>
+            <path class="gauge-fill" d="M20,100 A80,80 0 0 1 180,100"/>
+            <line class="gauge-needle" x1="100" y1="100" x2="100" y2="32"/>
+            <circle class="gauge-pivot" cx="100" cy="100" r="5"/>
+          </svg>
+          <p class="gauge-value"><span class="gauge-number">0</span><span class="gauge-suffix">+</span></p>
+          <p class="gauge-label">Clienti soddisfatti negli anni</p>
+        </div>
+
+      </div>
+      <p class="dashboard-note">* Valori indicativi — sostituisci con i dati reali della tua attività.</p>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonianze">
+    <div class="container">
+      <p class="eyebrow eyebrow--dark">Grazie!</p>
+      <h2>Le parole dei nostri clienti</h2>
+
+      <div class="carousel" id="carousel">
+        <button type="button" class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Testimonianza precedente">‹</button>
+
+        <div class="carousel-track-wrap">
+          <ul class="carousel-track" id="carousel-track">
+            <li class="testimonial">
+              <p>“Sono molto competenti e professionali. Sono rimasta molto soddisfatta del trattamento ricevuto.”</p>
+              <cite>Lucia — Jaguar F-PACE</cite>
+            </li>
+            <li class="testimonial">
+              <p>“Officina molto attrezzata, personale competente e qualificato. Esperienza ottima.”</p>
+              <cite>Mariano — Jaguar XJ</cite>
+            </li>
+            <li class="testimonial">
+              <p>“Mi hanno risolto problemi difficili: una volta mi hanno mandato il meccanico direttamente al centro commerciale dove ero rimasto fermo. Cordialità e professionalità sono il loro biglietto da visita.”</p>
+              <cite>Filippo — Range Rover Sport</cite>
+            </li>
+            <li class="testimonial">
+              <p>“Professionalità e tempistica impeccabili, attesa in un ambiente silenzioso e climatizzato.”</p>
+              <cite>Nicola — Freelander</cite>
+            </li>
+            <li class="testimonial">
+              <p>“Accoglienza impeccabile, massima disponibilità e una competenza che oggi è difficile trovare in una concessionaria.”</p>
+              <cite>Antonio — Range Rover Evoque</cite>
+            </li>
+            <li class="testimonial">
+              <p>“Officina ottima, personale qualificato. Gentilezza e cordialità da parte di tutto lo staff e del titolare.”</p>
+              <cite>Umberto — Jaguar XF</cite>
+            </li>
+          </ul>
+        </div>
+
+        <button type="button" class="carousel-arrow carousel-next" id="carousel-next" aria-label="Testimonianza successiva">›</button>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Seleziona testimonianza"></div>
+    </div>
+  </section>
+
+  <!-- ============ DUAL CTA ============ -->
+  <section class="dual-cta">
+    <div class="dual-cta-col dual-cta-search">
+      <div class="dual-cta-inner">
+        <h3>Stai cercando un'auto?</h3>
+        <p>Ogni giorno inseriamo vetture nuove e usate a prezzi imbattibili.</p>
+        <a href="#auto" class="btn btn-primary">Cerca qui</a>
+      </div>
+    </div>
+    <div class="dual-cta-col dual-cta-service">
+      <div class="dual-cta-inner">
+        <h3>Ti serve assistenza, ricambi o un noleggio?</h3>
+        <p>Scopri tutti i servizi della nostra officina autorizzata.</p>
+        <a href="assistenza.html" class="btn btn-ghost-light">Scopri di più</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="contatti">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <a href="#home" class="brand brand--footer" aria-label="GF Motori — torna alla home">
+        <svg class="brand-badge" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="16" fill="var(--copper)"/>
+          <text x="32" y="42" text-anchor="middle" font-family="'Big Shoulders Display', sans-serif" font-weight="800" font-size="22" fill="var(--green-900)">GF</text>
+        </svg>
+        <span class="brand-name">GF <strong>MOTORI</strong></span>
+      </a>
+      <p>Sul nostro sito troverai certamente l'auto che stai cercando. Un team affiatato che con grande professionalità saprà prendersi cura di te e della tua auto.</p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-heading">Contatti</p>
+      <ul class="footer-contact">
+        <li>Via Patera SNC, 89052<br>Campo Calabro (RC)</li>
+        <li><a href="tel:+390965042766">0965 42766</a></li>
+        <li><a href="mailto:info@gfmotorisrl.it">info@gfmotorisrl.it</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-heading">Link rapidi</p>
+      <ul class="footer-links">
+        <li><a href="chi-siamo.html">Chi Siamo</a></li>
+        <li><a href="assistenza.html">Assistenza</a></li>
+        <li><a href="ricambi.html">Ricambi</a></li>
+        <li><a href="#auto">Auto Nuove e Usate</a></li>
+        <li><a href="noleggio.html">Noleggio</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-heading">Seguici</p>
+      <div class="footer-social">
+        <a href="#" aria-label="GF Motori su Facebook">FB</a>
+        <a href="#" aria-label="GF Motori su Instagram">IG</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom container">
+    <p>© <span id="current-year">2026</span> GF Motori S.r.l. — P.IVA 02916910801</p>
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Torna in cima">↑</button>
+  </div>
+</footer>
+
+<!-- Sprite SVG nascosto: icone riutilizzate via <use> -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-car" viewBox="0 0 240 100">
+    <path d="M8,84 C8,80 11,77 16,77 L26,77 C28,54 47,36 74,33 L98,19 C115,9 137,9 156,17 L186,31 C206,38 220,53 224,73 L228,73 C233,73 236,77 235,81 C234,85 230,87 226,87 L214,87 C212,72 200,61 186,61 C172,61 160,72 158,87 L82,87 C80,72 68,61 54,61 C40,61 28,72 26,87 L18,87 C12,87 8,84 8,84 Z"/>
+    <circle cx="54" cy="87" r="17"/>
+    <circle cx="186" cy="87" r="17"/>
+  </symbol>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
