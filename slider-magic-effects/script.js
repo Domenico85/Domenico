@@ -1,31 +1,52 @@
 let items = document.querySelectorAll(".slider .item");
 let prevBtn = document.querySelector("#prev");
 let nextBtn = document.querySelector("#next");
-let lastPosition = items.length - 1;
-let firstPosition = 0;
-let active = 1;
+let sliderEl = document.querySelector(".slider");
+let active = 0;
 
-nextBtn.addEventListener("click", () => {
-  active++;
-  setSlider();
-});
-
-prevBtn.addEventListener("click", () => {
-  active--;
-  setSlider();
-});
+const AUTOPLAY_DELAY = 6000;
+let autoplayTimer = null;
 
 const setSlider = () => {
   let oldActive = document.querySelector(".slider .item.active");
   if (oldActive) oldActive.classList.remove("active");
   items[active].classList.add("active");
-
-  nextBtn.classList.remove("d-none");
-  prevBtn.classList.remove("d-none");
-  if (active == lastPosition) nextBtn.classList.add("d-none");
-  if (active == firstPosition) prevBtn.classList.add("d-none");
 };
+
+const goNext = () => {
+  active = (active + 1) % items.length;
+  setSlider();
+};
+
+const goPrev = () => {
+  active = (active - 1 + items.length) % items.length;
+  setSlider();
+};
+
+const startAutoplay = () => {
+  autoplayTimer = setInterval(goNext, AUTOPLAY_DELAY);
+};
+
+const restartAutoplay = () => {
+  clearInterval(autoplayTimer);
+  startAutoplay();
+};
+
+nextBtn.addEventListener("click", () => {
+  goNext();
+  restartAutoplay();
+});
+
+prevBtn.addEventListener("click", () => {
+  goPrev();
+  restartAutoplay();
+});
+
+sliderEl.addEventListener("mouseenter", () => clearInterval(autoplayTimer));
+sliderEl.addEventListener("mouseleave", startAutoplay);
+
 setSlider();
+startAutoplay();
 
 const setDiameter = () => {
   let slider = document.querySelector(".slider");

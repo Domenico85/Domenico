@@ -188,11 +188,59 @@ header .logo img {
   width: var(--width-df);
   display: flex;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .arrows button {
   all: unset;
   cursor: pointer;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: background 0.3s ease, transform 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arrows button svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+}
+
+.arrows button svg path:last-child {
+  opacity: 0.45;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.arrows button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.08);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.arrows button:active {
+  transform: scale(0.94);
+}
+
+#next:hover svg path:last-child {
+  transform: translateX(4px);
+  opacity: 0.85;
+}
+
+#prev:hover svg path:last-child {
+  transform: translateX(-4px);
+  opacity: 0.85;
 }
 
 .slider .list::after {
@@ -214,11 +262,6 @@ header .logo img {
   from {
     transform: translateX(-50%) scale(1.5) translateY(88px);
   }
-}
-
-.arrows button.d-none {
-  opacity: 0;
-  pointer-events: none;
 }
 
 @media all and (max-width: 1024px) {
