@@ -18,6 +18,22 @@ nextDom.onclick = function () {
 prevDom.onclick = function () {
   showSlider("prev");
 };
+
+thumbnailBorderDom.addEventListener("click", function (e) {
+  const clickedItem = e.target.closest(".item");
+  if (!clickedItem) return;
+
+  const items = Array.from(thumbnailBorderDom.children);
+  const index = items.indexOf(clickedItem);
+  const steps = index + 1;
+
+  if (steps === items.length) return;
+
+  for (let i = 0; i < steps; i++) {
+    showSlider("next");
+  }
+});
+
 let runTimeOut;
 let runNextAuto = setTimeout(() => {
   next.click();
