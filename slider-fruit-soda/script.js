@@ -53,3 +53,26 @@ function changeCarousel() {
 }
 
 let refreshInterval = setInterval(() => next.click(), 5000);
+
+// Swipe touch (mobile): scorrimento orizzontale in aggiunta ai bottoni prev/next
+let touchStartX = 0;
+const SWIPE_THRESHOLD = 40;
+
+carousel.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartX = e.changedTouches[0].clientX;
+  },
+  { passive: true },
+);
+
+carousel.addEventListener(
+  "touchend",
+  (e) => {
+    let delta = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+    if (delta < 0) next.click();
+    else prev.click();
+  },
+  { passive: true },
+);
