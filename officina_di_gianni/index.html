@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Officina di Gianni — Scenografie & Recupero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- CURSORE CUSTOM -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <!-- NOISE OVERLAY -->
+    <canvas id="noise-canvas"></canvas>
+
+    <!-- NAV -->
+    <nav id="nav">
+      <div class="nav-logo" data-text="M.A.">OFFICINA DI GIANNI</div>
+      <ul class="nav-links">
+        <li><a href="#chi-sono" class="nav-link">Chi Sono</a></li>
+        <li><a href="#lavori" class="nav-link">Lavori</a></li>
+        <li><a href="#interventi" class="nav-link">Interventi</a></li>
+        <li><a href="#contatti" class="nav-link">Contatti</a></li>
+      </ul>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#chi-sono" class="mobile-link">Chi Sono</a></li>
+        <li><a href="#lavori" class="mobile-link">Lavori</a></li>
+        <li><a href="#interventi" class="mobile-link">Interventi</a></li>
+        <li><a href="#contatti" class="mobile-link">Contatti</a></li>
+      </ul>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg-text" aria-hidden="true">MATERIA</div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">Scenografia · Recupero · Arte</div>
+        <h1 class="hero-title">
+          <span class="line" data-delay="0">Dare vita</span>
+          <span class="line italic" data-delay="150">a ciò che</span>
+          <span class="line" data-delay="300">sembrava morto</span>
+        </h1>
+        <p class="hero-sub">Legno. Ferro. Ruggine. Memoria.</p>
+        <a href="#lavori" class="hero-cta"
+          >Scopri i lavori
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <line
+              x1="0"
+              y1="10"
+              x2="16"
+              y2="10"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <polyline
+              points="10,4 16,10 10,16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+          </svg>
+        </a>
+      </div>
+      <div class="hero-scroll-hint" id="scroll-hint">
+        <span>Scorri</span>
+        <div class="scroll-line"></div>
+      </div>
+      <!-- particelle ferro arrugginito -->
+      <canvas id="particle-canvas"></canvas>
+    </section>
+
+    <!-- CHI SONO -->
+    <section id="chi-sono" class="section">
+      <div class="section-label">/ 01</div>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title reveal">Chi<br /><em>Sono</em></h2>
+          <div class="about-portrait">
+            <div class="portrait-frame">
+              <div class="portrait-inner">
+                <!-- placeholder grafico -->
+                <div class="portrait-placeholder" id="portrait-canvas-wrap">
+                  <img src="img/maria.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <blockquote class="about-quote reveal" data-delay="100">
+            "Ogni oggetto porta una storia.<br />Il mio lavoro è ascoltarla."
+          </blockquote>
+          <div class="about-text reveal" data-delay="200">
+            <p>
+              Scenografa di formazione, con gli anni ho sviluppato una pratica
+              che travalica i confini del set: recupero mobili, travi, lamiere
+              abbandonate e riporto in essi la dignità del tempo vissuto.
+            </p>
+            <p>
+              Lavoro con le mani. Con la ruggine che impregna le dita. Con il
+              legno che odora di decenni lontani. Ogni intervento — che sia una
+              scenografia, un mobile, un muro — è un atto di ascolto e
+              trasformazione.
+            </p>
+          </div>
+          <div class="about-tags">
+            <span class="tag reveal" data-delay="300"
+              >Scenografia teatrale</span
+            >
+            <span class="tag reveal" data-delay="350"
+              >Recupero legno antico</span
+            >
+            <span class="tag reveal" data-delay="400">Lavorazione ferro</span>
+            <span class="tag reveal" data-delay="450">Interventi murali</span>
+            <span class="tag reveal" data-delay="500">Arte applicata</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINEA DIVISORIA ANIMATA -->
+    <div class="divider-line" aria-hidden="true">
+      <div class="divider-track">
+        <span>LEGNO · FERRO · RUGGINE · MEMORIA · MATERIA · TEMPO · </span>
+        <span>LEGNO · FERRO · RUGGINE · MEMORIA · MATERIA · TEMPO · </span>
+      </div>
+    </div>
+
+    <!-- LAVORI -->
+    <section id="lavori" class="section">
+      <div class="section-label">/ 02</div>
+      <h2 class="section-title reveal">I<br /><em>Lavori</em></h2>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Tutto</button>
+        <button class="filter-btn" data-filter="scenografia">
+          Scenografia
+        </button>
+        <button class="filter-btn" data-filter="recupero">Recupero</button>
+        <button class="filter-btn" data-filter="interventi">Interventi</button>
+      </div>
+
+      <div class="grid-lavori" id="grid-lavori">
+        <article class="card-lavoro" data-cat="scenografia" tabindex="0">
+          <div class="card-visual" data-index="0">
+            <img src="img/tutte.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Scenografia</span>
+            <h3 class="card-title">Il Giardino dei Ciliegi</h3>
+            <p class="card-desc">
+              Spazio teatrale costruito con assi di recupero e veli di iuta.
+              Teatro Nuovo, 2023.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article class="card-lavoro" data-cat="recupero" tabindex="0">
+          <div class="card-visual" data-index="1">
+            <img src="img/m&p.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Recupero</span>
+            <h3 class="card-title">Armadio Ventennale</h3>
+            <p class="card-desc">
+              Mobile in castagno del '900 riportato a nuova vita con cera nera e
+              ottone ossidato.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article class="card-lavoro" data-cat="interventi" tabindex="0">
+          <div class="card-visual" data-index="2">
+            <img src="img/anna.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Intervento</span>
+            <h3 class="card-title">Muro Stratigrafico</h3>
+            <p class="card-desc">
+              Intervento pittorico su parete grezza. Intonaco scalfito, ferro
+              bruciato, calce. Abitazione privata, Milano.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article class="card-lavoro" data-cat="recupero" tabindex="0">
+          <div class="card-visual" data-index="3">
+            <canvas class="card-canvas"></canvas>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Recupero</span>
+            <h3 class="card-title">Tavolo Officina</h3>
+            <p class="card-desc">
+              Piano in lamiera saldata e gambe in ferro forgiato. Recupero
+              industriale, uso domestico.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article class="card-lavoro" data-cat="scenografia" tabindex="0">
+          <div class="card-visual" data-index="4">
+            <canvas class="card-canvas"></canvas>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Scenografia</span>
+            <h3 class="card-title">Spazio Nudo</h3>
+            <p class="card-desc">
+              Installazione scenografica con elementi sospesi in ferro
+              arrugginito. Festival delle Arti, 2024.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+
+        <article class="card-lavoro" data-cat="interventi" tabindex="0">
+          <div class="card-visual" data-index="5">
+            <canvas class="card-canvas"></canvas>
+          </div>
+          <div class="card-body">
+            <span class="card-cat">Intervento</span>
+            <h3 class="card-title">Ossidazione Guidata</h3>
+            <p class="card-desc">
+              Trattamento sperimentale su superficie in rame. Residenza
+              artistica privata, Cittanova.
+            </p>
+          </div>
+          <div class="card-overlay">
+            <span>Esplora</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <line
+                x1="0"
+                y1="12"
+                x2="20"
+                y2="12"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <polyline
+                points="13,5 20,12 13,19"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INTERVENTI IN CASA -->
+    <section id="interventi" class="section section-dark">
+      <div class="section-label light">/ 03</div>
+      <div class="interventi-grid">
+        <div class="interventi-text">
+          <h2 class="section-title light reveal">
+            Interventi<br /><em>nelle Case</em>
+          </h2>
+          <div class="interventi-desc reveal" data-delay="100">
+            <p>
+              Non solo oggetti: trasformo gli spazi dove vivete. Un muro può
+              diventare memoria. Un angolo dimenticato, racconto.
+            </p>
+            <p>
+              Lavoro con voi, ascoltando la storia dell'ambiente e di chi lo
+              abita. Ogni intervento è unico, irripetibile.
+            </p>
+          </div>
+          <ul class="interventi-list">
+            <li class="reveal" data-delay="150">
+              <span class="bullet">—</span> Affreschi e tecniche miste su parete
+            </li>
+            <li class="reveal" data-delay="200">
+              <span class="bullet">—</span> Patine e trattamenti su superfici
+              esistenti
+            </li>
+            <li class="reveal" data-delay="250">
+              <span class="bullet">—</span> Installazioni permanenti in ferro e
+              legno
+            </li>
+            <li class="reveal" data-delay="300">
+              <span class="bullet">—</span> Interventi scultorei su architettura
+            </li>
+          </ul>
+          <a href="#contatti" class="cta-dark reveal" data-delay="350"
+            >Parliamone →</a
+          >
+        </div>
+        <div class="interventi-visual">
+          <canvas id="rust-canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section id="processo" class="section">
+      <div class="section-label">/ 04</div>
+      <h2 class="section-title reveal">Il<br /><em>Processo</em></h2>
+      <div class="processo-steps">
+        <div class="step reveal" data-delay="0">
+          <div class="step-num">01</div>
+          <h3 class="step-title">Ascolto</h3>
+          <p class="step-desc">
+            Prima di toccare i materiali, ascolto. L'oggetto, lo spazio, la
+            persona che li abita.
+          </p>
+        </div>
+        <div class="step-divider" aria-hidden="true">
+          <div class="step-line"></div>
+        </div>
+        <div class="step reveal" data-delay="150">
+          <div class="step-num">02</div>
+          <h3 class="step-title">Studio</h3>
+          <p class="step-desc">
+            Studia la materia: le vene del legno, il grano della ruggine, la
+            memoria del ferro.
+          </p>
+        </div>
+        <div class="step-divider" aria-hidden="true">
+          <div class="step-line"></div>
+        </div>
+        <div class="step reveal" data-delay="300">
+          <div class="step-num">03</div>
+          <h3 class="step-title">Trasformazione</h3>
+          <p class="step-desc">
+            Il lavoro manuale. Lento, fisico, onesto. Senza scorciatoie.
+          </p>
+        </div>
+        <div class="step-divider" aria-hidden="true">
+          <div class="step-line"></div>
+        </div>
+        <div class="step reveal" data-delay="450">
+          <div class="step-num">04</div>
+          <h3 class="step-title">Vita Nuova</h3>
+          <p class="step-desc">
+            L'oggetto ritorna nel mondo con la propria storia intatta — e una
+            nuova.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti" class="section section-contact">
+      <div class="section-label">/ 05</div>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <h2 class="section-title reveal">Iniziamo<br /><em>a parlare</em></h2>
+          <p class="contact-sub reveal" data-delay="100">
+            Hai un oggetto da recuperare, uno spazio da trasformare, una
+            scenografia da immaginare? Scrivimi.
+          </p>
+        </div>
+        <div class="contact-right reveal" data-delay="200">
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <a href="mailto:officinadigianni@gmail.com" class="contact-value"
+              >officinadigianni@gmail.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Instagram</span>
+            <a href="#" class="contact-value">@officinadigianni</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Studio</span>
+            <span class="contact-value">Cittanova, Calabria, Italia</span>
+          </div>
+        </div>
+      </div>
+      <!-- grande scritta decorativa -->
+      <div class="contact-bg-text" aria-hidden="true">CONTATTO</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        © 2026 OFFICINA DI GIANNI. Tutti i diritti riservati.
+      </div>
+      <div class="footer-right">Scenografia · Recupero · Arte</div>
+    </footer>
+
+    <script src="js/noise.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/rust.js"></script>
+    <script src="js/portrait.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

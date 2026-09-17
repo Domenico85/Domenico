@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giuseppe Giordano — Candidato | Reggio Calabria</title>
+    <meta
+      name="description"
+      content="Giuseppe Giordano candidato della Città Metropolitana di Reggio Calabria. Una visione per il futuro della nostra terra."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- LOADER -->
+    <div id="loader">
+      <div class="loader-emblem">
+        <div class="loader-ring"></div>
+        <span class="loader-initials">GG</span>
+      </div>
+      <p class="loader-text">Reggio Calabria</p>
+    </div>
+
+    <!-- CURSOR PERSONALIZZATO -->
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <div class="logo-mark">GG</div>
+          <div class="logo-text">
+            <span class="logo-name">Giuseppe Giordano</span>
+            <span class="logo-subtitle">Candidato</span>
+          </div>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#chi-sono">Chi Sono</a></li>
+          <li><a href="#programma">Programma</a></li>
+          <li><a href="#valori">Valori</a></li>
+          <li><a href="#territorio">Territorio</a></li>
+          <li><a href="#contatti">Contatti</a></li>
+        </ul>
+        <a href="#contatti" class="nav-cta">Sostienimi</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#chi-sono" class="mob-link">Chi Sono</a></li>
+        <li><a href="#programma" class="mob-link">Programma</a></li>
+        <li><a href="#valori" class="mob-link">Valori</a></li>
+        <li><a href="#territorio" class="mob-link">Territorio</a></li>
+        <li><a href="#contatti" class="mob-link">Contatti</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-stripe"></div>
+        <div class="hero-container">
+          <div class="hero-eyebrow reveal">
+            <span class="eyebrow-line"></span>
+            <span
+              >Città Metropolitana di Reggio Calabria · Elezioni Comunali</span
+            >
+          </div>
+          <h1 class="hero-title reveal">
+            <span class="title-line">Una città</span>
+            <span class="title-line italic">che guarda</span>
+            <span class="title-line">al futuro.</span>
+          </h1>
+          <p class="hero-sub reveal">
+            Con radici profonde nella nostra terra e una visione chiara per
+            domani.<br />
+            <strong>Giuseppe Giordano</strong> per Reggio Calabria.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#programma" class="btn-primary">Scopri il Programma</a>
+            <a href="#chi-sono" class="btn-ghost">Chi sono →</a>
+          </div>
+          <div class="hero-scroll-hint reveal">
+            <span class="scroll-line"></span>
+            <span>Scorri</span>
+          </div>
+        </div>
+
+        <!-- Foto placeholder candidato -->
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <div class="photo-placeholder">
+              <div class="photo-inner">
+                <svg
+                  viewBox="0 0 200 240"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="100"
+                    cy="80"
+                    r="45"
+                    fill="currentColor"
+                    opacity="0.2"
+                  />
+                  <path
+                    d="M20 240c0-44.183 35.817-80 80-80s80 35.817 80 80"
+                    fill="currentColor"
+                    opacity="0.15"
+                  />
+                </svg>
+                <span>Foto Candidato</span>
+              </div>
+            </div>
+            <div class="photo-badge">
+              <span>Candidato</span>
+              <strong>2025</strong>
+            </div>
+          </div>
+          <div class="hero-photo-accent"></div>
+        </div>
+
+        <!-- Dati statistici -->
+        <div class="hero-stats">
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="180000">0</span>
+            <span class="stat-label">Cittadini da Rappresentare</span>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="97">0</span>
+            <span class="stat-label">Comuni della Metrocittà</span>
+          </div>
+          <div class="stat-item reveal">
+            <span class="stat-num" data-target="15">0</span>
+            <span class="stat-label">Anni di Impegno Civile</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHI SONO -->
+      <section id="chi-sono">
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">01</span>
+            <span>Chi Sono</span>
+          </div>
+          <div class="chisono-grid">
+            <div class="chisono-left reveal">
+              <div class="chisono-img-wrap">
+                <div class="img-placeholder large">
+                  <svg
+                    viewBox="0 0 300 400"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="150"
+                      cy="130"
+                      r="70"
+                      fill="currentColor"
+                      opacity="0.15"
+                    />
+                    <path
+                      d="M10 400c0-77.32 62.68-140 140-140s140 62.68 140 140"
+                      fill="currentColor"
+                      opacity="0.1"
+                    />
+                  </svg>
+                  <span>Foto Istituzionale</span>
+                </div>
+                <div class="img-deco-block"></div>
+              </div>
+            </div>
+            <div class="chisono-right">
+              <h2 class="section-title reveal">
+                Radici calabresi,<br /><em>sguardo europeo.</em>
+              </h2>
+              <div class="bio-text reveal">
+                <p>
+                  Nato e cresciuto a Reggio Calabria, ho dedicato la mia vita
+                  professionale e civile al servizio della comunità. Laureato in
+                  <strong>[Titolo di Studio]</strong> presso
+                  <strong>[Università]</strong>, ho maturato una lunga
+                  esperienza in <strong>[Settore/Professione]</strong>.
+                </p>
+                <p>
+                  Convinto che il cambiamento nasca dall'ascolto e dalla
+                  partecipazione, ho promosso negli anni numerose iniziative per
+                  il rilancio economico, culturale e sociale del nostro
+                  territorio.
+                </p>
+                <p>
+                  Oggi mi candido con la certezza che Reggio Calabria merita
+                  un'amministrazione all'altezza del suo straordinario
+                  patrimonio umano e storico.
+                </p>
+              </div>
+              <div class="bio-highlights reveal">
+                <div class="highlight-item">
+                  <div class="highlight-icon">🎓</div>
+                  <div>
+                    <strong>Formazione</strong>
+                    <span>[Titolo di Studio · Università]</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">💼</div>
+                  <div>
+                    <strong>Professione</strong>
+                    <span>[Ruolo Professionale · Settore]</span>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <div class="highlight-icon">🏛️</div>
+                  <div>
+                    <strong>Esperienza Politica</strong>
+                    <span>[Incarichi Precedenti · Anni]</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#programma" class="btn-primary reveal"
+                >Il mio programma</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CITAZIONE MANIFESTO -->
+      <section id="manifesto">
+        <div class="manifesto-inner">
+          <div class="manifesto-quote reveal">
+            <span class="quote-mark">"</span>
+            <blockquote>
+              Reggio Calabria non è un problema da risolvere.<br />
+              È una <em>promessa da mantenere.</em>
+            </blockquote>
+            <cite>— Giuseppe Giordano</cite>
+          </div>
+          <div class="manifesto-flag reveal">
+            <div class="flag-tricolor">
+              <div class="flag-green"></div>
+              <div class="flag-white"></div>
+              <div class="flag-red"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAMMA -->
+      <section id="programma">
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">02</span>
+            <span>Il Programma</span>
+          </div>
+          <h2 class="section-title centered reveal">
+            Cinque pilastri per<br /><em>una nuova Reggio.</em>
+          </h2>
+          <p class="section-intro reveal">
+            Un programma concreto, costruito insieme ai cittadini, per
+            rispondere alle vere priorità della nostra comunità.
+          </p>
+          <div class="programma-grid">
+            <div class="pillar-card reveal" data-delay="0">
+              <div class="pillar-num">01</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M24 4L4 18v26h14V30h12v14h14V18L24 4z"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Sviluppo Economico</h3>
+              <p>
+                Attrarre investimenti, sostenere le imprese locali e creare
+                nuova occupazione attraverso politiche innovative e fondi
+                europei.
+              </p>
+              <ul class="pillar-points">
+                <li>Sportello Unico per le Imprese</li>
+                <li>Piano per il turismo culturale</li>
+                <li>Incentivi per startup e PMI</li>
+              </ul>
+            </div>
+
+            <div class="pillar-card reveal" data-delay="100">
+              <div class="pillar-num">02</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M24 44C35.046 44 44 35.046 44 24S35.046 4 24 4 4 12.954 4 24s8.954 20 20 20z"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  />
+                  <path
+                    d="M16 24h16M24 16v16"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Ambiente e Territorio</h3>
+              <p>
+                Tutela del paesaggio, gestione sostenibile dei rifiuti e piano
+                straordinario per la manutenzione del verde urbano.
+              </p>
+              <ul class="pillar-points">
+                <li>Raccolta differenziata al 65%</li>
+                <li>Riqualificazione del lungomare</li>
+                <li>Parchi urbani rinnovati</li>
+              </ul>
+            </div>
+
+            <div class="pillar-card reveal" data-delay="200">
+              <div class="pillar-num">03</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M8 40V20L24 8l16 12v20H30V28H18v12H8z"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <h3>Sicurezza e Legalità</h3>
+              <p>
+                Lavorare con le forze dell'ordine per garantire sicurezza
+                urbana, trasparenza amministrativa e contrasto alla criminalità
+                organizzata.
+              </p>
+              <ul class="pillar-points">
+                <li>Videosorveglianza estesa</li>
+                <li>Polizia municipale rafforzata</li>
+                <li>Beni confiscati riutilizzati</li>
+              </ul>
+            </div>
+
+            <div class="pillar-card reveal" data-delay="300">
+              <div class="pillar-num">04</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4z"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  />
+                  <path
+                    d="M24 14v10l6 6"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Welfare e Sociale</h3>
+              <p>
+                Potenziare i servizi sociali, il sostegno alle famiglie in
+                difficoltà e la rete di assistenza agli anziani e ai giovani.
+              </p>
+              <ul class="pillar-points">
+                <li>Casa della comunità diffusa</li>
+                <li>Piano per i giovani NEET</li>
+                <li>Sostegno agli anziani soli</li>
+              </ul>
+            </div>
+
+            <div class="pillar-card reveal" data-delay="400">
+              <div class="pillar-num">05</div>
+              <div class="pillar-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <path
+                    d="M12 36V20M24 36V8M36 36V26"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M6 40h36"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+              <h3>Cultura e Innovazione</h3>
+              <p>
+                Valorizzare il patrimonio storico-artistico reggino e investire
+                nella digitalizzazione dei servizi pubblici e nella cultura
+                digitale.
+              </p>
+              <ul class="pillar-points">
+                <li>Museo del Mediterraneo</li>
+                <li>Agenda digitale comunale</li>
+                <li>Festival culturali tutto l'anno</li>
+              </ul>
+            </div>
+          </div>
+          <div class="programma-cta reveal">
+            <a href="#contatti" class="btn-primary"
+              >Scarica il Programma Completo</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- VALORI -->
+      <section id="valori">
+        <div class="valori-bg-text">INTEGRITÀ</div>
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">03</span>
+            <span>I Valori</span>
+          </div>
+          <div class="valori-grid">
+            <div class="valore-item reveal">
+              <div class="valore-line"></div>
+              <h3>Trasparenza</h3>
+              <p>
+                Ogni decisione sarà presa alla luce del sole, con
+                rendicontazione pubblica e accesso aperto ai dati
+                dell'amministrazione.
+              </p>
+            </div>
+            <div class="valore-item reveal">
+              <div class="valore-line"></div>
+              <h3>Partecipazione</h3>
+              <p>
+                I cittadini non sono spettatori ma protagonisti. Bilancio
+                partecipativo, consultazioni pubbliche e democrazia diretta.
+              </p>
+            </div>
+            <div class="valore-item reveal">
+              <div class="valore-line"></div>
+              <h3>Competenza</h3>
+              <p>
+                Assessori e dirigenti scelti per merito e capacità, non per
+                appartenenza politica. La bravura prima di tutto.
+              </p>
+            </div>
+            <div class="valore-item reveal">
+              <div class="valore-line"></div>
+              <h3>Visione</h3>
+              <p>
+                Governare con un piano decennale, non guardando solo alla
+                scadenza elettorale. Il bene dei figli prima dei voti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TERRITORIO -->
+      <section id="territorio">
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">04</span>
+            <span>Il Territorio</span>
+          </div>
+          <div class="territorio-layout">
+            <div class="territorio-text">
+              <h2 class="section-title reveal">
+                Reggio Calabria:<br /><em
+                  >dove la storia<br />incontra il mare.</em
+                >
+              </h2>
+              <p class="reveal">
+                La Città Metropolitana di Reggio Calabria è uno dei territori
+                più affascinanti d'Italia. Il Bronzi di Riace, il Lungomare
+                Falcomatà, lo Stretto di Messina: un patrimonio unico che merita
+                un'amministrazione all'altezza.
+              </p>
+              <p class="reveal">
+                Con 97 comuni e oltre 500.000 abitanti nell'area metropolitana,
+                Reggio rappresenta un hub strategico per il Mediterraneo. La
+                nostra sfida è trasformare questa posizione geografica in
+                vantaggio competitivo.
+              </p>
+              <div class="territorio-facts reveal">
+                <div class="fact">
+                  <strong>2.800+</strong>
+                  <span>anni di storia</span>
+                </div>
+                <div class="fact">
+                  <strong>180 km</strong>
+                  <span>di costa</span>
+                </div>
+                <div class="fact">
+                  <strong>1°</strong>
+                  <span>in Italia per clima</span>
+                </div>
+              </div>
+            </div>
+            <div class="territorio-map reveal">
+              <div class="map-wrapper">
+                <iframe
+                  class="gmap-iframe"
+                  title="Reggio Calabria — Città Metropolitana"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48618.27!2d15.6500!3d38.1100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.5!3m3!1m2!1s0x13166e5a0a47db41%3A0xa23f91ef04e38c58!2sReggio%20Calabria%2C%20RC!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+                <div class="map-overlay-label">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span>Reggio Calabria</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA / COMUNICATI - PLACEHOLDER -->
+      <section id="media">
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">05</span>
+            <span>Rassegna Stampa</span>
+          </div>
+          <h2 class="section-title centered reveal">
+            <em>Notizie</em> e Aggiornamenti
+          </h2>
+          <div class="media-grid">
+            <article class="media-card reveal" data-delay="0">
+              <div class="media-img-placeholder">
+                <span>Immagine Comunicato</span>
+              </div>
+              <div class="media-body">
+                <span class="media-date">[Data · Fonte]</span>
+                <h4>[Titolo del comunicato stampa o notizia principale]</h4>
+                <p>
+                  Questo spazio è riservato al primo comunicato stampa o alla
+                  prima dichiarazione pubblica del candidato...
+                </p>
+                <a href="#" class="media-link">Leggi tutto →</a>
+              </div>
+            </article>
+            <article class="media-card reveal" data-delay="100">
+              <div class="media-img-placeholder">
+                <span>Immagine Comunicato</span>
+              </div>
+              <div class="media-body">
+                <span class="media-date">[Data · Fonte]</span>
+                <h4>[Titolo del secondo comunicato stampa o evento]</h4>
+                <p>
+                  Descrizione dell'evento, dichiarazione pubblica o comunicato
+                  da inserire in questa sezione...
+                </p>
+                <a href="#" class="media-link">Leggi tutto →</a>
+              </div>
+            </article>
+            <article class="media-card reveal" data-delay="200">
+              <div class="media-img-placeholder">
+                <span>Immagine Comunicato</span>
+              </div>
+              <div class="media-body">
+                <span class="media-date">[Data · Fonte]</span>
+                <h4>[Titolo del terzo aggiornamento della campagna]</h4>
+                <p>
+                  Spazio per notizie, appuntamenti, interviste e tutto il
+                  materiale comunicato durante la campagna...
+                </p>
+                <a href="#" class="media-link">Leggi tutto →</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOSTIENIMI / CTA -->
+      <section id="sostieni">
+        <div class="sostieni-inner">
+          <div class="sostieni-bg-num">2025</div>
+          <div class="sostieni-content reveal">
+            <h2>Unisciti al<br /><em>cambiamento.</em></h2>
+            <p>
+              La politica cambia quando cambiano le persone che la fanno.<br />Sostieni
+              la nostra campagna con la tua firma, il tuo tempo, la tua voce.
+            </p>
+            <div class="sostieni-actions">
+              <a href="#contatti" class="btn-primary large"
+                >Aderisci alla Campagna</a
+              >
+              <a href="tel:[NUMERO]" class="btn-ghost large">Chiamaci</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTATTI -->
+      <section id="contatti">
+        <div class="section-container">
+          <div class="section-label reveal">
+            <span class="label-num">06</span>
+            <span>Contatti</span>
+          </div>
+          <div class="contatti-layout">
+            <div class="contatti-info reveal">
+              <h2 class="section-title">Parliamo<br /><em>insieme.</em></h2>
+              <p>
+                Il dialogo è il cuore della nostra campagna. Scrivici, chiamaci,
+                vieni a trovarci. Ogni voce conta.
+              </p>
+              <div class="contact-items">
+                <div class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <div>
+                    <strong>Sede di Campagna</strong>
+                    <span>[Via e numero civico, Reggio Calabria]</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 11.9a19.79 19.79 0 01-3.07-8.67A2 2 0 012.92 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.7a16 16 0 006.29 6.29l1.06-1.13a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <div>
+                    <strong>Telefono</strong>
+                    <span>[+39 000 000 0000]</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <polyline
+                      points="22,6 12,13 2,6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                  </svg>
+                  <div>
+                    <strong>Email</strong>
+                    <span>[info@giuseppegiordano.it]</span>
+                  </div>
+                </div>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-btn" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="Instagram">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle
+                      cx="17.5"
+                      cy="6.5"
+                      r="1"
+                      fill="currentColor"
+                      stroke="none"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="Twitter/X">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-btn" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="contatti-form-wrap reveal">
+              <form class="contact-form" id="contact-form">
+                <h3>Lasciaci un messaggio</h3>
+                <div class="form-group">
+                  <label for="nome">Nome e Cognome</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Il tuo nome"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email-c">Email</label>
+                  <input
+                    type="email"
+                    id="email-c"
+                    name="email"
+                    placeholder="La tua email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="telefono">Telefono (opzionale)</label>
+                  <input
+                    type="tel"
+                    id="telefono"
+                    name="telefono"
+                    placeholder="+39 ..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="messaggio">Messaggio</label>
+                  <textarea
+                    id="messaggio"
+                    name="messaggio"
+                    rows="4"
+                    placeholder="Scrivi qui il tuo messaggio..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="privacy" name="privacy" required />
+                  <label for="privacy"
+                    >Acconsento al trattamento dei dati personali ai sensi del
+                    GDPR</label
+                  >
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                  Invia il Messaggio
+                </button>
+              </form>
+              <div class="form-success" id="form-success">
+                <svg viewBox="0 0 48 48" fill="none">
+                  <circle
+                    cx="24"
+                    cy="24"
+                    r="20"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  />
+                  <path
+                    d="M14 24l7 7 13-14"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <h3>Grazie per il tuo messaggio!</h3>
+                <p>Ti risponderemo al più presto.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="logo-mark large">GG</div>
+            <div>
+              <strong>Giuseppe Giordano</strong>
+              <span>Candidato — Reggio Calabria</span>
+            </div>
+          </div>
+          <div class="footer-links">
+            <a href="#chi-sono">Chi Sono</a>
+            <a href="#programma">Programma</a>
+            <a href="#valori">Valori</a>
+            <a href="#contatti">Contatti</a>
+          </div>
+          <div class="footer-cta">
+            <a href="#contatti" class="btn-primary">Sostienimi</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            © 2026 Giuseppe Giordano — Tutti i diritti riservati.
+            <a href="#">Privacy Policy</a> · <a href="#">Note Legali</a>
+          </p>
+          <p class="footer-slogan"><em>"Per Reggio, con Reggio."</em></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="back-top" aria-label="Torna su">↑</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

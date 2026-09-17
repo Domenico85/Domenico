@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gfmotori srl - Concessionaria auto di prestigio. Vendita, noleggio e consulenza personalizzata.">
+    <title>Gfmotori srl — Eccellenza su quattro ruote</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-gf">GF</span><span class="logo-motori">motori</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#vetture" class="nav-link">Vetture</a>
+                <a href="#servizi" class="nav-link">Servizi</a>
+                <a href="#chi-siamo" class="nav-link">Chi Siamo</a>
+                <a href="#contatti" class="nav-link">Contatti</a>
+            </nav>
+            <a href="#contatti" class="btn-nav">Prenota Prova</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-tag reveal">Concessionaria ufficiale dal 1998</span>
+            <h1 class="hero-title reveal">
+                Dove la <span class="accent">passione</span><br>
+                incontra la <span class="accent">strada</span>.
+            </h1>
+            <p class="hero-sub reveal">
+                Selezioniamo solo vetture che raccontano una storia. 
+                Eccellenza, artigianalità e prestazioni — tutto in un unico luogo.
+            </p>
+            <div class="hero-cta reveal">
+                <a href="#vetture" class="btn btn-primary">Esplora la collezione</a>
+                <a href="#chi-siamo" class="btn btn-ghost">La nostra storia →</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat reveal">
+                <span class="stat-num" data-target="28">0</span>
+                <span class="stat-label">Anni di esperienza</span>
+            </div>
+            <div class="stat reveal">
+                <span class="stat-num" data-target="1500">0</span>
+                <span class="stat-label">Clienti soddisfatti</span>
+            </div>
+            <div class="stat reveal">
+                <span class="stat-num" data-target="45">0</span>
+                <span class="stat-label">Vetture in showroom</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scorri</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- VETTURE IN EVIDENZA -->
+    <section class="vetture" id="vetture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">In evidenza</span>
+                <h2 class="section-title reveal">La collezione<br><span class="accent">del momento</span></h2>
+            </div>
+            <div class="cars-grid">
+                <article class="car-card reveal">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80" alt="BMW M4">
+                        <span class="car-badge">Nuovo</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-meta">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>480 CV</span>
+                            <span>•</span>
+                            <span>Automatico</span>
+                        </div>
+                        <h3>BMW M4 Competition</h3>
+                        <div class="car-footer">
+                            <span class="car-price">€ 112.900</span>
+                            <a href="#contatti" class="car-link">Scopri →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="car-card reveal">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80" alt="Porsche 911">
+                        <span class="car-badge">Usato garantito</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-meta">
+                            <span>2023</span>
+                            <span>•</span>
+                            <span>385 CV</span>
+                            <span>•</span>
+                            <span>PDK</span>
+                        </div>
+                        <h3>Porsche 911 Carrera S</h3>
+                        <div class="car-footer">
+                            <span class="car-price">€ 148.500</span>
+                            <a href="#contatti" class="car-link">Scopri →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="car-card reveal">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=800&q=80" alt="Audi RS6">
+                        <span class="car-badge">Km 0</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-meta">
+                            <span>2024</span>
+                            <span>•</span>
+                            <span>600 CV</span>
+                            <span>•</span>
+                            <span>Tiptronic</span>
+                        </div>
+                        <h3>Audi RS6 Avant</h3>
+                        <div class="car-footer">
+                            <span class="car-price">€ 139.000</span>
+                            <a href="#contatti" class="car-link">Scopri →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="car-card reveal">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="Mercedes AMG GT">
+                        <span class="car-badge">Exclusive</span>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-meta">
+                            <span>2023</span>
+                            <span>•</span>
+                            <span>585 CV</span>
+                            <span>•</span>
+                            <span>AMG Speedshift</span>
+                        </div>
+                        <h3>Mercedes-AMG GT 63 S</h3>
+                        <div class="car-footer">
+                            <span class="car-price">€ 175.000</span>
+                            <a href="#contatti" class="car-link">Scopri →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="center-cta reveal">
+                <a href="#" class="btn btn-outline">Vedi tutte le vetture →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIZI -->
+    <section class="servizi" id="servizi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal">I nostri servizi</span>
+                <h2 class="section-title reveal">Più di una<br><span class="accent">concessionaria</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service reveal">
+                    <div class="service-icon">01</div>
+                    <h3>Vendita & Noleggio</h3>
+                    <p>Vetture nuove, km 0 e usate garantite. Soluzioni di noleggio a lungo termine personalizzate.</p>
+                </div>
+                <div class="service reveal">
+                    <div class="service-icon">02</div>
+                    <h3>Finanziamenti su misura</h3>
+                    <p>Consulenza finanziaria dedicata con tassi agevolati e piani rateali flessibili.</p>
+                </div>
+                <div class="service reveal">
+                    <div class="service-icon">03</div>
+                    <h3>Officina autorizzata</h3>
+                    <p>Manutenzione e riparazioni con tecnici certificati e ricambi originali garantiti.</p>
+                </div>
+                <div class="service reveal">
+                    <div class="service-icon">04</div>
+                    <h3>Permuta & Ritiro</h3>
+                    <p>Valutiamo il tuo usato in modo trasparente e immediato. Permuta senza pensieri.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section class="chi-siamo" id="chi-siamo">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="https://images.unsplash.com/photo-1562141961-b5d1fe8a3?w=800&q=80" alt="Showroom Gfmotori"
+                         onerror="this.src='https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80'">
+                </div>
+                <div class="about-content">
+                    <span class="section-tag reveal">Chi siamo</span>
+                    <h2 class="section-title reveal">Una storia fatta<br>di <span class="accent">motori</span> e persone</h2>
+                    <p class="reveal">
+                        Dal 1998, <strong>Gfmotori srl</strong> è un punto di riferimento per chi cerca 
+                        non solo un'auto, ma un'esperienza. La nostra passione per l'eccellenza 
+                        automobilistica ci ha portato a selezionare solo le vetture migliori, 
+                        offrendo un servizio personalizzato che va ben oltre la semplice vendita.
+                    </p>
+                    <p class="reveal">
+                        Ogni cliente è unico. Per questo ascoltiamo, consigliamo e accompagniamo 
+                        nella scelta della vettura perfetta — quella che farà battere il cuore 
+                        al primo giro di chiave.
+                    </p>
+                    <a href="#contatti" class="btn btn-primary reveal">Vieni a trovarci</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section class="contatti" id="contatti">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag reveal">Contatti</span>
+                    <h2 class="section-title reveal">Parliamo della<br><span class="accent">tua prossima auto</span></h2>
+                    <div class="contact-details reveal">
+                        <div class="contact-item">
+                            <span class="contact-label">Showroom</span>
+                            <span>Via dell'Industria 42, 20100 Milano</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Telefono</span>
+                            <a href="tel:+390212345678">+39 02 1234 5678</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:info@gfmotori.it">info@gfmotori.it</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Orari</span>
+                            <span>Lun–Sab: 9:00 – 19:00</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form reveal" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nome e cognome</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Invia richiesta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-gf">GF</span><span class="logo-motori">motori</span>
+                    </a>
+                    <p>Eccellenza su quattro ruote dal 1998.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigazione</h4>
+                    <a href="#home">Home</a>
+                    <a href="#vetture">Vetture</a>
+                    <a href="#servizi">Servizi</a>
+                    <a href="#chi-siamo">Chi Siamo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <a href="tel:+390212345678">+39 02 1234 5678</a>
+                    <a href="mailto:info@gfmotori.it">info@gfmotori.it</a>
+                    <span>Via dell'Industria 42, Milano</span>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguici</h4>
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Gfmotori srl — P.IVA 01234567890</span>
+                <span>Tutti i diritti riservati</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
