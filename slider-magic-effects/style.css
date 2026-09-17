@@ -33,8 +33,19 @@ header {
   z-index: 1;
 }
 
-header .logo img {
-  width: 50px;
+.logo-link {
+  display: flex;
+  align-items: center;
+  background-color: #eee5;
+  border: 1px solid #eee9;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+.logo {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 
 .slider {
