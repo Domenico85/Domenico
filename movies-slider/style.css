@@ -1,15 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
   font-family: sans-serif;
-  box-sizing: border-box;
   font-size: 12px;
+  background-color: #000;
+}
+a {
+  text-decoration: none;
+}
+header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+header a {
+  color: #fff;
+  margin-right: 40px;
+  font-size: 14px;
+}
+header a:hover {
+  color: red;
+}
+.logo-link {
+  margin-right: 0;
+  flex-shrink: 0;
+}
+.logo-link .author {
+  display: block;
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0;
 }
 .slider {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   position: relative;
+  margin-top: -60px;
 }
 .slider .sliderlist .slideritem img {
   width: 100%;
@@ -35,6 +77,17 @@ body {
   box-sizing: border-box;
   color: #fff;
   text-shadow: 0 5px 10px #000;
+}
+.author {
+  display: inline-block;
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  background-color: #fffc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 5px 10px #0004;
+  margin-bottom: 12px;
 }
 .date {
   font-weight: bold;
@@ -308,5 +361,19 @@ body {
   }
   .slider .sliderlist .slideritem .content .title {
     font-size: 35px;
+  }
+  header {
+    padding: 0 16px;
+    height: 50px;
+  }
+  header a {
+    margin-right: 16px;
+    font-size: 12px;
+  }
+  .logo-link .author {
+    height: 20px;
+  }
+  .slider {
+    margin-top: -50px;
   }
 }
