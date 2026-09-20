@@ -1,111 +1,107 @@
-function hiddenPlaceholder() {
-  const searchBox = document.querySelector(".search-box");
-  const inputSearch = document.querySelector(".input-search");
-  const btnSearch = document.querySelector(".btn-search");
+const WEATHER_PROXY_URL =
+  "https://skytracker-weather-proxy.domenicociardullo85.workers.dev/weather";
+const DEFAULT_CITY = "Milano";
 
-  btnSearch.addEventListener("click", () => {
-    inputSearch.focus();
-  });
-
-  inputSearch.addEventListener("focus", () => {
-    inputSearch.setAttribute("placeholder", "Search a City...");
-  });
-
-  inputSearch.addEventListener("blur", () => {
-    if (inputSearch.value === "") {
-      inputSearch.setAttribute("placeholder", "");
-    }
-  });
-}
-
-hiddenPlaceholder();
+const inputSearch = document.querySelector(".input-search");
+const btnSearch = document.querySelector(".btn-search");
+const errorMessage = document.querySelector(".error-message");
+const weatherCard = document.querySelector(".weather-card");
 
 function getDayName(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", { weekday: "long" });
+  return date.toLocaleDateString("it-IT", { weekday: "long" });
 }
-const WEATHER_PROXY_URL = "https://skytracker-weather-proxy.domenicociardullo85.workers.dev/weather";
 
-function searchWeather() {
-  const city = document.querySelector(".input-search").value.trim();
-  if (city) {
-    const url = `${WEATHER_PROXY_URL}?q=${encodeURIComponent(city)}&days=3`;
+function showError(message) {
+  errorMessage.textContent = message;
+  errorMessage.hidden = false;
+}
 
-    fetch(url, { mode: "cors" })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        updateWeatherInfo(data);
-        document.querySelector(".input-search").value = "";
-      })
-      .catch((error) => {
-        console.log("There was a problem with the fetch operation:", error);
-      });
-  } else {
-    alert("Please enter a city name.");
+function clearError() {
+  errorMessage.hidden = true;
+  errorMessage.textContent = "";
+}
+
+function setLoading(isLoading) {
+  weatherCard.style.opacity = isLoading ? "0.6" : "1";
+  btnSearch.disabled = isLoading;
+}
+
+function searchWeather(city) {
+  const query = (city ?? inputSearch.value).trim();
+  if (!query) {
+    showError("Inserisci il nome di una città.");
+    return;
   }
+
+  clearError();
+  setLoading(true);
+
+  const url = `${WEATHER_PROXY_URL}?q=${encodeURIComponent(query)}&days=3`;
+
+  fetch(url, { mode: "cors" })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      if (data.error) {
+        throw new Error(data.error.message || "Città non trovata.");
+      }
+      updateWeatherInfo(data);
+      inputSearch.value = "";
+    })
+    .catch((error) => {
+      console.error("There was a problem with the fetch operation:", error);
+      showError("Città non trovata o servizio non disponibile. Riprova.");
+    })
+    .finally(() => setLoading(false));
 }
 
-document.querySelector(".btn-search").addEventListener("click", searchWeather);
+btnSearch.addEventListener("click", () => searchWeather());
 
-document
-  .querySelector(".input-search")
-  .addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-      searchWeather();
-    }
-  });
+inputSearch.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    searchWeather();
+  }
+});
 
 function updateWeatherInfo(data) {
-  const weatherInfo = document.querySelector(".weather-info");
   const location = data.location;
   const todayDayName = getDayName(data.location.localtime);
 
-  weatherInfo.querySelector(
+  document.querySelector(
     ".weather-info__city"
-  ).innerText = `${location.name}, ${location.region}, ${location.country}`;
-  weatherInfo.querySelector(".weather-info__description").innerText =
+  ).innerText = `${location.name}, ${location.country}`;
+  document.querySelector(".weather-info__description").innerText =
     data.current.condition.text;
-  weatherInfo.querySelector(".weather-info__day").innerText = todayDayName;
-  weatherInfo.querySelector(".weather-info__date").innerText = new Date(
+  document.querySelector(".weather-info__day").innerText = todayDayName;
+  document.querySelector(".weather-info__date").innerText = new Date(
     data.location.localtime
-  ).toLocaleDateString();
-  weatherInfo.querySelector(".weather-info__time").innerText = new Date(
-    data.location.localtime
-  ).toLocaleTimeString();
-  weatherInfo.querySelector(
+  ).toLocaleDateString("it-IT");
+  document.querySelector(
     ".weather-info__temperature"
-  ).innerText = `${data.current.temp_c}°C / ${data.current.temp_f}°F`;
-  weatherInfo.querySelector(
+  ).innerText = `${Math.round(data.current.temp_c)}°C`;
+  document.querySelector(
     ".weather-info__units-f"
-  ).innerText = `Fahrenheit: ${data.current.temp_f}°F`;
-  weatherInfo.querySelector(
+  ).innerText = `${Math.round(data.current.temp_f)}°F`;
+  document.querySelector(
     ".weather-info__units-c"
-  ).innerText = `Celsius: ${data.current.temp_c}°C`;
+  ).innerText = `${Math.round(data.current.temp_c)}°C`;
 
-  getWeatherIconUrl(data.current.condition.code, data.current.is_day)
-    .then((iconUrl) => {
-      const iconElement = weatherInfo.querySelector(".weather-info__icon");
-      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
+  getWeatherIconUrl(data.current.condition.code, data.current.is_day).then(
+    (iconUrl) => {
+      const iconElement = document.querySelector(".weather-info__icon");
+      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text}" />`;
+    }
+  );
 
-      if (!iconUrl.includes("default.svg")) {
-        const defaultIcon = iconElement.querySelector("img");
-        defaultIcon.style.width = "110px";
-      }
-    })
-    .catch((error) => {
-      console.error("Error getting weather icon URL:", error);
-    });
   const weatherDetails = document.querySelector(".weather-details");
-  console.log("con", data.current.condition);
   weatherDetails.querySelector(
     ".feels-like div span"
-  ).innerText = `${data.current.feelslike_c}°C / ${data.current.feelslike_f}°F`;
+  ).innerText = `${Math.round(data.current.feelslike_c)}°C`;
   weatherDetails.querySelector(
     ".humidity div span"
   ).innerText = `${data.current.humidity}%`;
@@ -114,63 +110,29 @@ function updateWeatherInfo(data) {
   ).innerText = `${data.forecast.forecastday[0].day.daily_chance_of_rain}%`;
   weatherDetails.querySelector(
     ".wind div span"
-  ).innerText = `${data.current.wind_kph}km/h`;
+  ).innerText = `${Math.round(data.current.wind_kph)} km/h`;
 
-  const weatherNextDays = document.querySelector(".next-days-info-day1");
-  const dayName = getDayName(data.forecast.forecastday[1].date);
-  weatherNextDays.querySelector(".day").innerText = `${dayName}`;
-  weatherNextDays.querySelector(
+  updateForecastDay(".next-days-info-day1", data.forecast.forecastday[1]);
+  updateForecastDay(".next-days-info-day2", data.forecast.forecastday[2]);
+}
+
+function updateForecastDay(selector, forecastDay) {
+  const card = document.querySelector(selector);
+  const dayName = getDayName(forecastDay.date);
+
+  card.querySelector(".day").innerText = dayName;
+  card.querySelector(
     ".max-temp"
-  ).innerText = `Max ${data.forecast.forecastday[1].day.maxtemp_c}°C`;
-  weatherNextDays.querySelector(
+  ).innerText = `Max ${Math.round(forecastDay.day.maxtemp_c)}°C`;
+  card.querySelector(
     ".min-temp"
-  ).innerText = `Min ${data.forecast.forecastday[1].day.mintemp_c}°C`;
+  ).innerText = `Min ${Math.round(forecastDay.day.mintemp_c)}°C`;
 
-  getWeatherIconUrl(
-    data.forecast.forecastday[1].day.condition.code,
-    data.forecast.forecastday[1].is_day
-  )
-    .then((iconUrl) => {
-      const iconElement = weatherNextDays.querySelector(".icon-next-day");
-      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
-
-      if (!iconUrl.includes("default.svg")) {
-        const defaultIcon = iconElement.querySelector("img");
-        defaultIcon.style.width = "110px";
-      }
-      weatherNextDays.style.background = "rgba(255, 255, 255, 0.5)";
-    })
-    .catch((error) => {
-      console.error("Error getting weather icon URL:", error);
-    });
-
-  const weatherNextDays2 = document.querySelector(".next-days-info-day2");
-  const dayName2 = getDayName(data.forecast.forecastday[2].date);
-  weatherNextDays2.querySelector(".day").innerText = `${dayName2}`;
-  weatherNextDays2.querySelector(
-    ".max-temp"
-  ).innerText = `Max ${data.forecast.forecastday[2].day.maxtemp_c}°C`;
-  weatherNextDays2.querySelector(
-    ".min-temp"
-  ).innerText = `Min ${data.forecast.forecastday[2].day.mintemp_c}°C`;
-
-  getWeatherIconUrl(
-    data.forecast.forecastday[2].day.condition.code,
-    data.forecast.forecastday[2].is_day
-  )
-    .then((iconUrl) => {
-      const iconElement = weatherNextDays2.querySelector(".icon-next-day");
-      iconElement.innerHTML = `<img src="${iconUrl}" alt="${data.current.condition.text} icon" />`;
-
-      if (!iconUrl.includes("default.svg")) {
-        const defaultIcon = iconElement.querySelector("img");
-        defaultIcon.style.width = "110px";
-      }
-      weatherNextDays2.style.background = "rgba(255, 255, 255, 0.5)";
-    })
-    .catch((error) => {
-      console.error("Error getting weather icon URL:", error);
-    });
+  getWeatherIconUrl(forecastDay.day.condition.code, 1).then((iconUrl) => {
+    card.querySelector(
+      ".icon-next-day"
+    ).innerHTML = `<img src="${iconUrl}" alt="${forecastDay.day.condition.text}" />`;
+  });
 }
 
 function getWeatherIconUrl(conditionCode, isDay) {
@@ -193,3 +155,5 @@ function getWeatherIconUrl(conditionCode, isDay) {
       return "img/default.svg";
     });
 }
+
+searchWeather(DEFAULT_CITY);
