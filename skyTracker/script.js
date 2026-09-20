@@ -24,13 +24,12 @@ function getDayName(dateString) {
   const date = new Date(dateString);
   return date.toLocaleDateString("en-US", { weekday: "long" });
 }
-const apiKey = "ae761484c1284fce82f91509241405";
+const WEATHER_PROXY_URL = "https://skytracker-weather-proxy.domenicociardullo85.workers.dev/weather";
 
 function searchWeather() {
   const city = document.querySelector(".input-search").value.trim();
   if (city) {
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3`;
-    console.log(url);
+    const url = `${WEATHER_PROXY_URL}?q=${encodeURIComponent(city)}&days=3`;
 
     fetch(url, { mode: "cors" })
       .then((response) => {
