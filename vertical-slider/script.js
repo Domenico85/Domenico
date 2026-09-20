@@ -26,5 +26,40 @@ const changeSlide = (direction) => {
   }px)`;
 };
 
-upButton.addEventListener("click", () => changeSlide("up"));
-downButton.addEventListener("click", () => changeSlide("down"));
+let isAnimating = false;
+
+const triggerChange = (direction) => {
+  if (isAnimating) return;
+  isAnimating = true;
+  changeSlide(direction);
+  resetAutoplay();
+  setTimeout(() => {
+    isAnimating = false;
+  }, 600);
+};
+
+upButton.addEventListener("click", () => triggerChange("up"));
+downButton.addEventListener("click", () => triggerChange("down"));
+
+sliderContainer.addEventListener(
+  "wheel",
+  (event) => {
+    event.preventDefault();
+    triggerChange(event.deltaY > 0 ? "up" : "down");
+  },
+  { passive: false }
+);
+
+const AUTOPLAY_INTERVAL = 4000;
+let autoplayTimer = null;
+
+const startAutoplay = () => {
+  autoplayTimer = setInterval(() => triggerChange("up"), AUTOPLAY_INTERVAL);
+};
+
+const resetAutoplay = () => {
+  clearInterval(autoplayTimer);
+  startAutoplay();
+};
+
+startAutoplay();
