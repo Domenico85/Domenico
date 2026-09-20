@@ -20,7 +20,16 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background: var(--color-black);
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.7) 100%
+    ),
+    url("img/skytrackerbg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--color-white);
   font-family: "Hanken Grotesk", sans-serif;
 }
@@ -34,15 +43,6 @@ a {
 
 .hero-band {
   position: relative;
-  background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.55) 0%,
-      rgba(0, 0, 0, 0.8) 65%,
-      var(--color-black) 100%
-    ),
-    url("img/skytrackerbg.webp");
-  background-size: cover;
-  background-position: center;
   padding-bottom: clamp(2rem, 6vw, 4rem);
 }
 
@@ -161,8 +161,9 @@ main {
 }
 
 .weather-card {
-  background: var(--color-anthracite);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(26, 26, 26, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: clamp(1.5rem, 4vw, 2.5rem);
 }
@@ -277,8 +278,9 @@ main {
 }
 
 .forecast-card {
-  background: var(--color-anthracite);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(26, 26, 26, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 1.25rem;
   text-align: center;
