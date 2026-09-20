@@ -37,6 +37,12 @@ body {
   margin: 10px 5px;
 }
 
+.emoji {
+  display: block;
+  font-size: 32px;
+  line-height: 1;
+}
+
 .rating:hover,
 .rating.active {
   background: darkseagreen;
@@ -63,10 +69,4 @@ body {
 
 #btn:active {
   transform: scale(0.96);
-}
-
-a {
-  font-size: 14px;
-  position: absolute;
-  bottom: 30px;
 }

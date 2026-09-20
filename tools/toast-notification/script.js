@@ -46,7 +46,7 @@ submit.addEventListener("click", (e) => {
 
 information.addEventListener("click", (e) => {
   e.preventDefault();
-  showToast("Do POTD and Earn Coins", "info", 5000);
+  showToast("New update available", "info", 5000);
 });
 
 failed.addEventListener("click", (e) => {
