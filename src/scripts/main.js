@@ -81,5 +81,8 @@ $('#top-btn').onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
 // ----- cursore con infinito, bottoni magnetici, musica che segue il movimento
 const cur = $('#cur'); let cx = 0, cy = 0, tx = 0, ty = 0, speed = 0;
 addEventListener('pointermove', (e) => { speed = Math.min(1, speed + Math.hypot(e.movementX, e.movementY) / 120); tx = e.clientX; ty = e.clientY; cur.classList.toggle('big', !!e.target.closest('a,button,canvas#cc')); });
-(function loop() { cx += (tx - cx) * .18; cy += (ty - cy) * .18; cur.style.transform = `translate(${cx + 10}px,${cy + 10}px)`; speed *= .96; audio.energy(speed); requestAnimationFrame(loop); })();
+let fr = 0; // ogni 5 fotogrammi: se sotto il puntatore c'e' la scena 1 (bianca), l'infinito diventa nero e rosso
+addEventListener('click', () => { cur.classList.remove('spin'); void cur.offsetWidth; cur.classList.add('spin'); }); // un giro di 360 gradi a ogni clic, come il puntatore del sito dello studio
+(function loop() { cx += (tx - cx) * .18; cy += (ty - cy) * .18; cur.style.transform = `translate(${cx + 12}px,${cy + 16}px)`;
+	if (++fr % 5 === 0) cur.classList.toggle('lite', !!document.elementFromPoint(tx, ty)?.closest('.p1')); speed *= .96; audio.energy(speed); requestAnimationFrame(loop); })();
 document.querySelectorAll('.btn').forEach((b) => { b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .2}px,${(e.clientY - r.top - r.height / 2) * .3}px)`; }); b.addEventListener('pointerleave', () => (b.style.transform = '')); });
