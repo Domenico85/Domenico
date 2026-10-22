@@ -18,9 +18,9 @@ export type Capitolo = {
 export const CAPITOLI: Capitolo[] = [
 	{ id: 'hello', titolo: 'Hello World', anno: '2024', quando: 'febbraio 2024', stadio: 'HTML nudo', musica: 'reggae', peso: 1, dal: '2024-02-01', chiaro: true,
 		testo: 'Una riga di Java e un hello-world. Non sapevo ancora che mi sarebbe piaciuto.' },
-	{ id: 'corso', titolo: 'Il corso', anno: '2024', quando: 'aprile 2024 – marzo 2025', stadio: 'terminale e JS', musica: 'reggae', peso: 1, dal: '2024-04-01',
+	{ id: 'corso', titolo: 'Il corso', anno: '2024', quando: 'aprile 2024 – aprile 2025', stadio: 'terminale e JS', musica: 'reggae', peso: 1, dal: '2024-04-01',
 		testo: 'Ho fatto un corso Full Stack Developer. Quasi tutto è rimasto in locale: esercizi, errori, qualche momento di gloria. Il progetto finale, Presto, l\'abbiamo fatto in squadra.' },
-	{ id: 'esperimenti', titolo: 'Esperimenti', anno: '2025', quando: '2025, e ancora oggi', stadio: 'CSS e collage', musica: 'stylish', peso: 1, dal: '2025-01-01',
+	{ id: 'esperimenti', titolo: 'Esperimenti', anno: '2025', quando: '2025, e ancora oggi', stadio: 'CSS e collage', musica: 'stylish', peso: 1.8, dal: '2025-01-01',
 		testo: 'Vanilla JS, slider, effetti. Il periodo in cui rompevo le cose per capire come funzionavano. Lo faccio ancora, adesso nel Lab dello studio.' },
 	{ id: 'react', titolo: 'React', anno: '2025', quando: 'gennaio – luglio 2025', stadio: 'React', musica: 'joyful', peso: 1, dal: '2025-01-30',
 		testo: 'Un widget per volta, e un po\' di vergogna per i nomi. Ne ho tenute poche: Meal-Planner è quella a cui voglio ancora bene.' },

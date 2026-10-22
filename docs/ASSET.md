@@ -13,7 +13,7 @@ Documento interno. Da aggiornare a ogni asset nuovo.
 | File | Origine | Note |
 |---|---|---|
 | `src/assets/hero-bg.jpg` | Greg Rakozy, Unsplash | credito in pagina |
-| `skytracker.jpg`, `slider-image-effect.jpg`, `three-js-animation.jpg`, `starbucks-coffee.jpg` | screenshot di lavori miei (portfolio Loop Studio) | |
+| `skytracker.jpg`, `slider-image-effect.jpg`, `three-js-animation.jpg`, `starbucks-coffee.jpg`, `animal-slider.jpg`, `slider-fruit-soda.jpg` | screenshot di lavori miei (portfolio Loop Studio) | |
 
 ## Musica (`public/audio/`, mp3 112 kbps, max 90 s, normalizzati)
 Fonte: Pixabay (licenza Pixabay, senza attribuzione obbligatoria; credito in pagina).

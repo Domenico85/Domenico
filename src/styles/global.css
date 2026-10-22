@@ -95,7 +95,7 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .pane { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
 .no-motion #story { height: auto; overflow: visible; } .no-motion .pane { position: relative; min-height: 100svh; visibility: visible; }
 .no-motion .frame { --rv: 1 !important; } .no-motion .frame img { opacity: 1; }
-.g .w > span { transition: none; transform: none; }
+.g .w > span { transition: none; transform: none; } .g .w { padding-inline: .14em; margin-inline: -.14em; }
 .big-n { position: absolute; font-weight: 700; line-height: .75; -webkit-text-stroke: 1.5px currentColor; color: transparent; opacity: .28; pointer-events: none; user-select: none; }
 .lab { font: .75rem ui-monospace, monospace; opacity: .75; }
 .fr { position: absolute; } .fr .frame { width: 100%; }
@@ -118,9 +118,10 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 /* 3 esperimenti */
 .p3 { background: linear-gradient(135deg, #1b1233, #0f4c5c); color: #fff; }
 .mq { position: absolute; left: 0; top: 50%; translate: 0 -50%; white-space: nowrap; font: 700 clamp(8rem, 24vw, 22rem)/1 var(--display); -webkit-text-stroke: 2px #ffffff55; color: transparent; will-change: transform; }
-.p3 .fr.a { left: 7vw; top: 12vh; width: min(34vw, 52vh); } .p3 .fr.b { right: 8vw; top: 26vh; width: 30vw; } .p3 .fr.c { right: 14vw; bottom: 8vh; width: 24vw; }
-.p3 h2 { position: absolute; left: 5vw; bottom: max(10vh, 108px); font: 700 clamp(3.4rem, min(11vw, 22vh), 10rem)/.9 var(--script); z-index: 1; }
-.p3 .cp { top: 50vh; bottom: auto; z-index: 3; } /* sotto la prima immagine, sopra il titolo: le immagini stanno sul canvas e coprirebbero il testo */
+.p3 .fr.a { left: 44vw; top: 9vh; width: min(30vw, 46vh); } .p3 .fr.b { left: 74vw; top: 30vh; width: min(24vw, 36vh); } .p3 .fr.c { left: 47vw; top: 52vh; width: min(24vw, 34vh); }
+.p3 .fr.d { left: 66vw; top: 8vh; width: min(28vw, 44vh); } .p3 .fr.e { left: 42vw; top: 32vh; width: min(25vw, 38vh); } .p3 .fr.f { left: 69vw; top: 55vh; width: min(22vw, 32vh); }
+.p3 h2 { position: absolute; left: 5vw; bottom: max(10vh, 108px); font: 700 clamp(3.4rem, min(9.5vw, 19vh), 10rem)/.9 var(--script); z-index: 1; }
+.p3 .cp { top: 22vh; bottom: auto; z-index: 3; color: #ff7a70; max-width: 30ch; } .p3 .cp .lab { color: #ff7a70; } /* a sinistra, fuori dalle schede (stanno sul canvas e coprirebbero il testo); rosso chiaro: il bianco si confondeva con il titolo e la scritta in contorno */
 /* 4 react */
 .p4 { background: #08090c; color: #e8ecf2; font-family: 'LT Industry', var(--display); }
 .cnt { position: absolute; left: 50%; top: 50%; translate: -50% -52%; text-align: center; line-height: .8; }
@@ -142,6 +143,9 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .p5 .c5 span { color: #cfd3dc; font-size: .95rem; }
 .p5 .c5 em { font: normal .75rem ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
 .p5 .cp { left: 21vw; right: 21vw; max-width: none; bottom: max(6vh, 108px); }
+.no-motion .p3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; align-content: start; padding: 16vh 6vw 10vh; }
+.no-motion .p3 .mq { display: none; } .no-motion .p3 .fr { position: relative; inset: auto; width: auto; }
+.no-motion .p3 h2, .no-motion .p3 .cp { position: static; grid-column: 1 / -1; max-width: 44ch; } .no-motion .p3 h2 { order: -2; } .no-motion .p3 .cp { order: -1; }
 .no-motion .p5 { padding: 16vh 6vw 10vh; }
 .no-motion .p5 .t { position: static; translate: none; text-align: left; font-size: clamp(3rem, 14vw, 9rem); margin-bottom: 2.5rem; }
 .no-motion #fr5 { position: static; display: grid; gap: 4.5rem; } .no-motion #fr5 .fr { position: relative; inset: auto; }
@@ -166,7 +170,9 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 	.hero::after { background: linear-gradient(180deg, #02030a99 0%, #02030a00 30%, #02030a00 38%, #02030af0 66%, #02030af5 100%); }
 	.hero .ui { padding-bottom: 170px; } .gnav { bottom: 84px; } .gd span { display: none; } .gd.on span { display: block; position: absolute; bottom: 100%; left: 0; padding: 0 0 2px 12px; white-space: nowrap; font-size: .75rem; } .cue { bottom: 150px; }
 	.p2 .term { width: 84vw; } .p2 .fr { top: auto; bottom: max(31vh, 250px); width: 70vw; } .p2 .cp { right: auto; left: 5vw; width: 84vw; bottom: max(6vh, 112px); }
-	.p3 .fr.a { width: 52vw; } .p3 .fr.b { width: 46vw; } .p3 .fr.c { width: 40vw; left: 20vw; right: auto; bottom: 22vh; } .p3 .cp { top: auto; bottom: 40vh; max-width: 28ch; } .p3 h2 { bottom: 11vh; }
+	.p3 .fr.a { left: 6vw; top: 12vh; width: 50vw; } .p3 .fr.b { left: 46vw; top: 27vh; width: 46vw; } .p3 .fr.c { left: 12vw; top: 42vh; width: 42vw; }
+	.p3 .fr.d { left: 44vw; top: 11vh; width: 48vw; } .p3 .fr.e { left: 6vw; top: 26vh; width: 44vw; } .p3 .fr.f { left: 40vw; top: 41vh; width: 44vw; }
+	.p3 .cp { top: 57vh; left: 5vw; right: 5vw; max-width: none; } .p3 h2 { bottom: 11vh; }
 	#fr5 { left: 6vw; right: 6vw; } .p5 .cp { left: 6vw; right: 6vw; } .p5 .lab.l2 { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
