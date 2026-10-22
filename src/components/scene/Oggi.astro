@@ -1,0 +1,17 @@
+---
+import InfinityMark from '../InfinityMark.astro';
+const { c } = Astro.props;
+---
+<div class="pane p6">
+	<div>
+		<div class="inf" id="inf"><InfinityMark width="100%" /></div>
+		<h2 class="g" data-split>Oggi: <i>Loop Studio</i></h2>
+		<div class="sig" id="sig">Domenico</div>
+		<p>{c.testo}</p>
+		<div class="links">
+			<a class="btn pri" href="https://theloopstudio.org/" target="_blank" rel="noopener">Vai allo studio</a>
+			<button class="btn" id="top-btn" type="button">↑ Ricomincia</button>
+		</div>
+	</div>
+	<div class="fine">foto del cielo: Unsplash · musica: Pixabay</div>
+</div>

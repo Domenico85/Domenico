@@ -1,0 +1,15 @@
+---
+import Quadro from '../Quadro.astro';
+import slider from '../../assets/slider-image-effect.jpg';
+import three from '../../assets/three-js-animation.jpg';
+import coffee from '../../assets/starbucks-coffee.jpg';
+const { c, n, tot } = Astro.props;
+---
+<div class="pane p3">
+	<div class="mq" id="mq" aria-hidden="true">SLIDER · CARD · HOVER · GRADIENTE · OMBRA · SLIDER · CARD · HOVER ·</div>
+	<div class="fr a"><Quadro src={slider} alt="Slider con effetto sulle immagini" look="seppia" /></div>
+	<div class="fr b"><Quadro src={three} alt="Animazione 3D a scroll" look="seppia" /></div>
+	<div class="fr c"><Quadro src={coffee} alt="Carosello di caffè" look="carta" /></div>
+	<h2 class="g" data-split>{c.titolo}</h2>
+	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
+</div>

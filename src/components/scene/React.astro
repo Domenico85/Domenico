@@ -1,0 +1,19 @@
+---
+// Il contatore e i nomi vengono dai dati: sono le repo dei gruppi React che cadono nel capitolo.
+import { CAPITOLI } from '../../data/capitoli';
+import { GRUPPI, REPOS } from '../../data/repos';
+const { c, n, tot } = Astro.props;
+const idx = CAPITOLI.findIndex((x) => x.id === c.id);
+const react = REPOS.filter((r) => r.cap === idx && GRUPPI[r.g].tech === 'react');
+const ms = (r: { d: string }) => new Date(r.d).getTime();
+const mesi = Math.max(1, Math.round((Math.max(...react.map(ms)) - Math.min(...react.map(ms))) / (30.4 * 86400000)));
+const h = (i: number) => { const x = Math.sin(i * 91.7 + 13.3) * 43758.5; return x - Math.floor(x); };
+---
+<div class="pane p4">
+	<h2 class="g" data-split>Componenti</h2>
+	<div class="cnt"><b id="cnt">{react.length}</b><span>repo in {mesi} mesi</span></div>
+	<div id="chips" aria-hidden="true">
+		{react.map((r, i) => <span class="chip" style={`left:${6 + h(i) * 80}%;top:${12 + h(i + 50) * 74}%`}>{r.name}</span>)}
+	</div>
+	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
+</div>

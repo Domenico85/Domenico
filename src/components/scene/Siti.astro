@@ -1,0 +1,24 @@
+---
+// I quattro lavori veri del portfolio dello studio (screenshot già usati lì).
+import Quadro from '../Quadro.astro';
+import osteomed from '../../assets/osteomed.png';
+import gf from '../../assets/gf-motori.jpg';
+import axpro from '../../assets/axpro.jpg';
+import ananda from '../../assets/ananda.jpg';
+const { c, n, tot } = Astro.props;
+const lavori = [
+	{ nome: 'Osteomed', img: osteomed, alt: 'Sito dello studio di osteopatia Osteomed' },
+	{ nome: 'GF Motori', img: gf, alt: 'Sito di GF Motori' },
+	{ nome: 'Axpro Paintball', img: axpro, alt: 'Sito di Axpro Paintball' },
+	{ nome: 'Ananda Grejo', img: ananda, alt: 'Sito fotografico di Ananda Grejo' },
+];
+---
+<div class="pane p5">
+	<div class="t" id="t5">{c.titolo}</div><div class="lh" id="lh" aria-label="Lighthouse 100">100</div>
+	<div id="fr5">
+		{lavori.map((l) => <div class="fr"><Quadro src={l.img} alt={l.alt} /></div>)}
+	</div>
+	{lavori.map((l) => <div class="c5">{l.nome}</div>)}
+	<div class="lab l1">{n} / {tot} · Astro, Lighthouse, clienti</div><div class="lab l2">passa sopra: torna a colori</div>
+	<p class="cp">{c.testo}</p>
+</div>

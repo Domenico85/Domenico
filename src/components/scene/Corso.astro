@@ -1,0 +1,12 @@
+---
+import Quadro from '../Quadro.astro';
+import coffee from '../../assets/starbucks-coffee.jpg';
+const { c, n, tot } = Astro.props;
+const righe = ['$ corso --avvia', '> aprile 2024: corso full-stack', '> javascript, php, laravel', '> quasi tutto resta in locale', '> primo bottone che cambia colore', '> errori: troppi', '> gennaio 2025: fine', '$ ./esperimenti.sh'];
+---
+<div class="pane p2">
+	<div class="big-n" aria-hidden="true">{n}</div>
+	<div class="term" id="term">{righe.join('\n')}</div>
+	<div class="fr"><Quadro src={coffee} alt="Carosello di caffè, uno dei miei primi esperimenti" look="carta" /></div>
+	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
+</div>
