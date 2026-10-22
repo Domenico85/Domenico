@@ -44,16 +44,23 @@ else {
 	} });
 }
 
+// ----- salto a un capitolo (stelle, elenco da tastiera)
+const vai = (i) => { if (story) story.vai(i); else document.querySelectorAll('.pane')[i]?.scrollIntoView({ behavior: 'smooth' }); };
+document.querySelectorAll('[data-vai]').forEach((b) => (b.onclick = () => vai(+b.dataset.vai)));
+
 // ----- hero: ingresso, zoom del cielo e uscita a scroll
 const constellation = initConstellation({ canvas: $('#cc'), labelEl: $('#lbl'), navEl: $('#gnav'), repos: D.repos, gruppi: D.gruppi,
-	onPick: (r) => { if (story) story.vai(r.cap); else scrollTo({ top: $('#story').offsetTop + innerHeight * r.cap, behavior: 'smooth' }); } });
+	onPick: (r) => vai(r.cap) });
 const hbg = $('#hbg'); let zoom = 1.25;
 const heroLoop = () => {
 	if (scrollY < innerHeight * 1.2) { if (ready) zoom += (1.02 - zoom) * .015; const sy = Math.min(scrollY, innerHeight); hbg.style.transform = `scale(${zoom + sy / innerHeight * .15}) translateY(${sy * .12}px)`; }
 	requestAnimationFrame(heroLoop);
 };
 heroLoop();
-addEventListener('scroll', () => { const p = Math.min(1, scrollY / innerHeight); $('#h1').style.opacity = 1 - p * 1.2; $('#h1').style.transform = `translateY(${-p * 60}px)`; }, { passive: true });
+addEventListener('scroll', () => { const p = Math.min(1, scrollY / innerHeight); $('#h1').style.opacity = 1 - p * 1.2; $('#h1').style.transform = `translateY(${-p * 60}px)`; $('#gnav').inert = p > .6; }, { passive: true }); // fuori dal hero i gruppi non si raggiungono con Tab (il focus riporterebbe lassu')
+
+// ----- finche' il loader e' aperto, il resto della pagina non si raggiunge ne' con Tab ne' con il lettore di schermo
+const dietro = ['header.top', '.capnav', 'main'].map((q) => $(q)); dietro.forEach((e) => (e.inert = true));
 
 // ----- loader: il contatore sale fino al 90% da solo, poi aspetta caricamento vero (pagina e font)
 const gn = $('#gnum'), t0 = performance.now(); let caricato = false, n = 0;
@@ -64,7 +71,7 @@ const tick = () => {
 }; tick();
 const snd = $('#snd'); const syncSnd = () => { snd.textContent = 'suono: ' + (audio.on ? 'on' : 'off'); snd.setAttribute('aria-pressed', audio.on); };
 document.querySelectorAll('[data-snd]').forEach((b) => b.onclick = () => {
-	if (b.dataset.snd === '1') audio.start(D.capitoli[0].musica); syncSnd(); $('#gate').classList.add('open'); $('#gate').inert = true; $('#cur').classList.add('on');
+	if (b.dataset.snd === '1') audio.start(D.capitoli[0].musica); syncSnd(); $('#gate').classList.add('open'); $('#gate').inert = true; dietro.forEach((e) => (e.inert = false)); $('#cur').classList.add('on');
 	setTimeout(() => { ready = true; document.querySelectorAll('[data-split]:not(.g),.rv').forEach((el) => io.observe(el)); constellation?.go(); $('#rule').classList.add('on'); }, 500); });
 snd.onclick = () => { audio.toggle(); syncSnd(); };
 let eraAcceso = false; // la musica si ferma se cambi scheda e riparte quando torni

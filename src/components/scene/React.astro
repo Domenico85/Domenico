@@ -8,12 +8,15 @@ const react = REPOS.filter((r) => r.cap === idx && GRUPPI[r.g].tech === 'react')
 const ms = (r: { d: string }) => new Date(r.d).getTime();
 const mesi = Math.max(1, Math.round((Math.max(...react.map(ms)) - Math.min(...react.map(ms))) / (30.4 * 86400000)));
 const h = (i: number) => { const x = Math.sin(i * 91.7 + 13.3) * 43758.5; return x - Math.floor(x); };
+// Chip su griglia con un po' di scarto: 5 colonne su desktop, 2 su telefono (le variabili --c/--r si scelgono in CSS).
+const ordine = react.map((r, i) => ({ r, k: h(i) })).sort((a, b) => a.k - b.k).map((x, slot) => ({ ...x, slot }));
+const righe = (cols: number) => Math.ceil(react.length / cols);
 ---
 <div class="pane p4">
-	<h2 class="g" data-split>Componenti</h2>
+	<h2 class="g" data-split>{c.titolo}</h2>
 	<div class="cnt"><b id="cnt">{react.length}</b><span>repo in {mesi} mesi</span></div>
-	<div id="chips" aria-hidden="true">
-		{react.map((r, i) => <span class="chip" style={`left:${6 + h(i) * 80}%;top:${12 + h(i + 50) * 74}%`}>{r.name}</span>)}
+	<div id="chips" aria-hidden="true" style={`--rows5:${righe(5)};--rows2:${righe(2)}`}>
+		{ordine.map(({ r, slot }, i) => <span class="chip" style={`--c5:${slot % 5};--r5:${Math.floor(slot / 5)};--c2:${slot % 2};--r2:${Math.floor(slot / 2)};--jx:${Math.round((h(i + 7) - .5) * 28)};--jy:${Math.round((h(i + 31) - .5) * 14)}`}>{r.name}</span>)}
 	</div>
 	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
 </div>

@@ -62,7 +62,7 @@ export function buildStory({ capitoli, onChapter }) {
 	const st = tl.scrollTrigger;
 	return {
 		st,
-		// scroll fino al capitolo i (a circa un terzo della sua durata, dove la scena è già leggibile)
-		vai(i) { const y = st.start + (st.end - st.start) * (starts[i] + kids[i].duration() * .35) / total; scrollTo({ top: y, behavior: 'smooth' }); },
+		// scroll fino al capitolo i (a circa un terzo della sua durata, dove la scena è già leggibile; nell'ultimo, a fine scena, dove i link sono già visibili)
+		vai(i) { const y = st.start + (st.end - st.start) * (starts[i] + kids[i].duration() * (i === kids.length - 1 ? .85 : .35)) / total; scrollTo({ top: y, behavior: 'smooth' }); },
 	};
 }
