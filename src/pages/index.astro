@@ -18,17 +18,17 @@ const dati = { base: import.meta.env.BASE_URL, capitoli: CAPITOLI, tracce: TRACC
 const primo = REPOS[0].d.slice(0, 7).split('-').reverse().join('/');
 ---
 <Base title="Domenico" description="Domenico, sviluppatore web. La mappa di quello che ho costruito, una repo alla volta.">
-	<canvas id="gl"></canvas>
+	<canvas id="gl" aria-hidden="true"></canvas>
 	<div id="cur" aria-hidden="true"><InfinityMark width="100%" /></div>
 
-	<div id="gate">
+	<section id="gate" aria-label="Ingresso">
 		<div class="pre" role="img" aria-label="Caricamento in corso">
 			<span class="pre__ring pre__ring--5"></span><span class="pre__ring pre__ring--4"></span><span class="pre__ring pre__ring--3"></span><span class="pre__ring pre__ring--2"></span>
 			<div class="goo"><i></i></div><InfinityMark width="3.6rem" />
 		</div>
 		<div id="gnum">0<small>%</small></div>
 		<div class="ask" id="ask"><button class="btn pri" data-snd="1" type="button">Entra con musica</button><button class="btn" data-snd="0" type="button">Senza musica</button></div>
-	</div>
+	</section>
 
 	<header class="top">
 		<a href="https://theloopstudio.org/" target="_blank" rel="noopener" aria-label="Loop Studio"><InfinityMark width="1.6em" /><span>Loop Studio</span></a>

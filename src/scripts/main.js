@@ -64,7 +64,7 @@ const tick = () => {
 }; tick();
 const snd = $('#snd'); const syncSnd = () => { snd.textContent = 'suono: ' + (audio.on ? 'on' : 'off'); snd.setAttribute('aria-pressed', audio.on); };
 document.querySelectorAll('[data-snd]').forEach((b) => b.onclick = () => {
-	if (b.dataset.snd === '1') audio.start(D.capitoli[0].musica); syncSnd(); $('#gate').classList.add('open'); $('#cur').classList.add('on');
+	if (b.dataset.snd === '1') audio.start(D.capitoli[0].musica); syncSnd(); $('#gate').classList.add('open'); $('#gate').inert = true; $('#cur').classList.add('on');
 	setTimeout(() => { ready = true; document.querySelectorAll('[data-split]:not(.g),.rv').forEach((el) => io.observe(el)); constellation?.go(); $('#rule').classList.add('on'); }, 500); });
 snd.onclick = () => { audio.toggle(); syncSnd(); };
 let eraAcceso = false; // la musica si ferma se cambi scheda e riparte quando torni
