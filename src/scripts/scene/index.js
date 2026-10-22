@@ -41,8 +41,10 @@ export function buildStory({ capitoli, onChapter }) {
 		const natural = s.duration(); s.duration(natural * c.peso);
 		return s;
 	});
+	// con `s.duration(x)` GSAP cambia il timeScale e k.duration() resta quella di prima: la lunghezza vera nel padre e' duration / timeScale
+	const len = (k) => k.duration() / k.timeScale();
 	const starts = []; let total = 0;
-	kids.forEach((k) => { starts.push(total); total += k.duration(); });
+	kids.forEach((k) => { starts.push(total); total += len(k); });
 
 	const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: {
 		trigger: '#story', start: 'top top', end: () => '+=' + innerHeight * VH_PER_UNITA * total, scrub: .7, pin: true, anticipatePin: 1,
@@ -63,6 +65,6 @@ export function buildStory({ capitoli, onChapter }) {
 	return {
 		st,
 		// scroll fino al capitolo i (a circa un terzo della sua durata, dove la scena è già leggibile; nell'ultimo, a fine scena, dove i link sono già visibili)
-		vai(i) { const y = st.start + (st.end - st.start) * (starts[i] + kids[i].duration() * (i === kids.length - 1 ? .85 : .35)) / total; scrollTo({ top: y, behavior: 'smooth' }); },
+		vai(i) { const y = st.start + (st.end - st.start) * (starts[i] + len(kids[i]) * (i === kids.length - 1 ? .85 : .35)) / total; scrollTo({ top: y, behavior: 'smooth' }); },
 	};
 }

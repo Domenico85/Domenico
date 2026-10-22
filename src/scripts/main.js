@@ -37,7 +37,8 @@ if (reduced) document.documentElement.classList.add('no-motion');
 else {
 	let ultimo = -1;
 	story = buildStory({ capitoli: cap, onChapter: (i, _p, attiva) => {
-		document.documentElement.dataset.tone = attiva && cap[i].chiaro ? 'light' : 'dark';
+		const chiara = attiva && cap[i].chiaro; document.documentElement.dataset.tone = chiara ? 'light' : 'dark';
+		document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chiara ? '#ffffff' : '#050506'); // barra del browser su telefono: bianca sulla scena 1
 		$('#mk').style.left = (100 * (scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight))) + '%';
 		if (i === ultimo) return; ultimo = i;
 		$('#yr').textContent = cap[i].anno; $('#stage').textContent = `stadio ${i + 1}/${cap.length} · ${cap[i].stadio}`; vogliaTraccia(cap[i].musica); audio.preload(cap[Math.min(i + 1, cap.length - 1)].musica);
@@ -47,6 +48,8 @@ else {
 // ----- salto a un capitolo (stelle, elenco da tastiera)
 const vai = (i) => { if (story) story.vai(i); else document.querySelectorAll('.pane')[i]?.scrollIntoView({ behavior: 'smooth' }); };
 document.querySelectorAll('[data-vai]').forEach((b) => (b.onclick = () => vai(+b.dataset.vai)));
+
+document.querySelector('header.top a[href="#story"]').onclick = (e) => { e.preventDefault(); if (story) scrollTo({ top: story.st.start, behavior: 'smooth' }); else $('#story').scrollIntoView({ behavior: 'smooth' }); };
 
 // ----- hero: ingresso, zoom del cielo e uscita a scroll
 const constellation = initConstellation({ canvas: $('#cc'), labelEl: $('#lbl'), navEl: $('#gnav'), repos: D.repos, gruppi: D.gruppi,

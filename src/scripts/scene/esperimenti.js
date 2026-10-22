@@ -8,6 +8,6 @@ export const esperimenti = {
 			s.fromTo($(sel), { yPercent: 14 }, { yPercent: 0, duration: .22, ease: 'power3.out' }, at);
 			wipe(s, $(`${sel} .frame`), 0, .9, .05);
 		});
-		s.fromTo(chars('.p3'), { yPercent: 105 }, { yPercent: 0, stagger: .008, duration: .08, ease: 'power3.out' }, .1);
+		s.fromTo(chars('.p3'), { yPercent: 140, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, stagger: .008, duration: .08, ease: 'power3.out' }, .1);
 	},
 };
