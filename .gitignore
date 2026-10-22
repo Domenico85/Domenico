@@ -24,4 +24,5 @@ pnpm-debug.log*
 .idea/
 
 # Skill Impeccable: installata solo per progetto, motore da 19 MB fuori da git
-.claude/skills/impeccable/
+.claude/skills/
+.claude/agents/
