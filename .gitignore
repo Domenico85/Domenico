@@ -26,3 +26,6 @@ pnpm-debug.log*
 # Skill Impeccable: installata solo per progetto, motore da 19 MB fuori da git
 .claude/skills/
 .claude/agents/
+
+# Archivio delle critique di Impeccable (locale)
+.impeccable/

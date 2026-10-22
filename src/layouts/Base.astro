@@ -16,7 +16,7 @@ const base = import.meta.env.BASE_URL;
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<noscript><style>#gate { display: none; } #story { height: auto; overflow: visible; } .pane { position: relative; min-height: 100svh; visibility: visible; } .rv { opacity: 1; transform: none; } .frame img { opacity: 1; } .w > span { transform: none; } .rule, .gnav { display: none; }</style></noscript>
+		<noscript><style>#gate { display: none !important; } #story { height: auto !important; overflow: visible !important; } .pane { position: relative !important; min-height: 100svh; visibility: visible !important; } .rv { opacity: 1 !important; transform: none !important; } .frame img { opacity: 1 !important; } .w > span { transform: none !important; } .rule, .gnav, #cur, #snd { display: none !important; }</style></noscript>
 	</head>
 	<body>
 		<slot />
