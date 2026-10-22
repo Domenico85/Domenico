@@ -2,9 +2,9 @@
 export const corso = {
 	portale: ['30%', '40%'],
 	build(s, { $, typed, wipe }) {
-		typed(s, $('#term'), .02, .5, '▌');
+		typed(s, $('#term'), .02, .62, '▌');
 		s.fromTo($('.p2 .big-n'), { yPercent: 40 }, { yPercent: 0, duration: .5 }, 0);
-		wipe(s, $('.p2 .frame'), 1, .24, .25);
-		wipe(s, $('.p2 .frame'), 0, .84, .06);
+		wipe(s, $('.p2 .frame'), 1, .3, .25);
+		wipe(s, $('.p2 .frame'), 0, .86, .06);
 	},
 };

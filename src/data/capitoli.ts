@@ -16,9 +16,9 @@ export type Capitolo = {
 };
 
 export const CAPITOLI: Capitolo[] = [
-	{ id: 'hello', titolo: 'Hello World', anno: '2024', quando: 'febbraio 2024', stadio: 'HTML nudo', musica: 'reggae', peso: 1, dal: '2024-02-01', chiaro: true,
+	{ id: 'hello', titolo: 'Hello World', anno: '2024', quando: 'febbraio 2024', stadio: 'HTML nudo', musica: 'reggae', peso: .75, dal: '2024-02-01', chiaro: true,
 		testo: 'Una riga di Java e un hello-world. Non sapevo ancora che mi sarebbe piaciuto.' },
-	{ id: 'corso', titolo: 'Il corso', anno: '2024', quando: 'aprile 2024 – aprile 2025', stadio: 'terminale e JS', musica: 'reggae', peso: 1, dal: '2024-04-01',
+	{ id: 'corso', titolo: 'Il corso', anno: '2024', quando: 'aprile 2024 – aprile 2025', stadio: 'terminale e JS', musica: 'reggae', peso: .85, dal: '2024-04-01',
 		testo: 'Ho fatto un corso Full Stack Developer. Quasi tutto è rimasto in locale: esercizi, errori, qualche momento di gloria. Il progetto finale, Presto, l\'abbiamo fatto in squadra.' },
 	{ id: 'esperimenti', titolo: 'Esperimenti', anno: '2025', quando: '2025, e ancora oggi', stadio: 'CSS e collage', musica: 'stylish', peso: 1.8, dal: '2025-01-01',
 		testo: 'Vanilla JS, slider, effetti. Il periodo in cui rompevo le cose per capire come funzionavano. Lo faccio ancora, adesso nel Lab dello studio.' },
@@ -26,7 +26,7 @@ export const CAPITOLI: Capitolo[] = [
 		testo: 'Un widget per volta, e un po\' di vergogna per i nomi. Ne ho tenute poche: Meal-Planner è quella a cui voglio ancora bene.' },
 	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: 'da settembre 2025', stadio: 'Astro e WebGL', musica: 'odyssey', peso: 2, dal: '2025-09-01',
 		testo: 'Clienti, Astro, un occhio fisso ai punteggi di Lighthouse. Qui le cose iniziano a stare online davvero.' },
-	{ id: 'oggi', titolo: 'Lo studio', anno: '2026', quando: 'oggi', stadio: 'oggi', musica: 'odyssey', peso: 1, dal: '2026-07-19',
+	{ id: 'oggi', titolo: 'Lo studio', anno: '2026', quando: 'oggi', stadio: 'oggi', musica: 'odyssey', peso: .6, dal: '2026-07-19',
 		testo: 'Questa pagina è il posto dove continuo a giocare. Se ti serve un sito vero, quello lo faccio con lo studio.' },
 ];
 
