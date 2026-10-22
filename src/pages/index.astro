@@ -9,12 +9,12 @@ import Esperimenti from '../components/scene/Esperimenti.astro';
 import React from '../components/scene/React.astro';
 import Siti from '../components/scene/Siti.astro';
 import Oggi from '../components/scene/Oggi.astro';
-import { CAPITOLI, TRACCE, MUSICA_PERMANENZA_MIN } from '../data/capitoli';
+import { CAPITOLI, TRACCE, MUSICA_ATTESA } from '../data/capitoli';
 import { GRUPPI, REPOS } from '../data/repos';
 
 // una scena per capitolo, stesso `id`
 const SCENE = { hello: Hello, corso: Corso, esperimenti: Esperimenti, react: React, siti: Siti, oggi: Oggi };
-const dati = { base: import.meta.env.BASE_URL, capitoli: CAPITOLI, tracce: TRACCE, permanenza: MUSICA_PERMANENZA_MIN, repos: REPOS, gruppi: GRUPPI };
+const dati = { base: import.meta.env.BASE_URL, capitoli: CAPITOLI, tracce: TRACCE, attesa: MUSICA_ATTESA, repos: REPOS, gruppi: GRUPPI };
 const primo = REPOS[0].d.slice(0, 7).split('-').reverse().join('/');
 ---
 <Base title="Domenico" description="Domenico, sviluppatore web. La mappa di quello che ho costruito, una repo alla volta.">

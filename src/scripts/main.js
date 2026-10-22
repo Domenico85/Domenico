@@ -18,16 +18,16 @@ document.querySelectorAll('[data-split]').forEach(split);
 let ready = false;
 const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && ready) { e.target.classList.add('in'); e.target.querySelectorAll('.w').forEach((w) => w.classList.add('in')); } }), { threshold: .25 });
 
-// ----- musica: una traccia per capitolo, ma mai più di un cambio ogni PERMANENZA secondi
+// ----- musica: segue il capitolo visibile. Il cambio parte solo se ci si ferma D.attesa secondi nel capitolo
+// (scorrendo veloce non scatta); la dissolvenza incrociata la fa audio.js.
 initReveal({ canvas: $('#gl') });
 const tracks = Object.fromEntries(Object.entries(D.tracce).map(([k, v]) => [k, D.base + v]));
 const audio = createAudio({ tracks });
-let corrente = null, voluta = null, ultimoCambio = -1e9, timer = 0;
-const applica = () => { if (voluta === corrente) return; corrente = voluta; ultimoCambio = performance.now(); audio.play(corrente); };
+let corrente = null, voluta = null, timer = 0;
+const applica = () => { if (voluta === corrente) return; corrente = voluta; audio.play(corrente); };
 const vogliaTraccia = (t) => {
 	voluta = t; clearTimeout(timer); if (t === corrente) return;
-	const attesa = D.permanenza * 1000 - (performance.now() - ultimoCambio);
-	if (attesa <= 0) applica(); else timer = setTimeout(applica, attesa);
+	timer = setTimeout(applica, D.attesa * 1000);
 };
 
 // ----- palco: la timeline principale
@@ -40,7 +40,7 @@ else {
 		document.documentElement.dataset.tone = attiva && cap[i].chiaro ? 'light' : 'dark';
 		$('#mk').style.left = (100 * (scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight))) + '%';
 		if (i === ultimo) return; ultimo = i;
-		$('#yr').textContent = cap[i].anno; $('#stage').textContent = `stadio ${i + 1}/${cap.length} · ${cap[i].stadio}`; vogliaTraccia(cap[i].musica);
+		$('#yr').textContent = cap[i].anno; $('#stage').textContent = `stadio ${i + 1}/${cap.length} · ${cap[i].stadio}`; vogliaTraccia(cap[i].musica); audio.preload(cap[Math.min(i + 1, cap.length - 1)].musica);
 	} });
 }
 

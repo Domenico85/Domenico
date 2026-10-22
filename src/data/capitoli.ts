@@ -24,7 +24,7 @@ export const CAPITOLI: Capitolo[] = [
 		testo: 'Vanilla JS, slider, effetti. Il periodo in cui rompevo le cose per capire come funzionavano.' },
 	{ id: 'react', titolo: 'React', anno: '2025', quando: 'primavera 2025', stadio: 'React', musica: 'joyful', peso: 1, dal: '2025-01-30',
 		testo: 'Un widget per volta, e un po\' di vergogna per i nomi. Ne ho tenute poche: Meal-Planner è quella a cui voglio ancora bene.' },
-	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: '2026', stadio: 'Astro e WebGL', musica: 'travel', peso: 1.2, dal: '2025-09-01',
+	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: '2026', stadio: 'Astro e WebGL', musica: 'odyssey', peso: 1.2, dal: '2025-09-01',
 		testo: 'Clienti, Astro, un occhio fisso ai punteggi di Lighthouse. Qui le cose iniziano a stare online davvero.' },
 	{ id: 'oggi', titolo: 'Lo studio', anno: '2026', quando: 'oggi', stadio: 'oggi', musica: 'odyssey', peso: 1, dal: '2026-07-19',
 		testo: 'Questa pagina è il posto dove continuo a giocare. Se ti serve un sito vero, quello lo faccio con lo studio.' },
@@ -35,12 +35,13 @@ export const TRACCE: Record<string, string> = {
 	reggae: 'audio/reggae.mp3',
 	stylish: 'audio/stylish-funk.mp3',
 	joyful: 'audio/joyful-funk.mp3',
-	travel: 'audio/travel.mp3',
+	// travel: 'audio/travel.mp3', // messa da parte (22/10): il capitolo "Siti veri" usa odyssey
 	odyssey: 'audio/odyssey.mp3',
 };
 
-// Una traccia resta almeno questi secondi prima di lasciare il posto a un'altra.
-export const MUSICA_PERMANENZA_MIN = 22;
+// La musica segue il capitolo che si vede: cambia solo se ci si ferma almeno questi secondi (scorrendo veloce non scatta),
+// poi la traccia attuale scende a zero e quella nuova sale (fade-out, fade-in, senza incrocio).
+export const MUSICA_ATTESA = 1.5;
 
 export const capitoloDi = (data: string): number => {
 	let idx = 0;

@@ -33,8 +33,11 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 	};
 
 	const vs = `#version 300 es
-	in vec4 a; in float aG; uniform vec2 uRes, uM; uniform float uT, uAppear, uVis[${MAX_G}]; uniform vec3 uCol[${MAX_G}];
+	in vec4 a; in float aG; uniform vec2 uRes, uM; uniform float uT, uAppear, uVis[${MAX_G}], uSeed[${MAX_G}]; uniform vec3 uCol[${MAX_G}];
 	out float vS; out float vG; out vec3 vC; out float vV;
+	// la tinta del gruppo, con una variazione lieve per stella (cambia a ogni apparizione e respira piano): resta riconoscibile come nella leggenda
+	vec3 tint(vec3 c, float w, float seed) { float h = fract(sin((w + seed) * 91.3 + 7.1) * 43758.5453) - .5, s = sin(uT * .45 + w * 25.) * .5;
+		return clamp(c * (1. + h * .3 + s * .08) + vec3(h, 0., -h) * .16 + vec3(s, 0., -s) * .04, 0., 1.4); }
 	void main(){
 		float vis = aG < 0. ? 1. : uVis[int(aG + .5)];
 		vec2 base = vec2(.05 + a.x * .9, .1 + a.y * .76);
@@ -44,8 +47,8 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 		vec2 px = base * uRes; float d = distance(px, uM); vG = exp(-d * d / (2. * 140. * 140.));
 		if (a.z < .5) base += normalize(px - uM + .001) / uRes * 24. * vG;
 		gl_Position = vec4(base * 2. - 1., 0., 1.); gl_Position.y *= -1.; vS = a.z * k; vV = vis;
-		vC = aG < 0. ? vec3(.6, .66, .8) : uCol[int(aG + .5)];
-		gl_PointSize = (a.z > .5 ? 7. + 5. * vis : 1.4 + a.w * 1.2) * (1. + vG * 1.6 * (a.z > .5 ? vis : 1.)) * min(uRes.x / 900., 1.4); }`;
+		vC = aG < 0. ? vec3(.6, .66, .8) : tint(uCol[int(aG + .5)], a.w, uSeed[int(aG + .5)]);
+		gl_PointSize = (a.z > .5 ? 12. + 8. * vis : 1.4 + a.w * 1.2) * (1. + vG * 1.6 * (a.z > .5 ? vis : 1.)) * min(uRes.x / 900., 1.5); }`;
 	const fs = `#version 300 es
 	precision highp float; in float vS; in float vG; in vec3 vC; in float vV; out vec4 o;
 	void main(){ float d = length(gl_PointCoord - .5) * 2.; if (d > 1.) discard;
@@ -61,6 +64,7 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 	gl.enable(gl.BLEND); gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
 	const u = (nm) => gl.getUniformLocation(p, nm);
 	const colors = new Float32Array(MAX_G * 3); gruppi.forEach((g, i) => colors.set(g.colore, i * 3)); gl.uniform3fv(u('uCol'), colors);
+	const seeds = new Float32Array(MAX_G); const reseed = (i) => { seeds[i] = Math.random() * 50; gl.uniform1fv(u('uSeed'), seeds); }; gruppi.forEach((_, i) => { seeds[i] = i * 7.3; }); gl.uniform1fv(u('uSeed'), seeds);
 
 	// stato dei gruppi: `vis` insegue `target` con una dissolvenza morbida
 	let active = 0; const vis = new Float32Array(MAX_G); vis[0] = 1;
@@ -71,6 +75,7 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 		b.innerHTML = '<i></i><span></span>'; b.onclick = () => show(i, true); navEl.append(b); return b;
 	});
 	const show = (i, manual = false) => {
+		if (i !== active) reseed(i); // ogni volta che un gruppo ricompare, una variazione di tinta nuova
 		active = i; lastSwitch = performance.now(); if (manual) pausedUntil = lastSwitch + 14000;
 		dots.forEach((d, k) => { d.classList.toggle('on', k === i); d.setAttribute('aria-pressed', k === i); d.querySelector('span').textContent = k === i ? `${gruppi[k].nome} · ${gruppi[k].periodo}` : ''; });
 	}; show(0);
@@ -83,7 +88,7 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 	canvas.addEventListener('pointermove', (e) => { const r = canvas.getBoundingClientRect(); m = [e.clientX - r.left, e.clientY - r.top]; });
 	canvas.addEventListener('pointerleave', () => { m = [-999, -999]; });
 	const nearest = (maxD) => { let best = null, bd = maxD; for (const q of pts) { if (vis[q.g] < .5) continue; const [bx, by] = screenPos(q), d = Math.hypot(bx - m[0], by - m[1]); if (d < bd) { bd = d; best = [q, bx, by]; } } return best; };
-	canvas.addEventListener('click', (e) => { const r = canvas.getBoundingClientRect(); m = [e.clientX - r.left, e.clientY - r.top]; const b = nearest(30); if (b && onPick) onPick(b[0]); });
+	canvas.addEventListener('click', (e) => { const r = canvas.getBoundingClientRect(); m = [e.clientX - r.left, e.clientY - r.top]; const b = nearest(40); if (b && onPick) onPick(b[0]); });
 	new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) { lastNow = 0; requestAnimationFrame(frame); } }).observe(canvas);
 
 	const frame = (now) => {
@@ -98,7 +103,11 @@ export function initConstellation({ canvas, labelEl, navEl, repos, gruppi, onPic
 		gl.uniform1fv(u('uVis'), vis);
 		gl.drawArrays(gl.POINTS, 0, all.length);
 		const b = nearest(60);
-		if (b) { labelEl.style.opacity = 1; labelEl.style.left = b[1] + 'px'; labelEl.style.top = b[2] + 'px'; labelEl.innerHTML = `<b>${b[0].d}</b>${b[0].name}`; canvas.style.cursor = 'pointer'; } else { labelEl.style.opacity = 0; canvas.style.cursor = ''; }
+		if (b) { // il nome sta a destra della stella, a sinistra se a destra non c'è posto (stelle vicine al bordo)
+			if (labelEl.dataset.id !== String(b[0].id)) { labelEl.dataset.id = b[0].id; labelEl.innerHTML = `<b>${b[0].d}</b>${b[0].name}`; }
+			const flip = b[1] + 20 + labelEl.offsetWidth > W - 8;
+			labelEl.style.transform = flip ? 'translate(calc(-100% - 14px), -50%)' : 'translate(14px, -50%)';
+			labelEl.style.opacity = 1; labelEl.style.left = b[1] + 'px'; labelEl.style.top = b[2] + 'px'; canvas.style.cursor = 'pointer'; } else { labelEl.style.opacity = 0; canvas.style.cursor = ''; }
 		requestAnimationFrame(frame);
 	};
 	requestAnimationFrame(frame);
