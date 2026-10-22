@@ -6,19 +6,20 @@ import gf from '../../assets/gf-motori.jpg';
 import axpro from '../../assets/axpro.jpg';
 import ananda from '../../assets/ananda.jpg';
 const { c, n, tot } = Astro.props;
+// Link, tecnologie e punteggio vengono da src/data/portfolio-projects.ts dello studio (Lighthouse 100 nelle 4 categorie).
 const lavori = [
-	{ nome: 'Osteomed', img: osteomed, alt: 'Sito dello studio di osteopatia Osteomed' },
-	{ nome: 'GF Motori', img: gf, alt: 'Sito di GF Motori' },
-	{ nome: 'Axpro Paintball', img: axpro, alt: 'Sito di Axpro Paintball' },
-	{ nome: 'Ananda Grejo', img: ananda, alt: 'Sito fotografico di Ananda Grejo' },
+	{ nome: 'Osteomed', riga: 'Studio di osteopatia · WordPress, PHP', url: 'https://www.osteomedrc.it/', img: osteomed, alt: 'Sito dello studio di osteopatia Osteomed' },
+	{ nome: 'GF Motori', riga: 'Concessionaria · WordPress, PHP', url: 'https://www.gfmotori.com/', img: gf, alt: 'Sito di GF Motori' },
+	{ nome: 'Axpro Paintball', riga: 'Campo di paintball · Astro, prenotazioni online', url: 'https://axpropaintball.com/', img: axpro, alt: 'Sito di Axpro Paintball' },
+	{ nome: 'Ananda Grejo', riga: 'Fotografa · Astro, Sanity', url: 'https://anandagrejo.netlify.app/', img: ananda, alt: 'Sito fotografico di Ananda Grejo' },
 ];
 ---
 <div class="pane p5">
-	<div class="t" id="t5">{c.titolo}</div><div class="lh" id="lh" aria-label="Lighthouse 100">100</div>
+	<div class="t" id="t5">{c.titolo}</div>
 	<div id="fr5">
 		{lavori.map((l) => <div class="fr"><Quadro src={l.img} alt={l.alt} /></div>)}
 	</div>
-	{lavori.map((l) => <div class="c5">{l.nome}</div>)}
+	{lavori.map((l) => <a class="c5" href={l.url} target="_blank" rel="noopener"><b>{l.nome}</b><span>{l.riga}</span><em>Lighthouse 100</em></a>)}
 	<div class="lab l1">{n} / {tot} · Astro, Lighthouse, clienti</div><div class="lab l2">passa sopra: torna a colori</div>
 	<p class="cp">{c.testo}</p>
 </div>

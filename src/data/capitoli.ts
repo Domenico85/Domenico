@@ -24,7 +24,7 @@ export const CAPITOLI: Capitolo[] = [
 		testo: 'Vanilla JS, slider, effetti. Il periodo in cui rompevo le cose per capire come funzionavano.' },
 	{ id: 'react', titolo: 'React', anno: '2025', quando: 'primavera 2025', stadio: 'React', musica: 'joyful', peso: 1, dal: '2025-01-30',
 		testo: 'Un widget per volta, e un po\' di vergogna per i nomi. Ne ho tenute poche: Meal-Planner è quella a cui voglio ancora bene.' },
-	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: '2026', stadio: 'Astro e WebGL', musica: 'odyssey', peso: 1.2, dal: '2025-09-01',
+	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: '2026', stadio: 'Astro e WebGL', musica: 'odyssey', peso: 2, dal: '2025-09-01',
 		testo: 'Clienti, Astro, un occhio fisso ai punteggi di Lighthouse. Qui le cose iniziano a stare online davvero.' },
 	{ id: 'oggi', titolo: 'Lo studio', anno: '2026', quando: 'oggi', stadio: 'oggi', musica: 'odyssey', peso: 1, dal: '2026-07-19',
 		testo: 'Questa pagina è il posto dove continuo a giocare. Se ti serve un sito vero, quello lo faccio con lo studio.' },

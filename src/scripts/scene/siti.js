@@ -13,8 +13,5 @@ export const siti = {
 			wipe(s, frame, 0, out, .05);
 			s.to(caps[k], { autoAlpha: 0, duration: .04 }, out);
 		});
-		const lh = { n: 0 };
-		s.fromTo($('#lh'), { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: .08 }, .55)
-			.to(lh, { n: 100, duration: .2, onUpdate: () => { $('#lh').textContent = Math.round(lh.n); } }, .55);
 	},
 };
