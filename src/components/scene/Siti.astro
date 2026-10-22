@@ -17,8 +17,8 @@ const lavori = [
 <div class="pane p5">
 	<div class="t" id="t5">{c.titolo}</div>
 	<div id="fr5">
-		{lavori.map((l) => <div class="fr"><Quadro src={l.img} alt={l.alt} /><a class="c5" href={l.url} target="_blank" rel="noopener"><b>{l.nome}</b><span>{l.riga}</span><em>Lighthouse 100</em></a></div>)}
+		{lavori.map((l) => <div class="fr"><a class="shot" href={l.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><Quadro src={l.img} alt={l.alt} fx="liquid" /></a><a class="c5" href={l.url} target="_blank" rel="noopener"><b>{l.nome}</b><span>{l.riga}</span><em>Lighthouse 100</em></a></div>)}
 	</div>
-	<div class="lab l1">{n} / {tot} · Astro, Lighthouse, clienti</div><div class="lab l2">passa sopra: torna a colori</div>
+	<div class="lab l1">{n} / {tot} · Astro, Lighthouse, clienti</div><div class="lab l2"><span class="hov">passa sopra: torna a colori</span><span class="tch">trascina il dito: torna a colori</span></div>
 	<p class="cp">{c.testo}</p>
 </div>

@@ -135,8 +135,8 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .p5 { background: #050505; color: #fff; }
 .p5 .t { position: absolute; left: 0; right: 0; top: 50%; translate: 0 -52%; text-align: center; font: 700 clamp(5rem, 23vw, 22rem)/.8 var(--display); text-transform: uppercase; letter-spacing: -.03em; white-space: nowrap; }
 #fr5 { position: absolute; left: 21vw; right: 21vw; top: 15vh; bottom: max(31vh, 270px); }
-#fr5 .fr { inset: 0; } #fr5 .fr .frame { height: 100%; aspect-ratio: auto; }
-.p5 .lab.l1 { position: absolute; left: 5vw; top: 9vh; } .p5 .lab.l2 { position: absolute; right: 5vw; bottom: 20vh; }
+.p5 .shot { display: block; height: 100%; pointer-events: none; } #fr5 .fr { inset: 0; pointer-events: none; } .p5 .c5 { pointer-events: auto; } /* i riquadri sono impilati: solo il sito in scena riceve il clic (il suo .shot passa ad auto da GSAP) */ #fr5 .fr .frame { height: 100%; aspect-ratio: auto; }
+.p5 .lab.l1 { position: absolute; left: 5vw; top: 9vh; } .p5 .lab.l2 { position: absolute; right: 5vw; bottom: 20vh; } .p5 .lab.l2 .tch { display: none; } @media (hover: none) { .p5 .lab.l2 .hov { display: none; } .p5 .lab.l2 .tch { display: inline; } }
 .p5 .c5 { position: absolute; left: 0; top: calc(100% + 14px); display: grid; gap: .2rem; color: inherit; text-decoration: none; }
 .p5 .c5 b { font: 700 1.1rem var(--display); letter-spacing: .02em; text-decoration: underline; text-decoration-color: #fff5; text-underline-offset: .25em; transition: text-decoration-color .3s; }
 .p5 .c5:hover b { text-decoration-color: var(--red); }
@@ -173,7 +173,7 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 	.p3 .fr.a { left: 6vw; top: 12vh; width: 50vw; } .p3 .fr.b { left: 46vw; top: 27vh; width: 46vw; } .p3 .fr.c { left: 12vw; top: 42vh; width: 42vw; }
 	.p3 .fr.d { left: 44vw; top: 11vh; width: 48vw; } .p3 .fr.e { left: 6vw; top: 26vh; width: 44vw; } .p3 .fr.f { left: 40vw; top: 41vh; width: 44vw; }
 	.p3 .cp { top: 57vh; left: 5vw; right: 5vw; max-width: none; } .p3 h2 { bottom: 11vh; }
-	#fr5 { left: 6vw; right: 6vw; } .p5 .cp { left: 6vw; right: 6vw; } .p5 .lab.l2 { display: none; }
+	#fr5 { left: 6vw; right: 6vw; } .p5 .cp { left: 6vw; right: 6vw; } .p5 .lab.l2 { left: 5vw; right: auto; bottom: auto; top: calc(9vh + 1.5rem); }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 /* scena con sfondo chiaro (la prima): niente inversione di colore, header e righello in nero, marchio rosso + nero */

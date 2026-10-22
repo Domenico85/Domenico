@@ -7,10 +7,11 @@ export const siti = {
 		s.fromTo($('#t5'), { xPercent: 0 }, { xPercent: -12, duration: .7 }, .1);
 		s.fromTo($('#fr5'), { scale: 1.2 }, { scale: 1, duration: .5, ease: 'power2.out' }, .1);
 		frs.forEach((f, k) => {
-			const frame = f.querySelector('.frame'), at = .1 + k * win, out = k === n - 1 ? .86 : at + win - .02;
+			const frame = f.querySelector('.frame'), shot = f.querySelector('.shot'), at = .1 + k * win, out = k === n - 1 ? .86 : at + win - .02;
 			wipe(s, frame, 1, at, .12);
 			s.fromTo(caps[k], { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: .06 }, at + .04);
 			wipe(s, frame, 0, out, .05);
+			s.set(shot, { pointerEvents: 'auto' }, at + .02).set(shot, { pointerEvents: 'none' }, out); // solo il sito in scena si apre al clic
 			s.to(caps[k], { autoAlpha: 0, duration: .04 }, out);
 		});
 	},

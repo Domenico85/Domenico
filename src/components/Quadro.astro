@@ -2,9 +2,9 @@
 // Un riquadro con immagine: l'<img> resta invisibile, la disegna il canvas WebGL (src/scripts/reveal.js)
 // con l'effetto "ricordo" che si colora dove passa il cursore. Senza WebGL si vede l'<img> in bianco e nero.
 import { Image } from 'astro:assets';
-interface Props { src: ImageMetadata; alt: string; look?: 'bn' | 'seppia' | 'carta'; }
-const { src, alt, look = 'bn' } = Astro.props;
+interface Props { src: ImageMetadata; alt: string; look?: 'bn' | 'seppia' | 'carta'; fx?: 'liquid'; }
+const { src, alt, look = 'bn', fx } = Astro.props;
 ---
-<div class="frame" data-look={look} style="--rv:0">
+<div class="frame" data-look={look} data-fx={fx} style="--rv:0">
 	<Image src={src} alt={alt} width={1200} format="webp" quality={78} loading="eager" decoding="async" />
 </div>

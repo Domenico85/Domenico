@@ -26,21 +26,34 @@ export function initReveal({ canvas, selector = '.frame', params = {} }) {
 	}`;
 	const imgFs = `#version 300 es
 	precision highp float; in vec2 vUv; in vec2 vScreen; out vec4 o;
-	uniform sampler2D uTex, uTrail; uniform vec3 uShadow, uLight; uniform vec2 uImgAspect; uniform float uTime, uGrain, uEdge, uBoxAspect, uDim, uAlpha, uClip;
+	uniform sampler2D uTex, uTrail; uniform vec3 uShadow, uLight; uniform vec2 uImgAspect; uniform float uTime, uGrain, uEdge, uBoxAspect, uDim, uAlpha, uClip, uFx;
 	float h(vec2 p) { p = fract(p * vec2(443.8975, 397.2973)); p += dot(p, p.yx + 19.19); return fract((p.x + p.y) * p.x); }
 	float vn(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f); return mix(mix(h(i), h(i + vec2(1, 0)), f.x), mix(h(i + vec2(0, 1)), h(i + 1.), f.x), f.y); }
 	void main() {
-		if (vUv.x > uClip) discard;
+		// uFx > 0 (riquadri dei siti veri): il bordo della tendina ondeggia e, lungo il bordo, i colori si separano
+		float band = smoothstep(0., .08, uClip) * (1. - smoothstep(.92, 1., uClip)) * uFx;
+		float wob = 0., near = 0.;
+		if (band > 0.) { // solo mentre la tendina e' a meta' (e solo per i riquadri con uFx): il resto del tempo costa come prima
+			wob = (vn(vec2(vUv.y * 7., uTime * .9)) - .5) * .09 * band;
+			near = pow(max(1. - abs(vUv.x - uClip - wob) * 5., 0.), 2.) * band;
+		}
+		if (vUv.x > uClip + wob) discard;
 		vec2 uv = vUv; float r = uBoxAspect / (uImgAspect.x / uImgAspect.y);
 		uv = r > 1. ? vec2(uv.x, (uv.y - .5) / r + .5) : vec2((uv.x - .5) * r + .5, uv.y);
-		vec3 c = texture(uTex, uv).rgb; float lum = dot(c, vec3(.299, .587, .114));
-		float g = h(gl_FragCoord.xy + floor(uTime * 24.) * 13.7) - .5;
 		float t = texture(uTrail, vec2(vScreen.x, 1. - vScreen.y)).r;
 		t += (vn(gl_FragCoord.xy * .03 + uTime * .2) - .5) * .35 * uEdge * smoothstep(0., .3, t);
-		float reveal = smoothstep(.03, .3, t); float edge = 1. - abs(reveal * 2. - 1.);
+		float reveal = smoothstep(.03, mix(.3, .18, uFx), t); float edge = 1. - abs(reveal * 2. - 1.);
+		uv = (uv - .5) * (1. - .05 * uFx * reveal) + .5; // la lente ingrandisce un poco dove passa il cursore
+		vec3 c;
+		if (near > .002) {
+			uv += vec2(near * .05 * sin(vUv.y * 16. + uTime * 3.), near * .02 * (vn(vUv * 9. + uTime) - .5));
+			c = vec3(texture(uTex, uv + vec2(near * .035, 0.)).r, texture(uTex, uv).g, texture(uTex, uv - vec2(near * .035, 0.)).b);
+		} else c = texture(uTex, uv).rgb;
+		float lum = dot(c, vec3(.299, .587, .114));
+		float g = h(gl_FragCoord.xy + floor(uTime * 24.) * 13.7) - .5;
 		vec3 duo = mix(uShadow, uLight, clamp(lum + g * uGrain * .25, 0., 1.)) * uDim;
 		vec3 live = mix(vec3(lum), c, 1.18);
-		o = vec4(mix(duo, live + g * uGrain * .12 * edge, reveal), 1.) * uAlpha;
+		o = vec4(mix(duo, live + g * uGrain * .12 * edge, reveal) + near * .14, 1.) * uAlpha;
 	}`;
 	const mk = (type, src) => { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; };
 	const prog = (f) => { const p = gl.createProgram(); gl.attachShader(p, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(p, mk(gl.FRAGMENT_SHADER, f)); gl.bindAttribLocation(p, 0, 'p'); gl.linkProgram(p); return { p, u: (n) => gl.getUniformLocation(p, n) }; };
@@ -85,7 +98,7 @@ export function initReveal({ canvas, selector = '.frame', params = {} }) {
 		for (const im of imgs) {
 			if (!im.ok) continue; const r = im.frame.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight || r.width === 0) continue;
 			const cs = getComputedStyle(im.frame); if (cs.visibility === 'hidden') continue; const rv = cs.getPropertyValue('--rv').trim();
-			const look = LOOKS[im.frame.dataset.look] || LOOKS.bn; const a = +cs.opacity; gl.uniform1f(imgP.u('uClip'), rv === '' ? 1 : +rv);
+			const look = LOOKS[im.frame.dataset.look] || LOOKS.bn; const a = +cs.opacity; gl.uniform1f(imgP.u('uClip'), rv === '' ? 1 : +rv); gl.uniform1f(imgP.u('uFx'), im.frame.dataset.fx === 'liquid' && !reduced ? 1 : 0);
 			gl.uniform3fv(imgP.u('uShadow'), look[0]); gl.uniform3fv(imgP.u('uLight'), look[1]); gl.uniform1f(imgP.u('uAlpha'), a);
 			gl.uniform4f(imgP.u('uRect'), r.left / innerWidth, r.top / innerHeight, r.width / innerWidth, r.height / innerHeight);
 			gl.uniform2f(imgP.u('uImgAspect'), im.w, im.h); gl.uniform1f(imgP.u('uBoxAspect'), r.width / r.height);
