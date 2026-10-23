@@ -67,8 +67,8 @@ header.top a { text-decoration: none; display: flex; align-items: center; gap: .
 .lang__flags::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #0000, #0006); }
 .lang__flags svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .3s; }
 .lang[data-cur='0'] .f-it, .lang[data-cur='1'] .f-gb, .lang[data-cur='2'] .f-es { opacity: 1; }
-.lang__a { position: absolute; top: 0; bottom: 0; width: var(--slot); left: calc(var(--pad) + var(--slot) * var(--n)); display: grid; place-items: center; text-decoration: none; color: #fff; font: 12px/1 'LT Industry', ui-monospace, monospace; letter-spacing: .08em; -webkit-text-stroke: 3px #000; paint-order: stroke fill; border-radius: 999px; z-index: 1; }
-.lang__a[aria-current='true'] { color: transparent; -webkit-text-stroke: 0; }
+.lang__a { position: absolute; top: 0; bottom: 0; width: var(--slot); left: calc(var(--pad) + var(--slot) * var(--n)); display: grid; place-items: center; text-decoration: none; color: #fff; font: 12px/1 'LT Industry', ui-monospace, monospace; letter-spacing: .08em; text-shadow: 1.5px 0 #000, -1.5px 0 #000, 0 1.5px #000, 0 -1.5px #000, 1.2px 1.2px #000, -1.2px -1.2px #000, 1.2px -1.2px #000, -1.2px 1.2px #000; /* contorno: con -webkit-text-stroke il controllo di contrasto legge il nero come colore del testo */ border-radius: 999px; z-index: 1; }
+.lang__a[aria-current='true'] { color: transparent; text-shadow: none; }
 .lang__knob { position: absolute; top: calc((42px - var(--knob)) / 2); left: calc(var(--pad) + (var(--slot) - var(--knob)) / 2 + var(--slot) * var(--i)); width: var(--knob); height: var(--knob); border-radius: 50%; z-index: 2; pointer-events: none; display: grid; place-items: center;
 	background: radial-gradient(circle at 35% 28%, #fff, #e3e3e6 55%, #bfbfc6); box-shadow: 0 2px 6px #000b, 0 0 0 1px #0004, inset 0 -2px 3px #0003, inset 0 1px 1px #fff;
 	color: #111; font: 12px/1 'LT Industry', ui-monospace, monospace; letter-spacing: .08em; transition: left .45s var(--ease); }
