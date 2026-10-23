@@ -2,7 +2,7 @@
 
 La mia pagina personale: una mappa delle cose che ho costruito, una repo alla volta. Ogni "stella" della costellazione è un progetto; cliccando una stella si arriva al capitolo giusto di un percorso a scroll che cambia tecnica a ogni scena (HTML nudo, terminale, collage CSS, React, Astro e WebGL).
 
-Online: https://domenico85.github.io/Domenico/
+Online: https://domenico85.github.io/Domenico/ (italiano), [/en/](https://domenico85.github.io/Domenico/en/) (inglese), [/es/](https://domenico85.github.io/Domenico/es/) (spagnolo).
 
 Qui sperimento, senza limiti di punteggi. I siti veri li faccio con [Loop Studio](https://theloopstudio.org/).
 
@@ -27,7 +27,9 @@ Serve Node 22.23.4 o superiore. L'indirizzo ha il prefisso `/Domenico/` (è la b
 
 | Cosa | Dove |
 |---|---|
-| Capitoli, testi, musica, peso (quanto scroll occupa) | `src/data/capitoli.ts` |
+| Testi di ogni lingua (it, en, es) | `src/i18n/` |
+| Capitoli: anno, musica, peso (quanto scroll occupa) | `src/data/capitoli.ts` |
+| La pagina (una sola, usata per ogni lingua) e il selettore di lingua | `src/components/Pagina.astro`, `Lingue.astro` (script: `src/scripts/lingue.js`) |
 | Le stelle della costellazione (repo, date, gruppi) | `src/data/repos.ts` |
 | Markup di una scena | `src/components/scene/` |
 | Tempi e animazione di una scena | `src/scripts/scene/` (il registro è in `index.js`) |
@@ -36,7 +38,9 @@ Serve Node 22.23.4 o superiore. L'indirizzo ha il prefisso `/Domenico/` (è la b
 | Stili | `src/styles/global.css` |
 | Fonti e licenze degli asset | `docs/ASSET.md` |
 
-Aggiungere un capitolo = una riga in `capitoli.ts`, una scena in `components/scene/` e il suo builder in `scripts/scene/`: righello, musica e scroll si adeguano da soli.
+Aggiungere un capitolo = una riga in `capitoli.ts`, i suoi testi in ognuno dei tre file di `src/i18n/`, una scena in `components/scene/` e il suo builder in `scripts/scene/`: righello, musica e scroll si adeguano da soli.
+
+Le lingue hanno un indirizzo ciascuna (`/Domenico/`, `/en/`, `/es/`, pagine in `src/pages/`) e la pagina riparte sempre dal loader: lo scroll non si ricorda, né al ricaricamento né cambiando lingua.
 
 ## Crediti
 

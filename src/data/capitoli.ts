@@ -1,34 +1,35 @@
 // I capitoli della storia. Aggiungerne uno = una riga qui + una scena in
 // src/components/scene/ + il suo builder in src/scripts/scene/ (registro in
-// scene/index.js). Il resto (righello, musica, scroll) si adegua da solo.
-// I testi sono la prima bozza (docs/testi-bozza.md): le frasi con [?] vanno confermate.
-export type Capitolo = {
-	id: string; // chiave della scena
-	titolo: string;
+// scene/index.js) + i suoi testi in src/i18n/<lingua>.ts. Il resto (righello, musica, scroll) si adegua da solo.
+// I testi (titolo, quando, stadio, didascalia) stanno in src/i18n: `capitoliIn(t)` li unisce a questi dati.
+import type { Testi } from '../i18n/it';
+
+export type CapitoloBase = {
+	id: string; // chiave della scena e dei testi in i18n
 	anno: string; // mostrato nel righello
-	quando: string; // etichetta piccola nella scena
-	stadio: string; // etichetta tecnica nel righello
-	testo: string; // didascalia in prima persona
 	musica: string; // chiave della traccia in TRACCE
 	peso: number; // quanto scroll occupa rispetto al normale (1)
 	dal: string; // data da cui le repo appartengono a questo capitolo
 	chiaro?: boolean; // la scena ha sfondo chiaro: header e righello passano a testo nero (marchio rosso e nero)
 };
 
-export const CAPITOLI: Capitolo[] = [
-	{ id: 'hello', titolo: 'Hello World', anno: '2024', quando: 'febbraio 2024', stadio: 'HTML nudo', musica: 'reggae', peso: .75, dal: '2024-02-01', chiaro: true,
-		testo: 'Una riga di Java e un hello-world. Non sapevo ancora che mi sarebbe piaciuto.' },
-	{ id: 'corso', titolo: 'Il corso', anno: '2024', quando: 'aprile 2024 – aprile 2025', stadio: 'terminale e JS', musica: 'reggae', peso: .85, dal: '2024-04-01',
-		testo: 'Ho fatto un corso Full Stack Developer. Quasi tutto è rimasto in locale: esercizi, errori, qualche momento di gloria. Il progetto finale, Presto, l\'abbiamo fatto in squadra.' },
-	{ id: 'esperimenti', titolo: 'Esperimenti', anno: '2025', quando: '2025, e ancora oggi', stadio: 'CSS e collage', musica: 'stylish', peso: 1.8, dal: '2025-01-01',
-		testo: 'Vanilla JS, slider, effetti. Il periodo in cui rompevo le cose per capire come funzionavano. Lo faccio ancora, adesso nel Lab dello studio.' },
-	{ id: 'react', titolo: 'React', anno: '2025', quando: 'gennaio – luglio 2025', stadio: 'React', musica: 'joyful', peso: 1, dal: '2025-01-30',
-		testo: 'Un widget per volta, e un po\' di vergogna per i nomi. Ne ho tenute poche: Meal-Planner è quella a cui voglio ancora bene.' },
-	{ id: 'siti', titolo: 'Siti veri', anno: '2026', quando: 'da settembre 2025', stadio: 'Astro e WebGL', musica: 'odyssey', peso: 2, dal: '2025-09-01',
-		testo: 'Clienti, Astro, un occhio fisso ai punteggi di Lighthouse. Qui le cose iniziano a stare online davvero.' },
-	{ id: 'oggi', titolo: 'Lo studio', anno: '2026', quando: 'oggi', stadio: 'oggi', musica: 'odyssey', peso: .6, dal: '2026-07-19',
-		testo: 'Questa pagina è il posto dove continuo a giocare. Se ti serve un sito vero, quello lo faccio con lo studio.' },
+export type Capitolo = CapitoloBase & {
+	titolo: string; // grande, nella scena
+	quando: string; // etichetta piccola nella scena
+	stadio: string; // etichetta tecnica nel righello
+	testo: string; // didascalia in prima persona
+};
+
+export const CAPITOLI: CapitoloBase[] = [
+	{ id: 'hello', anno: '2024', musica: 'reggae', peso: .75, dal: '2024-02-01', chiaro: true },
+	{ id: 'corso', anno: '2024', musica: 'reggae', peso: .85, dal: '2024-04-01' },
+	{ id: 'esperimenti', anno: '2025', musica: 'stylish', peso: 1.8, dal: '2025-01-01' },
+	{ id: 'react', anno: '2025', musica: 'joyful', peso: 1, dal: '2025-01-30' },
+	{ id: 'siti', anno: '2026', musica: 'odyssey', peso: 2, dal: '2025-09-01' },
+	{ id: 'oggi', anno: '2026', musica: 'odyssey', peso: .6, dal: '2026-07-19' },
 ];
+
+export const capitoliIn = (t: Testi): Capitolo[] => CAPITOLI.map((c) => ({ ...c, ...t.capitoli[c.id as keyof Testi['capitoli']] }));
 
 // Una traccia può servire più capitoli: se la chiave è uguale, la musica continua senza stacchi.
 export const TRACCE: Record<string, string> = {

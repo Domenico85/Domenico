@@ -14,7 +14,7 @@
 	--bg: #050506; --fg: #eee; --muted: #8a8a8a; --red: #ff3b30;
 	--color-accent: var(--red); --color-text: #fff; /* usati da InfinityMark */
 	--tick-a: #fff6; --tick-b: #fff;
-	--ease: cubic-bezier(.23, 1, .32, 1);
+	--ease: cubic-bezier(.23, 1, .32, 1); --lang-w: 152px; /* larghezza del selettore di lingua: l'header le lascia posto */
 	--display: 'LT Humor', system-ui, sans-serif; --script: 'LT Humor Script', 'LT Humor', cursive;
 	color-scheme: dark;
 }
@@ -54,9 +54,32 @@ canvas#gl { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events
 .btn:hover { border-color: var(--red); background: #ff3b3014; } .btn.pri { border-color: var(--red); }
 
 /* ---------- header, cursore, righello ---------- */
-header.top { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; mix-blend-mode: difference; color: #fff; }
+header.top { position: fixed; inset: 0 0 auto; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 16px calc(22px + var(--lang-w) + 16px) 16px 22px; mix-blend-mode: difference; color: #fff; }
 header.top nav { display: flex; gap: 1.2rem; align-items: center; font-size: .9rem; }
 header.top a { text-decoration: none; display: flex; align-items: center; gap: .5rem; font-size: .9rem; min-height: 44px; padding-inline: .4rem; }
+/* ---------- selettore di lingua (Lingue.astro): pista scura, pallina chiara, la bandiera riempie la pista fino alla pallina ---------- */
+.langsw { position: fixed; top: 16px; right: 22px; z-index: 21; } /* fuori dall'header: il suo mix-blend inverte i colori, le bandiere no */
+.lang { --i: 0; --slot: 48px; --pad: 4px; --knob: 40px; position: relative; display: block; width: calc(var(--slot) * 3 + var(--pad) * 2); height: 44px; border-radius: 999px; flex: none;
+	background: #0d0d10; border: 1px solid #2b2b31; box-shadow: inset 0 2px 6px #000c, 0 1px 0 #ffffff12; touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
+.lang.drag { cursor: grabbing; }
+.lang__flags { position: absolute; left: 0; top: 0; bottom: 0; width: min(100%, calc(var(--pad) + (var(--slot) + var(--knob)) / 2 + var(--slot) * var(--i) + 18px)); border-radius: 999px; overflow: hidden; transition: width .45s var(--ease); }
+.lang.drag .lang__flags, .lang.drag .lang__knob { transition: none; }
+.lang__flags::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #0000, #0006); }
+.lang__flags svg { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .3s; }
+.lang[data-cur='0'] .f-it, .lang[data-cur='1'] .f-gb, .lang[data-cur='2'] .f-es { opacity: 1; }
+.lang__a { position: absolute; top: 0; bottom: 0; width: var(--slot); left: calc(var(--pad) + var(--slot) * var(--n)); display: grid; place-items: center; text-decoration: none; color: #fff; font: 12px/1 'LT Industry', ui-monospace, monospace; letter-spacing: .08em; -webkit-text-stroke: 3px #000; paint-order: stroke fill; border-radius: 999px; z-index: 1; }
+.lang__a[aria-current='true'] { color: transparent; -webkit-text-stroke: 0; }
+.lang__knob { position: absolute; top: calc((42px - var(--knob)) / 2); left: calc(var(--pad) + (var(--slot) - var(--knob)) / 2 + var(--slot) * var(--i)); width: var(--knob); height: var(--knob); border-radius: 50%; z-index: 2; pointer-events: none; display: grid; place-items: center;
+	background: radial-gradient(circle at 35% 28%, #fff, #e3e3e6 55%, #bfbfc6); box-shadow: 0 2px 6px #000b, 0 0 0 1px #0004, inset 0 -2px 3px #0003, inset 0 1px 1px #fff;
+	color: #111; font: 12px/1 'LT Industry', ui-monospace, monospace; letter-spacing: .08em; transition: left .45s var(--ease); }
+#gate .lang { margin-top: .2rem; }
+@media (max-height: 560px) { #gate { gap: .8rem; } .pre { width: 9rem; } } /* schermi bassi: l'ingresso (anello, bottoni, selettore) deve starci tutto */
+@media (max-width: 480px) { /* telefono: pista piu' stretta, e nell'header resta solo il simbolo dello studio e il suono */
+	:root { --lang-w: 134px; } .lang { --slot: 42px; --knob: 38px; }
+	header.top > a span, header.top nav a { display: none; }
+}
+.no-motion .lang__flags, .no-motion .lang__knob, .no-motion .lang__flags svg { transition: none; }
+
 #snd { background: none; border: 1px solid #fff5; color: #fff; border-radius: 99px; padding: .5rem .9rem; min-height: 44px; font: .75rem ui-monospace, monospace; cursor: pointer; }
 #cur { position: fixed; left: 0; top: 0; z-index: 200; pointer-events: none; width: 18px; transition: width .25s var(--ease), opacity .3s; opacity: 0; }
 #cur.on { opacity: 1; } #cur.big { width: 30px; } #cur.lite { --color-text: #000; } /* sopra la scena bianca: infinito nero e rosso */

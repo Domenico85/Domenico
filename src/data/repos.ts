@@ -3,18 +3,23 @@
 // Non compaiono: Incanto, Incanto_Astro (scelta dell'utente) e Laravel (cancellata).
 // `url` solo per le repo pubbliche; le private compaiono senza link.
 import { capitoloDi } from './capitoli';
+import type { Testi } from '../i18n/it';
 
-export type Gruppo = { nome: string; periodo: string; tech: string; colore: [number, number, number] };
+export type GruppoBase = { periodo: string; tech: string; colore: [number, number, number] };
+export type Gruppo = GruppoBase & { nome: string }; // il nome è nella lingua della pagina
 
 // Colori come la temperatura delle stelle: blu, rosso, arancio, giallo, bianco, azzurro.
-export const GRUPPI: Gruppo[] = [
-	{ nome: 'Primi passi', periodo: '2024', tech: 'base', colore: [0.45, 0.62, 1.0] }, // blu
-	{ nome: 'Il corso e Laravel', periodo: '2025', tech: 'laravel', colore: [1.0, 0.36, 0.28] }, // rosso
-	{ nome: 'React, inverno', periodo: '2025', tech: 'react', colore: [1.0, 0.68, 0.38] }, // arancio
-	{ nome: 'React, primavera', periodo: '2025', tech: 'react', colore: [1.0, 0.92, 0.62] }, // giallo
-	{ nome: 'React, estate', periodo: '2025', tech: 'react', colore: [0.96, 0.97, 1.0] }, // bianco
-	{ nome: 'Siti veri', periodo: '2025-26', tech: 'siti', colore: [0.62, 0.84, 1.0] }, // azzurro
+// I nomi dei gruppi stanno in src/i18n/<lingua>.ts, nello stesso ordine (`gruppiIn` li unisce).
+export const GRUPPI: GruppoBase[] = [
+	{ periodo: '2024', tech: 'base', colore: [0.45, 0.62, 1.0] }, // blu
+	{ periodo: '2025', tech: 'laravel', colore: [1.0, 0.36, 0.28] }, // rosso
+	{ periodo: '2025', tech: 'react', colore: [1.0, 0.68, 0.38] }, // arancio
+	{ periodo: '2025', tech: 'react', colore: [1.0, 0.92, 0.62] }, // giallo
+	{ periodo: '2025', tech: 'react', colore: [0.96, 0.97, 1.0] }, // bianco
+	{ periodo: '2025-26', tech: 'siti', colore: [0.62, 0.84, 1.0] }, // azzurro
 ];
+
+export const gruppiIn = (t: Testi): Gruppo[] => GRUPPI.map((g, i) => ({ ...g, nome: t.gruppi[i] }));
 
 // `cap` forza il capitolo quando la data da sola lo assegna male (Presto e Laravel sono del corso, Ananda e' un sito vero).
 type Voce = { d: string; name: string; g: number; pubblica?: boolean; link?: string; cap?: number };

@@ -4,6 +4,12 @@ import { initReveal } from './reveal.js';
 import { initConstellation } from './constellation.js';
 import { createAudio } from './audio.js';
 import { buildStory } from './scene/index.js';
+import { initLingue } from './lingue.js';
+
+// La pagina riparte sempre dall'inizio (loader, hero): niente scroll ricordato dal browser, neanche tornando indietro dalla cache.
+history.scrollRestoration = 'manual'; scrollTo(0, 0);
+addEventListener('pageshow', (e) => { if (e.persisted) scrollTo(0, 0); });
+initLingue();
 
 const $ = (s) => document.querySelector(s);
 const D = JSON.parse($('#app-data').textContent);
@@ -41,7 +47,7 @@ else {
 		document.querySelector('meta[name="theme-color"]')?.setAttribute('content', chiara ? '#ffffff' : '#050506'); // barra del browser su telefono: bianca sulla scena 1
 		$('#mk').style.left = (100 * (scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight))) + '%';
 		if (i === ultimo) return; ultimo = i;
-		$('#yr').textContent = cap[i].anno; $('#stage').textContent = `stadio ${i + 1}/${cap.length} · ${cap[i].stadio}`; vogliaTraccia(cap[i].musica); audio.preload(cap[Math.min(i + 1, cap.length - 1)].musica);
+		$('#yr').textContent = cap[i].anno; $('#stage').textContent = `${D.ui.stadio} ${i + 1}/${cap.length} · ${cap[i].stadio}`; vogliaTraccia(cap[i].musica); audio.preload(cap[Math.min(i + 1, cap.length - 1)].musica);
 	} });
 }
 
@@ -72,7 +78,7 @@ const tick = () => {
 	n = Math.min(caricato ? 100 : 90, Math.round((performance.now() - t0) / 22)); gn.firstChild.textContent = n;
 	if (n < 100) requestAnimationFrame(tick); else $('#ask').classList.add('on');
 }; tick();
-const snd = $('#snd'); const syncSnd = () => { snd.textContent = 'suono: ' + (audio.on ? 'on' : 'off'); snd.setAttribute('aria-pressed', audio.on); };
+const snd = $('#snd'); const syncSnd = () => { snd.textContent = audio.on ? D.ui.suonoOn : D.ui.suonoOff; snd.setAttribute('aria-pressed', audio.on); };
 document.querySelectorAll('[data-snd]').forEach((b) => b.onclick = () => {
 	if (b.dataset.snd === '1') audio.start(D.capitoli[0].musica); syncSnd(); $('#gate').classList.add('open'); $('#gate').inert = true; dietro.forEach((e) => (e.inert = false)); $('#cur').classList.add('on');
 	setTimeout(() => { ready = true; document.querySelectorAll('[data-split]:not(.g),.rv').forEach((el) => io.observe(el)); constellation?.go(); $('#rule').classList.add('on'); }, 500); });

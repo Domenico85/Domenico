@@ -1,12 +1,12 @@
 ---
-const { c, n, tot } = Astro.props;
+const { c, n, tot, t } = Astro.props;
 ---
 <div class="pane p1">
 	<div class="doc">
 		<div class="lab">{n} / {tot} · {c.quando}</div>
-		<h2 id="t1" aria-label="Hello World">Hello World</h2>
-		<p id="t1b">Questo è il mio primo sito. Non ha stile.</p>
-		<p><span class="fake-link" id="t1l">Link non visitato</span></p>
+		<h2 id="t1" aria-label={c.titolo}>{c.titolo}</h2>
+		<p id="t1b">{t.hello.documento}</p>
+		<p><span class="fake-link" id="t1l">{t.hello.link}</span></p>
 	</div>
 	<p class="cp">{c.testo}</p>
 </div>

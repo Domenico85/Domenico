@@ -1,13 +1,16 @@
 ---
 import '../styles/global.css';
-interface Props { title: string; description: string; }
-const { title, description } = Astro.props;
+import { LINGUE, TESTI, indirizzo, type Lingua } from '../i18n';
+interface Props { title: string; lingua: Lingua; }
+const { title, lingua } = Astro.props;
+const description = TESTI[lingua].descrizione;
 const base = import.meta.env.BASE_URL;
-const pagina = new URL(base, Astro.site).href; // https://domenico85.github.io/Domenico/
+const url = (l: Lingua) => new URL(indirizzo(l, base), Astro.site).href; // https://domenico85.github.io/Domenico/ (it), .../en/, .../es/
+const pagina = url(lingua);
 const immagine = new URL(`${base}og.jpg`, Astro.site).href;
 ---
 <!doctype html>
-<html lang="it">
+<html lang={lingua}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,12 +25,15 @@ const immagine = new URL(`${base}og.jpg`, Astro.site).href;
 		<meta property="og:image" content={immagine} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:locale" content="it_IT" />
+		<meta property="og:locale" content={TESTI[lingua].locale} />
+		{LINGUE.filter((l) => l !== lingua).map((l) => <meta property="og:locale:alternate" content={TESTI[l].locale} />)}
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={immagine} />
 		<link rel="canonical" href={pagina} />
+		{LINGUE.map((l) => <link rel="alternate" hreflang={l} href={url(l)} />)}
+		<link rel="alternate" hreflang="x-default" href={url('it')} />
 		<noscript><style>#gate { display: none !important; } #story { height: auto !important; overflow: visible !important; } .pane { position: relative !important; min-height: 100svh; visibility: visible !important; } .rv { opacity: 1 !important; transform: none !important; } .frame img { opacity: 1 !important; } .w > span { transform: none !important; } .rule, .gnav, #cur, #snd { display: none !important; }</style></noscript>
 	</head>
 	<body>

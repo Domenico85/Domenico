@@ -1,0 +1,69 @@
+---
+// La pagina intera, una volta per lingua: src/pages/index.astro (it), en/index.astro, es/index.astro la usano con `lingua`.
+import Base from '../layouts/Base.astro';
+import InfinityMark from './InfinityMark.astro';
+import Lingue from './Lingue.astro';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/hero-bg.jpg';
+import Hello from './scene/Hello.astro';
+import Corso from './scene/Corso.astro';
+import Esperimenti from './scene/Esperimenti.astro';
+import React from './scene/React.astro';
+import Siti from './scene/Siti.astro';
+import Oggi from './scene/Oggi.astro';
+import { capitoliIn, TRACCE, MUSICA_ATTESA } from '../data/capitoli';
+import { gruppiIn, REPOS } from '../data/repos';
+import { TESTI, type Lingua } from '../i18n';
+
+interface Props { lingua: Lingua; }
+const { lingua } = Astro.props;
+const t = TESTI[lingua];
+const CAPITOLI = capitoliIn(t);
+
+// una scena per capitolo, stesso `id`
+const SCENE = { hello: Hello, corso: Corso, esperimenti: Esperimenti, react: React, siti: Siti, oggi: Oggi };
+const dati = { base: import.meta.env.BASE_URL, capitoli: CAPITOLI, tracce: TRACCE, attesa: MUSICA_ATTESA, repos: REPOS, gruppi: gruppiIn(t), ui: { suonoOn: t.ui.suonoOn, suonoOff: t.ui.suonoOff, stadio: t.ui.stadio } };
+const primo = REPOS[0].d.slice(0, 7).split('-').reverse().join('/');
+---
+<Base title="Domenico" lingua={lingua}>
+	<canvas id="gl" aria-hidden="true"></canvas>
+	<div id="cur" aria-hidden="true"><InfinityMark width="100%" /></div>
+
+	<section id="gate" aria-label={t.ui.ingresso}>
+		<div class="pre" role="img" aria-label={t.ui.caricamento}>
+			<span class="pre__ring pre__ring--5"></span><span class="pre__ring pre__ring--4"></span><span class="pre__ring pre__ring--3"></span><span class="pre__ring pre__ring--2"></span>
+			<div class="goo"><i></i></div><InfinityMark width="3.6rem" />
+		</div>
+		<div id="gnum">0<small>%</small></div>
+		<div class="ask" id="ask"><button class="btn pri" data-snd="1" type="button">{t.ui.conMusica}</button><button class="btn" data-snd="0" type="button">{t.ui.senzaMusica}</button></div>
+		<Lingue lingua={lingua} uid="gate" />
+	</section>
+
+	<header class="top">
+		<a href="https://theloopstudio.org/" target="_blank" rel="noopener" aria-label="Loop Studio"><InfinityMark width="1.6em" /><span>Loop Studio</span></a>
+		<nav><button id="snd" type="button" aria-pressed="false">{t.ui.suonoOff}</button><a href="#story">{t.ui.percorso}</a></nav>
+	</header>
+	<div class="langsw"><Lingue lingua={lingua} uid="top" /></div>
+	<div class="rule" id="rule" aria-hidden="true"><div class="stage" id="stage"></div><div class="year" id="yr">{CAPITOLI[0].anno}</div><div class="ticks"><i id="mk"></i></div></div>
+
+	<nav class="capnav" aria-label={t.ui.capitoli}>{CAPITOLI.map((c, i) => <button class="btn" type="button" data-vai={i}>{c.titolo}</button>)}</nav>
+
+	<main>
+		<section class="hero" id="top">
+			<div class="bg" id="hbg"><Image src={heroBg} alt="" widths={[900, 1600, 2400]} sizes="100vw" format="webp" quality={72} loading="eager" fetchpriority="high" /></div>
+			<canvas id="cc" role="img" aria-label={t.ui.costellazione}></canvas>
+			<div id="lbl" class="mono"></div>
+			<div class="tag mono rv">{t.ui.repo} <b>{REPOS.length}</b><br />{t.ui.capitoliTag} <b>{CAPITOLI.length}</b><br />{t.ui.dal} <b>{primo}</b></div>
+			<div class="ui"><h1 data-split id="h1">{t.ui.ciao} <i>Domenico</i></h1><p class="role rv">{t.ui.ruolo}</p><p class="sub rv">{t.ui.sotto}</p></div>
+			<div class="gnav" id="gnav" role="group" aria-label={t.ui.gruppiRepo}></div>
+			<div class="credit">{t.ui.foto}</div><div class="cue" aria-hidden="true">{t.ui.scorri}</div>
+		</section>
+
+		<section id="story" aria-label={t.ui.ilPercorso}>
+			{CAPITOLI.map((c, i) => { const Scena = SCENE[c.id]; return <Scena c={c} t={t} n={String(i + 1).padStart(2, '0')} tot={String(CAPITOLI.length).padStart(2, '0')} />; })}
+		</section>
+	</main>
+
+	<script is:inline id="app-data" type="application/json" set:html={JSON.stringify(dati)}></script>
+	<script>import '../scripts/main.js';</script>
+</Base>

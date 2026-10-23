@@ -5,20 +5,20 @@ import osteomed from '../../assets/osteomed.png';
 import gf from '../../assets/gf-motori.jpg';
 import axpro from '../../assets/axpro.jpg';
 import ananda from '../../assets/ananda.jpg';
-const { c, n, tot } = Astro.props;
-// Link, tecnologie e punteggio vengono da src/data/portfolio-projects.ts dello studio (Lighthouse 100 nelle 4 categorie).
+const { c, n, tot, t } = Astro.props;
+// Nome, link e immagine sono qui; riga e alt (nella lingua della pagina) in src/i18n, nello stesso ordine. Tecnologie e punteggio vengono da src/data/portfolio-projects.ts dello studio (Lighthouse 100 nelle 4 categorie).
 const lavori = [
-	{ nome: 'Osteomed', riga: 'Studio di osteopatia · WordPress, PHP', url: 'https://www.osteomedrc.it/', img: osteomed, alt: 'Sito dello studio di osteopatia Osteomed' },
-	{ nome: 'GF Motori', riga: 'Concessionaria · WordPress, PHP', url: 'https://www.gfmotori.com/', img: gf, alt: 'Sito di GF Motori' },
-	{ nome: 'Axpro Paintball', riga: 'Campo di paintball · Astro, prenotazioni online', url: 'https://axpropaintball.com/', img: axpro, alt: 'Sito di Axpro Paintball' },
-	{ nome: 'Ananda Grejo', riga: 'Fotografa · Astro, Sanity', url: 'https://anandagrejo.netlify.app/', img: ananda, alt: 'Sito fotografico di Ananda Grejo' },
+	{ nome: 'Osteomed', url: 'https://www.osteomedrc.it/', img: osteomed },
+	{ nome: 'GF Motori', url: 'https://www.gfmotori.com/', img: gf },
+	{ nome: 'Axpro Paintball', url: 'https://axpropaintball.com/', img: axpro },
+	{ nome: 'Ananda Grejo', url: 'https://anandagrejo.netlify.app/', img: ananda },
 ];
 ---
 <div class="pane p5">
 	<div class="t" id="t5">{c.titolo}</div>
 	<div id="fr5">
-		{lavori.map((l) => <div class="fr"><a class="shot" href={l.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><Quadro src={l.img} alt={l.alt} fx="liquid" /></a><a class="c5" href={l.url} target="_blank" rel="noopener"><b>{l.nome}</b><span>{l.riga}</span><em>Lighthouse 100</em></a></div>)}
+		{lavori.map((l, i) => <div class="fr"><a class="shot" href={l.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><Quadro src={l.img} alt={t.siti.lavori[i].alt} fx="liquid" /></a><a class="c5" href={l.url} target="_blank" rel="noopener"><b>{l.nome}</b><span>{t.siti.lavori[i].riga}</span><em>Lighthouse 100</em></a></div>)}
 	</div>
-	<div class="lab l1">{n} / {tot} · Astro, Lighthouse, clienti</div><div class="lab l2"><span class="hov">passa sopra: torna a colori</span><span class="tch">trascina il dito: torna a colori</span></div>
+	<div class="lab l1">{n} / {tot} · {t.siti.etichetta}</div><div class="lab l2"><span class="hov">{t.siti.passa}</span><span class="tch">{t.siti.tocco}</span></div>
 	<p class="cp">{c.testo}</p>
 </div>

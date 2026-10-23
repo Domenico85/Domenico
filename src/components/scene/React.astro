@@ -2,7 +2,7 @@
 // Il contatore e i nomi vengono dai dati: sono le repo dei gruppi React che cadono nel capitolo.
 import { CAPITOLI } from '../../data/capitoli';
 import { GRUPPI, REPOS } from '../../data/repos';
-const { c, n, tot } = Astro.props;
+const { c, n, tot, t } = Astro.props;
 const idx = CAPITOLI.findIndex((x) => x.id === c.id);
 const react = REPOS.filter((r) => r.cap === idx && GRUPPI[r.g].tech === 'react');
 const ms = (r: { d: string }) => new Date(r.d).getTime();
@@ -14,7 +14,7 @@ const righe = (cols: number) => Math.ceil(react.length / cols);
 ---
 <div class="pane p4">
 	<h2 class="g" data-split>{c.titolo}</h2>
-	<div class="cnt"><b id="cnt">{react.length}</b><span>repo in {mesi} mesi</span></div>
+	<div class="cnt"><b id="cnt">{react.length}</b><span>{t.react.repoIn(mesi)}</span></div>
 	<div id="chips" aria-hidden="true" style={`--rows5:${righe(5)};--rows2:${righe(2)}`}>
 		{ordine.map(({ r, slot }, i) => <span class="chip" style={`--c5:${slot % 5};--r5:${Math.floor(slot / 5)};--c2:${slot % 2};--r2:${Math.floor(slot / 2)};--jx:${Math.round((h(i + 7) - .5) * 28)};--jy:${Math.round((h(i + 31) - .5) * 14)}`}>{r.name}</span>)}
 	</div>

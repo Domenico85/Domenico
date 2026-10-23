@@ -7,19 +7,19 @@ import coffee from '../../assets/starbucks-coffee.jpg';
 import animal from '../../assets/animal-slider.jpg';
 import soda from '../../assets/slider-fruit-soda.jpg';
 import sky from '../../assets/skytracker.jpg';
-const { c, n, tot } = Astro.props;
+const { c, n, tot, t } = Astro.props;
 const schede = [
-	{ k: 'a', src: slider, alt: 'Slider con effetto sulle immagini', look: 'seppia' },
-	{ k: 'b', src: three, alt: 'Animazione 3D a scroll', look: 'seppia' },
-	{ k: 'c', src: coffee, alt: 'Carosello di caffè', look: 'carta' },
-	{ k: 'd', src: animal, alt: 'Slider a tema animali', look: 'seppia' },
-	{ k: 'e', src: soda, alt: 'Slider con lattina e avocado', look: 'carta' },
-	{ k: 'f', src: sky, alt: 'Previsioni del tempo con temporale', look: 'seppia' },
+	{ k: 'a', src: slider, look: 'seppia' },
+	{ k: 'b', src: three, look: 'seppia' },
+	{ k: 'c', src: coffee, look: 'carta' },
+	{ k: 'd', src: animal, look: 'seppia' },
+	{ k: 'e', src: soda, look: 'carta' },
+	{ k: 'f', src: sky, look: 'seppia' },
 ] as const;
 ---
 <div class="pane p3">
-	<div class="mq" id="mq" aria-hidden="true">SLIDER · CARD · HOVER · GRADIENTE · OMBRA · SLIDER · CARD · HOVER ·</div>
-	{schede.map((s) => <div class={`fr ${s.k}`}><Quadro src={s.src} alt={s.alt} look={s.look} /></div>)}
+	<div class="mq" id="mq" aria-hidden="true">{t.esperimenti.marquee}</div>
+	{schede.map((s, i) => <div class={`fr ${s.k}`}><Quadro src={s.src} alt={t.esperimenti.alt[i]} look={s.look} /></div>)}
 	<h2 class="g" data-split>{c.titolo}</h2>
 	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
 </div>
