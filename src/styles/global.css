@@ -91,7 +91,7 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .cue { position: absolute; z-index: 2; left: 50%; bottom: 104px; transform: translateX(-50%); font: .75rem ui-monospace, monospace; color: #9ab; animation: cue 2s ease-in-out infinite; } @keyframes cue { 50% { transform: translate(-50%, 6px); } }
 
 /* ---------- storia: un palco fisso, le scene si danno il cambio ---------- */
-#story { position: relative; height: 100svh; overflow: hidden; background: #000; }
+#story { position: relative; height: 100dvh; overflow: hidden; background: #000; } /* dvh: su Android, con la barra del browser nascosta, il palco riempie lo schermo e le posizioni in dvh restano nel riquadro (con svh restava una fascia nera e le scene uscivano) */
 .pane { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
 .no-motion #story { height: auto; overflow: visible; } .no-motion .pane { position: relative; min-height: 100svh; visibility: visible; }
 .no-motion .frame { --rv: 1 !important; } .no-motion .frame img { opacity: 1; }
@@ -100,28 +100,28 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .lab { font: .75rem ui-monospace, monospace; opacity: .75; }
 .fr { position: absolute; } .fr .frame { width: 100%; }
 .cp { position: absolute; z-index: 2; left: 5vw; max-width: 34ch; font-size: 1rem; line-height: 1.5; opacity: .85; }
-.cp { bottom: max(9vh, 112px); } /* sopra il righello con l'anno */
+.cp { bottom: max(9dvh, 112px); } /* sopra il righello con l'anno */
 /* 1 Hello World */
 .p1 { background: #fff; color: #000; font-family: 'Times New Roman', serif; }
-.p1 .doc { position: absolute; inset: 0; padding: 12vh 6vw; background: #fff; } /* sfondo proprio: il glitch invert (nero su bianco e viceversa) resta leggibile */
-.p1 h2 { font: 700 clamp(3.4rem, min(17vw, 24vh), 16rem)/.95 'Times New Roman', serif; letter-spacing: 0; min-height: 1em; word-break: break-word; }
+.p1 .doc { position: absolute; inset: 0; padding: 12dvh 6vw; background: #fff; } /* sfondo proprio: il glitch invert (nero su bianco e viceversa) resta leggibile */
+.p1 h2 { font: 700 clamp(3.4rem, min(17vw, 24dvh), 16rem)/.95 'Times New Roman', serif; letter-spacing: 0; min-height: 1em; word-break: break-word; }
 .p1 p { font-size: 1.2rem; margin-top: 1rem; min-height: 1.4em; } .p1 .fake-link { color: #00e; text-decoration: underline; opacity: 0; }
 .p1 .caret { display: inline-block; width: .08em; height: .85em; background: #000; margin-left: .04em; vertical-align: -.05em; animation: b 1s steps(1) infinite; } @keyframes b { 50% { opacity: 0; } }
 .p1 .cp { font-family: 'Times New Roman', serif; font-size: 1.1rem; left: auto; right: 6vw; text-align: right; }
 .no-motion .p1 .fake-link { opacity: 1; }
 /* 2 il corso */
 .p2 { background: #0a0a0a; color: #3fdc6a; font: 1rem/1.7 ui-monospace, monospace; }
-.p2 .term { position: absolute; left: 6vw; top: 18vh; width: min(46ch, 44vw); white-space: pre-wrap; min-height: 50vh; }
+.p2 .term { position: absolute; left: 6vw; top: 18dvh; width: min(46ch, 44vw); white-space: pre-wrap; min-height: 50dvh; }
 .p2 .term b { color: #fff; } .p2 .big-n { right: 4vw; bottom: -4vw; font-size: 34vw; color: transparent; }
-.p2 .fr { right: 7vw; top: 22vh; width: min(40vw, 640px); }
-.p2 .cp { left: auto; right: 7vw; bottom: max(8vh, 112px); width: min(40vw, 640px); max-width: none; color: #cfeedd; font-family: var(--display); }
+.p2 .fr { right: 7vw; top: 22dvh; width: min(40vw, 640px); }
+.p2 .cp { left: auto; right: 7vw; bottom: max(8dvh, 112px); width: min(40vw, 640px); max-width: none; color: #cfeedd; font-family: var(--display); }
 /* 3 esperimenti */
 .p3 { background: linear-gradient(135deg, #1b1233, #0f4c5c); color: #fff; }
 .mq { position: absolute; left: 0; top: 50%; translate: 0 -50%; white-space: nowrap; font: 700 clamp(8rem, 24vw, 22rem)/1 var(--display); -webkit-text-stroke: 2px #ffffff55; color: transparent; will-change: transform; }
-.p3 .fr.a { left: 44vw; top: 9vh; width: min(30vw, 46vh); } .p3 .fr.b { left: 74vw; top: 30vh; width: min(24vw, 36vh); } .p3 .fr.c { left: 47vw; top: 52vh; width: min(24vw, 34vh); }
-.p3 .fr.d { left: 66vw; top: 8vh; width: min(28vw, 44vh); } .p3 .fr.e { left: 42vw; top: 32vh; width: min(25vw, 38vh); } .p3 .fr.f { left: 69vw; top: 55vh; width: min(22vw, 32vh); }
-.p3 h2 { position: absolute; left: 5vw; bottom: max(10vh, 108px); font: 700 clamp(3.4rem, min(9.5vw, 19vh), 10rem)/.9 var(--script); z-index: 1; }
-.p3 .cp { top: 22vh; bottom: auto; z-index: 3; color: #ff7a70; max-width: 30ch; } .p3 .cp .lab { color: #ff7a70; } /* a sinistra, fuori dalle schede (stanno sul canvas e coprirebbero il testo); rosso chiaro: il bianco si confondeva con il titolo e la scritta in contorno */
+.p3 .fr.a { left: 44vw; top: 9dvh; width: min(30vw, 46dvh); } .p3 .fr.b { left: 74vw; top: 30dvh; width: min(24vw, 36dvh); } .p3 .fr.c { left: 47vw; top: 52dvh; width: min(24vw, 34dvh); }
+.p3 .fr.d { left: 66vw; top: 8dvh; width: min(28vw, 44dvh); } .p3 .fr.e { left: 42vw; top: 32dvh; width: min(25vw, 38dvh); } .p3 .fr.f { left: 69vw; top: 55dvh; width: min(22vw, 32dvh); }
+.p3 h2 { position: absolute; left: 5vw; bottom: max(10dvh, 108px); font: 700 clamp(3.4rem, min(9.5vw, 19dvh), 10rem)/.9 var(--script); z-index: 1; }
+.p3 .cp { top: 22dvh; bottom: auto; z-index: 3; color: #ff7a70; max-width: 30ch; } .p3 .cp .lab { color: #ff7a70; } /* a sinistra, fuori dalle schede (stanno sul canvas e coprirebbero il testo); rosso chiaro: il bianco si confondeva con il titolo e la scritta in contorno */
 /* 4 react */
 .p4 { background: #08090c; color: #e8ecf2; font-family: 'LT Industry', var(--display); }
 .cnt { position: absolute; left: 50%; top: 50%; translate: -50% -52%; text-align: center; line-height: .8; }
@@ -129,33 +129,33 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .chip { --c: var(--c5); --r: var(--r5); --rows: var(--rows5); left: calc((var(--c) + .5) / 5 * 100% + var(--jx) * 1px); top: calc((var(--r) + .5) / var(--rows) * 100% + var(--jy) * 1px); translate: -50% -50%; position: absolute; font: .78rem ui-monospace, monospace; color: #61dafb; border: 1px solid #61dafb55; background: #61dafb14; padding: .25rem .7rem; border-radius: 99px; white-space: nowrap; }
 #chips { position: absolute; inset: 24% 3% 30% 3%; }
 @media (max-width: 700px) { .chip { --c: var(--c2); --r: var(--r2); --rows: var(--rows2); left: calc((var(--c) + .5) / 2 * 100% + var(--jx) * 1px); } #chips { inset: 20% 3% 34% 3%; } }
-.p4 h2 { position: absolute; left: 5vw; top: 13vh; font: 400 clamp(2rem, 5vw, 4rem)/1 'LT Industry'; }
+.p4 h2 { position: absolute; left: 5vw; top: 13dvh; font: 400 clamp(2rem, 5vw, 4rem)/1 'LT Industry'; }
 .p4 .cp { z-index: 3; font-family: var(--display); }
 /* 5 siti veri */
 .p5 { background: #050505; color: #fff; }
 .p5 .t { position: absolute; left: 0; right: 0; top: 50%; translate: 0 -52%; text-align: center; font: 700 clamp(5rem, 23vw, 22rem)/.8 var(--display); text-transform: uppercase; letter-spacing: -.03em; white-space: nowrap; }
-#fr5 { position: absolute; left: 21vw; right: 21vw; top: 15vh; bottom: max(31vh, 270px); }
+#fr5 { position: absolute; left: 21vw; right: 21vw; top: 15dvh; bottom: max(31dvh, 270px); }
 .p5 .shot { display: block; height: 100%; pointer-events: none; } #fr5 .fr { inset: 0; pointer-events: none; } .p5 .c5 { pointer-events: auto; } /* i riquadri sono impilati: solo il sito in scena riceve il clic (il suo .shot passa ad auto da GSAP) */ #fr5 .fr .frame { height: 100%; aspect-ratio: auto; }
-.p5 .lab.l1 { position: absolute; left: 5vw; top: 9vh; } .p5 .lab.l2 { position: absolute; right: 5vw; bottom: 20vh; } .p5 .lab.l2 .tch { display: none; } @media (hover: none) { .p5 .lab.l2 .hov { display: none; } .p5 .lab.l2 .tch { display: inline; } }
+.p5 .lab.l1 { position: absolute; left: 5vw; top: 9dvh; } .p5 .lab.l2 { position: absolute; right: 5vw; bottom: 20dvh; } .p5 .lab.l2 .tch { display: none; } @media (hover: none) { .p5 .lab.l2 .hov { display: none; } .p5 .lab.l2 .tch { display: inline; } }
 .p5 .c5 { position: absolute; left: 0; top: calc(100% + 14px); display: grid; gap: .2rem; color: inherit; text-decoration: none; }
 .p5 .c5 b { font: 700 1.1rem var(--display); letter-spacing: .02em; text-decoration: underline; text-decoration-color: #fff5; text-underline-offset: .25em; transition: text-decoration-color .3s; }
 .p5 .c5:hover b { text-decoration-color: var(--red); }
 .p5 .c5 span { color: #cfd3dc; font-size: .95rem; }
 .p5 .c5 em { font: normal .75rem ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; color: var(--red); }
-.p5 .cp { left: 21vw; right: 21vw; max-width: none; bottom: max(6vh, 108px); }
-.no-motion .p3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; align-content: start; padding: 16vh 6vw 10vh; }
+.p5 .cp { left: 21vw; right: 21vw; max-width: none; bottom: max(6dvh, 108px); }
+.no-motion .p3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; align-content: start; padding: 16dvh 6vw 10dvh; }
 .no-motion .p3 .mq { display: none; } .no-motion .p3 .fr { position: relative; inset: auto; width: auto; }
 .no-motion .p3 h2, .no-motion .p3 .cp { position: static; grid-column: 1 / -1; max-width: 44ch; } .no-motion .p3 h2 { order: -2; } .no-motion .p3 .cp { order: -1; }
-.no-motion .p5 { padding: 16vh 6vw 10vh; }
+.no-motion .p5 { padding: 16dvh 6vw 10dvh; }
 .no-motion .p5 .t { position: static; translate: none; text-align: left; font-size: clamp(3rem, 14vw, 9rem); margin-bottom: 2.5rem; }
 .no-motion #fr5 { position: static; display: grid; gap: 4.5rem; } .no-motion #fr5 .fr { position: relative; inset: auto; }
 .no-motion #fr5 .fr .frame { height: auto; aspect-ratio: 16 / 10; } .no-motion .p5 .c5 { position: static; margin-top: 1rem; }
 .no-motion .p5 .cp { position: static; margin-top: 3rem; max-width: 44ch; } .no-motion .p5 .lab.l1 { position: static; display: block; margin-bottom: 1.5rem; } .no-motion .p5 .lab.l2 { display: none; }
 /* 6 oggi */
 .p6 { background: #050506; color: #fff; display: grid; place-items: center; text-align: center; padding: 64px 22px 128px; }
-.p6 .inf { width: min(26vw, 20vh, 280px); margin: 0 auto; }
-.p6 h2 { font: 700 clamp(2.2rem, min(7vw, 9vh), 6rem)/.95 var(--display); margin-top: 1rem; }
-.sig { font: 400 clamp(2.6rem, min(9vw, 12vh), 8rem)/1 'Grechen Fuemen', var(--script); color: var(--red); margin-top: .4rem; }
+.p6 .inf { width: min(26vw, 20dvh, 280px); margin: 0 auto; }
+.p6 h2 { font: 700 clamp(2.2rem, min(7vw, 9dvh), 6rem)/.95 var(--display); margin-top: 1rem; }
+.sig { font: 400 clamp(2.6rem, min(9vw, 12dvh), 8rem)/1 'Grechen Fuemen', var(--script); color: var(--red); margin-top: .4rem; }
 .p6 p { color: #aab; max-width: 44ch; margin: 1rem auto 0; line-height: 1.5; }
 .p6 .links { display: flex; gap: 1rem; justify-content: center; margin-top: 1.6rem; flex-wrap: wrap; }
 .p6 .fine { position: absolute; left: 0; right: 0; bottom: 92px; font: .75rem ui-monospace, monospace; color: #8d97ab; }
@@ -166,14 +166,28 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 .no-motion .rv { opacity: 1; transform: none; }
 @media (max-width: 760px) {
 	.tag, .credit, .stage { display: none; }
-	.p1 .cp { right: auto; left: 6vw; text-align: left; bottom: max(9vh, 112px); }
+	/* telefono: il righello e' basso (~42px), quindi le didascalie scendono a 68px; misure in dvh e px, cosi' tutto sta nel palco anche a 360x518 */
+	.p1 .cp { right: auto; left: 6vw; text-align: left; bottom: max(6dvh, 68px); }
 	.hero::after { background: linear-gradient(180deg, #02030a99 0%, #02030a00 30%, #02030a00 38%, #02030af0 66%, #02030af5 100%); }
 	.hero .ui { padding-bottom: 170px; } .gnav { bottom: 84px; } .gd span { display: none; } .gd.on span { display: block; position: absolute; bottom: 100%; left: 0; padding: 0 0 2px 12px; white-space: nowrap; font-size: .75rem; } .cue { bottom: 150px; }
-	.p2 .term { width: 84vw; } .p2 .fr { top: auto; bottom: max(31vh, 250px); width: 70vw; } .p2 .cp { right: auto; left: 5vw; width: 84vw; bottom: max(6vh, 112px); }
-	.p3 .fr.a { left: 6vw; top: 12vh; width: 50vw; } .p3 .fr.b { left: 46vw; top: 27vh; width: 46vw; } .p3 .fr.c { left: 12vw; top: 42vh; width: 42vw; }
-	.p3 .fr.d { left: 44vw; top: 11vh; width: 48vw; } .p3 .fr.e { left: 6vw; top: 26vh; width: 44vw; } .p3 .fr.f { left: 40vw; top: 41vh; width: 44vw; }
-	.p3 .cp { top: 57vh; left: 5vw; right: 5vw; max-width: none; } .p3 h2 { bottom: 11vh; }
-	#fr5 { left: 6vw; right: 6vw; } .p5 .cp { left: 6vw; right: 6vw; } .p5 .lab.l2 { left: 5vw; right: auto; bottom: auto; top: calc(9vh + 1.5rem); }
+	/* il corso: l'immagine copre il terminale (che si abbassa quando entra); il monospazio di Android e' piu' largo del nostro, quindi il corpo segue la larghezza: la riga piu' lunga (34 caratteri) sta in una riga */
+	.p2 .term { top: 17dvh; width: 88vw; min-height: 0; font-size: min(1rem, 4.1vw); } .p2 .fr { top: 17dvh; right: auto; left: 6vw; width: 88vw; } .p2 .cp { right: auto; left: 6vw; width: 88vw; bottom: max(6dvh, 68px); }
+	/* esperimenti: schede in alto, didascalia sopra il titolo, titolo sopra il righello */
+	.p3 .fr.a { left: 6vw; top: 14dvh; width: 48vw; } .p3 .fr.b { left: 48vw; top: 27dvh; width: 44vw; } .p3 .fr.c { left: 14vw; top: 39dvh; width: 40vw; }
+	.p3 .fr.d { left: 46vw; top: 14dvh; width: 48vw; } .p3 .fr.e { left: 6vw; top: 27dvh; width: 44vw; } .p3 .fr.f { left: 42vw; top: 39dvh; width: 40vw; }
+	.p3 h2 { bottom: 58px; } .p3 .cp { top: auto; bottom: 120px; left: 5vw; right: 5vw; max-width: none; }
+	/* react: contatore accanto al titolo, nomi su due colonne piu' piccole e senza scarto (altrimenti si toccano e escono dal bordo) */
+	.p4 h2 { top: 12dvh; } .cnt { left: auto; right: 5vw; top: 12dvh; translate: none; display: flex; align-items: baseline; gap: .5rem; } .cnt b { font-size: 15vw; } .cnt span { font-size: .95rem; }
+	#chips { inset: calc(12dvh + 58px) 3% 176px 3%; } .p4 .cp { bottom: max(6dvh, 68px); }
+	.chip { font-size: min(.78rem, 3vw); padding: .15rem .5rem; left: calc((var(--c) + .5) / 2 * 100% + var(--jx) * .25px); top: calc((var(--r) + .5) / var(--rows) * 100%); }
+	/* siti veri */
+	#fr5 { left: 6vw; right: 6vw; top: max(15dvh, 118px); bottom: max(26dvh, 215px); } .p5 .lab.l1 { top: 76px; } .p5 .cp { left: 6vw; right: 6vw; bottom: max(6dvh, 68px); } .p5 .lab.l2 { left: 5vw; right: auto; bottom: auto; top: calc(76px + 1.4rem); }
+	/* oggi: colonna che si centra e i crediti dentro il flusso (prima erano assoluti e finivano sotto i bottoni) */
+	.p6 { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 10px; padding: 76px 22px 56px; }
+	.p6 .inf { width: min(22vw, 11dvh, 280px); } .p6 h2, .sig, .p6 p { margin-top: 0; } .p6 .links { margin-top: 4px; } .p6 .fine { position: static; }
+}
+@media (max-width: 760px) and (max-height: 520px) { /* telefoni molto bassi (320x480): l'ultima scena si stringe ancora */
+	.p6 { gap: 6px; padding-top: 72px; } .p6 .inf { width: 8dvh; } .p6 h2 { font-size: 1.7rem; } .sig { font-size: 2rem; } .p6 p { font-size: .85rem; line-height: 1.35; } .p6 .links { gap: .5rem; } .p6 .btn { padding: .5rem 1rem; min-height: 44px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 /* scena con sfondo chiaro (la prima): niente inversione di colore, header e righello in nero, marchio rosso + nero */
