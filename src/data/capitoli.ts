@@ -23,7 +23,7 @@ export type Capitolo = CapitoloBase & {
 export const CAPITOLI: CapitoloBase[] = [
 	{ id: 'hello', anno: '2024', musica: 'reggae', peso: .75, dal: '2024-02-01', chiaro: true },
 	{ id: 'corso', anno: '2024', musica: 'reggae', peso: .85, dal: '2024-04-01' },
-	{ id: 'esperimenti', anno: '2025', musica: 'stylish', peso: 1.8, dal: '2025-01-01' },
+	{ id: 'esperimenti', anno: '2025', musica: 'stylish', peso: 3.4, dal: '2025-01-01' },
 	{ id: 'react', anno: '2025', musica: 'joyful', peso: 1, dal: '2025-01-30' },
 	{ id: 'siti', anno: '2026', musica: 'odyssey', peso: 2, dal: '2025-09-01' },
 	{ id: 'oggi', anno: '2026', musica: 'odyssey', peso: .6, dal: '2026-07-19' },

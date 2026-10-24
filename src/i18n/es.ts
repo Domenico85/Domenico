@@ -36,8 +36,8 @@ export const es: Testi = {
 		alt: 'Presto.it, el proyecto final del curso, hecho en equipo',
 	},
 	esperimenti: {
-		marquee: 'SLIDER · CARD · HOVER · DEGRADADO · SOMBRA · SLIDER · CARD · HOVER ·',
-		alt: ['Slider con efecto en las imágenes', 'Animación 3D con scroll', 'Carrusel de cafés', 'Slider de animales', 'Slider con una lata y un aguacate', 'Previsión del tiempo con tormenta'],
+		marquee: 'SLIDER · CARD · HOVER · 3D · SCROLL · GALERÍA · DEGRADADO · SOMBRA · SLIDER · CARD · HOVER ·',
+		alt: ['Slider con efecto en las imágenes', 'Animación 3D con scroll', 'Carrusel de cafés', 'Slider de animales', 'Slider con una lata y un aguacate', 'Previsión del tiempo con tormenta', 'El logo del estudio en 3D, con scroll', 'El viaje del agua, contado solo con CSS', 'Galería de fotos para arrastrar', 'Medusa 3D que nada con el scroll', 'Mariposa 3D que sigue el puntero', 'Galería de fotos para reordenar'],
 	},
 	react: { repoIn: (m: number) => `repos en ${m} ${m === 1 ? 'mes' : 'meses'}` },
 	siti: {

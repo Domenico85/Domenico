@@ -35,8 +35,8 @@ export const it = {
 		alt: 'Presto.it, il progetto finale del corso, fatto in squadra',
 	},
 	esperimenti: {
-		marquee: 'SLIDER · CARD · HOVER · GRADIENTE · OMBRA · SLIDER · CARD · HOVER ·',
-		alt: ['Slider con effetto sulle immagini', 'Animazione 3D a scroll', 'Carosello di caffè', 'Slider a tema animali', 'Slider con lattina e avocado', 'Previsioni del tempo con temporale'],
+		marquee: 'SLIDER · CARD · HOVER · 3D · SCROLL · GALLERIA · GRADIENTE · OMBRA · SLIDER · CARD · HOVER ·',
+		alt: ['Slider con effetto sulle immagini', 'Animazione 3D a scroll', 'Carosello di caffè', 'Slider a tema animali', 'Slider con lattina e avocado', 'Previsioni del tempo con temporale', 'Il logo dello studio in 3D, a scorrimento', 'Il viaggio dell’acqua raccontato in solo CSS', 'Galleria di foto da trascinare', 'Medusa 3D che nuota seguendo lo scroll', 'Farfalla 3D che segue il puntatore', 'Galleria di foto da riordinare'],
 	},
 	react: { repoIn: (m: number) => `repo in ${m} ${m === 1 ? 'mese' : 'mesi'}` },
 	siti: {

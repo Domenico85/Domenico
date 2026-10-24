@@ -36,8 +36,8 @@ export const en: Testi = {
 		alt: 'Presto.it, the final project of the course, built as a team',
 	},
 	esperimenti: {
-		marquee: 'SLIDER · CARD · HOVER · GRADIENT · SHADOW · SLIDER · CARD · HOVER ·',
-		alt: ['Slider with an image effect', '3D scroll animation', 'Coffee carousel', 'Animal-themed slider', 'Slider with a can and an avocado', 'Weather forecast with a thunderstorm'],
+		marquee: 'SLIDER · CARD · HOVER · 3D · SCROLL · GALLERY · GRADIENT · SHADOW · SLIDER · CARD · HOVER ·',
+		alt: ['Slider with an image effect', '3D scroll animation', 'Coffee carousel', 'Animal-themed slider', 'Slider with a can and an avocado', 'Weather forecast with a thunderstorm', 'The studio logo in 3D, driven by scroll', 'The journey of water, told in pure CSS', 'Draggable photo gallery', 'A 3D jellyfish swimming with the scroll', 'A 3D butterfly following the pointer', 'Photo gallery you can reorder'],
 	},
 	react: { repoIn: (m: number) => `repos in ${m} ${m === 1 ? 'month' : 'months'}` },
 	siti: {

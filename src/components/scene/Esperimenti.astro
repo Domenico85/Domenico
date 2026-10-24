@@ -1,5 +1,6 @@
 ---
-// Sei esperimenti in due serie da tre (screenshot dal Lab dello studio, gli stessi del portfolio): la prima serie esce, entra la seconda.
+// Dodici esperimenti in quattro serie da tre (screenshot dal Lab dello studio, gli stessi del portfolio): le prime due sono i lavori del 2025,
+// le ultime due le Demo nuove del Lab. Ogni serie esce quando entra la successiva; la posizione sul palco dipende dall'indice nella serie (a-f in global.css).
 import Quadro from '../Quadro.astro';
 import slider from '../../assets/slider-image-effect.jpg';
 import three from '../../assets/three-js-animation.jpg';
@@ -7,19 +8,32 @@ import coffee from '../../assets/starbucks-coffee.jpg';
 import animal from '../../assets/animal-slider.jpg';
 import soda from '../../assets/slider-fruit-soda.jpg';
 import sky from '../../assets/skytracker.jpg';
+import infinito from '../../assets/3d-infinito.jpg';
+import storytelling from '../../assets/storytelling-css.jpg';
+import trascinabile from '../../assets/galleria-trascinabile.jpg';
+import medusa from '../../assets/3d-medusa.jpg';
+import farfalla from '../../assets/3d-farfalla.jpg';
+import riordinabile from '../../assets/galleria-riordinabile.jpg';
 const { c, n, tot, t } = Astro.props;
+const POSIZIONI = ['a', 'b', 'c', 'd', 'e', 'f'];
 const schede = [
-	{ k: 'a', src: slider, look: 'seppia' },
-	{ k: 'b', src: three, look: 'seppia' },
-	{ k: 'c', src: coffee, look: 'carta' },
-	{ k: 'd', src: animal, look: 'seppia' },
-	{ k: 'e', src: soda, look: 'carta' },
-	{ k: 'f', src: sky, look: 'seppia' },
+	{ src: slider, look: 'seppia' },
+	{ src: three, look: 'seppia' },
+	{ src: coffee, look: 'carta' },
+	{ src: animal, look: 'seppia' },
+	{ src: soda, look: 'carta' },
+	{ src: sky, look: 'seppia' },
+	{ src: infinito, look: 'carta' },
+	{ src: storytelling, look: 'seppia' },
+	{ src: trascinabile, look: 'carta' },
+	{ src: medusa, look: 'seppia' },
+	{ src: farfalla, look: 'carta' },
+	{ src: riordinabile, look: 'seppia' },
 ] as const;
 ---
 <div class="pane p3">
 	<div class="mq" id="mq" aria-hidden="true">{t.esperimenti.marquee}</div>
-	{schede.map((s, i) => <div class={`fr ${s.k}`}><Quadro src={s.src} alt={t.esperimenti.alt[i]} look={s.look} /></div>)}
+	{schede.map((s, i) => <div class={`fr ${POSIZIONI[i % 6]}`}><Quadro src={s.src} alt={t.esperimenti.alt[i]} look={s.look} /></div>)}
 	<h2 class="g" data-split>{c.titolo}</h2>
 	<p class="cp"><span class="lab">{n} / {tot} · {c.quando}</span><br />{c.testo}</p>
 </div>
