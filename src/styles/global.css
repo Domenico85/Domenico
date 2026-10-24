@@ -141,8 +141,8 @@ h1 i, h2 i { font-family: var(--script); font-style: normal; font-weight: 700; c
 /* 3 esperimenti */
 .p3 { background: linear-gradient(135deg, #1b1233, #0f4c5c); color: #fff; }
 .mq { position: absolute; left: 0; top: 50%; translate: 0 -50%; white-space: nowrap; font: 700 clamp(8rem, 24vw, 22rem)/1 var(--display); -webkit-text-stroke: 2px #ffffff55; color: transparent; will-change: transform; }
-.p3 .fr.a { left: 44vw; top: 9dvh; width: min(30vw, 46dvh); } .p3 .fr.b { left: 74vw; top: 30dvh; width: min(24vw, 36dvh); } .p3 .fr.c { left: 47vw; top: 52dvh; width: min(24vw, 34dvh); }
-.p3 .fr.d { left: 66vw; top: 8dvh; width: min(28vw, 44dvh); } .p3 .fr.e { left: 42vw; top: 32dvh; width: min(25vw, 38dvh); } .p3 .fr.f { left: 69vw; top: 55dvh; width: min(22vw, 32dvh); }
+.p3 .fr.a { left: 31vw; top: 8dvh; width: min(34vw, 54dvh); } .p3 .fr.b { left: 63vw; top: 26dvh; width: min(33vw, 52dvh); } .p3 .fr.c { left: 32vw; top: 43dvh; width: min(29vw, 44dvh); }
+.p3 .fr.d { left: 61vw; top: 8dvh; width: min(36vw, 56dvh); } .p3 .fr.e { left: 30vw; top: 30dvh; width: min(30vw, 48dvh); } .p3 .fr.f { left: 62vw; top: 50dvh; width: min(28vw, 44dvh); }
 .p3 h2 { position: absolute; left: 5vw; bottom: max(10dvh, 108px); font: 700 clamp(3.4rem, min(9.5vw, 19dvh), 10rem)/.9 var(--script); z-index: 1; }
 .p3 .cp { top: 22dvh; bottom: auto; z-index: 3; color: #ff7a70; max-width: 30ch; } .p3 .cp .lab { color: #ff7a70; } /* a sinistra, fuori dalle schede (stanno sul canvas e coprirebbero il testo); rosso chiaro: il bianco si confondeva con il titolo e la scritta in contorno */
 /* 4 react */
